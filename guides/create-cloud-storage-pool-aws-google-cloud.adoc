@@ -1,0 +1,51 @@
+---
+permalink: guides/create-cloud-storage-pool-aws-google-cloud.html
+sidebar: sidebar
+keywords: cloud storage pool, aws, S3, amazon web services, google cloud
+summary: 'You can use a Cloud Storage Pool if you want to move StorageGRID objects to an external S3 bucket. The external bucket can belong to Amazon S3 (AWS) or Google Cloud.'
+---
+= Create Cloud Storage Pool for AWS or Google Cloud
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can use a Cloud Storage Pool if you want to move StorageGRID objects to an external S3 bucket. The external bucket can belong to Amazon S3 (AWS) or Google Cloud. 
+
+.What you'll need
+* StorageGRID 11.6 has been configured.
+* You have already set up an external S3 bucket on AWS or Google Cloud.
+
+.Steps
+
+. In the Grid Manager, navigate to *ILM* > *Storage Pools*.
+
+. In the Cloud Storage Pools section of the page, select *Create*.
++
+The Create Cloud Storage Pool pop-up appears.
+
+. Enter a display name.
+
+. Select *Amazon S3* from the Provider Type drop-down list.
++
+This provider type works for AWS S3 or Google Cloud.
+
+. Enter the URI for the S3 bucket to be used for the Cloud Storage Pool.
++
+Two formats are allowed:
++
+`https://host:port`
++
+`http://host:port`
+
+. Enter the S3 bucket name.
++
+The name you specify must exactly match the S3 bucket's name; otherwise, Cloud Storage Pool creation fails. You cannot change this value after the Cloud Storage Pool is saved.
+
+. Optionally, enter the Access Key ID and the Secret Access Key.
+
+. Select *Do Not Verify Certificate* from the drop-down.
+
+. Click *Save*.
+
+.Expected result
+Confirm that a Cloud Storage Pool has been created for Amazon S3 or Google Cloud.

@@ -1,0 +1,12 @@
+---
+permalink: third-party/index.html
+sidebar: sidebar
+keywords: third-party applications, storagegrid
+summary: 'You can use the validated third-party solutions in this section.'
+---
+= Validated third-party solutions: Overview
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can use the validated third-party solutions in this section. 
