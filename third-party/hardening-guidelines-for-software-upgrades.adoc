@@ -1,0 +1,19 @@
+---
+permalink: third-party/hardening-guidelines-for-software-upgrades.html
+sidebar: sidebar
+keywords: Hardening guidelines, upgrades
+summary: 'You must keep your StorageGRID system and related services up to date to defend against attacks.'
+---
+= Hardening guidelines for software upgrades
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You must keep your StorageGRID system and related services up to date to defend against attacks.
+
+== Upgrades to StorageGRID software
+
+Whenever possible, you should upgrade StorageGRID software to the most recent major release or to the previous major release. Keeping StorageGRID up to date helps reduce the amount of time that known vulnerabilities are active and reduces the overall attack surface area. In addition, the most recent releases of StorageGRID often contain security hardening features that are not included in earlier releases.
+
+When a hotfix is required, NetApp prioritizes creating updates for the most recent releases. Some patches might not be compatible with earlier releases.
+

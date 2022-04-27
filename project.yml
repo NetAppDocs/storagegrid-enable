@@ -1,7 +1,62 @@
 settings:
-  name: "Product Name"
+  name: "StorageGRID enablement docs"
   internal:
     pdf_enabled: true
   prod:
-    pdf_enabled: true
+    pdf_enabled: false
 sidebar:
+  entries:
+    - title: StorageGRID enablement docs
+      url: /index.html
+    - title: whats-new
+      url: /whats-new.html
+    - section: third-party
+    - section: guides 
+
+homepage:
+  tiles:
+    - title: Get started
+      links:
+      - title: What's new
+        url: /whats-new.html
+    - title: Third-party solutions
+      links:
+      - title: Overview
+        url: /third-party/index.html
+    - title: Guides
+      links:
+      - title: Overview
+        url: /guides/index.html
+      - title: Create Cloud Storage Pool for AWS or Google
+        url: /guides/create-cloud-storage-pool-aws-google-cloud.html
+    - title: Demos & tutorials
+      links:
+      - title: StorageGRID video library
+        url: https://www.youtube.com/playlist?list=PLdXI3bZJEw7nh2wGRA65iulXhtXwLiqrY
+      - title: NetApp learning services
+        url: https://www.netapp.com/support-and-training/netapp-university/
+    - title: More resources
+      links:
+      - title: StorageGRID support page
+        url: https://mysupport.netapp.com/site/products/all/details/5d9f1107e01d9c0001ee50f6/downloads-tab
+      - title: NetApp Interoperability Matrix Tool (IMT)
+        url: https://mysupport.netapp.com/matrix
+      - title: StorageGRID knowledge base
+        url: https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID
+      - title: NetApp blog
+        url: https://netapp.com/blog/
+      - title: NetApp community
+        url: https://community.netapp.com/
+    - title: StorageGRID documentation
+      links:
+      - title: StorageGRID 11.6 documentation
+        url: https://docs.netapp.com/us-en/storagegrid-116/index.jsp     
+      - title: StorageGRID 11.5 documentation
+        url: https://docs.netapp.com/sgws-115/index.jsp
+      - title: StorageGRID 11.4 documentation
+        url: https://docs.netapp.com/sgws-114/index.jsp
+      - title: StorageGRID 11.3 documentation
+        url: https://docs.netapp.com/sgws-113/index.jsp
+      - title: StorageGRID 11.2 documentation
+        url: https://docs.netapp.com/sgws-112/index.jsp
+
