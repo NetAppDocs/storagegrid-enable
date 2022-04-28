@@ -62,7 +62,7 @@ These solutions have been tested in collaboration with the respective partners
 
 == Third-party solutions validated on StorageGRID with object lock
 
-These solutions have been tested in collaboration with the respective vendors
+These solutions have been tested in collaboration with the respective partners
 
 * Commvault 11 Feature Release 26
 * OpenText Documentum 21.4
