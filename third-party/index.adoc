@@ -12,7 +12,7 @@ The following third-party solutions have been validated for use with StorageGRID
 
 [.lead]
 == Third-party solutions validated on StorageGRID   
-.These solutions have been tested in collaboration with the respective 
+._These solutions have been tested in collaboration with the respective_ 
 * Actifio
 * Apache Kafka
 * Cantemo
@@ -56,7 +56,7 @@ The following third-party solutions have been validated for use with StorageGRID
 * eMAM 
 
 == Third-party solutions validated on StorageGRID with object lock
-.These solutions have been tested in collaboration with the respective vendors
+._These solutions have been tested in collaboration with the respective vendors_
 * Commvault 11 Feature Release 26
 * OpenText Documentum 21.4
 * Veeam 11
