@@ -5,4 +5,6 @@ entries:
     pdf-filename: StorageGRID guides - overview
     url: "/guides/index.html"
   - title: Create Cloud Storage Pool for AWS or Google Cloud
-    url: "/guides/create-cloud-storage-pool-aws-google-cloud.html"
+    url: "/guides/create-cloud-storage-pool-aws-google-cloud.html"    
+  - title: Validated Third Party Solutions
+    url: "/third-party/3rd-party-list.html"
