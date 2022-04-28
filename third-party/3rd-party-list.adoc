@@ -11,10 +11,12 @@ summary: '3rd Party solutions validated for StorageGRID by NetApp.'
 :imagesdir: ../media/
 
 [.lead]
+
 The following third-party solutions have been validated for use with StorageGRID.
 
-== Third-party solutions validated on StorageGRID   
-_These solutions have been tested in collaboration with the respective partners_ 
+== Third-party solutions validated on StorageGRID
+
+These solutions have been tested in collaboration with the respective partners 
 
 * Actifio
 * Apache Kafka
@@ -59,7 +61,8 @@ _These solutions have been tested in collaboration with the respective partners_
 * eMAM 
 
 == Third-party solutions validated on StorageGRID with object lock
-_These solutions have been tested in collaboration with the respective vendors_
+
+These solutions have been tested in collaboration with the respective vendors
 
 * Commvault 11 Feature Release 26
 * OpenText Documentum 21.4
