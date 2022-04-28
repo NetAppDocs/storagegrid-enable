@@ -53,6 +53,6 @@ summary: '3rd Party solutions validated for StorageGRID by NetApp.'
 * eMAM 
 
 .3rd Party solutions validated on StorageGRID with object lock
-* Commvault 11 Feature Release 26;
-* OpenText Documentum 21.4;
+* Commvault 11 Feature Release 26
+* OpenText Documentum 21.4
 * Veeam 11
