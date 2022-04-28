@@ -4,12 +4,15 @@ sidebar: sidebar
 keywords: third-party applications, storagegrid
 summary: '3rd Party solutions validated for StorageGRID by NetApp.'
 ---
-= Validated third-party solutions: Overview
+= Validated third-party solutions
 :icons: font
 :imagesdir: ../media/
 
+The following third-party solutions have been validated for use with StorageGRID. Learn more by reviewing the information in this section
+
 [.lead]
-.3rd Party solutions validated on StorageGRID   
+== Third-party solutions validated on StorageGRID   
+.These solutions have been tested in collaboration with the respective 
 * Actifio
 * Apache Kafka
 * Cantemo
@@ -52,7 +55,8 @@ summary: '3rd Party solutions validated for StorageGRID by NetApp.'
 * Weka v3.10 or later
 * eMAM 
 
-.3rd Party solutions validated on StorageGRID with object lock
+== Third-party solutions validated on StorageGRID with object lock
+.These solutions have been tested in collaboration with the respective vendors
 * Commvault 11 Feature Release 26
 * OpenText Documentum 21.4
 * Veeam 11
