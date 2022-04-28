@@ -6,13 +6,14 @@ summary: '3rd Party solutions validated for StorageGRID by NetApp.'
 ---
 = Validated third-party solutions
 The following third-party solutions have been validated for use with StorageGRID.
+
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
 
 == Third-party solutions validated on StorageGRID   
-_These solutions have been tested in collaboration with the respective_ 
+_These solutions have been tested in collaboration with the respective partners_ 
 
 * Actifio
 * Apache Kafka
