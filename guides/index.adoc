@@ -9,7 +9,7 @@ summary: 'You can use StorageGRID guides as you set up your StorageGRID system.'
 :imagesdir: ../media/
 
 [.lead]
-You can use StorageGRID guides as you set up your StorageGRID system.
+You can use StorageGRID guides as you set up your applications with your StorageGRID system.
 
 == heading 2
 

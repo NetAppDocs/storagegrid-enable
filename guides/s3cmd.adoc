@@ -1,0 +1,55 @@
+---
+permalink: guides/s3cmd.html
+sidebar: sidebar
+keywords: cli, aws, S3, amazon s3cmd, api
+summary: 'You can use s3cmd to to test and demonstrate s3 access on StorageGRID.'
+---
+= Create Cloud Storage Pool for AWS or Google Cloud
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+S3cmd is a free command line tool and client for S3 operations. You can use s3cmd to to test and demonstrate s3 access on StorageGRID.
+
+== Install and configure S3cmd
+
+You can download s3cmd https://s3tools.org/s3cmd[here^] to install on a workstation or server.  s3cmd is pre-installed on each StorageGRID node as a tool to aid in troubleshooting.
+
+.Initial configuration steps
+. s3cmd --configure
+
+. Provide only access_key and secret_key, for the the rest keep the defaults. 
+
+. Test access with supplied credentials? [Y/n]: n  (bypass the test as it will fail)
+
+. Save settings? [y/N] y
+
+.. Configuration saved to '/root/.s3cfg'
+
+. In .s3cfg make fields host_base and host_bucket empty after the "=" sign : 
+
+.. host_base =
+
+.. host_bucket =
+[NOTE]
+====
+If you specify host_base and host_bucket in step 4, you don't need to specify an endpoint with --host in the CLI. Example:
+
+host_base = 10.64.24.91:8082
+host_bucket = bucketX.10.64.24.91:8082
+
+s3cmd ls s3://bucketX --no-check-certificate
+====
+ 
+.Examples 
+
+. Create a bucket $ s3cmd mb s3://s3cmdbucket  --host=<endpoint>:<port> --no-check-certificate
++
+Bucket 's3://s3cmdbucket/' created
++
+. List all buckets and their contents: $ s3cmd la  --host=<endpoint>:<port> --no-check-certificate  
+. List objects in a specific bucket: $ s3cmd ls s3://<bucket>  --host=<endpoint>:<port> --no-check-certificate
+. Put an object: $ s3cmd put <file> s3://<bucket>  --host=<endpoint>:<port> --no-check-certificate
++
+Example endpoint:port = storagenode_ip:18082 or gateway_ip:8082
++
