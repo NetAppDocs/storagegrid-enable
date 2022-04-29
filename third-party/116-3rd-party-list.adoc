@@ -1,10 +1,10 @@
 ---
-permalink: third-party/3rd-party-list.html
+permalink: third-party/116-3rd-party-list.html
 sidebar: sidebar
 keywords: third-party applications, storagegrid
-summary: '3rd Party solutions validated for StorageGRID by NetApp.'
+summary: '3rd Party solutions validated for StorageGRID 11.6.'
 ---
-= Validated third-party solutions
+= StorageGRID 11.6 Validated third-party solutions
 
 
 :icons: font
@@ -12,7 +12,7 @@ summary: '3rd Party solutions validated for StorageGRID by NetApp.'
 
 [.lead]
 
-The following third-party solutions have been validated for use with StorageGRID.
+The following third-party solutions have been validated for use with StorageGRID 11.6
 
 == Third-party solutions validated on StorageGRID
 
