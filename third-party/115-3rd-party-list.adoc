@@ -1,10 +1,10 @@
 ---
-permalink: third-party/116-3rd-party-list.html
+permalink: third-party/115-3rd-party-list.html
 sidebar: sidebar
 keywords: third-party applications, storagegrid
-summary: '3rd Party solutions validated for StorageGRID 11.6'
+summary: '3rd Party solutions validated for StorageGRID 11.5'
 ---
-= StorageGRID 11.6 Validated third-party solutions
+= StorageGRID 11.5 Validated third-party solutions
 
 
 :icons: font
@@ -12,14 +12,13 @@ summary: '3rd Party solutions validated for StorageGRID 11.6'
 
 [.lead]
 
-The following third-party solutions have been validated for use with StorageGRID 11.6
+The following third-party solutions have been validated for use with StorageGRID 11.5
 
 == Third-party solutions validated on StorageGRID
 
 These solutions have been tested in collaboration with the respective partners 
 
 * Actifio
-* Apache Kafka
 * Cantemo
 * Citrix Content Collaboration
 * Commvault 11
@@ -27,13 +26,8 @@ These solutions have been tested in collaboration with the respective partners
 * Dalet
 * Data Dynamics StorageX
 * DefendX
-* FujiFilm Object Archive
-* GitHub Enterprise Server
-* IBM Filenet
-* IBM Spectrum Protect Plus
 * Interica
 * Komprise
-* Microsoft SQL Server Big Data Clusters
 * Moonwalk Universal
 * NICE
 * Nasuni
@@ -42,7 +36,6 @@ These solutions have been tested in collaboration with the respective partners
 * OpenText InfoArchive 16 EP7
 * OpenText Media Management 16.5 with CyanGate Cloud
 * Panzura
-* PixitMedia ngenea
 * PoINT Archival Gateway 2.0
 * PoINT Storage Manager 6.4
 * Primestream
@@ -50,20 +43,18 @@ These solutions have been tested in collaboration with the respective partners
 * Rubrik CDM 5.0.1 p1-1342
 * Signiant
 * Splunk Smartstore
-* Storage Made Easy
 * Varnish Enterprise 6.0.4
 * Veeam 11
-* Veritas Enterprise Vault 14
+* Veritas Enterprise Vault 11
+* Veritas Enterprise Vault 12
 * Veritas NetBackup 8.0
 * Vertica 10.x
 * Vidispine
-* Weka v3.10 or later
-* eMAM 
+
 
 == Third-party solutions validated on StorageGRID with object lock
 
 These solutions have been tested in collaboration with the respective partners
 
-* Commvault 11 Feature Release 26
 * OpenText Documentum 21.4
 * Veeam 11

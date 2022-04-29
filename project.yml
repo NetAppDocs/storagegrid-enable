@@ -23,8 +23,16 @@ homepage:
       links:
       - title: Overview
         url: /third-party/index.html
-      - title: Validated third-party solutions
+      - title: StorageGRID 11.6 Validated third-party solutions
         url: /third-party/116-3rd-party-list.html
+      - title: 11.5 Validated Third Party Solutions
+        url: "/third-party/115-3rd-party-list.html"
+      - title: 11.4 Validated Third Party Solutions
+        url: "/third-party/114-3rd-party-list.html"
+      - title: 11.3 Validated Third Party Solutions
+        url: "/third-party/113-3rd-party-list.html"
+      - title: 11.2 Validated Third Party Solutions
+        url: "/third-party/112-3rd-party-list.html"
     - title: Guides
       links:
       - title: Overview
