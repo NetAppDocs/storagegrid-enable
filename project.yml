@@ -19,19 +19,19 @@ homepage:
       links:
       - title: What's new
         url: /whats-new.html
-    - title: Third-party solutions
+    - title: Validated Third-party solutions
       links:
       - title: Overview
         url: /third-party/index.html
-      - title: StorageGRID 11.6 Validated third-party solutions
+      - title: StorageGRID 11.6 third-party solutions
         url: /third-party/116-3rd-party-list.html
-      - title: 11.5 Validated Third Party Solutions
+      - title: StorageGRID 11.5 third-party solutions
         url: "/third-party/115-3rd-party-list.html"
-      - title: 11.4 Validated Third Party Solutions
+      - title: StorageGRID 11.4 third-party solutions
         url: "/third-party/114-3rd-party-list.html"
-      - title: 11.3 Validated Third Party Solutions
+      - title: StorageGRID 11.3 third-party solutions
         url: "/third-party/113-3rd-party-list.html"
-      - title: 11.2 Validated Third Party Solutions
+      - title: StorageGRID 11.2 third-party solutions
         url: "/third-party/112-3rd-party-list.html"
     - title: Guides
       links:
