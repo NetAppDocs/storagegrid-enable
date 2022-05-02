@@ -41,7 +41,7 @@ NOTE: If you specify host_base and host_bucket in step 4, you don't need to spec
 ....
 ====
  
-== Basic command Examples 
+== Basic command examples 
 
 * *Create a bucket:*  s3cmd mb s3://s3cmdbucket --host=<endpoint>:<port> --no-check-certificate
 * *List all buckets:*  s3cmd ls  --host=<endpoint>:<port> --no-check-certificate  
