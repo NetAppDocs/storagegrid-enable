@@ -17,6 +17,8 @@ Cloud Storage Pools
 
 xref:../guides/create-cloud-storage-pool-aws-google-cloud.adoc[Create Cloud Storage Pool for AWS or Google Cloud]
 
+xref:../guides/encryption examples.adoc[Test and Demo S3 encryption]
+
 == Tool Guides
 
 CLI S3 Tools
