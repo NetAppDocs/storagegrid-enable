@@ -23,5 +23,4 @@ CLI S3 Tools
 
 xref:../guides/s3cmd.adoc[Setup and use S3cmd].
 
-
 == Application Guides
