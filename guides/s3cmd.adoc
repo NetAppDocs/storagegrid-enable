@@ -1,10 +1,10 @@
 ---
 permalink: guides/s3cmd.html
 sidebar: sidebar
-keywords: cli, aws, S3, amazon s3cmd, api
+keywords: cli, aws, S3, s3cmd, api
 summary: 'You can use s3cmd to to test and demonstrate s3 access on StorageGRID.'
 ---
-= Create Cloud Storage Pool for AWS or Google Cloud
+= Use S3cmd to test and Demonstrate S3 access on StorageGRID
 :icons: font
 :imagesdir: ../media/
 
