@@ -35,17 +35,21 @@ You can download s3cmd https://s3tools.org/s3cmd[here^] to install on a workstat
 ====
 NOTE: If you specify host_base and host_bucket in step 4, you don't need to specify an endpoint with --host in the CLI. Example:
 ....
-            host_base = 10.64.24.91:8082
+            host_base = 192.168.1.91:8082
 
-            host_bucket = bucketX.10.64.24.91:8082
+            host_bucket = bucketX.192.168.1.91:8082
 
             s3cmd ls s3://bucketX --no-check-certificate
 ....
 ====
  
-== Examples 
+== Basic command Examples 
 
-* Create a bucket $ s3cmd mb s3://s3cmdbucket  --host=<endpoint>:<port> --no-check-certificate
-* List all buckets and their contents: $ s3cmd la  --host=<endpoint>:<port> --no-check-certificate  
-* List objects in a specific bucket: $ s3cmd ls s3://<bucket>  --host=<endpoint>:<port> --no-check-certificate
-* Put an object: $ s3cmd put <file> s3://<bucket>  --host=<endpoint>:<port> --no-check-certificate
+* *Create a bucket:*  s3cmd mb s3://s3cmdbucket --host=<endpoint>:<port> --no-check-certificate
+* *List all buckets:*  s3cmd ls  --host=<endpoint>:<port> --no-check-certificate  
+* *List all buckets and their contents:*  s3cmd la --host=<endpoint>:<port> --no-check-certificate  
+* *List objects in a specific bucket:*  s3cmd ls s3://<bucket> --host=<endpoint>:<port> --no-check-certificate
+* *Delete a bucket:*  s3cmd rb s3://s3cmdbucket --host=<endpoint>:<port> --no-check-certificate
+* *Put an object:*  s3cmd put <file> s3://<bucket>  --host=<endpoint>:<port> --no-check-certificate
+* *Get an object:*  s3cmd get s3://<bucket>/<object> <file> --host=<endpoint>:<port> --no-check-certificate
+* *Delete an object:* s3cmd del s3://<bucket>/<object> --host=<endpoint>:<port> --no-check-certificate

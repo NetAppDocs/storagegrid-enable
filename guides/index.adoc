@@ -9,16 +9,19 @@ summary: 'You can use StorageGRID guides as you set up your StorageGRID system.'
 :imagesdir: ../media/
 
 [.lead]
-You can use StorageGRID guides as you set up your applications with your StorageGRID system.
+Use these StorageGRID guides as you set up your applications and your StorageGRID system.
 
-== heading 2
+== Product Feature Guides
 
-text here
+Cloud Storage Pools
 
-To learn how, go to xref:../guides/create-cloud-storage-pool-aws-google-cloud.adoc[Create Cloud Storage Pool for AWS or Google Cloud].
+xref:../guides/create-cloud-storage-pool-aws-google-cloud.adoc[Create Cloud Storage Pool for AWS or Google Cloud]
 
-== heading 2
+== Tool Guides
 
-more text here
+CLI S3 Tools
+
+xref:../guides/s3cmd.adoc[Setup and use S3cmd].
 
 
+== Application Guides
