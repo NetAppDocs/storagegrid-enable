@@ -36,9 +36,7 @@ You can download s3cmd https://s3tools.org/s3cmd[here^] to install on a workstat
 NOTE: If you specify host_base and host_bucket in step 4, you don't need to specify an endpoint with --host in the CLI. Example:
 ....
             host_base = 192.168.1.91:8082
-
             host_bucket = bucketX.192.168.1.91:8082
-
             s3cmd ls s3://bucketX --no-check-certificate
 ....
 ====
