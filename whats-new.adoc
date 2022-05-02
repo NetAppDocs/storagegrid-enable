@@ -1,7 +1,7 @@
 ---
 permalink: whats-new.html
 sidebar: sidebar
-keywords: whats new, third-party applications, storagegrid
+keywords: whats new, third-party applications, storagegrid, Guides, cookbooks
 summary: 'Here are recent changes to this site.'
 ---
 = What's new
@@ -15,12 +15,8 @@ Here are recent changes to this site.
 |===
 |Release |What changed
 
-|11.7
-|* _Some new information added_
-* _More new information_
-
 |11.6
-|Initial release. Includes guides for Cloud Storage Pool and third-party solutions for StorageGRID 11.6.
+|Initial release. Includes guides for Cloud Storage Pool, S3cmd, and validated third-party solutions for StorageGRID.
 
 
 |===
