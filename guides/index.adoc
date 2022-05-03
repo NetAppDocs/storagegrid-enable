@@ -19,6 +19,8 @@ xref:../guides/create-cloud-storage-pool-aws-google-cloud.adoc[Create Cloud Stor
 
 xref:../guides/encryption-examples.adoc[S3 api encryption examples]
 
+xref:../guides/object-lock-examples.adoc[S3 api object lock examples]
+
 == Tool Guides
 
 CLI S3 Tools
