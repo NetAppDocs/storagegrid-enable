@@ -42,7 +42,9 @@ homepage:
       - title: S3cmd
         url: /guides/s3cmd.html
       - title: S3 api encryption examples
-        url: "/guides/encryption-examples.html"        
+        url: "/guides/encryption-examples.html"
+      - title: S3 api object lock examples
+        url: "/guides/object-lock-examples.html"        
     - title: Demos & tutorials
       links:
       - title: StorageGRID video library
