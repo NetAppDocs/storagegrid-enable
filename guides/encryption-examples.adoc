@@ -25,7 +25,8 @@ SSE allows the client to store an object and encrypt it with a unique key that i
 * HEAD the object to verify encryption
 
 aws s3api head-object --bucket <bucket>  --key <file>   --endpoint-url https://s3.example.com
-....
+
+----
             {
                 "AcceptRanges": "bytes",
                 "LastModified": "2022-05-02T19:03:03+00:00",
@@ -35,7 +36,7 @@ aws s3api head-object --bucket <bucket>  --key <file>   --endpoint-url https://s
                 "ServerSideEncryption": "AES256",
                 "Metadata": {}
             }
-....
+----
 
 * GET the object
 
@@ -65,7 +66,7 @@ SSE allows the client to store an object and encrypt it with a unique key that i
 * Head the object 
 
 ** aws s3api head-object --bucket <bucket> --key <file> --sse-customer-algorithm AES256 --sse-customer-key 23832BAC16516152E560F933F261BF03 --endpoint-url https://s3.example.com
-....
+----
             {
                 "AcceptRanges": "bytes",
                 "LastModified": "2022-05-02T19:20:02+00:00",
@@ -76,7 +77,7 @@ SSE allows the client to store an object and encrypt it with a unique key that i
                 "SSECustomerAlgorithm": "AES256",
                 "SSECustomerKeyMD5": "rjGuMdjLpPV1eRuotNaPMQ=="
             }
-....
+----
 
 [NOTE]
 ====
@@ -116,7 +117,7 @@ SSE-S3 allows the client to define a default encryption behavior for all objects
 * Head the object 
 
 ** aws s3api head-object --bucket <bucket> --key <file> --endpoint-url https://s3.example.com
-....
+----
             {
                 "AcceptRanges": "bytes",
                 "LastModified": "2022-05-02T20:16:23+00:00",
@@ -126,7 +127,7 @@ SSE-S3 allows the client to define a default encryption behavior for all objects
                 "ServerSideEncryption": "AES256",
                 "Metadata": {}
             }
-....
+----
 
 * GET the object
 
