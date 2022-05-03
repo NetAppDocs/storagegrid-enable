@@ -12,7 +12,8 @@ summary: '3rd Party solutions validated for StorageGRID 11.5'
 
 [.lead]
 
-The following third-party solutions have been validated for use with StorageGRID 11.5
+The following third-party solutions have been validated for use with StorageGRID 11.5 +
+If the solution you are looking for is not listed, please contact your NetApp account representative.
 
 == Third-party solutions validated on StorageGRID
 
