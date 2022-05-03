@@ -16,7 +16,7 @@ Here are recent changes to this site.
 |Release |What changed
 
 |11.6
-|Initial release. Includes guides for Cloud Storage Pool, S3cmd, and validated third-party solutions for StorageGRID.
+|Initial release. Includes guides and validated third-party solutions lists for StorageGRID releases 11.2-11.6.
 
 
 |===
