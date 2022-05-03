@@ -17,6 +17,8 @@ Cloud Storage Pools
 
 xref:../guides/create-cloud-storage-pool-aws-google-cloud.adoc[Create Cloud Storage Pool for AWS or Google Cloud]
 
+== S3 REST API examples 
+
 xref:../guides/encryption-examples.adoc[S3 api encryption examples]
 
 xref:../guides/object-lock-examples.adoc[S3 api object lock examples]
