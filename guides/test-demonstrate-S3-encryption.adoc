@@ -1,10 +1,10 @@
 ---
-permalink: guides/encryption-examples.html
+permalink: guides/test-demonstrate-S3-encryption.html
 sidebar: sidebar
 keywords: cli, aws, S3, encryption, SSE, SSE-C, SSE-S3, api
 summary: 'You can test and demonstrate s3 encryption on StorageGRID.'
 ---
-= Test and Demonstrate S3 encryption options on StorageGRID
+= Test and demonstrate S3 encryption options on StorageGRID
 :icons: font
 :imagesdir: ../media/
 

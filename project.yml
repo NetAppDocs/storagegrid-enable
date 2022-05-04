@@ -41,10 +41,10 @@ homepage:
         url: /guides/create-cloud-storage-pool-aws-google-cloud.html
       - title: S3cmd
         url: /guides/s3cmd.html
-      - title: S3 api encryption examples
-        url: "/guides/encryption-examples.html"
-      - title: S3 api object lock examples
-        url: "/guides/object-lock-examples.html"        
+      - title: Test and demonstrate S3 encryption
+        url: "/guides/test-demonstrate-S3-encryption.html"
+      - title: Test and demonstrate S3 object lock
+        url: "/guides/test-demonstrate-S3-object-lock.html"        
     - title: Demos & tutorials
       links:
       - title: StorageGRID video library
