@@ -24,7 +24,7 @@ SSE allows the client to store an object and encrypt it with a unique key that i
 
 * HEAD the object to verify encryption
 
-aws s3api head-object --bucket <bucket>  --key <file>   --endpoint-url https://s3.example.com
+** aws s3api head-object --bucket <bucket>  --key <file>   --endpoint-url https://s3.example.com
 
 ----
             {
