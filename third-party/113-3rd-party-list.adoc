@@ -12,12 +12,12 @@ summary: '3rd Party solutions validated for StorageGRID 11.3'
 
 [.lead]
 
-The following third-party solutions have been validated for use with StorageGRID 11.3 +
+The following third-party solutions have been validated for use with StorageGRID 11.3. +
 If the solution you are looking for is not listed, please contact your NetApp account representative.
 
 == Third-party solutions validated on StorageGRID
 
-These solutions have been tested in collaboration with the respective partners 
+These solutions have been tested in collaboration with the respective partners. 
 
 * Actifio
 * Cantemo

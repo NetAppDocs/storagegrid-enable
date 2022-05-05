@@ -10,4 +10,4 @@ summary: '3rd Party solutions validated for StorageGRID by NetApp.'
 
 NetApp in collaboration with our partners have validated these solutions for use with StorageGRID. Review the information in this section to learn what solutions have been validated, and additional instructions if applicable.
 
-If you would like to partner with StorageGRID and build solutions that solve customers' problems, please follow this  https://www.netapp.com/partners/#become[link^] 
+If you would like to partner with StorageGRID and build solutions that solve customers' problems, please follow this  https://www.netapp.com/partners/#become[link^]. 

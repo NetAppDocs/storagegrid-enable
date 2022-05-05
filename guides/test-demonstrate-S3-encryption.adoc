@@ -9,7 +9,7 @@ summary: 'You can test and demonstrate s3 encryption on StorageGRID.'
 :imagesdir: ../media/
 
 [.lead]
-StorageGRID and the S3 API offer a number of different ways to encrypt your data at rest. You can learn more about the different options https://docs.netapp.com/us-en/storagegrid-116/admin/reviewing-storagegrid-encryption-methods.html[here^] 
+StorageGRID and the S3 API offer a number of different ways to encrypt your data at rest. You can learn more about the different options https://docs.netapp.com/us-en/storagegrid-116/admin/reviewing-storagegrid-encryption-methods.html[here^]. 
 
 This guide will demonstrate the S3 API encryption methods.
 

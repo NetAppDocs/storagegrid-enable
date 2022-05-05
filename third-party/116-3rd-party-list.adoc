@@ -12,12 +12,12 @@ summary: '3rd Party solutions validated for StorageGRID 11.6'
 
 [.lead]
 
-The following third-party solutions have been validated for use with StorageGRID 11.6 +
+The following third-party solutions have been validated for use with StorageGRID 11.6. +
 If the solution you are looking for is not listed, please contact your NetApp account representative.
 
 == Third-party solutions validated on StorageGRID
 
-These solutions have been tested in collaboration with the respective partners 
+These solutions have been tested in collaboration with the respective partners. 
 
 * Actifio
 * Apache Kafka
@@ -63,7 +63,7 @@ These solutions have been tested in collaboration with the respective partners
 
 == Third-party solutions validated on StorageGRID with object lock
 
-These solutions have been tested in collaboration with the respective partners
+These solutions have been tested in collaboration with the respective partners.
 
 * Commvault 11 Feature Release 26
 * OpenText Documentum 21.4
