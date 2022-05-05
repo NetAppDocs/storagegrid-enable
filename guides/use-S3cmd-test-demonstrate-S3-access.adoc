@@ -43,11 +43,46 @@ NOTE: If you specify host_base and host_bucket in step 4, you don't need to spec
  
 == Basic command examples 
 
-* *Create a bucket:*  s3cmd mb s3://s3cmdbucket --host=<endpoint>:<port> --no-check-certificate
-* *List all buckets:*  s3cmd ls  --host=<endpoint>:<port> --no-check-certificate  
-* *List all buckets and their contents:*  s3cmd la --host=<endpoint>:<port> --no-check-certificate  
-* *List objects in a specific bucket:*  s3cmd ls s3://<bucket> --host=<endpoint>:<port> --no-check-certificate
-* *Delete a bucket:*  s3cmd rb s3://s3cmdbucket --host=<endpoint>:<port> --no-check-certificate
-* *Put an object:*  s3cmd put <file> s3://<bucket>  --host=<endpoint>:<port> --no-check-certificate
-* *Get an object:*  s3cmd get s3://<bucket>/<object> <file> --host=<endpoint>:<port> --no-check-certificate
-* *Delete an object:* s3cmd del s3://<bucket>/<object> --host=<endpoint>:<port> --no-check-certificate
+* *Create a bucket:*  
++
+
+`s3cmd mb s3://s3cmdbucket --host=<endpoint>:<port> --no-check-certificate`
+
+* *List all buckets:*  
++
+
+`s3cmd ls  --host=<endpoint>:<port> --no-check-certificate`  
+
+* *List all buckets and their contents:*  
++
+
+`s3cmd la --host=<endpoint>:<port> --no-check-certificate`
+
+* *List objects in a specific bucket:*  
++
+
+`s3cmd ls s3://<bucket> --host=<endpoint>:<port> --no-check-certificate`
+
+* *Delete a bucket:*  
++
+
+`s3cmd rb s3://s3cmdbucket --host=<endpoint>:<port> --no-check-certificate`
+
+* *Put an object:*  
++
+
+`s3cmd put <file> s3://<bucket>  --host=<endpoint>:<port> --no-check-certificate`
+
+* *Get an object:*  
++
+
+`s3cmd get s3://<bucket>/<object> <file> --host=<endpoint>:<port> --no-check-certificate`
+
+* *Delete an object:* 
++
+
+`s3cmd del s3://<bucket>/<object> --host=<endpoint>:<port> --no-check-certificate`
+
+
+
+
