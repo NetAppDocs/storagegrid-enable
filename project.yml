@@ -39,8 +39,8 @@ homepage:
         url: /guides/index.html
       - title: Create Cloud Storage Pool for AWS or Google
         url: /guides/create-cloud-storage-pool-aws-google-cloud.html
-      - title: S3cmd
-        url: /guides/s3cmd.html
+      - title: Use S3cmd to test and demonstrate S3 access
+        url: /guides/use-S3cmd-test-demonstrate-S3-access.html
       - title: Test and demonstrate S3 encryption
         url: "/guides/test-demonstrate-S3-encryption.html"
       - title: Test and demonstrate S3 object lock

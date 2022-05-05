@@ -21,12 +21,12 @@ xref:../guides/create-cloud-storage-pool-aws-google-cloud.adoc[Create Cloud Stor
 
 xref:../guides/test-demonstrate-S3-encryption.adoc[Test and demonstrate S3 encryption]
 
-xref:../guides/test-demonstrate-S3-object-lock.adoc[test-demonstrate-S3-object-lock]
+xref:../guides/test-demonstrate-S3-object-lock.adoc[Test and demonstrate S3 object lock]
 
 == Tool Guides
 
 CLI S3 Tools
 
-xref:../guides/s3cmd.adoc[Setup and use S3cmd].
+xref:../guides/use-S3cmd-test-demonstrate-S3-access.adoc[Use S3cmd to test and demonstrate S3 access].
 
 == Application Guides
