@@ -2,7 +2,7 @@
 permalink: third-party/114-3rd-party-list.html
 sidebar: sidebar
 keywords: third-party applications, storagegrid
-summary: '3rd Party solutions validated for StorageGRID 11.4'
+summary: 'Third-Party solutions validated for StorageGRID 11.4'
 ---
 = StorageGRID 11.4 Validated third-party solutions
 
