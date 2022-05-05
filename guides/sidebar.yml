@@ -10,5 +10,5 @@ entries:
     url: "/guides/use-S3cmd-test-demonstrate-S3-access.html"  
   - title: Test and demonstrate S3 encryption
     url: "/guides/test-demonstrate-S3-encryption.html"      
-  - title: S3 api object lock examples
-    url: "/guides/object-lock-examples.html"          
+  - title: Test and demonstrate S3 object lock
+    url: "/guides/test-demonstrate-S3-object-lock.html"          
