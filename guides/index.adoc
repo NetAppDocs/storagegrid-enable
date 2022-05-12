@@ -30,3 +30,5 @@ CLI S3 Tools
 xref:../guides/use-S3cmd-test-demonstrate-S3-access.adoc[Use S3cmd to test and demonstrate S3 access].
 
 == Application Guides
+
+xref:../guides/use-cloudera-hadoop-s3a-connector.adoc.adoc[Use Cloudera hadoop s3a connector]
