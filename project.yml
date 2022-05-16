@@ -11,7 +11,20 @@ sidebar:
     - title: What's new
       url: /whats-new.html
     - section: third-party
-    - section: guides 
+    - section: guides
+    - title: StorageGRID documentation
+      entries:
+      - title: StorageGRID 11.6 documentation
+        url: https://docs.netapp.com/us-en/storagegrid-116/index.html    
+      - title: StorageGRID 11.5 documentation
+        url: https://docs.netapp.com/sgws-115/index.jsp
+      - title: StorageGRID 11.4 documentation
+        url: https://docs.netapp.com/sgws-114/index.jsp
+      - title: StorageGRID 11.3 documentation
+        url: https://docs.netapp.com/sgws-113/index.jsp
+      - title: StorageGRID 11.2 documentation
+        url: https://docs.netapp.com/sgws-112/index.jsp
+
 
 homepage:
   tiles:
@@ -41,7 +54,7 @@ homepage:
         url: /guides/create-cloud-storage-pool-aws-google-cloud.html
       - title: Configure search integration service
         url: "/guides/storagegrid-search-integration-service.html"
-      - title: Use Cloudera hadoop s3a connector
+      - title: Use Cloudera Hadoop S3A connector
         url: "/guides/use-cloudera-hadoop-s3a-connector.html"        
       - title: Use S3cmd to test and demonstrate S3 access
         url: /guides/use-S3cmd-test-demonstrate-S3-access.html
