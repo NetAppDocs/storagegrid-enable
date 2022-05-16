@@ -2,21 +2,21 @@
 permalink: guides/test-demonstrate-S3-object-lock.html
 sidebar: sidebar
 keywords: cli, aws, S3, object lock, compliance, worm, api
-summary: 'You can test and demonstrate s3 object lock on StorageGRID.'
+summary: 'You can test and demonstrate s3 Object Lock on StorageGRID.'
 ---
 = Test and demonstrate S3 object lock on StorageGRID
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Object lock provides a WORM model to prevent objects from being deleted or overwritten. StorageGRID
+Object Lock provides a WORM model to prevent objects from being deleted or overwritten. StorageGRID
 implementation of object lock is Cohasset assessed to help meet regulatory requirements, supporting
 legal hold and compliance mode for object retention, and default bucket retention policies.
 
-This guide will demonstrate the S3 object lock API.
+This guide will demonstrate the S3 Object Lock API.
 
 == Legal hold
-* Object lock legal hold is a simple on/off status applied to an object.
+* Object Lock legal hold is a simple on/off status applied to an object.
 +
 
 [source,console]
@@ -156,8 +156,8 @@ aws s3api get-object-retention --bucket <bucket> --key <file> --endpoint-url htt
 ----
 
 
-== Test Deleting an object with a defined retention
-Object lock is built on top of versioning. The retention is defined on a version of the object. If an attempt is made to delete an object with a retention defined, and no version is specified, a delete marker is created as the current version of the object.
+== Test deleting an object with a defined retention
+Object Lock is built on top of versioning. The retention is defined on a version of the object. If an attempt is made to delete an object with a retention defined, and no version is specified, a delete marker is created as the current version of the object.
 
 * Delete the object with retention defined
 +
