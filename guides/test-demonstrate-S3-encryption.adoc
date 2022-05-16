@@ -21,6 +21,7 @@ SSE allows the client to store an object and encrypt it with a unique key that i
 
 * PUT an object with SSE
 +
+
 [source,console]
 ----
 aws s3api put-object --bucket <bucket>  --key <file> --body "<file>" --server-side-encryption AES256 --endpoint-url https://s3.example.com
@@ -28,12 +29,13 @@ aws s3api put-object --bucket <bucket>  --key <file> --body "<file>" --server-si
 
 * HEAD the object to verify encryption
 +
+
 [source,console]
 ----
 aws s3api head-object --bucket <bucket>  --key <file>   --endpoint-url https://s3.example.com
 ----
 +
-[source,json]
+
 ----
 {
     "AcceptRanges": "bytes",
@@ -48,6 +50,7 @@ aws s3api head-object --bucket <bucket>  --key <file>   --endpoint-url https://s
 
 * GET the object
 +
+
 [source,console]
 ----
 aws s3api get-object --bucket <bucket>  --key <file> <file> --endpoint-url https://s3.example.com
@@ -63,11 +66,13 @@ SSE allows the client to store an object and encrypt it with a unique key that i
 
 ** Create an encryption key
 +
+
 [source,console]
 ----
 openssl enc -aes-128-cbc -pass pass:secret -P`
 ----
 +
+
 ----
 salt=E9DBB6603C7B3D2A
 key=23832BAC16516152E560F933F261BF03
@@ -77,6 +82,7 @@ iv =71E87C0F6EC3C45921C2754BA131A315
 
 * Put an object with the generated key
 +
+
 [source,console]
 ----
 aws s3api put-object --bucket <bucket> --key <file> --body "file" --sse-customer-algorithm AES256 --sse-customer-key 23832BAC16516152E560F933F261BF03 --endpoint-url https://s3.example.com
@@ -84,12 +90,13 @@ aws s3api put-object --bucket <bucket> --key <file> --body "file" --sse-customer
 
 * Head the object 
 +
+
 [source,console]
 ----
 aws s3api head-object --bucket <bucket> --key <file> --sse-customer-algorithm AES256 --sse-customer-key 23832BAC16516152E560F933F261BF03 --endpoint-url https://s3.example.com
 ----
 +
-[source,json]
+
 ----
             {
                 "AcceptRanges": "bytes",
@@ -110,6 +117,7 @@ If you do not provide the encryption key, you will receive an error "An error oc
 
 * Get the object
 +
+
 [source,console]
 ----
 aws s3api get-object --bucket <bucket> --key <file> <file> --sse-customer-algorithm AES256 --sse-customer-key 23832BAC16516152E560F933F261BF03 --endpoint-url https://s3.example.com
@@ -130,6 +138,7 @@ SSE-S3 allows the client to define a default encryption behavior for all objects
 
 ** Create new bucket
 +
+
 [source,console]
 ----
 aws s3api create-bucket --bucket <bucket> --region us-east-1 --endpoint-url https://s3.example.com
@@ -137,6 +146,7 @@ aws s3api create-bucket --bucket <bucket> --region us-east-1 --endpoint-url http
 
 ** Put bucket encryption 
 +
+
 [source,console]
 ----
 aws s3api put-bucket-encryption --bucket <bucket> --server-side-encryption-configuration '{"Rules": [{"ApplyServerSideEncryptionByDefault": {"SSEAlgorithm": "AES256"}}]}' --endpoint-url https://s3.example.com
@@ -144,6 +154,7 @@ aws s3api put-bucket-encryption --bucket <bucket> --server-side-encryption-confi
 
 * Put an object in the bucket
 +
+
 [source,console]
 ----
 aws s3api put-object --bucket <bucket> --key <file> --body "file" --endpoint-url https://s3.example.com
@@ -157,7 +168,6 @@ aws s3api head-object --bucket <bucket> --key <file> --endpoint-url https://s3.e
 ----
 +
 
-[source,json]
 ----
 {
 "AcceptRanges": "bytes",
@@ -172,6 +182,7 @@ aws s3api head-object --bucket <bucket> --key <file> --endpoint-url https://s3.e
 
 * GET the object
 +
+
 [source,console]
 ----
 aws s3api get-object --bucket <bucket>  --key <file> <file> --endpoint-url https://s3.example.com

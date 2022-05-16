@@ -33,7 +33,6 @@ aws s3api get-object-legal-hold --bucket <bucket> --key <file> --endpoint-url ht
 ----
 +
 
-[source,json]
 ----
 {
     "LegalHold": {
@@ -58,7 +57,7 @@ aws s3api put-object-legal-hold --bucket <bucket> --key <file> --legal-hold Stat
 aws s3api get-object-legal-hold --bucket <bucket> --key <file> --endpoint-url https://s3.company.com
 ----
 +
-[source,json]
+
 ----
 {
     "LegalHold": {
@@ -86,7 +85,7 @@ aws s3api get-object-retention --bucket <bucket> --key <file> --endpoint-url htt
 +
 ----
 +
-[source,json]
+
 ----
 {
     "Retention": {
@@ -116,7 +115,6 @@ aws s3api get-object-lock-configuration --bucket <bucket> --endpoint-url https:/
 ----
 +
 
-[source,json]
 ----
 {
     "ObjectLockConfiguration": {
@@ -148,7 +146,6 @@ aws s3api get-object-retention --bucket <bucket> --key <file> --endpoint-url htt
 ----
 +
 
-[source,json]
 ----
 {
     "Retention": {
@@ -188,7 +185,7 @@ aws s3api list-objects --bucket <bucket> --endpoint-url https://s3.example.com
 aws s3api list-object-versions --bucket <bucket> --prefix <file> --endpoint-url https://s3.example.com
 ----
 +
-[source,json]
+
 ----
 {
     "Versions": [
@@ -228,8 +225,8 @@ aws s3api list-object-versions --bucket <bucket> --prefix <file> --endpoint-url 
 ----
 aws s3api delete-object  --bucket <bucket> --key <file> --version-id "<VersionId>" --endpoint-url https://s3.example.com
 ----
-
 +
+
 ----
 An error occurred (AccessDenied) when calling the DeleteObject operation: Access Denied
 ----
