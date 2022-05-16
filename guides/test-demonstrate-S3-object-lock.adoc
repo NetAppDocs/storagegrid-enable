@@ -19,14 +19,21 @@ This guide will demonstrate the S3 object lock API.
 * Object lock legal hold is a simple on/off status applied to an object.
 +
 
-`aws s3api put-object-legal-hold --bucket <bucket> --key <file> --legal-hold Status=ON --endpoint-url https://s3.company.com`
-
+[source,console]
+----
+aws s3api put-object-legal-hold --bucket <bucket> --key <file> --legal-hold Status=ON --endpoint-url https://s3.company.com
+----
 
 * Verify it with a GET operation.
 +
 
-`aws s3api get-object-legal-hold --bucket <bucket> --key <file> --endpoint-url https://s3.company.com`
+[source,console]
+----
+aws s3api get-object-legal-hold --bucket <bucket> --key <file> --endpoint-url https://s3.company.com
+----
 +
+
+[source,json]
 ----
 {
     "LegalHold": {
@@ -38,15 +45,20 @@ This guide will demonstrate the S3 object lock API.
 * Turn legal hold off
 +
 
-`aws s3api put-object-legal-hold --bucket <bucket> --key <file> --legal-hold Status=OFF --endpoint-url https://s3.company.com`
-
+[source,console]
+----
+aws s3api put-object-legal-hold --bucket <bucket> --key <file> --legal-hold Status=OFF --endpoint-url https://s3.company.com
+----
 
 * Verify it with a GET operation.
 +
 
-`aws s3api get-object-legal-hold --bucket <bucket> --key <file> --endpoint-url https://s3.company.com`
+[source,console]
+----
+aws s3api get-object-legal-hold --bucket <bucket> --key <file> --endpoint-url https://s3.company.com
+----
 +
-
+[source,json]
 ----
 {
     "LegalHold": {
@@ -60,14 +72,21 @@ This guide will demonstrate the S3 object lock API.
 * The object retention is done with a retain until timestamp.
 +
 
-`aws s3api put-object-retention --bucket <bucket> --key <file> --retention '{"Mode":"COMPLIANCE", "RetainUntilDate": "2025-06-10T16:00:00"}' --endpoint-url https://s3.company.com`
+[source,console]
+----
+aws s3api put-object-retention --bucket <bucket> --key <file> --retention '{"Mode":"COMPLIANCE", "RetainUntilDate": "2025-06-10T16:00:00"}' --endpoint-url https://s3.company.com
+----
 
 * Verify the retention status 
 +
 
-`aws s3api get-object-retention --bucket <bucket> --key <file> --endpoint-url https://s3.company.com`
+[source,console]
+----
+aws s3api get-object-retention --bucket <bucket> --key <file> --endpoint-url https://s3.company.com
 +
-
+----
++
+[source,json]
 ----
 {
     "Retention": {
@@ -83,14 +102,21 @@ This guide will demonstrate the S3 object lock API.
 * Set the retention period in days and years verses a retain until date defined with the per object api.
 +
 
-`aws s3api put-object-lock-configuration --bucket <bucket> --object-lock-configuration '{"ObjectLockEnabled": "Enabled", "Rule": { "DefaultRetention": { "Mode": "COMPLIANCE", "Days": 10 }}}' --endpoint-url https://s3.company.com`
+[source,console]
+----
+aws s3api put-object-lock-configuration --bucket <bucket> --object-lock-configuration '{"ObjectLockEnabled": "Enabled", "Rule": { "DefaultRetention": { "Mode": "COMPLIANCE", "Days": 10 }}}' --endpoint-url https://s3.company.com
+----
 
 * Verify the retention status 
 +
 
-`aws s3api get-object-lock-configuration --bucket <bucket> --endpoint-url https://s3.company.com`
+[source,console]
+----
+aws s3api get-object-lock-configuration --bucket <bucket> --endpoint-url https://s3.company.com
+----
 +
 
+[source,json]
 ----
 {
     "ObjectLockConfiguration": {
@@ -108,14 +134,21 @@ This guide will demonstrate the S3 object lock API.
 * Put an object in the bucket
 +
 
-`aws s3api put-object --bucket <bucket> --key <file> --body "file" --endpoint-url https://s3.example.com`
+[source,console]
+----
+aws s3api put-object --bucket <bucket> --key <file> --body "file" --endpoint-url https://s3.example.com
+----
 
 * The retention duration set on the bucket is converted to a retention timestamp on the object.
 +
 
-`aws s3api get-object-retention --bucket <bucket> --key <file> --endpoint-url https://s3.company.com`
+[source,console]
+----
+aws s3api get-object-retention --bucket <bucket> --key <file> --endpoint-url https://s3.company.com
+----
 +
 
+[source,json]
 ----
 {
     "Retention": {
@@ -132,21 +165,30 @@ Object lock is built on top of versioning. The retention is defined on a version
 * Delete the object with retention defined
 +
 
-`aws s3api delete-object --bucket <bucket> --key <file> --endpoint-url https://s3.example.com`
+[source,console]
+----
+aws s3api delete-object --bucket <bucket> --key <file> --endpoint-url https://s3.example.com
+----
 
 * List the objects in the bucket
 +
 
-`aws s3api list-objects --bucket <bucket> --endpoint-url https://s3.example.com`
+[source,console]
+----
+aws s3api list-objects --bucket <bucket> --endpoint-url https://s3.example.com
+----
 
 ** Notice the object is not listed.
 
 * List versions to see the delete marker, and the original locked version
 +
 
-`aws s3api list-object-versions --bucket <bucket> --prefix <file> --endpoint-url https://s3.example.com`
+[source,console]
+----
+aws s3api list-object-versions --bucket <bucket> --prefix <file> --endpoint-url https://s3.example.com
+----
 +
-
+[source,json]
 ----
 {
     "Versions": [
@@ -182,9 +224,12 @@ Object lock is built on top of versioning. The retention is defined on a version
 * Delete the locked version of the object
 +
 
-`aws s3api delete-object  --bucket <bucket> --key <file> --version-id "<VersionId>" --endpoint-url https://s3.example.com`
-+
+[source,console]
+----
+aws s3api delete-object  --bucket <bucket> --key <file> --version-id "<VersionId>" --endpoint-url https://s3.example.com
+----
 
++
 ----
 An error occurred (AccessDenied) when calling the DeleteObject operation: Access Denied
 ----
