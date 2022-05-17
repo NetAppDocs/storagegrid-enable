@@ -1,5 +1,5 @@
 section: tools-apps-guides
-title: StorageGRID guides
+title: Tool and application guides
 entries:
   - title: Use Cloudera Hadoop S3A connector
     url: "/tools-apps-guides/use-cloudera-hadoop-s3a-connector.html"  

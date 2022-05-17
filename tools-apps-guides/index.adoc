@@ -11,7 +11,7 @@ summary: 'You can use StorageGRID guides as you set up your StorageGRID system.'
 [.lead]
 Use these StorageGRID guides as you set up your applications and your StorageGRID system.
 
-== Tools and Application Guides
+== Tool and Application Guides
 
 xref:../tools-apps-guides/use-cloudera-hadoop-s3a-connector.adoc[Use Cloudera Hadoop S3A connector]
 

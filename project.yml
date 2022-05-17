@@ -54,7 +54,7 @@ homepage:
         url: /product-feature-guides/create-cloud-storage-pool-aws-google-cloud.html
       - title: Configure search integration service
         url: "/product_feature_guides/storagegrid-search-integration-service.html"
-    - title: Tools and Application Guides
+    - title: Tool and Application Guides
       links:
       - title: Use Cloudera Hadoop S3A connector
         url: "/tools-apps-guides/use-cloudera-hadoop-s3a-connector.html"        
