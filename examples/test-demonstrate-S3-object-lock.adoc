@@ -1,5 +1,5 @@
 ---
-permalink: guides/test-demonstrate-S3-object-lock.html
+permalink: examples/test-demonstrate-S3-object-lock.html
 sidebar: sidebar
 keywords: cli, aws, S3, object lock, compliance, worm, api
 summary: 'You can test and demonstrate s3 Object Lock on StorageGRID.'

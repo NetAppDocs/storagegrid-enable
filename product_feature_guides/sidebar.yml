@@ -1,0 +1,7 @@
+section: product_feature_guides
+title: StorageGRID guides
+entries:
+  - title: Create Cloud Storage Pool for AWS or Google Cloud
+    url: "/product_feature_guides/create-cloud-storage-pool-aws-google-cloud.html"  
+  - title: Configure search integration service
+    url: "/product_feature_guides/storagegrid-search-integration-service.html"  

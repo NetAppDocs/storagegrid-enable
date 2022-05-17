@@ -1,5 +1,5 @@
 ---
-permalink: guides/storagegrid-search-integration-service.html
+permalink: product_feature_guides/storagegrid-search-integration-service.html
 sidebar: sidebar
 keywords: Amazon OpenSearch Service, on-premises, Elasticsearch
 summary: 'This technical report provides detailed instructions for configuring NetApp StorageGRID 11.6 search integration service with either Amazon OpenSearch Service or on-premises Elasticsearch.'

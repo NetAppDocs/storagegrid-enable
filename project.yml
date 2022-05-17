@@ -11,7 +11,9 @@ sidebar:
     - title: What's new
       url: /whats-new.html
     - section: third-party
-    - section: guides
+    - section: Product Feature Guides
+    - section: Tools and Application Guides
+    - section: Examples
     - title: StorageGRID documentation
       entries:
       - title: StorageGRID 11.6 documentation
@@ -46,22 +48,24 @@ homepage:
         url: "/third-party/113-3rd-party-list.html"
       - title: StorageGRID 11.2 third-party solutions
         url: "/third-party/112-3rd-party-list.html"
-    - title: Guides
+    - title: Product Feature Guides
       links:
-      - title: Overview
-        url: /guides/index.html
       - title: Create Cloud Storage Pool for AWS or Google
-        url: /guides/create-cloud-storage-pool-aws-google-cloud.html
+        url: /product_feature_guides/create-cloud-storage-pool-aws-google-cloud.html
       - title: Configure search integration service
-        url: "/guides/storagegrid-search-integration-service.html"
+        url: "/product_feature_guides/storagegrid-search-integration-service.html"
+    - title: Tools and Application Guides
+      links:
       - title: Use Cloudera Hadoop S3A connector
-        url: "/guides/use-cloudera-hadoop-s3a-connector.html"        
+        url: "/tools_apps_guides/use-cloudera-hadoop-s3a-connector.html"        
       - title: Use S3cmd to test and demonstrate S3 access
-        url: /guides/use-S3cmd-test-demonstrate-S3-access.html
+        url: /tools_apps_guides/use-S3cmd-test-demonstrate-S3-access.html
+    - title: Examples
+      links:
       - title: Test and demonstrate S3 encryption
-        url: "/guides/test-demonstrate-S3-encryption.html"
+        url: "/examples/test-demonstrate-S3-encryption.html"
       - title: Test and demonstrate S3 object lock
-        url: "/guides/test-demonstrate-S3-object-lock.html"        
+        url: "/examples/test-demonstrate-S3-object-lock.html"        
     - title: Demos & tutorials
       links:
       - title: StorageGRID video library
