@@ -12,7 +12,7 @@ sidebar:
       url: /whats-new.html
     - section: third-party
     - section: product-feature-guides
-    - section: tools_apps_guides
+    - section: tools-apps-guides
     - section: Examples
     - title: StorageGRID documentation
       entries:
