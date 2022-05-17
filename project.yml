@@ -13,7 +13,7 @@ sidebar:
     - section: third-party
     - section: product-feature-guides
     - section: tools-apps-guides
-    - section: Examples
+    - section: examples
     - title: StorageGRID documentation
       entries:
       - title: StorageGRID 11.6 documentation
