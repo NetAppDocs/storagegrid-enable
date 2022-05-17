@@ -86,14 +86,14 @@ homepage:
         url: https://community.netapp.com/
     - title: StorageGRID documentation
       links:
-      - title: StorageGRID 11.6 documentation
+      - title: For StorageGRID 11.6
         url: https://docs.netapp.com/us-en/storagegrid-116/index.html     
-      - title: StorageGRID 11.5 documentation
+      - title: For StorageGRID 11.5
         url: https://docs.netapp.com/sgws-115/index.jsp
-      - title: StorageGRID 11.4 documentation
+      - title: For StorageGRID 11.4
         url: https://docs.netapp.com/sgws-114/index.jsp
-      - title: StorageGRID 11.3 documentation
+      - title: For StorageGRID 11.3
         url: https://docs.netapp.com/sgws-113/index.jsp
-      - title: StorageGRID 11.2 documentation
+      - title: For StorageGRID 11.2
         url: https://docs.netapp.com/sgws-112/index.jsp
 
