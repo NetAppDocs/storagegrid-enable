@@ -1,5 +1,5 @@
 section: examples
-title: StorageGRID examples
+title: API examples
 entries:
   - title: Test and demonstrate S3 encryption
     url: "/examples/test-demonstrate-S3-encryption.html"

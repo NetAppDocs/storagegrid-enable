@@ -34,7 +34,7 @@ homepage:
       links:
       - title: What's new
         url: /whats-new.html
-    - title: Validated Third-party solutions
+    - title: Validated third-party solutions
       links:
       - title: Overview
         url: /third-party/index.html
@@ -48,19 +48,19 @@ homepage:
         url: "/third-party/113-3rd-party-list.html"
       - title: StorageGRID 11.2 third-party solutions
         url: "/third-party/112-3rd-party-list.html"
-    - title: Product Feature Guides
+    - title: Product feature guides
       links:
       - title: Create Cloud Storage Pool for AWS or Google
         url: /product-feature-guides/create-cloud-storage-pool-aws-google-cloud.html
       - title: Configure search integration service
         url: "/product_feature_guides/storagegrid-search-integration-service.html"
-    - title: Tool and Application Guides
+    - title: Tool and application Guides
       links:
       - title: Use Cloudera Hadoop S3A connector
         url: "/tools-apps-guides/use-cloudera-hadoop-s3a-connector.html"        
       - title: Use S3cmd to test and demonstrate S3 access
         url: /tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html
-    - title: Examples
+    - title: API examples
       links:
       - title: Test and demonstrate S3 encryption
         url: "/examples/test-demonstrate-S3-encryption.html"
