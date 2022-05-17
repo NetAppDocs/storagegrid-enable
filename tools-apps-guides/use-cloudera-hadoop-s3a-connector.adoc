@@ -1,5 +1,5 @@
 ---
-permalink: guides/use-cloudera-hadoop-s3a-connector.html
+permalink: tools-apps-guides/use-cloudera-hadoop-s3a-connector.html
 sidebar: sidebar
 keywords: hadoop, cloudera, s3a
 summary: 'Hadoop allows for distributed processing of large data sets across clusters of computers using simple programing frameworks. Hadoop was designed to scale up from single servers to thousands of machines where each machine offered its local compute and storage.'

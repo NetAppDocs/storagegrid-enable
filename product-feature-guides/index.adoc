@@ -1,5 +1,5 @@
 ---
-permalink: product_feature_guides/index.html
+permalink: product-feature-guides/index.html
 sidebar: sidebar
 keywords: guides, storagegrid
 summary: 'You can use StorageGRID guides as you set up your StorageGRID system.'
@@ -13,6 +13,6 @@ Use these StorageGRID guides as you set up your applications and your StorageGRI
 
 == Product Feature Guides
 
-xref:../product_feature_guides/create-cloud-storage-pool-aws-google-cloud.adoc[Create Cloud Storage Pool for AWS or Google Cloud]
+xref:../product-feature-guides/create-cloud-storage-pool-aws-google-cloud.adoc[Create Cloud Storage Pool for AWS or Google Cloud]
 
-xref:../product_feature_guides/storagegrid-search-integration-service.adoc[Configure search integration service]
+xref:../product-feature-guides/storagegrid-search-integration-service.adoc[Configure search integration service]

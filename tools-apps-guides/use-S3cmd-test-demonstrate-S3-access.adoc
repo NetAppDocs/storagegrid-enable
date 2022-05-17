@@ -1,5 +1,5 @@
 ---
-permalink: guides/use-S3cmd-test-demonstrate-S3-access.html
+permalink: tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html
 sidebar: sidebar
 keywords: cli, aws, S3, s3cmd, api
 summary: 'You can use s3cmd to to test and demonstrate s3 access on StorageGRID.'

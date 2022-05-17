@@ -1,0 +1,7 @@
+section: tools-apps-guides
+title: StorageGRID guides
+entries:
+  - title: Use Cloudera Hadoop S3A connector
+    url: "/tools-apps-guides/use-cloudera-hadoop-s3a-connector.html"  
+  - title: Use S3cmd to test and demonstrate S3 access
+    url: "/tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html"  

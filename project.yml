@@ -11,8 +11,8 @@ sidebar:
     - title: What's new
       url: /whats-new.html
     - section: third-party
-    - section: Product Feature Guides
-    - section: Tools and Application Guides
+    - section: product-feature-guides
+    - section: tools_apps_guides
     - section: Examples
     - title: StorageGRID documentation
       entries:
@@ -51,15 +51,15 @@ homepage:
     - title: Product Feature Guides
       links:
       - title: Create Cloud Storage Pool for AWS or Google
-        url: /product_feature_guides/create-cloud-storage-pool-aws-google-cloud.html
+        url: /product-feature-guides/create-cloud-storage-pool-aws-google-cloud.html
       - title: Configure search integration service
         url: "/product_feature_guides/storagegrid-search-integration-service.html"
     - title: Tools and Application Guides
       links:
       - title: Use Cloudera Hadoop S3A connector
-        url: "/tools_apps_guides/use-cloudera-hadoop-s3a-connector.html"        
+        url: "/tools-apps-guides/use-cloudera-hadoop-s3a-connector.html"        
       - title: Use S3cmd to test and demonstrate S3 access
-        url: /tools_apps_guides/use-S3cmd-test-demonstrate-S3-access.html
+        url: /tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html
     - title: Examples
       links:
       - title: Test and demonstrate S3 encryption
