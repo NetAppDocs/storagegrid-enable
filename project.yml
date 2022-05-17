@@ -83,7 +83,7 @@ homepage:
       - title: NetApp blog
         url: https://netapp.com/blog/
       - title: NetApp community
-        url: https://community.netapp.com/
+        url: https://community.netapp.com/t5/Object-Storage/bd-p/object-storage
     - title: StorageGRID documentation
       links:
       - title: StorageGRID 11.6
