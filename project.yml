@@ -16,16 +16,15 @@ sidebar:
     - section: examples
     - title: StorageGRID documentation
       entries:
-      - title: StorageGRID 11.6
-        url: ^https://docs.netapp.com/us-en/storagegrid-116/index.html[window=_blank]    
+      - title: https://docs.netapp.com/us-en/storagegrid-116/index.html[StorageGRID 11.6^]   
       - title: StorageGRID 11.5
-        url: ^https://docs.netapp.com/sgws-115/index.jsp
+        url: https://docs.netapp.com/sgws-115/index.jsp
       - title: StorageGRID 11.4
-        url: ^https://docs.netapp.com/sgws-114/index.jsp
+        url: https://docs.netapp.com/sgws-114/index.jsp
       - title: StorageGRID 11.3
-        url: ^https://docs.netapp.com/sgws-113/index.jsp
+        url: https://docs.netapp.com/sgws-113/index.jsp
       - title: StorageGRID 11.2
-        url: ^https://docs.netapp.com/sgws-112/index.jsp
+        url: https://docs.netapp.com/sgws-112/index.jsp
 
 
 homepage:
