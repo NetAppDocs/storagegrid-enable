@@ -2,40 +2,46 @@
 permalink: tools-apps-guides/use-cloudera-hadoop-s3a-connector.html
 sidebar: sidebar
 keywords: hadoop, cloudera, s3a
-summary: 'Hadoop allows for distributed processing of large data sets across clusters of computers using simple programing frameworks. Hadoop was designed to scale up from single servers to thousands of machines where each machine offered its local compute and storage.'
+summary: Hadoop allows for distributed processing of large data sets across clusters of computers using simple programing frameworks. Hadoop was designed to scale up from single servers to thousands of machines where each machine offered its local compute and storage.
 ---
 = Use Cloudera Hadoop S3A connector with StorageGRID
+
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Hadoop has been one of data scientist's favorite platform for a long time now. Hadoop allows for distributed processing of large data sets across clusters of computers using simple programing frameworks. Hadoop was designed to scale up from single servers to thousands of machines where each machine offered its local compute and storage. 
+Hadoop has been a favorite of data scientist for some time now. Hadoop allows for the distributed processing of large data sets across clusters of computers using simple programing frameworks. Hadoop was designed to scale up from single servers to thousands of machines, with each machine possessing local compute and storage.
 
-== Why use S3A for Hadoop workflow?
-As the volume of data grew overtime this approach of just adding new machines with its own compute and storage becomes inefficient. Scaling linearly has challenges in terms of using your resources efficiently and managing the infrastructure. Hadoop’s “S3A” client offers high-performance IO against S3 object storage. Implementing your Hadoop workflow via S3A helps you leverage object storage as your data repository and enables you to separate compute and storage which in turn enables organizations to scale their compute and storage independently. Decoupling compute and storage also enable organizations to dedicate the right amount of resources needed for your compute jobs and have the dedicated capacity based on how big your data set is. Hence, reducing your overall TCO on your Hadoop workflows.
+== Why use S3A for Hadoop workflows?
+
+As the volume of data has grown over time, the approach of adding new machines with their own compute and storage has become inefficient. Scaling linearly crates challenges for using resources efficiently and managing the infrastructure.
+
+To address these challenges, the Hadoop S3A client offers high-performance I/O against S3 object storage. Implementing a Hadoop workflow with S3A helps you leverage object storage as a data repository and enables you to separate compute and storage, which in turn enables you to scale compute and storage independently. Decoupling compute and storage also enables you to dedicate the right amount of resources for your compute jobs and provide capacity based on the size of your data set. Therefore, you can reduce your overall TCO for Hadoop workflows.
 
 == Configure S3A connector to use StorageGRID
 
 === Prerequisites
-* You have StorageGRID S3 endpoint URL, tenant s3 access key and secret key for Hadoop S3A connection testing +
-* Cloudera cluster is ready and you have root or sudo permission to each host in the cluster to install Java package.
 
-As of April 2022, Java 11.0.14 with Cloudera 7.1.7 is tested against StorageGRID 11.5 and 11.6.  The Java version number could be different at the time of new install. 
+* A StorageGRID S3 endpoint URL, a tenant s3 access key, and a secret key for Hadoop S3A connection testing.
+* A Cloudera cluster and root or sudo permission to each host in the cluster to install the Java package.
+
+As of April 2022, Java 11.0.14 with Cloudera 7.1.7 was tested against StorageGRID 11.5 and 11.6. However, the Java version number might be different at the time of a new install.
 
 === Install Java package
-. Verify with https://docs.cloudera.com/cdp-private-cloud-upgrade/latest/release-guide/topics/cdpdc-java-requirements.html[Cloudera support matrix^] for supported JDK version. 
 
-. Download https://www.oracle.com/java/technologies/downloads/[Java 11.x package^] that matches the Cloudera cluster operating system.  Copy this package to each host in the cluster.  In this example, rpm package is used for CentOS. 
+. Check the https://docs.cloudera.com/cdp-private-cloud-upgrade/latest/release-guide/topics/cdpdc-java-requirements.html[Cloudera support matrix^] for the supported JDK version.
 
-. Log in to each host as root or using an account with sudo permission. Perform these steps on each host: 
+. Download the https://www.oracle.com/java/technologies/downloads/[Java 11.x package^] that matches the Cloudera cluster operating system. Copy this package to each host in the cluster. In this example, the rpm package is used for CentOS.
+
+. Log into each host as root or using an account with sudo permission. Perform the following steps on each host:
 
 .. Install the package:
 +
 ----
 $ sudo rpm -Uvh jdk-11.0.14_linux-x64_bin.rpm
 ----
-+
-.. Check where Java is installed.  If multiple versions are installed, set the newly installed version as default: 
+
+.. Check where Java is installed. If multiple versions are installed, set the newly installed version as default:
 +
 [subs="specialcharacters,quotes"]
 ----
@@ -50,14 +56,14 @@ There are 2 programs which provide 'java'.
 
 Enter to keep the current selection[+], or type selection number: 2
 ----
-+
-.. Add this line to the end of /etc/profile, the path should match the path of above selection:
+
+.. Add this line to the end of `/etc/profile`. The path should match the path of above selection:
 +
 ----
 export JAVA_HOME=/usr/java/jdk-11.0.14
 ----
-+
-.. Run this command for it to take effect:
+
+.. Run the following command for the profile to take effect:
 +
 ----
 source /etc/profile
@@ -65,11 +71,11 @@ source /etc/profile
 
 === Cloudera HDFS S3A configuration
 
-.Steps
+*Steps*
 
-. From Cloudera Manager GUI, select Clusters > HDFS, select Configuration.
-. Under CATEGORY, select Advanced, scroll down to locate 'Cluster-wide Advanced Configuration Snippet (Safety Valve) for core-site.xml 
-. Click + sign and add following value pairs.
+. From the Cloudera Manager GUI, select Clusters > HDFS, and select Configuration.
+. Under CATEGORY, select Advanced, and scroll down to locate `Cluster-wide Advanced Configuration Snippet (Safety Valve) for core-site.xml`. 
+. Click the (+) sign and add following value pairs.
 +
 [cols="1a,4a" options="header"]
 |===
@@ -97,7 +103,7 @@ source /etc/profile
 
 
 |fs.s3a.path.style.access 
-| [true or false]  (default is virtual host style if this entry is missing)
+| [true or false] (default is virtual host style if this entry is missing)
 
 
 |===
@@ -106,7 +112,7 @@ source /etc/profile
 +
 image::../media/hadoop-s3a/hadoop-s3a-configuration.png[S3A Configuration]
 
-. Click *Save Changes* button. Select *Stale Configuration* icon from HDFS menu bar, select 'Restart Stale Services' on next page and select 'Restart Now'.
+. Click the Save Changes button. Select the Stale Configuration icon from the HDFS menu bar, select Restart Stale Services on the next page, and select Restart Now.
 +
 image::../media/hadoop-s3a/hadoop-restart-stale-service-icon.png[restart stale service icon for Hadoop]
 
@@ -115,11 +121,10 @@ image::../media/hadoop-s3a/hadoop-restart-stale-service-icon.png[restart stale s
 
 === Perform basic connection test
 
-Login to one of the hosts in Cloudera cluster, enter
+Log into one of the hosts in the Cloudera cluster, and enter `hadoop fs -ls s3a://_<bucket-name>_/`.
 
-`hadoop fs -ls s3a://_<bucket-name>_/` 
+The following example uses path syle with a pre-existing hdfs-test bucket and a test object.
 
-The example below uses path syle with a pre-exist hdfs-test bucket and a test object.
 ----
 [root@ce-n1 ~]# hadoop fs -ls s3a://hdfs-test/
 22/02/15 18:24:37 WARN impl.MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
@@ -134,9 +139,15 @@ Found 1 items
 ----
 
 === Troubleshooting
-*Scenario 1:* use https connection to StorageGRID and get *handshake_failure* error after 15 minutes timeout +
-*Reason:* old JRE/JDK version using outdated/unsupported TLS cipher suite for connection to StorageGRID. +
-Sample error message
+
+==== Scenario 1
+
+Use an HTTPS connection to StorageGRID and get a `handshake_failure` error after a 15 minute timeout.
+
+*Reason:* Old JRE/JDK version using outdated or unsupported TLS cipher suite for connection to StorageGRID.
+
+*Sample error message*
+
 ----
 [root@ce-n1 ~]# hadoop fs -ls s3a://hdfs-test/
 22/02/15 18:52:34 WARN impl.MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
@@ -150,11 +161,16 @@ Sample error message
 ls: doesBucketExistV2 on hdfs: com.amazonaws.SdkClientException: Unable to execute HTTP request: Received fatal alert: handshake_failure: Unable to execute HTTP request: Received fatal alert: handshake_failure
 ----
 
-*Resolution:* Ensure JDK 11.x or higher is installed and set to default Java library.  Refer to <<Install Java package>> section for details. 
+*Resolution:* Make sure that JDK 11.x or later is installed and set to default the Java library.  Refer to the <<Install Java package>> section for more information. 
 
-*Scenario 2:* Failed to connect to StorageGRID with error message *'unable to find valid certification path to requested target'*. +
-*Reason:* StorageGRID S3 endpoint server certificate is not trusted by Java program. +
+==== Scenario 2: 
+
+Failed to connect to StorageGRID with error message `Unable to find valid certification path to requested target`.
+
+*Reason:* StorageGRID S3 endpoint server certificate is not trusted by Java program.
+
 Sample error message:
+
 ----
 [root@hdp6 ~]# hadoop fs -ls s3a://hdfs-test/
 22/03/11 20:58:12 WARN impl.MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-s3a-file-system.properties,hadoop-metrics2.properties
@@ -166,29 +182,30 @@ Sample error message:
 22/03/11 21:12:25 INFO impl.MetricsSystemImpl: s3a-file-system metrics system shutdown complete.
 22/03/11 21:12:25 WARN fs.FileSystem: Failed to initialize fileystem s3a://hdfs-test/: org.apache.hadoop.fs.s3a.AWSClientIOException: doesBucketExistV2 on hdfs: com.amazonaws.SdkClientException: Unable to execute HTTP request: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target: Unable to execute HTTP request: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 ----
-*Resolution:* recommend using a server certificate issued by a known public certificate signing authority to avoid this problem and ensure the authentication is secure.  Alternatively, add the custom CA or server certificate to Java trust store. 
 
-.Steps to add StorageGRID custom CA or server certificate to Java trust store
+*Resolution:* NetApp recommends using a server certificate issued by a known public certificate signing authority to make sure that the authentication is secure. Alternatively, add a custom CA or server certificate to the Java trust store.
 
-. Backup existing default Java cacerts file
+Complete the following steps to add a StorageGRID custom CA or server certificate to the Java trust store.
+
+. Backup the existing default Java cacerts file.
 +
 ----
 cp -ap $JAVA_HOME/lib/security/cacerts $JAVA_HOME/lib/security/cacerts.orig
 ----
-+
-. Import StorageGRID S3 endpoint cert to Java trust store
+
+. Import the StorageGRID S3 endpoint cert to the Java trust store.
 +
 [subs="specialcharacters,quotes"]
 ----
 keytool -import -trustcacerts -keystore $JAVA_HOME/lib/security/cacerts -storepass changeit -noprompt -alias sg-lb -file _<StorageGRID CA or server cert in pem format>_
 ----
 
-.Tips for troubleshooting
+==== Troubleshooting tips
 
-. Increase hadoop log level to DEBUG:
+. Increase the hadoop log level to DEBUG.
 +
 `export HADOOP_ROOT_LOGGER=hadoop.root.logger=DEBUG,console`
 
-. Execute the command and direct the log messages to error.log, example:
+. Execute the command, and direct the log messages to error.log.
 +
 `hadoop fs -ls s3a://_<bucket-name>_/ &>error.log`
