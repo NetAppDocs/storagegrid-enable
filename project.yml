@@ -60,7 +60,7 @@ homepage:
         url: "/tools-apps-guides/use-cloudera-hadoop-s3a-connector.html"        
       - title: Use S3cmd to test and demonstrate S3 access
         url: /tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html
-    - title: API examples
+    - title: Procedures and API examples
       links:
       - title: Test and demonstrate S3 encryption
         url: "/examples/test-demonstrate-S3-encryption.html"
