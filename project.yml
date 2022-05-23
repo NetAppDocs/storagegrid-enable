@@ -1,12 +1,12 @@
 settings:
-  name: "StorageGRID enablement docs"
+  name: "Enabling StorageGRID in your environment"
   internal:
     pdf_enabled: true
   prod:
     pdf_enabled: false
 sidebar:
   entries:
-    - title: StorageGRID enablement docs
+    - title: Enabling StorageGRID in your environment
       url: /index.html
     - title: What's new
       url: /whats-new.html
