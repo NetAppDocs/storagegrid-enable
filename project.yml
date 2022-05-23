@@ -53,7 +53,7 @@ homepage:
       links:
       - title: Test and demonstrate S3 encryption
         url: "/examples/test-demonstrate-S3-encryption.html"
-      - title: Test and demonstrate S3 object lock
+      - title: Test and demonstrate S3 Object Lock
         url: "/examples/test-demonstrate-S3-object-lock.html"        
     - title: Demos & tutorials
       links:

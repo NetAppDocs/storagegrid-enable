@@ -2,14 +2,14 @@
 permalink: storagegrid-documentation.html
 sidebar: sidebar
 keywords: storagegrid, 11.6, 11.5, 11.4, 11.3, 11.2
-summary: 'NetApp StorageGRID documentation.'
+summary: 'You can find the complete documentation for each NetApp StorageGRID release here.'
 ---
 = NetApp StorageGRID documentation
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-You can find documentation for NetApp StorageGRID software here:
+You can find the complete documentation for each NetApp StorageGRID release here:
 
 *  https://docs.netapp.com/us-en/storagegrid-116/index.html[StorageGRID 11.6^]
 *  https://docs.netapp.com/sgws-115/index.jsp[StorageGRID 11.5^]

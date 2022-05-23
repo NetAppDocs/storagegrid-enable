@@ -2,22 +2,22 @@
 permalink: examples/test-demonstrate-S3-encryption.html
 sidebar: sidebar
 keywords: cli, aws, S3, encryption, SSE, SSE-C, SSE-S3, api
-summary: 'You can test and demonstrate s3 encryption on StorageGRID.'
+summary: 'StorageGRID and the S3 API offer a number of different ways to encrypt your data at rest.'
 ---
 = Test and demonstrate S3 encryption options on StorageGRID
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-StorageGRID and the S3 API offer a number of different ways to encrypt your data at rest. You can learn more about the different options https://docs.netapp.com/us-en/storagegrid-116/admin/reviewing-storagegrid-encryption-methods.html[here^]. 
+StorageGRID and the S3 API offer a number of different ways to encrypt your data at rest. To learn more, see https://docs.netapp.com/us-en/storagegrid-116/admin/reviewing-storagegrid-encryption-methods.html[Review StorageGRID encryption methods^]. 
 
 This guide will demonstrate the S3 API encryption methods.
 
 == Server Side Encryption (SSE)
 
-SSE allows the client to store an object and encrypt it with a unique key that is managed by StorageGRID. When the object is requested, the object is decrypted by they key stored in storageGRID.
+SSE allows the client to store an object and encrypt it with a unique key that is managed by StorageGRID. When the object is requested, the object is decrypted by the key stored in storageGRID.
 
-.SSE Example
+=== SSE Example
 
 * PUT an object with SSE
 +
@@ -60,7 +60,7 @@ aws s3api get-object --bucket <bucket>  --key <file> <file> --endpoint-url https
 
 SSE allows the client to store an object and encrypt it with a unique key that is provided by the client with the object. When the object is requested, the same key must be provided in order to decrypt and return the object.
 
-.SSE-C Example
+=== SSE-C Example
 
 * For testing or demonstration purposes you can create an encryption key
 
@@ -110,10 +110,7 @@ aws s3api head-object --bucket <bucket> --key <file> --sse-customer-algorithm AE
             }
 ----
 
-[NOTE]
-====
-If you do not provide the encryption key, you will receive an error "An error occurred (404) when calling the HeadObject operation: Not Found"
-====
+NOTE: If you do not provide the encryption key, you will receive an error "An error occurred (404) when calling the HeadObject operation: Not Found"
 
 * Get the object
 +
@@ -123,16 +120,14 @@ If you do not provide the encryption key, you will receive an error "An error oc
 aws s3api get-object --bucket <bucket> --key <file> <file> --sse-customer-algorithm AES256 --sse-customer-key 23832BAC16516152E560F933F261BF03 --endpoint-url https://s3.example.com
 ----
  
-[NOTE]
-====
-If you do not provide the encryption key, you will receive an error "An error occurred (InvalidRequest) when calling the GetObject operation: The object was stored using a form of Server Side Encryption. The correct parameters must be provided to retrieve the object."
-====
+NOTE: If you do not provide the encryption key, you will receive an error "An error occurred (InvalidRequest) when calling the GetObject operation: The object was stored using a form of Server Side Encryption. The correct parameters must be provided to retrieve the object."
+
 
 == Bucket Server Side Encryption (SSE-S3)
 
 SSE-S3 allows the client to define a default encryption behavior for all objects stored in a bucket. The objects are encrypted with a unique key that is managed by StorageGRID. When the object is requested, the object is decrypted by they key stored in storageGRID.
 
-.Bucket SSE-S3 Example
+=== Bucket SSE-S3 Example
 
 * Create a new bucket and set a default encryption policy
 

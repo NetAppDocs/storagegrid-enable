@@ -1,10 +1,10 @@
 ---
 permalink: third-party/113-3rd-party-list.html
 sidebar: sidebar
-keywords: third-party applications, storagegrid
+keywords: 11.3, third-party applications, storagegrid,ISV
 summary: 'Third-Party solutions validated for StorageGRID 11.3'
 ---
-= StorageGRID 11.3 Validated third-party solutions
+= StorageGRID 11.3 validated third-party solutions
 
 
 :icons: font

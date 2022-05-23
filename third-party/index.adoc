@@ -2,12 +2,12 @@
 permalink: third-party/index.html
 sidebar: sidebar
 keywords: third-party applications, storagegrid
-summary: '3rd Party solutions validated for StorageGRID by NetApp.'
+summary: 'NetApp, in collaboration with our partners, has validated these solutions for use with StorageGRID. Review the information in this section to learn what solutions have been validated, and to obtain additional instructions if applicable.'
 ---
-= Validated third-party solutions : Overview
+= Validated third-party solutions: Overview
 :icons: font
 :imagesdir: ../media/
 
-NetApp in collaboration with our partners have validated these solutions for use with StorageGRID. Review the information in this section to learn what solutions have been validated, and additional instructions if applicable.
+NetApp, in collaboration with our partners, has validated these solutions for use with StorageGRID. Review the information in this section to learn what solutions have been validated, and to obtain additional instructions if applicable.
 
-If you would like to partner with StorageGRID and build solutions that solve customers' problems, please follow this  https://www.netapp.com/partners/#become[link^]. 
+Join forces with NetApp to accelerate portfolio innovation, expand market awareness and increase sales when you create tested, best-of-breed NetApp solutions. https://www.netapp.com/partners/#become[Become an alliance partner today^]. 
