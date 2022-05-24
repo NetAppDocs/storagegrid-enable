@@ -1,0 +1,61 @@
+---
+permalink: third-party/115-3rd-party-list.html
+sidebar: sidebar
+keywords: 11.5, third-party applications, storagegrid, ISV
+summary: 'Third-Party solutions validated for StorageGRID 11.5'
+---
+= StorageGRID 11.5 validated third-party solutions
+
+
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+
+The following third-party solutions have been validated for use with StorageGRID 11.5. +
+If the solution you are looking for is not listed, please contact your NetApp account representative.
+
+== Third-party solutions validated on StorageGRID
+
+These solutions have been tested in collaboration with the respective partners. 
+
+* Actifio
+* Cantemo
+* Citrix Content Collaboration
+* Commvault 11
+* Ctera Portal 6
+* Dalet
+* Data Dynamics StorageX
+* DefendX
+* Interica
+* Komprise
+* Moonwalk Universal
+* NICE
+* Nasuni
+* OpenText Documentum 16.4
+* OpenText Documentum 21.4
+* OpenText InfoArchive 16 EP7
+* OpenText Media Management 16.5 with CyanGate Cloud
+* Panzura
+* PoINT Archival Gateway 2.0
+* PoINT Storage Manager 6.4
+* Primestream
+* Quantum StorNext 5.4.0.1
+* Rubrik CDM 5.0.1 p1-1342
+* Signiant
+* Splunk Smartstore
+* Varnish Enterprise 6.0.4
+* Veeam 11
+* Veritas Enterprise Vault 11
+* Veritas Enterprise Vault 12
+* Veritas NetBackup 8.0
+* Vertica 10.x
+* Vidispine
+
+
+== Third-party solutions validated on StorageGRID with object lock
+
+These solutions have been tested in collaboration with the respective partners.
+
+* OpenText Documentum 21.4
+* Veeam 11

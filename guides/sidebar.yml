@@ -1,8 +1,0 @@
-section: guides
-title: StorageGRID guides
-entries:
-  - title: Overview
-    pdf-filename: StorageGRID guides - overview
-    url: "/guides/index.html"
-  - title: Create Cloud Storage Pool for AWS or Google Cloud
-    url: "/guides/create-cloud-storage-pool-aws-google-cloud.html"

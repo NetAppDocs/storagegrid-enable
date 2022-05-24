@@ -1,17 +1,22 @@
 settings:
-  name: "StorageGRID enablement docs"
+  name: "Enabling StorageGRID in your environment"
   internal:
     pdf_enabled: true
   prod:
     pdf_enabled: false
+  search: storagegrid-116
 sidebar:
   entries:
-    - title: StorageGRID enablement docs
+    - title: Enabling StorageGRID in your environment
       url: /index.html
     - title: What's new
       url: /whats-new.html
     - section: third-party
-    - section: guides 
+    - section: product-feature-guides
+    - section: tools-apps-guides
+    - section: examples
+    - title: StorageGRID documentation
+      url: /storagegrid-documentation.html
 
 homepage:
   tiles:
@@ -19,16 +24,38 @@ homepage:
       links:
       - title: What's new
         url: /whats-new.html
-    - title: Third-party solutions
+    - title: Validated third-party solutions
       links:
       - title: Overview
         url: /third-party/index.html
-    - title: Guides
+      - title: StorageGRID 11.6
+        url: /third-party/116-3rd-party-list.html
+      - title: StorageGRID 11.5 
+        url: "/third-party/115-3rd-party-list.html"
+      - title: StorageGRID 11.4 
+        url: "/third-party/114-3rd-party-list.html"
+      - title: StorageGRID 11.3 
+        url: "/third-party/113-3rd-party-list.html"
+      - title: StorageGRID 11.2 
+        url: "/third-party/112-3rd-party-list.html"
+    - title: Product feature guides
       links:
-      - title: Overview
-        url: /guides/index.html
       - title: Create Cloud Storage Pool for AWS or Google
-        url: /guides/create-cloud-storage-pool-aws-google-cloud.html
+        url: /product-feature-guides/create-cloud-storage-pool-aws-google-cloud.html
+      - title: Configure search integration service
+        url: "/product_feature_guides/storagegrid-search-integration-service.html"
+    - title: Tool and application guides
+      links:
+      - title: Use Cloudera Hadoop S3A connector
+        url: "/tools-apps-guides/use-cloudera-hadoop-s3a-connector.html"        
+      - title: Use S3cmd to test and demonstrate S3 access
+        url: /tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html
+    - title: Procedures and API examples
+      links:
+      - title: Test and demonstrate S3 encryption
+        url: "/examples/test-demonstrate-S3-encryption.html"
+      - title: Test and demonstrate S3 Object Lock
+        url: "/examples/test-demonstrate-S3-object-lock.html"        
     - title: Demos & tutorials
       links:
       - title: StorageGRID video library
@@ -46,17 +73,17 @@ homepage:
       - title: NetApp blog
         url: https://netapp.com/blog/
       - title: NetApp community
-        url: https://community.netapp.com/
+        url: https://community.netapp.com/t5/Object-Storage/bd-p/object-storage
     - title: StorageGRID documentation
       links:
-      - title: StorageGRID 11.6 documentation
+      - title: StorageGRID 11.6
         url: https://docs.netapp.com/us-en/storagegrid-116/index.html     
-      - title: StorageGRID 11.5 documentation
+      - title: StorageGRID 11.5
         url: https://docs.netapp.com/sgws-115/index.jsp
-      - title: StorageGRID 11.4 documentation
+      - title: StorageGRID 11.4
         url: https://docs.netapp.com/sgws-114/index.jsp
-      - title: StorageGRID 11.3 documentation
+      - title: StorageGRID 11.3
         url: https://docs.netapp.com/sgws-113/index.jsp
-      - title: StorageGRID 11.2 documentation
+      - title: StorageGRID 11.2
         url: https://docs.netapp.com/sgws-112/index.jsp
 
