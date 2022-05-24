@@ -9,7 +9,7 @@ summary: 'Here are recent changes to this site.'
 :imagesdir: ../media/
 
 [.lead]
-Use this collection of documents to learn how to enable applications and tools in your environment and test features with StorageGRID.  Here you will find examples and cookbooks that expand upon the product documentation, and provide some next steps in evaluating and integrating with StorageGRID.
+Use this collection of documents to learn how to enable applications and tools in your environment and test features with StorageGRID.  Here you will find examples and cookbooks that expand upon the product documentation and provide some next steps in evaluating and integrating with StorageGRID.
 
 [cols="1a,4a" options="header"]
 |===
