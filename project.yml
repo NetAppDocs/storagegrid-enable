@@ -7,7 +7,7 @@ settings:
   search: storagegrid-116
 sidebar:
   entries:
-    - title: Enabling StorageGRID in your environment
+    - title: How to enable StorageGRID
       url: /index.html
     - title: What's new
       url: /whats-new.html
