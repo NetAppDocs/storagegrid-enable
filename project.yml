@@ -1,5 +1,5 @@
 settings:
-  name: "How to enabling StorageGRID in your environment"
+  name: "How to enable StorageGRID in your environment"
   internal:
     pdf_enabled: true
   prod:
