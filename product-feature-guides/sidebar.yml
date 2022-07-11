@@ -2,6 +2,10 @@ section: product-feature-guides
 title: Product feature guides
 entries:
   - title: Create Cloud Storage Pool for AWS or Google Cloud
-    url: "/product-feature-guides/create-cloud-storage-pool-aws-google-cloud.html"  
+    url: "/product-feature-guides/create-cloud-storage-pool-aws-google-cloud.html"
+  - title: Create Cloud Storage Pool for Azure Blob storage
+    url: "/product-feature-guides/create-cloud-storage-pool-azure-blob-storage.html"
+  - title: Use a Cloud Storage Pool for backup
+    url: "product-feature-guides/use-a-cloud-storage-pool-for-backup.html"
   - title: Configure search integration service
-    url: "/product-feature-guides/storagegrid-search-integration-service.html"  
+    url: "/product-feature-guides/storagegrid-search-integration-service.html"
