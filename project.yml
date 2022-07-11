@@ -51,7 +51,9 @@ homepage:
     - title: Tool and application guides
       links:
       - title: Use Cloudera Hadoop S3A connector
-        url: "/tools-apps-guides/use-cloudera-hadoop-s3a-connector.html"        
+        url: "/tools-apps-guides/use-cloudera-hadoop-s3a-connector.html"   
+      - title: Create a Vertica Eon Mode database with communal storage
+        url: "/tools-apps-guides/vertica-eon-mode-database-using-netapp-storageGRID.html" 
       - title: Use S3cmd to test and demonstrate S3 access
         url: /tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html
     - title: Procedures and API examples
