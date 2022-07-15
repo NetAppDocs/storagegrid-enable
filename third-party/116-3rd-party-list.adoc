@@ -68,3 +68,4 @@ These solutions have been tested in collaboration with the respective partners.
 * Commvault 11 Feature Release 26
 * OpenText Documentum 21.4
 * Veeam 11
+* Veritas Enterprise Vault 14.2.2
