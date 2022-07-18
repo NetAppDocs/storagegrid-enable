@@ -18,13 +18,18 @@ This article provides sample files of Logstash configuration, Kibana queries, ch
 * StorageGRID 11.6.0.2 or higher
 * ELK (Elasticsearch, Logstash and Kibana) 7.1x or higher installed and in operation
 
+== Sample files
+
+* link:../media/elk-config/elk7-sample.zip[Download the Logstash 7.x sample]
+* link:../media/elk-config/elk8-sample.zip[Download the Logstash 8.x sample]
+
 == Assumption
 
 Readers are familiar with StorageGRID and ELK terminology and operations. 
 
 == Instruction
 
-Two sample version are provided due to differences in names defined by grok patterns. +
+Two sample versions are provided due to differences in names defined by grok patterns. +
 For example, the SYSLOGBASE grok pattern in Logstash config file defines field names differently depending on the installed Logstash version. 
 
 ----
@@ -99,7 +104,7 @@ image::../media/elk-config/kibana-import-options.png[Kibana Import options]
 Import elk<version>-query-chart-sample.ndjson. +
 When prompted to resolve the conflict, select the index pattern or data view you created in step 8.
 +
-image::../media/elk-config/kibana-import-confict.png[Kibana Conflict]
+image::../media/elk-config/kibana-import-conflict.png[Kibana Conflict]
 +
 The following Kibana objects are imported: + 
 *Query* +
