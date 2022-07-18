@@ -56,6 +56,8 @@ homepage:
         url: "/tools-apps-guides/vertica-eon-mode-database-using-netapp-storageGRID.html" 
       - title: Use S3cmd to test and demonstrate S3 access
         url: /tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html
+      - title: Use Elasticsearch, Logstash, and Kibana for log analytics
+        url: "/tools-apps-guides/elk-instructions.html"  
     - title: Procedures and API examples
       links:
       - title: Test and demonstrate S3 encryption
