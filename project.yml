@@ -56,6 +56,8 @@ homepage:
         url: "/tools-apps-guides/vertica-eon-mode-database-using-netapp-storageGRID.html" 
       - title: Use S3cmd to test and demonstrate S3 access
         url: /tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html
+      - title: Use Elasticsearch, Logstash, and Kibana for log analytics
+        url: "/tools-apps-guides/elk-instructions.html"  
     - title: Procedures and API examples
       links:
       - title: Test and demonstrate S3 encryption
@@ -68,6 +70,8 @@ homepage:
         url: https://www.youtube.com/playlist?list=PLdXI3bZJEw7nh2wGRA65iulXhtXwLiqrY
       - title: NetApp learning services
         url: https://www.netapp.com/support-and-training/netapp-university/
+      - title: StorageGRID log analysis using ELK stack | NetApp TV
+        url: https://www.netapp.tv/details/29396?mcid=25386892005401214931964900243159140824
     - title: More resources
       links:
       - title: StorageGRID support page

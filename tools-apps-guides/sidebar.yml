@@ -7,3 +7,5 @@ entries:
     url: "/tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html"  
   - title: Create a Vertica Eon Mode database with communal storage
     url: "/tools-apps-guides/vertica-eon-mode-database-using-netapp-storageGRID.html"  
+  - title: Use Elasticsearch, Logstash, and Kibana for log analytics
+    url: "/tools-apps-guides/elk-instructions.html"  
