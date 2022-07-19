@@ -132,8 +132,8 @@ You are now ready to perform StorageGRID log analysis using Kibana.
 == Additional resources
 * https://coralogix.com/blog/syslog-101-everything-you-need-to-know-to-get-started/[syslog101]
 * https://www.elastic.co/what-is/elk-stack[What is the ELK stack]
-* https://github.com/hpcugent/logstash-patterns/blob/master/files/grok-patterns[Grok patters list]
-* https://logz.io/blog/logstash-grok/[A beginner's guide to Logstash Grok]
-* https://coralogix.com/blog/a-practical-guide-to-logstash-syslog-deep-dive/[A practical guide to Logstash syslog deep dive]
+* https://github.com/hpcugent/logstash-patterns/blob/master/files/grok-patterns[Grok patterns list]
+* https://logz.io/blog/logstash-grok/[A beginner's guide to Logstash: Grok]
+* https://coralogix.com/blog/a-practical-guide-to-logstash-syslog-deep-dive/[A practical guide to Logstash: syslog deep dive]
 * https://www.elastic.co/guide/en/kibana/master/document-explorer.html[Kibana guide – Explore the document]
 * https://docs.netapp.com/us-en/storagegrid-116/audit/index.html[StorageGRID audit log messages reference]
