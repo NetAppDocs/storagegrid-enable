@@ -20,11 +20,11 @@ This article provides sample files of Logstash configuration, Kibana queries, ch
 
 == Sample files
 
-* link:../media/elk-config/elk7-sample.zip[Download the Logstash 7.x sample] +
+* link:../media/elk-config/elk7-sample.zip[Download the Logstash 7.x sample files package] +
    *md5 checksum* 148c23d0021d9a4bb4a6c0287464deab +
    *sha256 checksum* f51ec9e2e3f842d5a7861566b167a561beb4373038b4e7bb3c8be3d522adf2d6   
 
-* link:../media/elk-config/elk8-sample.zip[Download the Logstash 8.x sample] +
+* link:../media/elk-config/elk8-sample.zip[Download the Logstash 8.x sample files package] +
     *md5 checksum* e11bae3a662f87c310ef363d0fe06835 +
     *sha256 checksum* 5c670755742cfdfd5aa723a596ba087e0153a65bcaef3934afdb682f61cd278d   
 
