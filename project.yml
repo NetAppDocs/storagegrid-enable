@@ -71,7 +71,7 @@ homepage:
       - title: NetApp learning services
         url: https://www.netapp.com/support-and-training/netapp-university/
       - title: StorageGRID log analysis using ELK stack | NetApp TV
-        url: https://www.netapp.tv/details/29396?mcid=25386892005401214931964900243159140824
+        url: https://www.netapp.tv/details/29396
     - title: More resources
       links:
       - title: StorageGRID support page

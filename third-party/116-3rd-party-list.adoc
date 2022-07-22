@@ -28,6 +28,8 @@ These solutions have been tested in collaboration with the respective partners.
 * Dalet
 * Data Dynamics StorageX
 * DefendX
+* DremIO
+* eMAM 
 * FujiFilm Object Archive
 * GitHub Enterprise Server
 * IBM Filenet
@@ -48,6 +50,7 @@ These solutions have been tested in collaboration with the respective partners.
 * PoINT Storage Manager 6.4
 * Primestream
 * Quantum StorNext 5.4.0.1
+* Reveille v10 build 220706 or above
 * Rubrik CDM 5.0.1 p1-1342
 * Signiant
 * Splunk Smartstore
@@ -59,7 +62,7 @@ These solutions have been tested in collaboration with the respective partners.
 * Vertica 10.x
 * Vidispine
 * Weka v3.10 or later
-* eMAM 
+
 
 == Third-party solutions validated on StorageGRID with object lock
 
