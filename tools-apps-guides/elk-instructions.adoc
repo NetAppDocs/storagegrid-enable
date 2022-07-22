@@ -10,7 +10,7 @@ summary: With StorageGRID 11.6 syslog forward feature, you can configure a exter
 :imagesdir: ../media/
 
 [.lead]
-With the StorageGRID 11.6 syslog forward feature, you can configure an external syslog server to collect and analyze StorageGRID log messages.  ELK (Elasticsearch, Logstash, Kibana) has become one of the most popular log analytics solutions.  This https://www.netapp.tv/details/29396?mcid=88947807987539963323271458532634937353[NetApp TV StorageGRID log analysis using ELK video] walks you through a sample ELK configuration and how it can be used to identify and troubleshoot failed S3 requests.  
+With the StorageGRID 11.6 syslog forward feature, you can configure an external syslog server to collect and analyze StorageGRID log messages.  ELK (Elasticsearch, Logstash, Kibana) has become one of the most popular log analytics solutions.  Watch the https://www.netapp.tv/details/29396[StorageGRID log analysis using ELK video] to view a sample ELK configuration and how it can be used to identify and troubleshoot failed S3 requests.  
 This article provides sample files of Logstash configuration, Kibana queries, charts and dashboard to give you a quick start for StorageGRID log management and analytics.
 
 == Requirements
@@ -90,7 +90,7 @@ netstat -ntpa | grep 5000
 tcp6       0      0 :::5000                 :::*                    LISTEN      25744/java
 ----
 
-. From the StorageGRID manager GUI, configure external syslog server to send log messages to Logstash.  Refer to the https://www.netapp.tv/details/29396?mcid=88947807987539963323271458532634937353[demo video] for details. 
+. From the StorageGRID manager GUI, configure external syslog server to send log messages to Logstash.  Refer to the https://www.netapp.tv/details/29396[demo video] for details. 
 
 . You need to configure or disable firewall on the Logstash server to allow StorageGRID nodes connection to the defined TCP port.
 
