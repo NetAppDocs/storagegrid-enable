@@ -51,6 +51,7 @@ These solutions have been tested in collaboration with the respective partners.
 * Veritas NetBackup 8.0
 * Vertica 10.x
 * Vidispine
+* Virtalica StorageFabric
 
 
 == Third-party solutions validated on StorageGRID with object lock
