@@ -28,7 +28,7 @@ These solutions have been tested in collaboration with the respective partners.
 * Dalet
 * Data Dynamics StorageX
 * DefendX
-* DremIO
+* Dremio
 * eMAM 
 * FujiFilm Object Archive
 * GitHub Enterprise Server
@@ -61,6 +61,7 @@ These solutions have been tested in collaboration with the respective partners.
 * Veritas NetBackup 8.0
 * Vertica 10.x
 * Vidispine
+* Virtalica StorageFabric
 * Weka v3.10 or later
 
 
