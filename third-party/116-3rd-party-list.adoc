@@ -53,6 +53,7 @@ These solutions have been tested in collaboration with the respective partners.
 * Reveille v10 build 220706 or above
 * Rubrik CDM 5.0.1 p1-1342
 * Signiant
+* Snowflake
 * Splunk Smartstore
 * Storage Made Easy
 * Varnish Enterprise 6.0.4
