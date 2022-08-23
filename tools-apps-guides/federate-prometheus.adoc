@@ -136,6 +136,7 @@ sudo nano /etc/systemd/system/prometheus.service
 ----
 . Insert the following lines, note the "--storage.tsdb.retention.time=1y" which sets the retention of the metric data to 1 year.  This is where you decide how long you want your retention.
 +
+[highlight=13]
 ----
 [Unit]
 Description=Prometheus Time Series Collection and Processing Server
