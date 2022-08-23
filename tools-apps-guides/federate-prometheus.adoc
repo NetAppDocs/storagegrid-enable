@@ -279,7 +279,7 @@ image::../media/prometheus/storagegrid_metrics.png[StorageGRID metrics]
 image::../media/prometheus/storagegrid_dashboard_insp.png[StorageGRID dashboard]
 .. Copy out the JSON code and close the window.
 +
-image::../media/prometheus/storagegrid_panel_insp.png[StorageGRID JSON]
+image::../media/prometheus/storagegrid_panel_inspect.png[StorageGRID JSON]
 .. In our new dashboard, click on the icon to add a new panel.
 +
 image::../media/prometheus/grafana_add_panel.png[grafana add panel]
