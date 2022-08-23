@@ -292,7 +292,7 @@ image::../media/prometheus/grafana_panel_inspect.png[grafana inspect panel]
 image::../media/prometheus/grafana_panel_edit_menu.png[grafana edit panel menu]
 +
 image::../media/prometheus/grafana_panel_edit.png[grafana edit panel]
-.. Once you have all of the panels in place and configured as you like. Save the dashboard by clicking the disk icon in the upper right and give your dashboard a name.
+. Once you have all of the panels in place and configured as you like. Save the dashboard by clicking the disk icon in the upper right and give your dashboard a name.
 
 === Conclusion
 Now we have a Prometheus server with customizable data retention and storage capacity.  With this we can continue build out our own dashboards with the metrics that are most relevant to our operations. You can get more information on the Prometheus metrics collected in the https://docs.netapp.com/us-en/storagegrid-116/monitor/commonly-used-prometheus-metrics.html[StorageGRID documentation^].
