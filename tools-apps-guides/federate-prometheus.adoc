@@ -43,11 +43,13 @@ Before installing Prometheus, I want to get my environment prepared with a Prome
 
 . Create the Prometheus user.
 +
+[source,console]
 ----
 sudo useradd -M -r -s /bin/false Prometheus
 ----
 . Create the directories for Prometheus, client certificate, and metrics data.
 +
+[source,console]
 ----
 sudo mkdir /etc/Prometheus /etc/Prometheus/cert /var/lib/Prometheus
 ----
@@ -79,23 +81,27 @@ Now that the server is ready, I can begin the Prometheus installation and config
 
 . Extract the Prometheus installation package
 + 
+[source,console]
 ----
 tar xzf prometheus-2.38.0.linux-amd64.tar.gz
 ----
 . Copy the binaries to /usr/local/bin and change the ownership to the prometheus user created earlier
 +
+[source,console]
 ----
 sudo cp prometheus-2.38.0.linux-amd64/{prometheus,promtool} /usr/local/bin
 sudo chown prometheus:prometheus /usr/local/bin/{prometheus,promtool}
 ----
 . Copy the consoles and libraries to /etc/prometheus
 +
+[source,console]
 ----
 sudo cp -r prometheus-2.38.0.linux-amd64/{consoles,console_libraries} /etc/prometheus/
 ----
 . Copy the client certificate and private key pem files downloaded earlier from StorageGRID to /etc/prometheus/certs
 . Create the prometheus configuration yaml file
 +
+[source,console]
 ----
 sudo nano /etc/prometheus/prometheus.yml
 ----
@@ -125,12 +131,14 @@ scrape_configs:
 ----
 . Change the ownership of all files and directories in /etc/prometheus, and /var/lib/prometheus to the prometheus user
 +
+[source,console]
 ----
 sudo chown -R prometheus:prometheus /etc/prometheus/
 sudo chown -R prometheus:prometheus /var/lib/prometheus/
 ----
 . Create a prometheus service file in /etc/systemd/system
 +
+[source,console]
 ----
 sudo nano /etc/systemd/system/prometheus.service
 ----
@@ -159,6 +167,7 @@ WantedBy=multi-user.target
 ----
 . Reload the systemd service to register the new prometheus service. then start and enable the prometheus service.
 +
+[source,console]
 ----
 sudo systemctl daemon-reload
 sudo systemctl start prometheus
@@ -166,6 +175,7 @@ sudo systemctl enable prometheus
 ----
 . Check the service is runing properly
 +
+[source,console]
 ----
 sudo systemctl status prometheus
 ----
@@ -209,6 +219,7 @@ Now that prometheus is installed and working, we can move on to installing Grafa
 === Grafana Instalation
 .  Install the latest enterprise edition of Grafana
 +
+[source,console]
 ----
 sudo apt-get install -y apt-transport-https
 sudo apt-get install -y software-properties-common wget
@@ -216,18 +227,21 @@ sudo wget -q -O /usr/share/keyrings/grafana.key https://packages.grafana.com/gpg
 ----
 . Add this repository for stable releases:
 +
+[source,console]
 ----
 echo "deb [signed-by=/usr/share/keyrings/grafana.key] https://packages.grafana.com/enterprise/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
 ----
 
 . After you add the repository.
 +
+[source,console]
 ----
 sudo apt-get update
 sudo apt-get install grafana-enterprise
 ----
 . Reload the systemd service to register the new grafana service. then start and enable the Grafana service.
 +
+[source,console]
 ----
 sudo systemctl daemon-reload
 sudo systemctl start grafana-server
