@@ -19,14 +19,14 @@ StorageGRID stores metrics using Prometheus and provides visualizations of these
 == Federate Prometheus
 
 === Lab details
-For the purposes of this example, I will be using all virtual machines for StorageGRID 11.6 nodes, and a Debian 11 server. This example will not go through the installation and configuration of the StorageGRID system or Debian linux installation. You can use any Linux flavor you wish that is supported by Prometheus and Grafana. Both Prometheus and Grafana can install as docker containers, build from source, or pre-compiled binaries. In this example I will be installing both Prometheus and Grafana binaries directly on the same Debian server. Download and follow the basic installation instructions from HTTPS://prometheus.io and HTTPS://graphana.com respectively. 
+For the purposes of this example, I will be using all virtual machines for StorageGRID 11.6 nodes, and a Debian 11 server. The StorageGRID management interface is configured with a publicly trusted CA certificate. This example will not go through the installation and configuration of the StorageGRID system or Debian linux installation. You can use any Linux flavor you wish that is supported by Prometheus and Grafana. Both Prometheus and Grafana can install as docker containers, build from source, or pre-compiled binaries. In this example I will be installing both Prometheus and Grafana binaries directly on the same Debian server. Download and follow the basic installation instructions from HTTPS://prometheus.io and HTTPS://graphana.com respectively. 
 
 
 
 === Configure StorageGRID for Prometheus Client access
 In order to gain access to StorageGRIDs stored prometheus metrics you must generate or upload a client certificate with private key, and enable permission for the client. The StorageGRID managament interface must have an SSL certificate. This certificate must be trusted by the prometheus server either by a trusted CA, or manually trusted if it is self-signed. To read more, please visit the https://docs.netapp.com/us-en/storagegrid-116/admin/configuring-administrator-client-certificates.html[StorageGRID documentation].
 
-. In the StorageGRID management UI, select "CONFIGURATION" on the bottom left hand side, and in the second column under "Security" click on Certificates.
+. In the StorageGRID management interface, select "CONFIGURATION" on the bottom left hand side, and in the second column under "Security" click on Certificates.
 . On the Certificates page select the "Client" tab and click on the "Add" button.
 . Provide a name for the client that will be granted access and use this certificate. Click on the box under "Permissions", in front of "Allow Prometheus" and click the Continue button.
 +
@@ -270,7 +270,7 @@ image::../media/prometheus/grafana_source_explore.png[grafana prometheus metric 
 +
 image::../media/prometheus/grafana_panel_conf.png[configure grafana panel]
 . We could continue to build out our dashboard like this for each metric we want, but luckily StorageGRID already has dashboards with panels we can copy into our custom dashboards.
-.. From the StorageGRID management UI left hand pane, select "Support", and at the bottom of the "Tools" column click on "Metrics".
+.. From the StorageGRID management interface left hand pane, select "Support", and at the bottom of the "Tools" column click on "Metrics".
 .. Within metrics, I am going to select the "Grid" link on the top of the middle column.
 +
 image::../media/prometheus/storagegrid_metrics.png[StorageGRID metrics]
