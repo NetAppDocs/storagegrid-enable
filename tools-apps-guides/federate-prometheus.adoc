@@ -24,7 +24,7 @@ For the purposes of this example, I will be using all virtual machines for Stora
 
 
 === Configure StorageGRID for Prometheus Client access
-In order to gain access to StorageGRIDs stored prometheus metrics you must generate or upload a client certificate with private key, and enable permission for the client. The StorageGRID managament interface must have an SSL certificate. This certificate must be trusted by the prometheus server either by a trusted CA, or manually trusted if it is self-signed.   To read more, please visit the https://docs.netapp.com/us-en/storagegrid-116/admin/configuring-administrator-client-certificates.html#add-client-certificates[StorageGRID documentation].
+In order to gain access to StorageGRIDs stored prometheus metrics you must generate or upload a client certificate with private key, and enable permission for the client. The StorageGRID managament interface must have an SSL certificate. This certificate must be trusted by the prometheus server either by a trusted CA, or manually trusted if it is self-signed. To read more, please visit the https://docs.netapp.com/us-en/storagegrid-116/admin/configuring-administrator-client-certificates.html#add-client-certificates[StorageGRID documentation].
 
 . In the StorageGRID management UI, select "CONFIGURATION" on the bottom left hand side, and in the second column under "Security" click on Certificates.
 . On the Certificates page select the "Client" tab and click on the "Add" button.
