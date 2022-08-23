@@ -289,7 +289,7 @@ image::../media/prometheus/grafana_panel_edit_menu.png[grafana edit panel menu]
 +
 image::../media/prometheus/grafana_panel_edit.png[grafana edit panel]
 
-== Conclusion
+=== Conclusion
  Now we have a Prometheus server with customizable data retention and storage capacity.  With this we can continue build out our own dashboards with the metrics that are most relevant to our operations.
 
 
