@@ -138,7 +138,7 @@ sudo chown -R prometheus:prometheus /var/lib/prometheus/
 ----
 sudo nano /etc/systemd/system/prometheus.service
 ----
-. Insert the following lines
+. Insert the following lines, note the "--storage.tsdb.retention.time=1y" which sets the retention of the metric data to 1 year.  This is where you decide how long you want your retention.
 +
 ----
 [Unit]
@@ -153,6 +153,7 @@ Type=simple
 ExecStart=/usr/local/bin/prometheus \
         --config.file /etc/prometheus/prometheus.yml \
         --storage.tsdb.path /var/lib/prometheus/ \
+	      --storage.tsdb.retention.time=1y \
         --web.console.templates=/etc/prometheus/consoles \
         --web.console.libraries=/etc/prometheus/console_libraries
 
