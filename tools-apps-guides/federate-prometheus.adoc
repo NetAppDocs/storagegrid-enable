@@ -27,11 +27,7 @@ For the purposes of this example, I will be using all virtual machines for Stora
 In order to gain access to StorageGRIDs stored prometheus metrics you must generate or upload a client certificate with private key, and enable permission for the client. 
 
 . In the StorageGRID management UI, select "CONFIGURATION" on the bottom left hand side, and in the second column under "Security" click on Certificates.
-+
-image::../media/prometheus/configuration.png[configuration certificate page]
 . On the Certificates page select the "Client" tab and click on the "Add" button.
-+
-image::../media/prometheus/cert_add.png[certificate add]
 . Provide a name for the client that will be granted access and use this certificate. Click on the box under "Permissions", in front of "Allow Prometheus" and click the Continue button.
 +
 image::../media/prometheus/cert_name.png[certificate name]
@@ -243,33 +239,23 @@ sudo systemctl enable grafana-server.service
 With Grafana and Prometheus installed and running, now its time to connect the two by creating a data source and build a dashboard
 
 . On the left hand pane expand "Configuration" and select "Data sources", then click on the "Add Data source" button
-+
-image::../media/prometheus/grafana_source_menu.png[grafana data source menu]
 . Prometheus will be one of the top data sources to choose from. If it is not, then use the search bar to locate "Prometheus"
-+
-image::../media/prometheus/grafana_sources.png[grafana source list]
 . Configure the Prometheus source by entering the URL of the prometheus instance, and the scrape interval to match the Prometheus interval.  I also disabled the alerting section as I did not configure the alert manager on prometheus.
 +
-image::../media/prometheus/grafana_prometheus_config.png[grafana prometheus configuration]
+image::../media/prometheus/grafana_prometheus_conf.png[grafana prometheus configuration]
 . With the desired settings entered, scroll down to the bottom and click on "Save & test"
 . After the configuration test is successful, click on the explore button.
 .. In the explore window you can use the same metric we tested Prometheus with "storagegrid_node_cpu_utilization_percentage", and click the "Run query" button
 +
-image::../media/prometheus/grafana__source_explore.png[grafana prometheus metric explore]
+image::../media/prometheus/grafana_source_explore.png[grafana prometheus metric explore]
 . Now that we have the data source configured, we can create a dashboard.
 .. On the left hand pane expand "Dashboards", and select "+ new Dashboard"
-+
-image::../media/prometheus/grafana_dash_new[grafana new dashboard menu]
 .. Select "Add a new panel"
-+
-image::../media/prometheus/grafana_panel_new[new grafana panel]
 .. Configure the new panel by selecting a metric, again I will use "storagegrid_node_cpu_utilization_percentage", Enter a title for the panel, expand "Options" at the bottom and for legend change to custom and enter "{{instance}}" to define the node names", and on the right pane under "Standard options" set "Unit" to "Misc/Percent(0-100)". Then click "Apply" to save the panel to the dashboard.
 +
-image::../media/prometheus/grafana_panel_conf[configure grafana panel]
+image::../media/prometheus/grafana_panel_conf.png[configure grafana panel]
 . We could continue to build out our dashboard like this for each metric we want, but luckily StorageGRID already has dashboards with panels we can copy into our custom dashboards.
 .. From the StorageGRID management UI left hand pane, select "Support", and at the bottom of the "Tools" column click on "Metrics".
-+
-image::../media/prometheus/storagegrid_support_menu.png[StorageGRID menu]
 .. Within metrics, I am going to select the "Grid" link on the top of the middle column.
 +
 image::../media/prometheus/storagegrid_metrics.png[StorageGRID metrics]
