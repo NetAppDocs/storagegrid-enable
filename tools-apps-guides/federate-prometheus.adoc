@@ -14,12 +14,14 @@ summary: 'This technical report provides detailed instructions for configuring N
 This technical report provides detailed instructions for configuring NetApp StorageGRID 11.6 with external Prometheus and Grafana services.
 
 == Introduction
-StorageGRID stores metrics using Prometheus and provides visualizations of these metrics through built in Grafana dashboards. The Prometheus metrics can be accessed securely from StorageGRID by configuring client access certificates and enabling prometheus access for the specified client. Today, the retention of this metric data is limited by the storage capacity of the administration node. To gain a longer duration and an ability to create customized visualizations of these metrics we will deploy a new Prometheus and Grafana server, configure our new server to scrape the metrics from StorageGRIDs instance, and build a dashboard with the metrics that are important to us.
-
-== Lab details
-For the purposes of this example, I will be using all virtual machines for StorageGRID 11.6 nodes, and a Debian 11 server. This example will not go through the installation and configuration of the StorageGRID system or Debian linux installation. You can use any Linux flavor you wish that is supported by Prometheus and Grafana. Both Prometheus and Grafana can install as docker containers, build from source, or pre-compiled binaries. In this example I will be installing both Prometheus and Grafana binaries directly on the same Debian server. Download and follow the basic installation instructions from HTTPS://prometheus.io and HTTPS://graphana.com respectively. 
+StorageGRID stores metrics using Prometheus and provides visualizations of these metrics through built in Grafana dashboards. The Prometheus metrics can be accessed securely from StorageGRID by configuring client access certificates and enabling prometheus access for the specified client. Today, the retention of this metric data is limited by the storage capacity of the administration node. To gain a longer duration and an ability to create customized visualizations of these metrics we will deploy a new Prometheus and Grafana server, configure our new server to scrape the metrics from StorageGRIDs instance, and build a dashboard with the metrics that are important to us.  You can get more information on the Prometheus metrics collected in the https://docs.netapp.com/us-en/storagegrid-116/monitor/commonly-used-prometheus-metrics.html[StorageGRID documentation^].
 
 == Federate Prometheus
+
+=== Lab details
+For the purposes of this example, I will be using all virtual machines for StorageGRID 11.6 nodes, and a Debian 11 server. This example will not go through the installation and configuration of the StorageGRID system or Debian linux installation. You can use any Linux flavor you wish that is supported by Prometheus and Grafana. Both Prometheus and Grafana can install as docker containers, build from source, or pre-compiled binaries. In this example I will be installing both Prometheus and Grafana binaries directly on the same Debian server. Download and follow the basic installation instructions from HTTPS://prometheus.io and HTTPS://graphana.com respectively. 
+
+
 
 === Configure StorageGRID for Prometheus Client access
 In order to gain access to StorageGRIDs stored prometheus metrics you must generate or upload a client certificate with private key, and enable permission for the client. 
@@ -290,6 +292,6 @@ image::../media/prometheus/grafana_panel_edit_menu.png[grafana edit panel menu]
 image::../media/prometheus/grafana_panel_edit.png[grafana edit panel]
 
 === Conclusion
- Now we have a Prometheus server with customizable data retention and storage capacity.  With this we can continue build out our own dashboards with the metrics that are most relevant to our operations.
+ Now we have a Prometheus server with customizable data retention and storage capacity.  With this we can continue build out our own dashboards with the metrics that are most relevant to our operations. You can get more information on the Prometheus metrics collected in the https://docs.netapp.com/us-en/storagegrid-116/monitor/commonly-used-prometheus-metrics.html[StorageGRID documentation^].
 
 
