@@ -127,7 +127,7 @@ scrape_configs:
       match[]:
         - '{__name__=~"alertmanager_.*|cassandra_.*|node_.*|storagegrid_.*"}'
     static_configs:
-    - targets: ['sgadmin.netapp.com:9091']
+    - targets: ['sgdemo-rtp.netapp.com:9091']
 ----
 . Change the ownership of all files and directories in /etc/prometheus, and /var/lib/prometheus to the prometheus user
 +
