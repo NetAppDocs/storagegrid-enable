@@ -19,7 +19,7 @@ StorageGRID stores metrics using Prometheus and provides visualizations of these
 == Federate Prometheus
 
 === Lab details
-For the purposes of this example, I will be using all virtual machines for StorageGRID 11.6 nodes, and a Debian 11 server. The StorageGRID management interface is configured with a publicly trusted CA certificate. This example will not go through the installation and configuration of the StorageGRID system or Debian linux installation. You can use any Linux flavor you wish that is supported by Prometheus and Grafana. Both Prometheus and Grafana can install as docker containers, build from source, or pre-compiled binaries. In this example I will be installing both Prometheus and Grafana binaries directly on the same Debian server. Download and follow the basic installation instructions from HTTPS://prometheus.io and HTTPS://graphana.com respectively. 
+For the purposes of this example, I will be using all virtual machines for StorageGRID 11.6 nodes, and a Debian 11 server. The StorageGRID management interface is configured with a publicly trusted CA certificate. This example will not go through the installation and configuration of the StorageGRID system or Debian linux installation. You can use any Linux flavor you wish that is supported by Prometheus and Grafana. Both Prometheus and Grafana can install as docker containers, build from source, or pre-compiled binaries. In this example I will be installing both Prometheus and Grafana binaries directly on the same Debian server. Download and follow the basic installation instructions from https://prometheus.io and https://graphana.com respectively. 
 
 
 
@@ -31,12 +31,21 @@ In order to gain access to StorageGRIDs stored prometheus metrics you must gener
 . Provide a name for the client that will be granted access and use this certificate. Click on the box under "Permissions", in front of "Allow Prometheus" and click the Continue button.
 +
 image::../media/prometheus/cert_name.png[certificate name]
-. If you have a CA signed certificate you can select the radio button for "Upload certificate", but in our case we are going to let storageGRID generate the client certificate by selecting the radio button for "Generate Certificate". The required fields will be displayed to be filled in.  Enter the FQDN for the client server, the IP of the server, the subject, and duration of the certificate.  Then click the "Generate" button.  
+. If you have a CA signed certificate you can select the radio button for "Upload certificate", but in our case we are going to let storageGRID generate the client certificate by selecting the radio button for "Generate Certificate". The required fields will be displayed to be filled in.  Enter the FQDN for the client server, the IP of the server, the subject, and Days valid.  Then click the "Generate" button.  
 +
 image::../media/prometheus/cert_detail.png[certificate detail]
+[NOTE]
+====
+NOTE: Be mindful of the certificate days valid entry as you will need to renew this certificate in both StorageGRID and Prometheus before it expires to maintain uninterrupted collection.
+====
 . Download the certificate pem file, and the private key pem file.
 +
 image::../media/prometheus/cert_download.png[certificate download]
+
+[NOTE]
+====
+NOTE: This is the only time you can download the private key, so make sure you do not skip this step.
+====
 
 === Prepare the Linux server for Prometheus installation
 Before installing Prometheus, I want to get my environment prepared with a Prometheus user, the directory structure, and configure the capacity for the metrics storage location.
@@ -219,7 +228,8 @@ image::../media/prometheus/prometheus_targets.png[prometheus status menu]
 +
 image::../media/prometheus/prometheus_target_status.png[prometheus targets page]
 . On the Graph page, you can execute a test query and verify the data is successfully being scraped. for example enter "storagegrid_node_cpu_utilization_percentage" into the query bar and click the Execute button.
-+image::../media/prometheus/prometheus_execute.png[prometheus query execute]
++
+image::../media/prometheus/prometheus_execute.png[prometheus query execute]
 
 == Install and configure Grafana
 Now that prometheus is installed and working, we can move on to installing Grafana and configuring a dashboard
