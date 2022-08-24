@@ -34,17 +34,19 @@ image::../media/prometheus/cert_name.png[certificate name]
 . If you have a CA signed certificate you can select the radio button for "Upload certificate", but in our case we are going to let storageGRID generate the client certificate by selecting the radio button for "Generate Certificate". The required fields will be displayed to be filled in.  Enter the FQDN for the client server, the IP of the server, the subject, and Days valid.  Then click the "Generate" button.  
 +
 image::../media/prometheus/cert_detail.png[certificate detail]
+
 [NOTE]
 ====
-NOTE: Be mindful of the certificate days valid entry as you will need to renew this certificate in both StorageGRID and the Prometheus server before it expires to maintain uninterrupted collection.
+ Be mindful of the certificate days valid entry as you will need to renew this certificate in both StorageGRID and the Prometheus server before it expires to maintain uninterrupted collection.
 ====
+
 . Download the certificate pem file, and the private key pem file.
 +
 image::../media/prometheus/cert_download.png[certificate download]
 
 [NOTE]
 ====
-NOTE: This is the only time you can download the private key, so make sure you do not skip this step.
+ This is the only time you can download the private key, so make sure you do not skip this step.
 ====
 
 === Prepare the Linux server for Prometheus installation
@@ -139,13 +141,15 @@ scrape_configs:
     static_configs:
     - targets: ['sgdemo-rtp.netapp.com:9091']
 ----
+
 [NOTE]
 ====
-NOTE: If your grid management interface is using a self-signed certificate, download the certificate and place it with the client certificate with a unique name. In the tls_config section add the certificate above the client certificate and private key lines 
+If your grid management interface is using a self-signed certificate, download the certificate and place it with the client certificate with a unique name. In the tls_config section add the certificate above the client certificate and private key lines 
 ....
         ca_file: /etc/prometheus/cert/UIcert.pem
 ....
 ====
+
 . Change the ownership of all files and directories in /etc/prometheus, and /var/lib/prometheus to the prometheus user
 +
 [source,console]
