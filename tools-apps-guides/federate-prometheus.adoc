@@ -36,7 +36,7 @@ image::../media/prometheus/cert_name.png[certificate name]
 image::../media/prometheus/cert_detail.png[certificate detail]
 [NOTE]
 ====
-NOTE: Be mindful of the certificate days valid entry as you will need to renew this certificate in both StorageGRID and Prometheus before it expires to maintain uninterrupted collection.
+NOTE: Be mindful of the certificate days valid entry as you will need to renew this certificate in both StorageGRID and the Prometheus server before it expires to maintain uninterrupted collection.
 ====
 . Download the certificate pem file, and the private key pem file.
 +
