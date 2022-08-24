@@ -133,7 +133,7 @@ scrape_configs:
 ====
 NOTE: If your grid management interface is using a self-signed certificate, download the certificate and place it with the client certificate with a unique name. In the tls_config section add the certificate above the client certificate and private key lines 
 ....
-ca_file: /etc/prometheus/cert/UIcert.pem
+        ca_file: /etc/prometheus/cert/UIcert.pem
 ....
 ====
 . Change the ownership of all files and directories in /etc/prometheus, and /var/lib/prometheus to the prometheus user
