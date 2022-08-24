@@ -105,7 +105,7 @@ sudo cp -r prometheus-2.38.0.linux-amd64/{consoles,console_libraries} /etc/prome
 ----
 sudo nano /etc/prometheus/prometheus.yml
 ----
-. Insert the following configuration. The job name can be anything you wish. Change the "-targets: ['']" to the FQDN of the admin node, and if you altered the names of the certificate and private key file names, please update the tls_config section to match. then save the file.
+. Insert the following configuration. The job name can be anything you wish. Change the "-targets: ['']" to the FQDN of the admin node, and if you altered the names of the certificate and private key file names, please update the tls_config section to match. then save the file. If your grid management interface, is using a self-signed certificate, download the certificate and place it with the client certificate with a unique name, and in the tls_config section add ca_file: /etc/prometheus/cert/UIcert.pem
 +
 [source,yaml]
 ----
@@ -129,6 +129,13 @@ scrape_configs:
     static_configs:
     - targets: ['sgdemo-rtp.netapp.com:9091']
 ----
+[NOTE]
+====
+If your grid management interface, is using a self-signed certificate, download the certificate and place it with the client certificate with a unique name, and in the tls_config section add the certificate 
+....
+ca_file: /etc/prometheus/cert/UIcert.pem
+....
+====
 . Change the ownership of all files and directories in /etc/prometheus, and /var/lib/prometheus to the prometheus user
 +
 [source,console]
