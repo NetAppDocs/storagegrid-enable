@@ -37,6 +37,7 @@ These solutions have been tested in collaboration with the respective partners.
 * Interica
 * Komprise
 * Microsoft SQL Server Big Data Clusters
+* Model9
 * Moonwalk Universal
 * NICE
 * Nasuni
