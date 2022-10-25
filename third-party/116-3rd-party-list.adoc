@@ -28,6 +28,7 @@ These solutions have been tested in collaboration with the respective partners.
 * Dalet
 * Data Dynamics StorageX
 * DefendX
+* Diskover Data
 * Dremio
 * eMAM 
 * FujiFilm Object Archive
