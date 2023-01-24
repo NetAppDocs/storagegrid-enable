@@ -78,3 +78,4 @@ These solutions have been tested in collaboration with the respective partners.
 * OpenText Documentum 21.4
 * Veeam 11
 * Veritas Enterprise Vault 14.2.2
+* Veritas NetBackup 10.1.1 and later
