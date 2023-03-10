@@ -13,16 +13,16 @@ summary: Configure Datadog HQ to collect StorageGRID snmp metrics and traps.
 Configure Datadog HQ to collect StorageGRID snmp metrics and traps.
 
 
-=== Profile and Trap files from StorageGRID MIB file
-StorageGRID yaml file for Datadog Trap resolution mapping file. place in /etc/datadog-agent/conf.d/snmp.d/traps_db/
+=== Profile and Trap files Generated from StorageGRID MIB file
+StorageGRID yaml file for Datadog Trap resolution mapping file. place in /etc/datadog-agent/conf.d/snmp.d/traps_db/ +
 * link:../media/datadog/NETAPP-STORAGEGRID-MIB.yml[Download the trap yaml file] +
    *md5 checksum* 42e27e4210719945a46172b98c379517 +
-   *sha256 checksum* d0fe5c8e6ca3c902d054f854b70a85f928cba8b7c76391d356f05d2cf73b6887   
+   *sha256 checksum* d0fe5c8e6ca3c902d054f854b70a85f928cba8b7c76391d356f05d2cf73b6887 +
 
-StorageGRID profile yaml file for Datadog metrics mapping. place in /etc/datadog-agent/conf.d/snmp.d/profiles/
+StorageGRID profile yaml file for Datadog metrics mapping. place in /etc/datadog-agent/conf.d/snmp.d/profiles/ +
 * link:../media/datadog/netapp-storagegrid.yaml[Download the trap yaml file] +
    *md5 checksum* 72bb7784f4801adda4e0c3ea77df19aa +
-   *sha256 checksum* b6b7fadd33063422a8bb8e39b3ead8ab38349ee0229926eadc8585f0087b8cee   
+   *sha256 checksum* b6b7fadd33063422a8bb8e39b3ead8ab38349ee0229926eadc8585f0087b8cee +  
 
 
 
