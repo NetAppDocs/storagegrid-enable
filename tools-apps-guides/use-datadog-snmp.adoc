@@ -12,6 +12,7 @@ summary: Configure Datadog HQ to collect StorageGRID snmp metrics and traps.
 [.lead]
 Configure Datadog HQ to collect StorageGRID snmp metrics and traps.
 
+== Datadog
 
 === Profile and Trap files Generated from StorageGRID MIB file
 StorageGRID yaml file for Datadog Trap resolution mapping file. place in /etc/datadog-agent/conf.d/snmp.d/traps_db/ +
