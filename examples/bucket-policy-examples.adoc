@@ -1,5 +1,5 @@
 ---
-permalink: product-feature-guides/bucket-policy-examples.html
+permalink: examples/bucket-policy-examples.html
 sidebar: sidebar
 keywords: iam, bucket policy, group policy, policy
 summary: 'Here are examples of bucket policies and group policies(IAM Policies).'

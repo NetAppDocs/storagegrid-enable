@@ -66,6 +66,8 @@ homepage:
         url: "/examples/test-demonstrate-S3-encryption.html"
       - title: Test and demonstrate S3 Object Lock
         url: "/examples/test-demonstrate-S3-object-lock.html"        
+      - title: Bucket and Group Policy examples
+        url: "/examples/bucket-policy-examples.html"
     - title: Demos & tutorials
       links:
       - title: StorageGRID video library
