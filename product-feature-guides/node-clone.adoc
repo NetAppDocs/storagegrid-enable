@@ -20,7 +20,7 @@ Node clone can be a faster method for replacing existing appliance nodes for a t
 ** Make sure the new destination appliance has a larger drive size than the source
 ** if the destination appliance has the same size drives and is configured for DDP8, you can configure the destination for DDP16 .  If the source is already configured for DDP16 then node clone will not be possible.
 ** When going from SG5660 or SG5760 appliances to SG6060 appliances be aware that the SG5x60's have 60 capacity drives where the SG6060 only has 58.
-* the node clone process requires the source node to be offline to the grid for the duration of the cloning process. if an additional node goes offline during this time client services may be impacted.
+* The node clone process requires the source node to be offline to the grid for the duration of the cloning process. if an additional node goes offline during this time client services may be impacted.
 * A storage node can only be offline for 15 days. If the cloning process would exceed 15 days of come very close then use the expansion and decommission procedures.
 * For each expansion shelf you need to add the time from the SG6060 table for the drive size in the shelf to the time of the base chassis. 
 
