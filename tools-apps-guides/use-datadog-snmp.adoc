@@ -28,7 +28,7 @@ place this file in /etc/datadog-agent/conf.d/snmp.d/traps_db/ +
 This StorageGRID profile yaml file for Datadog metrics mapping generated following the instruction found https://datadoghq.dev/integrations-core/tutorials/snmp/introduction/[here^]. +
 place this file in /etc/datadog-agent/conf.d/snmp.d/profiles/ +
 
-* link:../media/datadog/netapp-storagegrid.yaml[Download the trap yaml file] +
+* link:../media/datadog/netapp-storagegrid.yaml[Download the profile yaml file] +
 ** *md5 checksum* 72bb7784f4801adda4e0c3ea77df19aa +
 **   *sha256 checksum* b6b7fadd33063422a8bb8e39b3ead8ab38349ee0229926eadc8585f0087b8cee +  
 
@@ -95,5 +95,5 @@ network_devices:
 === Example StorageGRID SNMP configuration
 The SNMP agent in your StorageGRID system is located under the configuration tab, Monitoring column. Enable SNMP and enter the desired information. If you wish to configure traps, select the "Traps Destinations" and Create a destination for the Datadog agent host containing the trap configuration. 
 
-image::../media/datadog/sg_snmp_conf.png[certificate download]
+image::../media/datadog/sg_snmp_conf.png[StorageGRID SNMP Configuration]
 
