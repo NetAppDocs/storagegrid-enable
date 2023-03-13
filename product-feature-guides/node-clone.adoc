@@ -161,7 +161,7 @@ The following tables contain calculated estimates for node clone duration
 |25GB |2 Day |3 Days |4 Days |4.5 Days |6 Days |7 Days
 |===
 
-==== Expansion shelf (add to above 6060 for each shelf on source appliance) 
+==== Expansion shelf (add to above SG6060 for each shelf on source appliance) 
 
 [cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
