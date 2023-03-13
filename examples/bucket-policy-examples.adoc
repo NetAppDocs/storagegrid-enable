@@ -47,7 +47,7 @@ This policy will only allow users to access objects in the bucket named the user
 This policy will restrict users from creating a bucket with object lock enabled on the bucket.
 [NOTE]
 ====
-This policy is not enfoced in the StorageGRID UI, it is only enforced by S3 API.
+This policy is not enforced in the StorageGRID UI, it is only enforced by S3 API.
 ====
 
 [source,json]
