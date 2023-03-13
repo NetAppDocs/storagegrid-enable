@@ -22,7 +22,7 @@ Node clone can be a faster method for replacing existing appliance nodes for a t
 ** When going from SG5660 or SG5760 appliances to SG6060 appliances be aware that the SG5x60's have 60 capacity drives where the SG6060 only has 58.
 * The node clone process requires the source node to be offline to the grid for the duration of the cloning process. if an additional node goes offline during this time client services may be impacted.
 * A storage node can only be offline for 15 days. If the cloning process would exceed 15 days of come very close then use the expansion and decommission procedures.
-* For each expansion shelf you need to add the time from the SG6060 table for the drive size in the shelf to the time of the base chassis. 
+* For a SG6060 with expansion shelves, you need to add the time for the correct shelf drive size to the time of the base appliance time to get the full clone duration. 
 
 == Node clone Performance estimates
 The following tables contain calculated estimates for node clone duration
