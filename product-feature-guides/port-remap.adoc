@@ -15,11 +15,11 @@ You may have a need to remap an incoming or outbound port for multiple reasons. 
 
 In releases earlier than StorageGRID 11.3, the included Load Balancer service on the Gateway Nodes is the Connection Load Balancer (CLB). In StorageGRID 11.3, NetApp introduces the NGINX service as a feature rich integrated solution for load balancing HTTP(s) traffic. Because the CLB service remains available in the current release of StorageGRID, you cannot reuse port 8082 in the new load balancer endpoint configuration. To work around this, the 8082 inbound port is remapped to 10443. This makes all HTTPS requests coming into port 8082 on the gateway redirect to port 10443, bypassing the CLB service and instead connecting to the NGINX service. Although the following instructions are for VMware, the PORT_REMAP functionality exists for all installation methods, and you can use a similar process for bare metal deployments and appliances.
 
-== VMware virtual machine Gateway Node deployment
+=== VMware virtual machine Gateway Node deployment
 
 The following steps are for a StorageGRID deployment where the Gateway Node or Nodes are deployed in VMware vSphere 7 as VMs using the StorageGRID Open Virtualization Format (OVF). The process entails destructively removing the VM and redeploying the VM with the same name and configuration. Before you power on the VM, change the vAPP property to remap the port, then power on the VM and follow the node recovery process.
 
-=== Prerequisites
+==== Prerequisites
 
 * You are running StorageGRID 11.3 or later
 * You have downloaded and have access to the installed StorageGRID version VMware install files.
@@ -33,7 +33,7 @@ The following steps are for a StorageGRID deployment where the Gateway Node or N
      If your existing certificate is self-signed, you cannot reuse it in the new endpoint. You must generate a new self-signed certificate when creating the endpoint and configure the clients to accept the new certificate.
 ====
 
-=== Destroy the first Gateway Node
+==== Destroy the first Gateway Node
 
 To destroy the first Gateway Node, follow these steps:
 
@@ -43,7 +43,7 @@ To destroy the first Gateway Node, follow these steps:
 . Power off the VM node.
 . Remove the VM node from the disk.
 
-=== Deploy the replacement Gateway Node
+==== Deploy the replacement Gateway Node
 
 To deploy the replacement Gateway Node, follow these steps:
 
@@ -79,7 +79,7 @@ image:port-remap/image6.png[Graphical user interface, text, application Descript
 . If you are using multiple networks, use a comma (,) to separate the network strings, for example, grid/tcp/8082/10443,admin/tcp/8082/10443,client/tcp/8082/10443
 
 
-=== Recover the Gateway Node
+==== Recover the Gateway Node
 
 To recover the Gateway Node, follow these steps:
 
