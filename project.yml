@@ -50,6 +50,9 @@ homepage:
         url: "/product-feature-guides/storagegrid-search-integration-service.html"
       - title: Node clone considerations and performance
         url: "/product-feature-guides/node-clone.html"
+      - title: How to use port remap
+        url: "/product-feature-guides/port-remap.html"
+
     - title: Tool and application guides
       links:
       - title: Use Cloudera Hadoop S3A connector

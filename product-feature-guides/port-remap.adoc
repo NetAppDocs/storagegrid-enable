@@ -1,0 +1,102 @@
+---
+permalink: product-feature-guides/port-remap.html
+sidebar: sidebar
+keywords: port remap, port redirect, port, remap, redirect 
+summary: 'How to use port remap.'
+---
+= How to use port remap
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You may have a need to remap an incoming or outbound port for multiple reasons. You may be moving from the legacy CLB load balancer service to the current nginx service load balancer endpoint and maintain the same port to reduce the impact to clients, or for firewall restrictions.  
+
+== Migrate S3 clients from CLB to NGINX with Port ReMap
+
+In releases earlier than StorageGRID 11.3, the included Load Balancer service on the Gateway Nodes is the Connection Load Balancer (CLB). In StorageGRID 11.3, NetApp introduces the NGINX service as a feature rich integrated solution for load balancing HTTP(s) traffic. Because the CLB service remains available in the current release of StorageGRID, you cannot reuse port 8082 in the new load balancer endpoint configuration. To work around this, the 8082 inbound port is remapped to 10443. This makes all HTTPS requests coming into port 8082 on the gateway redirect to port 10443, bypassing the CLB service and instead connecting to the NGINX service. Although the following instructions are for VMware, the PORT_REMAP functionality exists for all installation methods, and you can use a similar process for bare metal deployments and appliances.
+
+== VMware virtual machine Gateway Node deployment
+
+The following steps are for a StorageGRID deployment where the Gateway Node or Nodes are deployed in VMware vSphere 7 as VMs using the StorageGRID Open Virtualization Format (OVF). The process entails destructively removing the VM and redeploying the VM with the same name and configuration. Before you power on the VM, change the vAPP property to remap the port, then power on the VM and follow the node recovery process.
+
+=== Prerequisites
+
+* You are running StorageGRID 11.3 or later
+* You have downloaded and have access to the installed StorageGRID version VMware install files.
+* You have a vCenter account with permissions to power on/off VMs, change the settings of the VMs and vApps, remove VMs from vCenter, and deploy VMs by OVF.
+* You have created a load balancer endpoint
+    ** The port is configured to the desired redirect port
+    ** The endpoint SSL certificate is the same as installed for the CLB service in the Configuration/Server Certificates/ Object Storage API Service Endpoints Server Certificate or the client is able to accept a change in certificate.
+    
+[NOTE]
+====
+     If your existing certificate is self-signed, you cannot reuse it in the new endpoint. You must generate a new self-signed certificate when creating the endpoint and configure the clients to accept the new certificate.
+====
+
+=== Destroy the first Gateway Node
+
+To destroy the first Gateway Node, follow these steps:
+
+. Choose the Gateway Node to start with if the grid contains more than one.
+. Remove the node IPs from all DNS round-robin entities or load balancer pools, if applicable.
+. Wait for Time-to-Live (TTL) and open sessions to expire.
+. Power off the VM node.
+. Remove the VM node from the disk.
+
+=== Deploy the replacement Gateway Node
+
+To deploy the replacement Gateway Node, follow these steps:
+
+. Deploy the new VM from OVF, selecting the .ovf, .mf, and .vmdk files from the install package downloaded from the support site:
+    ** vsphere-gateway.mf
+    ** vsphere-gateway.ovf
+    ** NetApp-SG-11.4.0-20200721.1338.d3969b3.vmdk
+
+. After the VM has been deployed, select it from the list of VMs, select the Configure tab vApp Options.
++
+image:port-remap/image1.png[Graphical user interface, text, application, email Description automatically generated,width=326,height=138]
+
+. Scroll down to the Properties section and select the PORT_REMAP_INBOUND property
++
+image:port-remap/image2.png[Graphical user interface, application Description automatically generated,width=400,height=126]
+
+. Scroll to the top of the Properties list and click Edit
++
+image:port-remap/image3.png[A picture containing graphical user interface Description automatically generated,width=194,height=51]
+
+. Select the Type tab, confirm that the User Configurable checkbox is selected, and then click Save.
++
+image:port-remap/image4.png[Graphical user interface Description automatically generated,width=172,height=210]
+
+. At the top of the Properties list, with the “PORT_REMAP_INBOUND” property still selected, click Set Value.
++
+image:port-remap/image5.png[A picture containing graphical user interface Description automatically generated,width=194,height=51]
+
+. In the Property Value field, enter the network (grid, admin, or client), TCP, the original port (8082), and the new port (10443) with “/” in between each value as depicted following.
++
+image:port-remap/image6.png[Graphical user interface, text, application Description automatically generated,width=248,height=130]
+
+. If you are using multiple networks, use a comma (,) to separate the network strings, for example, grid/tcp/8082/10443,admin/tcp/8082/10443,client/tcp/8082/10443
+
+
+=== Recover the Gateway Node
+
+To recover the Gateway Node, follow these steps:
+
+. Power on the VM node and wait for the node to appear in the Maintenance/Recovery section of the Grid Management UI.
++
+image:port-remap/image7.png[Graphical user interface, application, table Description automatically generated,width=276,height=102]
+
+. Power on the VM node and wait for the node to appear in the Maintenance/Recovery Pending Nodes section of the Grid Management UI.
++
+image:port-remap/image8.png[A picture containing table Description automatically generated,width=384,height=99]
++
+
+[NOTE]
+====
+ For information and directions for node recovery, see the https://docs.netapp.com/sgws-114/topic/com.netapp.doc.sg-maint/GUID-7E22B1B9-4169-4800-8727-75F25FC0FFB1.html[Recovery and Maintenance guide]
+====
+
+. After the node has been recovered, the IP can be included in all DNS round-robin entities, or load balancer pools, if applicable.
++
+Now, any HTTPS sessions on port 8082 go to port 10443
