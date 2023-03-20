@@ -54,30 +54,29 @@ To deploy the replacement Gateway Node, follow these steps:
 
 . After the VM has been deployed, select it from the list of VMs, select the Configure tab vApp Options.
 +
-image:port-remap/image1.png[Graphical user interface, text, application, email Description automatically generated,width=326,height=138]
+image:port-remap/vapp_options.png[vApp options tab]
 
 . Scroll down to the Properties section and select the PORT_REMAP_INBOUND property
 +
-image:port-remap/image2.png[Graphical user interface, application Description automatically generated,width=400,height=126]
+image:port-remap/remap_inbound.png[port remap inbound]
 
 . Scroll to the top of the Properties list and click Edit
 +
-image:port-remap/image3.png[A picture containing graphical user interface Description automatically generated,width=194,height=51]
+image:port-remap/edit_button.png[edit button]
 
 . Select the Type tab, confirm that the User Configurable checkbox is selected, and then click Save.
 +
-image:port-remap/image4.png[Graphical user interface Description automatically generated,width=172,height=210]
+image:port-remap/type_tab.png[type tab]
 
 . At the top of the Properties list, with the “PORT_REMAP_INBOUND” property still selected, click Set Value.
 +
-image:port-remap/image5.png[A picture containing graphical user interface Description automatically generated,width=194,height=51]
+image:port-remap/edit_button.png[set value button]
 
 . In the Property Value field, enter the network (grid, admin, or client), TCP, the original port (8082), and the new port (10443) with “/” in between each value as depicted following.
 +
-image:port-remap/image6.png[Graphical user interface, text, application Description automatically generated,width=248,height=130]
+image:port-remap/value.png[property value]
 
 . If you are using multiple networks, use a comma (,) to separate the network strings, for example, grid/tcp/8082/10443,admin/tcp/8082/10443,client/tcp/8082/10443
-
 
 ==== Recover the Gateway Node
 
@@ -85,11 +84,11 @@ To recover the Gateway Node, follow these steps:
 
 . Power on the VM node and wait for the node to appear in the Maintenance/Recovery section of the Grid Management UI.
 +
-image:port-remap/image7.png[Graphical user interface, application, table Description automatically generated,width=276,height=102]
+image:port-remap/maint_menu.png[maintenance menu]
 
 . Power on the VM node and wait for the node to appear in the Maintenance/Recovery Pending Nodes section of the Grid Management UI.
 +
-image:port-remap/image8.png[A picture containing table Description automatically generated,width=384,height=99]
+image:port-remap/recover_pend.png[recovery pending]
 +
 
 [NOTE]
