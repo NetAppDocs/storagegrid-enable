@@ -82,7 +82,7 @@ image:port-remap/value.png[property value]
 
 To recover the Gateway Node, follow these steps:
 
-. Power on the VM node and wait for the node to appear in the Maintenance/Recovery section of the Grid Management UI.
+. Navigate to the Maintenance/Recovery section of the Grid Management UI.
 +
 image:port-remap/maint_menu.png[maintenance menu]
 
@@ -118,27 +118,35 @@ Admin nodes contain audit logs, prometheus metrics, as well as historical inform
 +
     When you are logged in as root, the prompt changes from `$` to `#`.
 
-. Create the directory to copy all audit log files to a temporary location on a separate grid node: `ssh admin@_grid_node_IP_`
+. Create the directory to copy all audit log files to a temporary location on a separate grid node lets use _storage_node_01_:
+  .. `ssh admin@_storage_node_01_IP_`
   .. `mkdir -p /var/local/tmp/saved-audit-logs`
-. Stop the AMS service to prevent it from creating a new log file: `service ams stop`
+. Back on the admin node, stop the AMS service to prevent it from creating a new log file: `service ams stop`
 . Rename the audit.log file so that it does not overwrite the existing file when you copy it to the recovered Admin Node.
 +
-Rename audit.log to a unique numbered file name such as yyyy-mm-dd.txt.1. For example, you can rename the audit.log file to 2015-10-25.txt.1``cd /var/local/audit/export```ls -l``mv audit.log 2015-10-25.txt.1`
+.. Rename audit.log to a unique numbered file name such as yyyy-mm-dd.txt.1. For example, you can rename the audit log file to 2015-10-25.txt.1
++
+[source,console]
+----
+cd /var/local/audit/export
+ls -l
+mv audit.log 2015-10-25.txt.1
+----
 
 . Restart the AMS service: `service ams start`
-. Copy all audit log files: `scp * admin@_grid_node_IP_:/var/local/tmp/saved-audit-logs`
+. Copy all audit log files: `scp * admin@_storage_node_01_IP_:/var/local/tmp/saved-audit-logs`
 
 ==== Copy Prometheus data
 
 NOTE: Copying the Prometheus database might take an hour or more. Some Grid Manager features will be unavailable while services are stopped on the Admin Node.
 
-. Create the directory to copy the prometheus data to a temporary location on a separate grid node: 
- .. Log in to the node:
-  ... Enter the following command: `ssh admin@_grid_node_IP_`
+. Create the directory to copy the prometheus data to a temporary location on a separate grid node, again we will user _storage_node_01_: 
+ .. Log in to the storage node:
+  ... Enter the following command: `ssh admin@_storage_node_01_IP_`
   ... Enter the password listed in the `Passwords.txt` file.
   ... mkdir -p /var/local/tmp/prometheus`
 . Log in to the Admin Node:
- .. Enter the following command: `ssh admin@_grid_node_IP_`
+ .. Enter the following command: `ssh admin@_admin_node_IP_`
  .. Enter the password listed in the `Passwords.txt` file.
  .. Enter the following command to switch to root: `su -`
  .. Enter the password listed in the `Passwords.txt` file.
@@ -148,14 +156,14 @@ NOTE: Copying the Prometheus database might take an hour or more. Some Grid Mana
     When you are logged in as root, the prompt changes from `$` to `#`.
     
 . From the Admin Node, stop the Prometheus service: `service prometheus stop`
- .. Copy the Prometheus database from the source Admin Node to the other node backup location Node: `/rsync -azh --stats "/var/local/mysql_ibdata/prometheus/data" "_destination_node_:/var/local/tmp/prometheus/"`
+ .. Copy the Prometheus database from the source Admin Node to the storage node backup location Node: `/rsync -azh --stats "/var/local/mysql_ibdata/prometheus/data" "_storage_node_01_IP_:/var/local/tmp/prometheus/"`
 . Restart the Prometheus service on the source Admin Node.`service prometheus start` 
 
 ==== Backup historical information
 The historical information is stored in a mysql database. In order to dump a copy of the database you will need the user and password from NetApp. If you have another admin node in the grid, this step is not necessary and the database can be cloned from a remaining admin node during the recovery process. 
 
 . Log in to the Admin Node:
- .. Enter the following command: `ssh admin@_grid_node_IP_`
+ .. Enter the following command: `ssh admin@_admin_node_IP_`
  .. Enter the password listed in the `Passwords.txt` file.
  .. Enter the following command to switch to root: `su -`
  .. Enter the password listed in the `Passwords.txt` file.
@@ -173,7 +181,8 @@ The historical information is stored in a mysql database. In order to dump a cop
  
  .. enter the following command: `mysqldump –u _username_ –p _password_ mi > /var/local/tmp/mysql-mi.sql`
  
-. Copy the mysql dump file to an alternat node: `scp /var/local/tmp/mysql-mi.sql grid_node_IP_:/var/local/tmp/mysql-mi.sql`
+. Copy the mysql dump file to an alternate node, we will use _storage_node_01: 
+    `scp /var/local/tmp/mysql-mi.sql _storage_node_01_IP_:/var/local/tmp/mysql-mi.sql`
 
 .. When you no longer require passwordless access to other servers, remove the private key from the SSH agent. Enter: `ssh-add -D`
 

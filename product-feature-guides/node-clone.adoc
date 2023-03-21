@@ -18,14 +18,14 @@ Node clone can be a faster method for replacing existing appliance nodes for a t
 * The source and destination appliances must be at the same PGE version
 * The destination node must always have larger capacity than the source
 ** Make sure the new destination appliance has a larger drive size than the source
-** if the destination appliance has the same size drives and is configured for DDP8, you can configure the destination for DDP16 .  If the source is already configured for DDP16 then node clone will not be possible.
+** If the destination appliance has the same size drives and is configured for DDP8, you can configure the destination for DDP16. If the source is already configured for DDP16 then node clone will not be possible.
 ** When going from SG5660 or SG5760 appliances to SG6060 appliances be aware that the SG5x60's have 60 capacity drives where the SG6060 only has 58.
-* The node clone process requires the source node to be offline to the grid for the duration of the cloning process. if an additional node goes offline during this time client services may be impacted.
-* A storage node can only be offline for 15 days. If the cloning process would exceed 15 days of come very close then use the expansion and decommission procedures.
+* The node clone process requires the source node to be offline to the grid for the duration of the cloning process. If an additional node goes offline during this time client services may be impacted.
+* A storage node can only be offline for 15 days. If the cloning process estimate is close to 15 days or will exceed 15 days, use the expansion and decommission procedures.
 * For a SG6060 with expansion shelves, you need to add the time for the correct shelf drive size to the time of the base appliance time to get the full clone duration. 
 
 == Node clone Performance estimates
-The following tables contain calculated estimates for node clone duration
+The following tables contain calculated estimates for node clone duration. Conditions vary so, entries in *BOLD* may risk exceeding the 15 day limit for a node down.
 
 === DDP8
 

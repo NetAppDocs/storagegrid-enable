@@ -19,14 +19,14 @@ Datadog is a monitoring solution providing metrics, visualizations, and alerting
 Datadog provides a method for converting product MIB files into datadog reference files required to map the SNMP messages. 
 
 This StorageGRID yaml file for Datadog Trap resolution mapping generated following the instruction found https://docs.datadoghq.com/network_monitoring/devices/snmp_traps/?tab=yaml[here^]. + 
-place this file in /etc/datadog-agent/conf.d/snmp.d/traps_db/ +
+Place this file in /etc/datadog-agent/conf.d/snmp.d/traps_db/ +
 
 * link:../media/datadog/NETAPP-STORAGEGRID-MIB.yml[Download the trap yaml file] +
 **   *md5 checksum* 42e27e4210719945a46172b98c379517 +
 **   *sha256 checksum* d0fe5c8e6ca3c902d054f854b70a85f928cba8b7c76391d356f05d2cf73b6887 +
 
 This StorageGRID profile yaml file for Datadog metrics mapping generated following the instruction found https://datadoghq.dev/integrations-core/tutorials/snmp/introduction/[here^]. +
-place this file in /etc/datadog-agent/conf.d/snmp.d/profiles/ +
+Place this file in /etc/datadog-agent/conf.d/snmp.d/profiles/ +
 
 * link:../media/datadog/netapp-storagegrid.yaml[Download the profile yaml file] +
 ** *md5 checksum* 72bb7784f4801adda4e0c3ea77df19aa +
