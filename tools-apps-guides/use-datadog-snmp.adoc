@@ -55,7 +55,7 @@ snmp_listener:
       profile: netapp-storagegrid
 ----
 ==== Individual devices
-/etc/datadog-agent/conf.d/snmp/d/conf.yaml
+/etc/datadog-agent/conf.d/snmp.d/conf.yaml
 [source,yaml]
 ----  
 init_config:
