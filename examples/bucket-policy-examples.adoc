@@ -78,6 +78,20 @@ This policy allows a single user to have read-only access to a bucket and explic
 {
     "Statement": [
         {
+            "Sid": "Deny non user1",
+            "Effect": "Deny",
+            "NotPrincipal": {
+                "AWS": "urn:sgws:identity::34921514133002833665:user/user1"
+            },
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "urn:sgws:s3:::bucket1",
+                "urn:sgws:s3:::bucket1/*"
+            ]
+        },
+        {
             "Sid": "Allow user1 read access to bucket bucket1",
             "Effect": "Allow",
             "Principal": {
@@ -86,20 +100,6 @@ This policy allows a single user to have read-only access to a bucket and explic
             "Action": [
                 "s3:GetObject",
                 "s3:ListBucket"
-            ],
-            "Resource": [
-                "urn:sgws:s3:::bucket1",
-                "urn:sgws:s3:::bucket1/*"
-            ]
-        },
-        {
-            "Sid": "Deny non user1",
-            "Effect": "Deny",
-            "NotPrincipal": {
-                "AWS": "urn:sgws:identity::34921514133002833665:user/user1"
-            },
-            "Action": [
-                "s3:*"
             ],
             "Resource": [
                 "urn:sgws:s3:::bucket1",
