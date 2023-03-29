@@ -72,7 +72,7 @@ This policy is not enforced in the StorageGRID UI, it is only enforced by S3 API
 ----
 
 === Restrict bucket to single user with read-only access
-This policy allows a single user to have read-only access to a bucket and explicitly denys access to all other users.
+This policy allows a single user to have read-only access to a bucket and explicitly denys access to all other users. Grouping the Deny statements at the top of the policy is a good practice for faster evaluation.
 [source,json]
 ----
 {
