@@ -1,0 +1,175 @@
+---
+permalink: product-feature-guides/node-clone.html
+sidebar: sidebar
+keywords: node clone, clone, clone performance, performance
+summary: 'Node clone performance and best practices.'
+---
+= Node Clone
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Node clone considerations and performance. 
+
+== Node clone considerations
+Node clone can be a faster method for replacing existing appliance nodes for a tech refresh, increase capacity, or increase performance of your StorageGRID system. Node clone can also be useful for converting to node encryption with a KMS, or changing a storage node from DDP8 to DDP16. 
+
+* The used capacity of the source node is not relevant to the time required for the clone process to complete. Node clone is a full copy of the node including free space in the node.
+* The source and destination appliances must be at the same PGE version
+* The destination node must always have larger capacity than the source
+** Make sure the new destination appliance has a larger drive size than the source
+** If the destination appliance has the same size drives and is configured for DDP8, you can configure the destination for DDP16. If the source is already configured for DDP16 then node clone will not be possible.
+** When going from SG5660 or SG5760 appliances to SG6060 appliances be aware that the SG5x60's have 60 capacity drives where the SG6060 only has 58.
+* The node clone process requires the source node to be offline to the grid for the duration of the cloning process. If an additional node goes offline during this time client services may be impacted.
+* A storage node can only be offline for 15 days. If the cloning process estimate is close to 15 days or will exceed 15 days, use the expansion and decommission procedures.
+* For a SG6060 with expansion shelves, you need to add the time for the correct shelf drive size to the time of the base appliance time to get the full clone duration. 
+
+== Node clone Performance estimates
+The following tables contain calculated estimates for node clone duration. Conditions vary so, entries in *BOLD* may risk exceeding the 15 day limit for a node down.
+
+=== DDP8
+
+==== SG5612 -> Any
+
+[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+|===
+// header row
+|Network Interface speed
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+
+|10GB |1 Day |2 Days |2.5 Days |3 Days |4 Days |4.5 Days 
+
+|25GB |1 Day |2 Days |2.5 Days |3 Days |4 Days |4.5 Days
+|===
+
+==== SG5712 -> Any
+
+[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+|===
+// header row
+|Network Interface speed
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+
+|10GB |1 Day |2 Days |2.5 Days |3 Days |4 Days |4.5 Days 
+
+|25GB |1 Day |2 Days |2.5 Days |3 Days |4 Days |4.5 Days
+|===
+
+==== SG5660 -> SG5760
+
+[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+|===
+// header row
+|Network Interface speed
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+
+|10GB |3 Day |6 Days |7 Days |8.5 Days |11.5 Days |*13 Days*
+
+|25GB |3 Day |6 Days |7 Days |8.5 Days |11.5 Days |*13 Days*
+|===
+
+==== SG5660 -> SG6060
+
+[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+|===
+// header row
+|Network Interface speed
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+
+|10GB |2.5 Day |4.5 Days |5.5 Days |6.5 Days |9 Days |10 Days 
+
+|25GB |2 Day |4 Days |5 Days |6 Days |8 Days |9 Days
+|===
+
+==== SG5760 -> SG5760
+
+[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+|===
+// header row
+|Network Interface speed
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+
+|10GB |3 Day |6 Days |7 Days |8.5 Days |11.5 Days |*13 Days*
+
+|25GB |3 Day |6 Days |7 Days |8.5 Days |11.5 Days |*13 Days*
+|===
+
+==== SG5760 -> SG6060
+
+[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+|===
+// header row
+|Network Interface speed
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+
+|10GB |2.5 Day |4.5 Days |5.5 Days |6.5 Days |9 Days |10 Days 
+
+|25GB |1.5 Day |3 Days |3.5 Days |4.5 Days |6 Days |6.5 Days
+|===
+
+==== SG6060 -> SG6060
+
+[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+|===
+// header row
+|Network Interface speed
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+
+|10GB |2.5 Day |4.5 Days |5.5 Days |6.5 Days |8.5 Days |9.5 Days 
+
+|25GB |1.5 Day |3 Days |3.5 Days |4 Days |5.5 Days |6 Days
+|===
+
+=== DDP16
+
+==== SG5760 -> SG5760
+
+[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+|===
+// header row
+|Network Interface speed
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+
+|10GB |3.5 Day |6.5 Days |8 Days |9.5 Days |12.5 Days |*14 Days* 
+
+|25GB |3.5 Day |6.5 Days |8 Days |9.5 Days |12.5 Days |*14 Days*
+|===
+
+==== SG5760 -> SG6060
+
+[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+|===
+// header row
+|Network Interface speed
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+
+|10GB |2.5 Day |5 Days |6 Days |7.5 Days |10 Days |11 Days 
+
+|25GB |2 Day |3.5 Days |4 Days |5 Days |6.5 Days |7 Days
+|===
+
+==== SG6060 -> SG6060 
+
+[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+|===
+// header row
+|Network Interface speed
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+
+|10GB |3.5 Day |5 Days |6 Days |7 Days |9.5 Days |10.5 Days 
+
+|25GB |2 Day |3 Days |4 Days |4.5 Days |6 Days |7 Days
+|===
+
+==== Expansion shelf (add to above SG6060 for each shelf on source appliance) 
+
+[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+|===
+// header row
+|Network Interface speed
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+
+|10GB |3.5 Day |5 Days |6 Days |7 Days |9.5 Days |10.5 Days 
+
+|25GB |2 Day |3 Days |4 Days |4.5 Days |6 Days |7 Days
+|===

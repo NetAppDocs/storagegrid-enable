@@ -11,3 +11,5 @@ entries:
     url: "/tools-apps-guides/elk-instructions.html"  
   - title: Use Prometheus and Grafana to extend your metrics retention
     url: "/tools-apps-guides/federate-prometheus.html"  
+  - title: Configure Datadog to collect StorageGRID snmp metrics and traps
+    url: "/tools-apps-guides/use-datadog-snmp.html"  

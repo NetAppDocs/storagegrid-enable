@@ -49,6 +49,11 @@ homepage:
         url: "/product-feature-guides/use-a-cloud-storage-pool-for-backup.html" 
       - title: Configure search integration service
         url: "/product-feature-guides/storagegrid-search-integration-service.html"
+      - title: Node clone considerations and performance
+        url: "/product-feature-guides/node-clone.html"
+      - title: How to use port remap
+        url: "/product-feature-guides/port-remap.html"
+
     - title: Tool and application guides
       links:
       - title: Use Cloudera Hadoop S3A connector
@@ -61,12 +66,16 @@ homepage:
         url: "/tools-apps-guides/elk-instructions.html"  
       - title: Use Prometheus and Grafana to extend your metrics retention
         url: "/tools-apps-guides/federate-prometheus.html"  
+      - title: Configure Datadog to collect StorageGRID snmp metrics and traps
+        url: "/tools-apps-guides/use-datadog-snmp.html"  
     - title: Procedures and API examples
       links:
       - title: Test and demonstrate S3 encryption
         url: "/examples/test-demonstrate-S3-encryption.html"
       - title: Test and demonstrate S3 Object Lock
         url: "/examples/test-demonstrate-S3-object-lock.html"        
+      - title: Bucket and Group Policy examples
+        url: "/examples/bucket-policy-examples.html"
     - title: Demos & tutorials
       links:
       - title: StorageGRID video library

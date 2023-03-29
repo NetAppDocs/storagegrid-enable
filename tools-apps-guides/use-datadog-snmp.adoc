@@ -1,0 +1,99 @@
+---
+permalink: tools-apps-guides/use-datadog-snmp.html
+sidebar: sidebar
+keywords: datadog, snmp
+summary: Configure Datadog HQ to collect StorageGRID snmp metrics and traps. 
+---
+= Datadog SNMP configuration
+
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Configure Datadog to collect StorageGRID snmp metrics and traps.
+
+== Configure Datadog
+Datadog is a monitoring solution providing metrics, visualizations, and alerting.  The following configuration was implemented with linux agent version 7.43.1 on an Ubuntu 22.04.1 host deployed local to the StorageGRID system.
+
+=== Datadog Profile and Trap files Generated from StorageGRID MIB file
+Datadog provides a method for converting product MIB files into datadog reference files required to map the SNMP messages. 
+
+This StorageGRID yaml file for Datadog Trap resolution mapping generated following the instruction found https://docs.datadoghq.com/network_monitoring/devices/snmp_traps/?tab=yaml[here^]. + 
+Place this file in /etc/datadog-agent/conf.d/snmp.d/traps_db/ +
+
+* link:../media/datadog/NETAPP-STORAGEGRID-MIB.yml[Download the trap yaml file] +
+**   *md5 checksum* 42e27e4210719945a46172b98c379517 +
+**   *sha256 checksum* d0fe5c8e6ca3c902d054f854b70a85f928cba8b7c76391d356f05d2cf73b6887 +
+
+This StorageGRID profile yaml file for Datadog metrics mapping generated following the instruction found https://datadoghq.dev/integrations-core/tutorials/snmp/introduction/[here^]. +
+Place this file in /etc/datadog-agent/conf.d/snmp.d/profiles/ +
+
+* link:../media/datadog/netapp-storagegrid.yaml[Download the profile yaml file] +
+** *md5 checksum* 72bb7784f4801adda4e0c3ea77df19aa +
+**   *sha256 checksum* b6b7fadd33063422a8bb8e39b3ead8ab38349ee0229926eadc8585f0087b8cee +  
+
+ 
+=== SNMP Datadog configuration for Metrics
+Configuring SNMP for metrics can be managed in two ways.  You can configure for auto-discovery by providing a network address range containing the StorageGRID system(s), or define the IP's of the individual devices.  The configuration location is different based on the decision made. Auto-discovery is defined in the datadog agent yaml file. Explicit device definitions are configured in the snmp configuration yaml file. Below are examples of each for the same StorageGRID system.
+
+==== Auto-discovery
+configuration located in /etc/datadog-agent/datadog.yaml
+[source,yaml]
+----
+listeners:
+  - name: snmp
+snmp_listener:
+  workers: 100  # number of workers used to discover devices concurrently
+  discovery_interval: 3600  # interval between each autodiscovery in seconds
+  loader: core  # use core check implementation of SNMP integration. recommended
+  use_device_id_as_hostname: true  # recommended
+  configs:
+    - network_address: 10.0.0.0/24  # CIDR subnet
+      snmp_version: 2
+      port: 161
+      community_string: 'st0r@gegrid'  # enclose with single quote
+      profile: netapp-storagegrid
+----
+==== Individual devices
+/etc/datadog-agent/conf.d/snmp.d/conf.yaml
+[source,yaml]
+----  
+init_config:
+  loader: core  # use core check implementation of SNMP integration. recommended
+  use_device_id_as_hostname: true  # recommended
+instances:
+- ip_address: '10.0.0.1'
+  profile: netapp-storagegrid
+  community_string: 'st0r@gegrid'  # enclose with single quote
+- ip_address: '10.0.0.2'
+  profile: netapp-storagegrid
+  community_string: 'st0r@gegrid'
+- ip_address: '10.0.0.3'
+  profile: netapp-storagegrid
+ community_string: 'st0r@gegrid'
+- ip_address: '10.0.0.4'
+  profile: netapp-storagegrid
+  community_string: 'st0r@gegrid'
+----
+
+
+
+=== SNMP configuration for traps
+The configuration for SNMP traps is defined in the datadog configuration yaml file /etc/datadog-agent/datadog.yaml
+[source,yaml]
+---- 
+network_devices:
+  namespace:  # optional, defaults to “default”.
+  snmp_traps:
+    enabled: true
+    port: 9162 # on which ports to listen for traps
+    community_strings: # which community strings to allow for v2 traps
+      - st0r@gegrid
+----
+
+
+=== Example StorageGRID SNMP configuration
+The SNMP agent in your StorageGRID system is located under the configuration tab, Monitoring column. Enable SNMP and enter the desired information. If you wish to configure traps, select the "Traps Destinations" and Create a destination for the Datadog agent host containing the trap configuration. 
+
+image::../media/datadog/sg_snmp_conf.png[StorageGRID SNMP Configuration]
+
