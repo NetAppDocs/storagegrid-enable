@@ -54,7 +54,7 @@ These solutions have been tested in collaboration with the respective partners.
 * Primestream
 * Quantum StorNext 5.4.0.1
 * Reveille v10 build 220706 or above
-* Rubrik CDM 5.0.1 p1-1342
+* Rubrik CDM
 * Signiant
 * Snowflake
 * Splunk Smartstore
