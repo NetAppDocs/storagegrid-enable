@@ -39,7 +39,7 @@ These solutions have been tested in collaboration with the respective partners.
 * PoINT Storage Manager 6.4
 * Primestream
 * Quantum StorNext 5.4.0.1
-* Rubrik CDM 5.0.1 p1-1342
+* Rubrik CDM
 * Signiant
 * Splunk Smartstore
 * Varnish Enterprise 6.0.4
