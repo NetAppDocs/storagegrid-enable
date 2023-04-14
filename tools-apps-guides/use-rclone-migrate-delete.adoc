@@ -16,7 +16,7 @@ rclone is a free command line tool and client for S3 operations. You can use rcl
 
 To install rclone on a workstation or server, download it from https://rclone.org/downloads/[rclone.org^]. 
 
-== Initial configuration steps
+=== Initial configuration steps
 
 . Create the rclone configuration file by either running the config script or manually creating the file. 
 . For this example I will use sgdemo for the name of the remote StorageGRID S3 endpoint in the rclone configuration.
