@@ -10,7 +10,7 @@ summary: 'rclone is a free command line tool and client for S3 operations. You c
 :imagesdir: ../media/
 
 [.lead]
-rclone is a free command line tool and client for S3 operations. You can use rclone to to migrate, copy, and delete object data on StorageGRID.
+rclone is a free command line tool and client for S3 operations. You can use rclone to to migrate, copy, and delete object data on StorageGRID. rclone includes the capability to delete buckets even when not empty with a "purge" function as seen in an example below.
 
 == Install and configure rclone
 
