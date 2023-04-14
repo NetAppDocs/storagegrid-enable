@@ -35,7 +35,6 @@ To install rclone on a workstation or server, download it from https://rclone.or
 +
     .. rclone config
 +
-[source,console]
 ----
     2023/04/13 14:22:45 NOTICE: Config file "/root/.config/rclone/rclone.conf" not found - using defaults
     No remotes found - make a new one
@@ -217,7 +216,7 @@ To install rclone on a workstation or server, download it from https://rclone.or
     Required when using an S3 clone.
     Enter a string value. Press Enter for the default ("").
     endpoint> sgdemo.netapp.com
-    
+
     Option location_constraint.
     Location constraint - must be set to match the Region.
     Leave blank if not sure. Used when creating buckets only.
@@ -304,7 +303,6 @@ To install rclone on a workstation or server, download it from https://rclone.or
 
 `rclone ls sgdemo:test01`
 +
-[source,console]
 ----
     # rclone ls sgdemo:test01
         65536 TestObject.0
@@ -336,7 +334,6 @@ To install rclone on a workstation or server, download it from https://rclone.or
 +
 `rclone rmdir remote:bucket`
 +
-[source,console]
 ----
 # rclone rmdir sgdemo:test02
 ----
@@ -345,7 +342,6 @@ To install rclone on a workstation or server, download it from https://rclone.or
 +
 `rclone copy _filename_ remote:bucket`
 +
-[source,console]
 ----
 # rclone copy ~/test/testfile.txt sgdemo:test01
 ----
@@ -354,7 +350,6 @@ To install rclone on a workstation or server, download it from https://rclone.or
 `rclone copy remote:bucket/objectname filename`
 
 +
-[source,console]
 ----
 # rclone copy sgdemo:test01/testfile.txt ~/test/testfileS3.txt
 ----
@@ -364,7 +359,6 @@ To install rclone on a workstation or server, download it from https://rclone.or
 
 `rclone delete remote:bucket/objectname`
 +
-[source,console]
 ----
 # rclone delete sgdemo:test01/testfile.txt
 ----
@@ -375,7 +369,6 @@ To install rclone on a workstation or server, download it from https://rclone.or
 +
 `rclone sync source_directory destination:bucket --progress`
 +
-[source,console]
 ----
 # rclone sync sgdemo:test01 sgdemo:clone01 --progress
 Transferred:   	    4.032 GiB / 4.032 GiB, 100%, 95.484 KiB/s, ETA 0s
@@ -389,7 +382,6 @@ NOTE: Use --progress or -P to display the progress of the task. Otherwise there 
 +
 `rclone purge remote:bucket --progress`
 +
-[source,console]
 ----
 # rclone purge sgdemo:test01 --progress
 Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
