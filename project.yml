@@ -68,7 +68,7 @@ homepage:
       - title: Configure Datadog to collect StorageGRID snmp metrics and traps
         url: "/tools-apps-guides/use-datadog-snmp.html"  
       - title: Use rclone to migrate, PUT, and DELETE objects on StorageGRID
-        url: "tools-apps-guides/use-rclone-migrate-delete.html"  
+        url: "/tools-apps-guides/use-rclone-migrate-delete.html"  
     - title: Procedures and API examples
       links:
       - title: Test and demonstrate S3 encryption
