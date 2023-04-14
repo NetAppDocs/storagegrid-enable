@@ -30,7 +30,7 @@ To install rclone on a workstation or server, download it from https://rclone.or
     provider = Other
     access_key_id = ABCDEFGH123456789JKL                    
     secret_access_key = 123456789ABCDEFGHIJKLMN0123456789PQRST+V                        
-    endpoint = sgdemo.netapp.com:443
+    endpoint = sgdemo.netapp.com
 ----
 +
     .. rclone config
@@ -216,7 +216,8 @@ To install rclone on a workstation or server, download it from https://rclone.or
     Endpoint for S3 API.
     Required when using an S3 clone.
     Enter a string value. Press Enter for the default ("").
-    endpoint> sgdemo.netapp.com:443
+    endpoint> sgdemo.netapp.com
+    
     Option location_constraint.
     Location constraint - must be set to match the Region.
     Leave blank if not sure. Used when creating buckets only.
