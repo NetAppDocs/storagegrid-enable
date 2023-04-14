@@ -21,7 +21,7 @@ To install rclone on a workstation or server, download it from https://rclone.or
 . Create the rclone configuration file by either running the config script or manually creating the file. 
 . For this example I will use sgdemo for the name of the remote StorageGRID S3 endpoint in the rclone configuration.
 
-    .. ~/.config/rclone/rclone.conf
+    ..Create the config file  ~/.config/rclone/rclone.conf
 +
 [source,console]
 ----
@@ -33,9 +33,11 @@ To install rclone on a workstation or server, download it from https://rclone.or
     endpoint = sgdemo.netapp.com
 ----
 +
-    .. rclone config
+    .. Run rclone config
 +
 ----
+# rclone config
+
     2023/04/13 14:22:45 NOTICE: Config file "/root/.config/rclone/rclone.conf" not found - using defaults
     No remotes found - make a new one
     n) New remote
@@ -291,16 +293,22 @@ To install rclone on a workstation or server, download it from https://rclone.or
 
 * *Create a bucket:*  
 +
-
-`rclone mkdir sgdemo:test01`
+`rclone mkdir remote:bucket`
++
+----
+rclone mkdir sgdemo:test01
+----
 
 * *List all buckets:*  
 +
-`rclone lsd sgdemo:`  
+`rclone lsd remote:`
++  
+----
+rclone lsd sgdemo:
+----
 
 * *List objects in a specific bucket:*  
 +
-
 `rclone ls sgdemo:test01`
 +
 ----
@@ -345,6 +353,7 @@ To install rclone on a workstation or server, download it from https://rclone.or
 ----
 # rclone copy ~/test/testfile.txt sgdemo:test01
 ----
+
 * *Get an object:*  
 +
 `rclone copy remote:bucket/objectname filename`
