@@ -21,7 +21,7 @@ To install rclone on a workstation or server, download it from https://rclone.or
 . Create the rclone configuration file by either running the config script or manually creating the file. 
 . For this example I will use sgdemo for the name of the remote StorageGRID S3 endpoint in the rclone configuration.
 
-    ..Create the config file  ~/.config/rclone/rclone.conf
+   .. Create the config file  ~/.config/rclone/rclone.conf
 +
 [source,console]
 ----
@@ -35,7 +35,7 @@ To install rclone on a workstation or server, download it from https://rclone.or
 +
     .. Run rclone config
 +
-----
+====
 # rclone config
 
     2023/04/13 14:22:45 NOTICE: Config file "/root/.config/rclone/rclone.conf" not found - using defaults
@@ -287,7 +287,8 @@ To install rclone on a workstation or server, download it from https://rclone.or
     s) Set configuration password
     q) Quit config
     e/n/d/r/c/s/q> q
-----
+
+====
  
 == Basic command examples 
 
@@ -295,23 +296,23 @@ To install rclone on a workstation or server, download it from https://rclone.or
 +
 `rclone mkdir remote:bucket`
 +
-----
+====
 rclone mkdir sgdemo:test01
-----
+====
 
 * *List all buckets:*  
 +
 `rclone lsd remote:`
 +  
-----
+====
 rclone lsd sgdemo:
-----
+====
 
 * *List objects in a specific bucket:*  
 +
-`rclone ls sgdemo:test01`
+`rclone ls remote:bucket`
 +
-----
+====
     # rclone ls sgdemo:test01
         65536 TestObject.0
         65536 TestObject.1
@@ -337,40 +338,38 @@ rclone lsd sgdemo:
            15 test.txt
           116 version.txt
       
-----
+====
 * *Delete a bucket:*  
 +
 `rclone rmdir remote:bucket`
 +
-----
+====
 # rclone rmdir sgdemo:test02
-----
+====
 
 * *Put an object:*  
 +
 `rclone copy _filename_ remote:bucket`
 +
-----
+====
 # rclone copy ~/test/testfile.txt sgdemo:test01
-----
+====
 
 * *Get an object:*  
 +
 `rclone copy remote:bucket/objectname filename`
-
 +
-----
+====
 # rclone copy sgdemo:test01/testfile.txt ~/test/testfileS3.txt
-----
+====
 
 * *Delete an object:* 
 +
-
 `rclone delete remote:bucket/objectname`
 +
-----
+====
 # rclone delete sgdemo:test01/testfile.txt
-----
+====
 
 * *Migrate objects in a bucket*
 +
@@ -378,12 +377,12 @@ rclone lsd sgdemo:
 +
 `rclone sync source_directory destination:bucket --progress`
 +
-----
+====
 # rclone sync sgdemo:test01 sgdemo:clone01 --progress
 Transferred:   	    4.032 GiB / 4.032 GiB, 100%, 95.484 KiB/s, ETA 0s
 Transferred:           22 / 22, 100%
 Elapsed time:       1m4.2s
-----
+====
 +
 NOTE: Use --progress or -P to display the progress of the task. Otherwise there is no output.
 
@@ -391,7 +390,7 @@ NOTE: Use --progress or -P to display the progress of the task. Otherwise there 
 +
 `rclone purge remote:bucket --progress`
 +
-----
+====
 # rclone purge sgdemo:test01 --progress
 Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
 Checks:                46 / 46, 100%
@@ -400,4 +399,4 @@ Elapsed time:        10.2s
 
 # rclone ls sgdemo:test01
 2023/04/14 09:40:51 Failed to ls: directory not found
-----
+====
