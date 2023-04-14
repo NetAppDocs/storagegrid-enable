@@ -313,7 +313,8 @@ To install rclone on a workstation or server, download it from https://rclone.or
 `rclone ls remote:bucket`
 +
 ====
-    # rclone ls sgdemo:test01
+# rclone ls sgdemo:test01
+
         65536 TestObject.0
         65536 TestObject.1
         65536 TestObject.10
@@ -379,9 +380,10 @@ To install rclone on a workstation or server, download it from https://rclone.or
 +
 ====
 # rclone sync sgdemo:test01 sgdemo:clone01 --progress
-Transferred:   	    4.032 GiB / 4.032 GiB, 100%, 95.484 KiB/s, ETA 0s
-Transferred:           22 / 22, 100%
-Elapsed time:       1m4.2s
+
+   Transferred:   	    4.032 GiB / 4.032 GiB, 100%, 95.484 KiB/s, ETA 0s
+   Transferred:           22 / 22, 100%
+   Elapsed time:       1m4.2s
 ====
 +
 NOTE: Use --progress or -P to display the progress of the task. Otherwise there is no output.
@@ -392,11 +394,13 @@ NOTE: Use --progress or -P to display the progress of the task. Otherwise there 
 +
 ====
 # rclone purge sgdemo:test01 --progress
-Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
-Checks:                46 / 46, 100%
-Deleted:               23 (files), 1 (dirs)
-Elapsed time:        10.2s
+
+   Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+   Checks:                46 / 46, 100%
+   Deleted:               23 (files), 1 (dirs)
+   Elapsed time:        10.2s
 
 # rclone ls sgdemo:test01
-2023/04/14 09:40:51 Failed to ls: directory not found
+
+   2023/04/14 09:40:51 Failed to ls: directory not found
 ====
