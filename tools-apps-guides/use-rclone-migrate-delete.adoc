@@ -297,7 +297,7 @@ To install rclone on a workstation or server, download it from https://rclone.or
 `rclone mkdir remote:bucket`
 +
 ====
-rclone mkdir sgdemo:test01
+# rclone mkdir sgdemo:test01
 ====
 
 * *List all buckets:*  
@@ -305,7 +305,7 @@ rclone mkdir sgdemo:test01
 `rclone lsd remote:`
 +  
 ====
-rclone lsd sgdemo:
+# rclone lsd sgdemo:
 ====
 
 * *List objects in a specific bucket:*  
