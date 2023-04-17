@@ -5,8 +5,10 @@ keywords: node clone, clone, clone performance, performance
 summary: 'Node clone performance and best practices.'
 ---
 = Node Clone
+
 :icons: font
 :imagesdir: ../media/
+_Aron Klein_
 
 [.lead]
 Node clone considerations and performance. 
