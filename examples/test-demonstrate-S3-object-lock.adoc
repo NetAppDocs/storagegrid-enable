@@ -7,8 +7,10 @@ implementation of object lock is Cohasset assessed to help meet regulatory requi
 legal hold and compliance mode for object retention, and default bucket retention policies.'
 ---
 = Test and demonstrate S3 object lock on StorageGRID
+
 :icons: font
 :imagesdir: ../media/
+_Aron Klein_
 
 [.lead]
 Object Lock provides a WORM model to prevent objects from being deleted or overwritten. StorageGRID

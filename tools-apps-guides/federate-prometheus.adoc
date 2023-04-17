@@ -8,7 +8,7 @@ summary: 'This technical report provides detailed instructions for configuring N
 
 :icons: font
 :imagesdir: ../media/
-
+_Aron Klein_
 
 [.lead]
 This technical report provides detailed instructions for configuring NetApp StorageGRID 11.6 with external Prometheus and Grafana services.

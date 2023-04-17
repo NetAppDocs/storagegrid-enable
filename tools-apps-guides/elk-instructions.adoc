@@ -8,6 +8,7 @@ summary: With StorageGRID 11.6 syslog forward feature, you can configure a exter
 
 :icons: font
 :imagesdir: ../media/
+_Angela Cheng_
 
 [.lead]
 With the StorageGRID 11.6 syslog forward feature, you can configure an external syslog server to collect and analyze StorageGRID log messages.  ELK (Elasticsearch, Logstash, Kibana) has become one of the most popular log analytics solutions.  Watch the https://www.netapp.tv/details/29396[StorageGRID log analysis using ELK video] to view a sample ELK configuration and how it can be used to identify and troubleshoot failed S3 requests.  
