@@ -7,9 +7,10 @@ summary: 'This guide provides detailed instructions for configuring NetApp Stora
 Elasticsearch.'
 ---
 = Configure StorageGRID search integration service
+
 :icons: font
 :imagesdir: ../media/
-
+_Angela Cheng_
 
 [.lead]
 This guide provides detailed instructions for configuring NetApp StorageGRID

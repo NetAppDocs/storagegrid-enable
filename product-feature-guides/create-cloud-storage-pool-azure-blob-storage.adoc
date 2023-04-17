@@ -5,8 +5,10 @@ keywords: cloud storage pool, azure, microsoft azure, azure blob storage
 summary: 'You can use a Cloud Storage Pool if you want to move StorageGRID objects to an external Azure Container.'
 ---
 = Create Cloud Storage Pool for Azure Blob Storage
+
 :icons: font
 :imagesdir: ../media/
+_Jonathan Wong_
 
 [.lead]
 You can use a Cloud Storage Pool if you want to move StorageGRID objects to an external Azure container.

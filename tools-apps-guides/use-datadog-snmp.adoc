@@ -8,6 +8,7 @@ summary: Configure Datadog HQ to collect StorageGRID snmp metrics and traps.
 
 :icons: font
 :imagesdir: ../media/
+_Aron Klein_
 
 [.lead]
 Configure Datadog to collect StorageGRID snmp metrics and traps.
