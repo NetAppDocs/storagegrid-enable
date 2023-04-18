@@ -101,6 +101,10 @@ homepage:
         url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/NetApp-StorageGRID-earns-Common-Criteria-security-certification/ba-p/437143
       - title: Is StorageGRID cozy with COSI yet?
         url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/Is-StorageGRID-cozy-with-COSI-yet/ba-p/432440
+      - title: NetApp StorageGRID for service providers
+        url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/NetApp-StorageGRID-for-service-providers/ba-p/438658
+      - title: NetApp Cloud Insights adds StorageGRID gallery dashboards
+        url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/NetApp-Cloud-Insights-adds-StorageGRID-gallery-dashboards/ba-p/438882
     - title: Demos & tutorials
       links:
       - title: StorageGRID video library
