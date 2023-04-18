@@ -9,13 +9,11 @@ sidebar:
   entries:
     - title: How to enable StorageGRID
       url: /index.html
-    - title: Blog posts
-      url: /blogs.html
     - section: third-party
     - section: product-feature-guides
     - section: tools-apps-guides
     - section: examples
-    - title: Blogs
+    - title: Blog posts
       url: /blogs.html
     - title: StorageGRID documentation
       url: /storagegrid-documentation.html
