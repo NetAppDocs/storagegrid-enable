@@ -9,21 +9,17 @@ sidebar:
   entries:
     - title: How to enable StorageGRID
       url: /index.html
-    - title: What's new
-      url: /whats-new.html
     - section: third-party
     - section: product-feature-guides
     - section: tools-apps-guides
     - section: examples
+    - title: Blog posts
+      url: /blogs.html
     - title: StorageGRID documentation
       url: /storagegrid-documentation.html
 
 homepage:
   tiles:
-    - title: Get started
-      links:
-      - title: What's new
-        url: /whats-new.html
     - title: Validated third-party solutions
       links:
       - title: Overview
@@ -52,7 +48,6 @@ homepage:
         url: "/product-feature-guides/node-clone.html"
       - title: How to use port remap
         url: "/product-feature-guides/port-remap.html"
-
     - title: Tool and application guides
       links:
       - title: Use Cloudera Hadoop S3A connector
@@ -77,6 +72,10 @@ homepage:
         url: "/examples/test-demonstrate-S3-object-lock.html"        
       - title: Bucket and Group Policy examples
         url: "/examples/bucket-policy-examples.html"
+    - title: Blog posts
+      links:
+      - title: StorageGRID Blogs
+        url: /blogs.html        
     - title: Demos & tutorials
       links:
       - title: StorageGRID video library

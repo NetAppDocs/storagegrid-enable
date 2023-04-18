@@ -300,6 +300,7 @@ To install rclone on a workstation or server, download it from https://rclone.or
 ====
 # rclone mkdir sgdemo:test01
 ====
+NOTE: Use --no-check-certificate if you need to ignore SSL certificates.
 
 * *List all buckets:*  
 +
