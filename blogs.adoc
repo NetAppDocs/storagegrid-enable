@@ -11,6 +11,7 @@ summary: 'You can find some NetApp StorageGRID blogs here.'
 [.lead]
 You can find some great NetApp StorageGRID blogs here:
 
+*  https://community.netapp.com/t5/Tech-ONTAP-Blogs/StorageGRID-and-ONTAP-S3-support-Differences-similarities-and-integration/ba-p/439706[StorageGRID and ONTAP S3 support: Differences, similarities, and integration]
 *  https://community.netapp.com/t5/Tech-ONTAP-Blogs/How-to-back-up-Epic-Systems-EHR-databases-with-one-command-in-a-3-2-1-compliant/ba-p/442426[How to back up Epic Systems EHR databases with one command in a 3:2:1-compliant architecture^]
 *  https://community.netapp.com/t5/Tech-ONTAP-Blogs/Take-these-Metrics-and-Graph-it/ba-p/437919[Take these Metrics and Graph it^]
 *  https://community.netapp.com/t5/Tech-ONTAP-Blogs/Revisiting-the-Match-Made-in-Heaven-are-StorageGRID-and-FabricPool-still-in/ba-p/433608[Revisiting the “Match Made in Heaven”: are StorageGRID and FabricPool still in their honeymoon?^]
