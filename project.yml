@@ -9,8 +9,8 @@ sidebar:
   entries:
     - title: How to enable StorageGRID
       url: /index.html
-    - title: What's new
-      url: /whats-new.html
+    - title: Blog posts
+      url: /blogs.html
     - section: third-party
     - section: product-feature-guides
     - section: tools-apps-guides
@@ -22,10 +22,6 @@ sidebar:
 
 homepage:
   tiles:
-    - title: Get started
-      links:
-      - title: What's new
-        url: /whats-new.html
     - title: Validated third-party solutions
       links:
       - title: Overview
@@ -54,7 +50,6 @@ homepage:
         url: "/product-feature-guides/node-clone.html"
       - title: How to use port remap
         url: "/product-feature-guides/port-remap.html"
-
     - title: Tool and application guides
       links:
       - title: Use Cloudera Hadoop S3A connector
@@ -79,32 +74,10 @@ homepage:
         url: "/examples/test-demonstrate-S3-object-lock.html"        
       - title: Bucket and Group Policy examples
         url: "/examples/bucket-policy-examples.html"
-    - title: Blogs
+    - title: Blog posts
       links:
-      - title: StorageGRID and ONTAP S3 support - Differences, similarities, and integration
-        url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/StorageGRID-and-ONTAP-S3-support-Differences-similarities-and-integration/ba-p/439706
-      - title: How to back up Epic Systems EHR databases with one command in a 3:2:1-compliant architecture
-        url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/How-to-back-up-Epic-Systems-EHR-databases-with-one-command-in-a-3-2-1-compliant/ba-p/442426
-      - title: Take these Metrics and Graph it
-        url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/Take-these-Metrics-and-Graph-it/ba-p/437919
-      - title: Revisiting the “Match Made in Heaven" are StorageGRID and FabricPool still in their honeymoon?
-        url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/Revisiting-the-Match-Made-in-Heaven-are-StorageGRID-and-FabricPool-still-in/ba-p/433608
-      - title: Storing and managing the on-premises backup and replication data
-        url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/StorageGRID-storing-and-managing-the-on-premises-backup-and-replication-data/ba-p/435322
-      - title: Integrating StorageGRID with the open-source ELK stack to enhance customer experience
-        url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/Integrating-StorageGRID-with-the-open-source-ELK-stack-to-enhance-customer/ba-p/437420
-      - title: Enabling StorageGRID AutoSupport and integrating with Active IQ
-        url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/Enabling-StorageGRID-AutoSupport-and-integrating-with-Active-IQ/ba-p/171339
-      - title: Mountpoint for Amazon S3 alpha release with StorageGRID
-        url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/Mountpoint-for-Amazon-S3-alpha-release-with-StorageGRID/ba-p/442993
-      - title: NetApp StorageGRID earns Common Criteria security certification
-        url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/NetApp-StorageGRID-earns-Common-Criteria-security-certification/ba-p/437143
-      - title: Is StorageGRID cozy with COSI yet?
-        url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/Is-StorageGRID-cozy-with-COSI-yet/ba-p/432440
-      - title: NetApp StorageGRID for service providers
-        url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/NetApp-StorageGRID-for-service-providers/ba-p/438658
-      - title: NetApp Cloud Insights adds StorageGRID gallery dashboards
-        url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/NetApp-Cloud-Insights-adds-StorageGRID-gallery-dashboards/ba-p/438882
+      - title: StorageGRID Blogs
+        url: /blogs.html        
     - title: Demos & tutorials
       links:
       - title: StorageGRID video library
