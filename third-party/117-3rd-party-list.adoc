@@ -1,0 +1,81 @@
+---
+permalink: third-party/117-3rd-party-list.html
+sidebar: sidebar
+keywords: 11.7, third-party applications, storagegrid, ISV
+summary: 'Third-Party solutions validated for StorageGRID 11.7'
+---
+= StorageGRID 11.7 validated third-party solutions
+
+
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+
+The following third-party solutions have been validated for use with StorageGRID 11.6. +
+If the solution you are looking for is not listed, please contact your NetApp account representative.
+
+== Third-party solutions validated on StorageGRID
+
+These solutions have been tested in collaboration with the respective partners. 
+
+* Actifio
+* Apache Kafka
+* Cantemo
+* Citrix Content Collaboration
+* Commvault 11
+* Ctera Portal 6
+* Dalet
+* Data Dynamics StorageX
+* DefendX
+* Diskover Data
+* Dremio
+* eMAM 
+* FujiFilm Object Archive
+* GitHub Enterprise Server
+* IBM Filenet
+* IBM Spectrum Protect Plus
+* Interica
+* Komprise
+* Microsoft SQL Server Big Data Clusters
+* Model9
+* Modzy
+* Moonwalk Universal
+* NICE
+* Nasuni
+* OpenText Documentum 16.4
+* OpenText Documentum 21.4
+* OpenText InfoArchive 16 EP7
+* OpenText Media Management 16.5 with CyanGate Cloud
+* Panzura
+* PixitMedia ngenea
+* PoINT Archival Gateway 2.0
+* PoINT Storage Manager 6.4
+* Primestream
+* Quantum StorNext 5.4.0.1
+* Reveille v10 build 220706 or above
+* Rubrik CDM
+* Signiant
+* Snowflake
+* Splunk Smartstore
+* Storage Made Easy
+* Varnish Enterprise 6.0.4
+* Veeam 11
+* Veritas Enterprise Vault 14
+* Veritas NetBackup 8.0
+* Vertica 10.x
+* Vidispine
+* Virtalica StorageFabric
+* Weka v3.10 or later
+
+
+== Third-party solutions validated on StorageGRID with object lock
+
+These solutions have been tested in collaboration with the respective partners.
+
+* Commvault 11 Feature Release 26
+* IBM Filenet
+* OpenText Documentum 21.4
+* Veeam 11
+* Veritas Enterprise Vault 14.2.2
+* Veritas NetBackup 10.1.1 and later
