@@ -64,7 +64,7 @@ These solutions have been tested in collaboration with the respective partners.
 
 
 == Third-party solutions supported on StorageGRID
-These solutions have been tested and are in use by customers.
+These solutions have been tested.
 
 * Archiware 
 * Axis Communications
