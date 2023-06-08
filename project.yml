@@ -55,7 +55,7 @@ homepage:
       - title: Use Cloudera Hadoop S3A connector
         url: "/tools-apps-guides/use-cloudera-hadoop-s3a-connector.html"   
       - title: Create a Vertica Eon Mode database with communal storage
-        url: "/tools-apps-guides/vertica-eon-mode-database-using-netapp-storageGRID.html" 
+        url: "/tools-apps-guides/vertica-eon-mode-database-using-storagegrid.html" 
       - title: Use S3cmd to test and demonstrate S3 access
         url: /tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html
       - title: Use Elasticsearch, Logstash, and Kibana for log analytics
@@ -88,6 +88,8 @@ homepage:
         url: https://www.netapp.tv/details/29396
     - title: More resources
       links:
+      - title: Legal notices
+        url: /legal-notices.html
       - title: StorageGRID support page
         url: https://mysupport.netapp.com/site/products/all/details/5d9f1107e01d9c0001ee50f6/downloads-tab
       - title: NetApp Interoperability Matrix Tool (IMT)

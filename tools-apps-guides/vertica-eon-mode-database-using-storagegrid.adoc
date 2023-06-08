@@ -1,5 +1,5 @@
 ---
-permalink: tools-apps-guides/vertica-eon-mode-database-using-netapp-storageGRID.html
+permalink: tools-apps-guides/vertica-eon-mode-database-using-storagegrid.html
 sidebar: sidebar
 keywords: Vertica Eon Mode database
 summary: 'This guide describes the procedure to create a Vertica Eon Mode database with communal storage on NetApp StorageGRID.'
