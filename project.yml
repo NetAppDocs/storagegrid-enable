@@ -1,11 +1,11 @@
 settings:
   name: "How to enable StorageGRID in your environment"
   internal:
-    pdf_enabled: true
-  prod:
     pdf_enabled: false
+    termcheck_enabled: false
+  prod:
+    pdf_enabled: true
     harmony_enabled: true
-  search: storagegrid-116
 sidebar:
   entries:
     - title: How to enable StorageGRID
@@ -18,99 +18,4 @@ sidebar:
       url: /blogs.html
     - title: StorageGRID documentation
       url: /storagegrid-documentation.html
-
-homepage:
-  tiles:
-    - title: Validated third-party solutions
-      links:
-      - title: Overview
-        url: /third-party/index.html
-      - title: StorageGRID 11.7
-        url: /third-party/117-3rd-party-list.html
-      - title: StorageGRID 11.6
-        url: /third-party/116-3rd-party-list.html
-      - title: StorageGRID 11.5 
-        url: "/third-party/115-3rd-party-list.html"
-      - title: StorageGRID 11.4 
-        url: "/third-party/114-3rd-party-list.html"
-      - title: StorageGRID 11.3 
-        url: "/third-party/113-3rd-party-list.html"
-      - title: StorageGRID 11.2 
-        url: "/third-party/112-3rd-party-list.html"
-    - title: Product feature guides
-      links:
-      - title: Create Cloud Storage Pool for AWS or Google
-        url: /product-feature-guides/create-cloud-storage-pool-aws-google-cloud.html
-      - title: Create Cloud Storage Pool for Azure Blob storage
-        url: "/product-feature-guides/create-cloud-storage-pool-azure-blob-storage.html"
-      - title: Use a Cloud Storage Pool for backup
-        url: "/product-feature-guides/use-a-cloud-storage-pool-for-backup.html" 
-      - title: Configure search integration service
-        url: "/product-feature-guides/storagegrid-search-integration-service.html"
-      - title: Node clone considerations and performance
-        url: "/product-feature-guides/node-clone.html"
-      - title: How to use port remap
-        url: "/product-feature-guides/port-remap.html"
-    - title: Tool and application guides
-      links:
-      - title: Use Cloudera Hadoop S3A connector
-        url: "/tools-apps-guides/use-cloudera-hadoop-s3a-connector.html"   
-      - title: Create a Vertica Eon Mode database with communal storage
-        url: "/tools-apps-guides/vertica-eon-mode-database-using-netapp-storageGRID.html" 
-      - title: Use S3cmd to test and demonstrate S3 access
-        url: /tools-apps-guides/use-S3cmd-test-demonstrate-S3-access.html
-      - title: Use Elasticsearch, Logstash, and Kibana for log analytics
-        url: "/tools-apps-guides/elk-instructions.html"  
-      - title: Use Prometheus and Grafana to extend your metrics retention
-        url: "/tools-apps-guides/federate-prometheus.html"  
-      - title: Configure Datadog to collect StorageGRID snmp metrics and traps
-        url: "/tools-apps-guides/use-datadog-snmp.html"  
-      - title: Use rclone to migrate, PUT, and DELETE objects on StorageGRID
-        url: "/tools-apps-guides/use-rclone-migrate-delete.html"  
-    - title: Procedures and API examples
-      links:
-      - title: Test and demonstrate S3 encryption
-        url: "/examples/test-demonstrate-S3-encryption.html"
-      - title: Test and demonstrate S3 Object Lock
-        url: "/examples/test-demonstrate-S3-object-lock.html"        
-      - title: Bucket and Group Policy examples
-        url: "/examples/bucket-policy-examples.html"
-    - title: Blog posts
-      links:
-      - title: StorageGRID Blogs
-        url: /blogs.html        
-    - title: Demos & tutorials
-      links:
-      - title: StorageGRID video library
-        url: https://www.youtube.com/playlist?list=PLdXI3bZJEw7nh2wGRA65iulXhtXwLiqrY
-      - title: NetApp learning services
-        url: https://www.netapp.com/support-and-training/netapp-university/
-      - title: StorageGRID log analysis using ELK stack | NetApp TV
-        url: https://www.netapp.tv/details/29396
-    - title: More resources
-      links:
-      - title: StorageGRID support page
-        url: https://mysupport.netapp.com/site/products/all/details/5d9f1107e01d9c0001ee50f6/downloads-tab
-      - title: NetApp Interoperability Matrix Tool (IMT)
-        url: https://mysupport.netapp.com/matrix
-      - title: StorageGRID knowledge base
-        url: https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID
-      - title: NetApp blog
-        url: https://netapp.com/blog/
-      - title: NetApp community
-        url: https://community.netapp.com/t5/Object-Storage/bd-p/object-storage
-    - title: StorageGRID documentation
-      links:
-      - title: StorageGRID 11.7
-        url: https://docs.netapp.com/us-en/storagegrid-117/index.html     
-      - title: StorageGRID 11.6
-        url: https://docs.netapp.com/us-en/storagegrid-116/index.html     
-      - title: StorageGRID 11.5
-        url: https://docs.netapp.com/sgws-115/index.jsp
-      - title: StorageGRID 11.4
-        url: https://docs.netapp.com/sgws-114/index.jsp
-      - title: StorageGRID 11.3
-        url: https://docs.netapp.com/sgws-113/index.jsp
-      - title: StorageGRID 11.2
-        url: https://docs.netapp.com/sgws-112/index.jsp
-
+      
