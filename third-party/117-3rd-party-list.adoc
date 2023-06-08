@@ -21,6 +21,7 @@ These solutions have been tested in collaboration with the respective partners.
 
 * Actifio
 * Apache Kafka
+* Bridgestor
 * Cantemo
 * Citrix Content Collaboration
 * Commvault 11
@@ -67,7 +68,7 @@ These solutions have been tested in collaboration with the respective partners.
 * Vidispine
 * Virtalica StorageFabric
 * Weka v3.10 or later
-
+ 
 
 == Third-party solutions validated on StorageGRID with object lock
 
@@ -79,3 +80,30 @@ These solutions have been tested in collaboration with the respective partners.
 * Veeam 11
 * Veritas Enterprise Vault 14.2.2
 * Veritas NetBackup 10.1.1 and later
+
+
+== Third-party solutions supported on StorageGRID
+These solutions have been tested.
+
+* Archiware 
+* Axis Communications
+* Congruity360 
+* DataFrameworks 
+* EcoDigital DIVA platform
+* Encoding.com
+* FujiFilm Object Archive
+* GE Centricity Enterprise Archive
+* Hyland Acuo
+* IBM Aspera
+* Milestone Systems
+* OnSSI
+* Reach Engine	
+* SilverTrak
+* SoftNAS	
+* QStar
+* Velasea
+
+
+
+
+ 

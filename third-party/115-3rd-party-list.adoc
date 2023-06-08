@@ -20,6 +20,7 @@ If the solution you are looking for is not listed, please contact your NetApp ac
 These solutions have been tested in collaboration with the respective partners. 
 
 * Actifio
+* Bridgestor
 * Cantemo
 * Citrix Content Collaboration
 * Commvault 11
@@ -60,3 +61,25 @@ These solutions have been tested in collaboration with the respective partners.
 
 * OpenText Documentum 21.4
 * Veeam 11
+
+
+== Third-party solutions supported on StorageGRID
+These solutions have been tested.
+
+* Archiware 
+* Axis Communications
+* Congruity360 
+* DataFrameworks 
+* EcoDigital DIVA platform
+* Encoding.com
+* FujiFilm Object Archive
+* GE Centricity Enterprise Archive
+* Hyland Acuo
+* IBM Aspera
+* Milestone Systems
+* OnSSI
+* Reach Engine	
+* SilverTrak
+* SoftNAS	
+* QStar
+* Velasea
