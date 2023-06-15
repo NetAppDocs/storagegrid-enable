@@ -16,7 +16,7 @@ Here are examples of bucket policies and group policies(IAM Policies).
 == Group Policies (IAM)
 
 === Home Directory style bucket access
-This policy will only allow users to access objects in the bucket named the users username.
+This group policy will only allow users to access objects in the bucket named the users username.
 
 [source,json]
 ----
@@ -44,7 +44,7 @@ This policy will only allow users to access objects in the bucket named the user
 ----
 
 === Deny object lock bucket creation
-This policy will restrict users from creating a bucket with object lock enabled on the bucket.
+This group policy will restrict users from creating a bucket with object lock enabled on the bucket.
 [NOTE]
 ====
 This policy is not enforced in the StorageGRID UI, it is only enforced by S3 API.
@@ -71,6 +71,87 @@ This policy is not enforced in the StorageGRID UI, it is only enforced by S3 API
 }
 ----
 
+=== Object lock retention limit
+This Bucket policy will restrict Object-Lock retention duration to 10 days or less 
+
+[source,json]
+----
+{
+ "Version":"2012-10-17",
+ "Id":"CustSetRetentionLimits",
+ "Statement": [
+   {
+    "Sid":"CustSetRetentionPeriod",
+    "Effect":"Deny",
+    "Principal":"*",
+    "Action": [
+      "s3:PutObjectRetention"
+    ],
+    "Resource":"arn:aws:s3:::testlock-01/*",
+    "Condition": {
+      "NumericGreaterThan": {
+        "s3:object-lock-remaining-retention-days":"10"
+      }
+    }
+   }
+  ]
+}
+----
+
+=== Restrict users from deleting objects by versionID
+This group policy will restrict users from deleting versioned objects by versionID
+
+[source,json]
+----
+{
+    "Statement": [
+        {
+            "Action": [
+                "s3:DeleteObjectVersion"
+            ],
+            "Effect": "Deny",
+            "Resource": "arn:aws:s3:::*"
+        },
+        {
+            "Action": "s3:*",
+            "Effect": "Allow",
+            "Resource": "arn:aws:s3:::*"
+        }
+    ]
+}
+----
+
+This bucket policy will restrict a user(identified by userID "56622399308951294926") from deleting versioned objects by versionID
+
+[source,json]
+----
+{
+  "Statement": [
+    {
+      "Action": [
+        "s3:DeleteObjectVersion"
+      ],
+      "Effect": "Deny",
+      "Resource": "arn:aws:s3:::verdeny/*",
+      "Principal": {
+        "AWS": [
+          "56622399308951294926"
+        ]
+      }
+    },
+    {
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::verdeny/*",
+      "Principal": {
+        "AWS": [
+          "56622399308951294926"
+        ]
+      }
+    }
+  ]
+}
+----
 === Restrict bucket to single user with read-only access
 This policy allows a single user to have read-only access to a bucket and explicitly denys access to all other users. Grouping the Deny statements at the top of the policy is a good practice for faster evaluation.
 [source,json]
