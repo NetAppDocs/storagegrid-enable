@@ -62,7 +62,7 @@ These solutions have been tested in collaboration with the respective partners.
 * Splunk Smartstore
 * Storage Made Easy
 * Varnish Enterprise 6.0.4
-* Veeam 11
+* Veeam 12
 * Veritas Enterprise Vault 14
 * Veritas NetBackup 8.0
 * Vertica 10.x
@@ -78,7 +78,7 @@ These solutions have been tested in collaboration with the respective partners.
 * Commvault 11 Feature Release 26
 * IBM Filenet
 * OpenText Documentum 21.4
-* Veeam 11
+* Veeam 12
 * Veritas Enterprise Vault 14.2.2
 * Veritas NetBackup 10.1.1 and later
 
