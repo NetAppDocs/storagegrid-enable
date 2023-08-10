@@ -45,6 +45,7 @@ These solutions have been tested in collaboration with the respective partners.
 * Primestream
 * Quantum StorNext 5.4.0.1
 * Rubrik CDM
+* s3a
 * Signiant
 * Splunk Smartstore
 * Trino
