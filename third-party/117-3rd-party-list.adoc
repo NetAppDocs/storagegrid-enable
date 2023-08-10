@@ -20,6 +20,7 @@ If the solution you are looking for is not listed, please contact your NetApp ac
 These solutions have been tested in collaboration with the respective partners. 
 
 * Actifio
+* Alluxio
 * Apache Kafka
 * Bridgestor
 * Cantemo
@@ -57,10 +58,12 @@ These solutions have been tested in collaboration with the respective partners.
 * Quantum StorNext 5.4.0.1
 * Reveille v10 build 220706 or above
 * Rubrik CDM
+* s3a
 * Signiant
 * Snowflake
 * Splunk Smartstore
 * Storage Made Easy
+* Trino
 * Varnish Enterprise 6.0.4
 * Veeam 12
 * Veritas Enterprise Vault 14
