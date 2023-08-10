@@ -20,6 +20,7 @@ If the solution you are looking for is not listed, please contact your NetApp ac
 These solutions have been tested in collaboration with the respective partners. 
 
 * Actifio
+* Alluxio
 * Bridgestor
 * Cantemo
 * Citrix Content Collaboration
@@ -46,6 +47,7 @@ These solutions have been tested in collaboration with the respective partners.
 * Rubrik CDM
 * Signiant
 * Splunk Smartstore
+* Trino
 * Varnish Enterprise 6.0.4
 * Veeam 11
 * Veritas Enterprise Vault 11
