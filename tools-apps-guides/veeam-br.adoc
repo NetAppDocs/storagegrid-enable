@@ -144,5 +144,3 @@ With a Traffic Classification Policy, we can view metrics on the load balancer R
 image:veeam-bp/tc_1.png[Traffic Classification Policy metrics]
 
 image:veeam-bp/tc_2.png[Traffic Classification Policy metrics]
-
-Refer to the http://mysupport.netapp.com/matrix[Interoperability Matrix Tool (IMT)] on the NetApp Support site to validate that the exact product and feature versions described in this document are supported for your specific environment. The NetApp IMT defines the product components and versions that can be used to construct configurations that are supported by NetApp. Specific results depend on each customer's installation in accordance with published specifications.
