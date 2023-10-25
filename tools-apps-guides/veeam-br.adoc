@@ -21,7 +21,7 @@ Veeam and NetApp StorageGRID provide an easy-to-use solution that work together 
 
 The object workload from Veeam creates a large number of concurrent PUT, DELETE, and LIST operations of small objects. Enabling immutability will add to the number of requests to the object store for setting retention and listing versions. The process of a backup job includes writing objects for the daily change then after the new writes are complete the job will delete any objects based on the retention policy of the backup. The scheduling of backup jobs will almost always overlap. This overlap will result in a large portion of the backup window consisting of 50/50 PUT/DELETE workload on the object store. Making adjustments in Veeam to the number of concurrent operations with the task slot setting, increasing the object size by increasing the backup job block size, reducing the number of objects in the multi-object delete requests, and choosing the maximum time window for the jobs to complete will optimize the solution for performance and cost.
 
-Make sure to read the product documentation for https://www.veeam.com/documentation-guides-datasheets.html?productId=8&version=product%3A8%2F221[Veeam Backup and Replication] and https://docs.netapp.com/us-en/storagegrid-117/[StorageGRID] before you begin. Veeam provides calculators for understanding the sizing of the Veeam infrastructure and capacity requirements that should be used prior to sizing your StorageGRID solution. Please always check the Veeam-NetApp validated configurations at the Veeam Ready Program website for https://www.veeam.com/alliance-partner-technical-programs.html?alliancePartner=netapp1&page=1[Veeam Ready Object, Object Immutability, and Repository].
+Make sure to read the product documentation for https://www.veeam.com/documentation-guides-datasheets.html?productId=8&version=product%3A8%2F221[Veeam Backup and Replication^] and https://docs.netapp.com/us-en/storagegrid-117/[StorageGRID^] before you begin. Veeam provides calculators for understanding the sizing of the Veeam infrastructure and capacity requirements that should be used prior to sizing your StorageGRID solution. Please always check the Veeam-NetApp validated configurations at the Veeam Ready Program website for https://www.veeam.com/alliance-partner-technical-programs.html?alliancePartner=netapp1&page=1[Veeam Ready Object, Object Immutability, and Repository^].
 
 == Veeam configuration
 
@@ -144,3 +144,9 @@ With a Traffic Classification Policy, we can view metrics on the load balancer R
 image:veeam-bp/tc_1.png[Traffic Classification Policy metrics]
 
 image:veeam-bp/tc_2.png[Traffic Classification Policy metrics]
+
+== Where to find additional information
+To learn more about the information that is described in this document, review the following documents and/or websites:
+
+* link:https://docs.netapp.com/us-en/storagegrid-117/[NetApp StorageGRID 11.7 Product Documentation^]
+* link:https://www.veeam.com/documentation-guides-datasheets.html?productId=8&version=product%3A8%2F221[Veeam Backup and Replication^]
