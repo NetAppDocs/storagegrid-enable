@@ -444,7 +444,7 @@ For example: `vsql < vmart_queries1.sql`
 == Where to find additional information
 To learn more about the information that is described in this document, review the following documents and/or websites:
 
-* link:https://docs.netapp.com/sgws-114/index.jsp[NetApp StorageGRID 11.4 Product Documentation^]
+* link:https://docs.netapp.com/us-en/storagegrid-117/[NetApp StorageGRID 11.7 Product Documentation^]
 
 * link:https://www.netapp.com/pdf.html?item=/media/7931-ds-3613.pdf[StorageGRID data sheet^]
 
