@@ -1,0 +1,72 @@
+---
+permalink: tools-apps-guides/configure-Dremio-StorageGRID.html
+sidebar: sidebar
+keywords: Dremio, StorageGRID, lakehouse, object storage, s3
+summary: Configure Dremio data source with StorageGRID
+
+---
+= Configure Dremio data source with StorageGRID
+:icons: font
+:imagesdir: ../media/
+_Angela Cheng_
+
+[.lead]
+Dremio supports a varity of data sources, including cloud-based or on-premises object storage.  You can configure Dremio to use StorageGRID as object storage data source. 
+
+== Configure Dremio data source
+
+=== Prerequisites
+
+* A StorageGRID S3 endpoint URL, a tenant s3 access key ID, and secret access key.
+* StorageGRID configuration recommendation: disable compression (disabled by default).  +
+Dremio uses byte range GET to fetch different byte ranges from within the same object concurrently during query.  Typical size for byte-range requests is 1MB. Compressed object degrades byte-range GET performance. 
+
+=== Dremio guide
+
+https://docs.dremio.com/current/sonar/data-sources/object/s3/[Connecting to Amazon S3 - Configuring S3-Compatible Storage^].
+
+== Instruction
+. On Dremio Datasets page, click + sign to add a source, select 'Amazon S3'.
+. Enter a name for this new data source, StorageGRID S3 tenant access key ID and secret access key. 
+. Check the box 'Encrypt connection' if using https for connection to StorageGRID S3 endpoint. +
+If using self-signed CA cert for this s3 endpoint, follow Dremio guide instrution to add this CA cert into Dremio server's <JAVA_HOME>/jre/lib/security +
+*Sample screenshot*
++
+image::../media/dremio/dremio-add-source-general.png[New Source - General]
+
+. Click 'Advanced Options', check 'Enable compatibility mode'
+. Under Connection properties, click + Add Properties and add these s3a properties.
+. fs.s3a.connection.maximum default is 100.  If your s3 datasets include large Parquet files with 100 or more columns, must enter a value greater than 100.  Refer to Dremio guide for this setting. 
+
++
+[cols="2a,3a" options="header"]
+|===
+// header row
+|Name
+|Value
+
+
+|fs.s3a.endpoint 
+| _<StorageGRID S3 endpoint:port>_
+
+
+|fs.s3a.path.style.access 
+| true 
+
+|fs.s3a.connection.maximum
+| _<a value greater than 100>_
+
+
+|===
++
+*Sample screenshot*
++
+image::../media/dremio/dremio-add-source-advanced.png[New Source - Advanced Options]
+
+. Configure other Dremio options as per your organization or application requirements. 
+. Click the Save button to create this new data source.
+. Once StorageGRID data source is added successfully, a list of buckets will be displayed on the left panel. +
+*Sample screenshot*
++
+image::../media/dremio/dremio-source-added.png[New data source added]
+
