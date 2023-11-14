@@ -3,7 +3,6 @@ permalink: tools-apps-guides/configure-Dremio-StorageGRID.html
 sidebar: sidebar
 keywords: Dremio, StorageGRID, lakehouse, object storage, s3
 summary: Configure Dremio data source with StorageGRID
-
 ---
 = Configure Dremio data source with StorageGRID
 :icons: font

@@ -17,3 +17,5 @@ entries:
     url: "/tools-apps-guides/use-rclone-migrate-delete.html"  
   - title: Use Veeam Backup and Replication with StorageGRID
     url: "/tools-apps-guides/veeam-br.html"  
+  - title: Configure Dremio with StorageGRID
+    url: "/tools-apps-guides/configure-Dremio-StorageGRID.html"
