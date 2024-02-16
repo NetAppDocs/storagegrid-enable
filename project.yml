@@ -7,7 +7,6 @@ settings:
     pdf_enabled: true
     harmony_enabled: true
 
-
 sidebar:
   entries:
     - title: How to enable StorageGRID
