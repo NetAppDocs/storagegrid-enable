@@ -5,6 +5,7 @@ keywords: Dremio, StorageGRID, lakehouse, object storage, s3
 summary: Configure Dremio data source with StorageGRID
 ---
 = Configure Dremio data source with StorageGRID
+:hardbreaks:
 :icons: font
 :imagesdir: ../media/dremio/
 

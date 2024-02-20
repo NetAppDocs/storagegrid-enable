@@ -5,6 +5,7 @@ keywords: cloud storage pool, backup, ILM, CSP
 summary: 'You can create an ILM rule to move objects into a Cloud Storage Pool for backup.'
 ---
 = Use a Cloud Storage Pool for backup
+:hardbreaks:
 :icons: font
 :imagesdir: ../media/
 

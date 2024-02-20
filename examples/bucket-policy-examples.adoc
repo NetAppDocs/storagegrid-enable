@@ -5,10 +5,9 @@ keywords: iam, bucket policy, group policy, policy
 summary: 'Here are examples of bucket policies and group policies(IAM Policies).'
 ---
 = Example bucket and Group(IAM) policies
-
+:hardbreaks:
 :icons: font
 :imagesdir: ../media/
-
 
 [.lead]
 Here are examples of bucket policies and group policies(IAM Policies).
