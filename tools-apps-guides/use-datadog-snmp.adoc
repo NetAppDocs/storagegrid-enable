@@ -5,10 +5,9 @@ keywords: datadog, snmp
 summary: Configure Datadog HQ to collect StorageGRID snmp metrics and traps. 
 ---
 = Datadog SNMP configuration
-
+:hardbreaks:
 :icons: font
-:imagesdir: ../media/
-_Aron Klein_
+:imagesdir: ../media/datadog/
 
 [.lead]
 Configure Datadog to collect StorageGRID snmp metrics and traps.
@@ -96,5 +95,6 @@ network_devices:
 === Example StorageGRID SNMP configuration
 The SNMP agent in your StorageGRID system is located under the configuration tab, Monitoring column. Enable SNMP and enter the desired information. If you wish to configure traps, select the "Traps Destinations" and Create a destination for the Datadog agent host containing the trap configuration. 
 
-image::../media/datadog/sg_snmp_conf.png[StorageGRID SNMP Configuration]
+image::sg_snmp_conf.png[StorageGRID SNMP Configuration]
 
+_By Aron Klein_

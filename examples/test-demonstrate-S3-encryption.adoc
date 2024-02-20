@@ -5,10 +5,9 @@ keywords: cli, aws, S3, encryption, SSE, SSE-C, SSE-S3, api
 summary: 'StorageGRID and the S3 API offer a number of different ways to encrypt your data at rest.'
 ---
 = Test and demonstrate S3 encryption options on StorageGRID
-
+:hardbreaks:
 :icons: font
 :imagesdir: ../media/
-_Aron Klein_
 
 [.lead]
 StorageGRID and the S3 API offer a number of different ways to encrypt your data at rest. To learn more, see https://docs.netapp.com/us-en/storagegrid-116/admin/reviewing-storagegrid-encryption-methods.html[Review StorageGRID encryption methods^]. 
@@ -185,3 +184,4 @@ aws s3api head-object --bucket <bucket> --key <file> --endpoint-url https://s3.e
 aws s3api get-object --bucket <bucket>  --key <file> <file> --endpoint-url https://s3.example.com
 ----
 
+_By Aron Klein_
