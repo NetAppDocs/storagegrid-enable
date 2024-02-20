@@ -5,10 +5,8 @@ keywords: veeam,backup,veeam12,veeam11,
 summary: 'This guide focuses on the configuration of NetApp StorageGRID and partly Veeam Backup and Replication. This paper is written for storage and network administrators who are familiar with Linux systems and tasked with maintaining or implementing a NetApp StorageGRID system in combination with Veeam Backup and Replication.'
 ---
 = StorageGRID best practices for deployment with Veeam Backup and Replication
-
 :icons: font
 :imagesdir: ../media/
-_Oliver Haensel and Aron Klein_
 
 [.lead]
 This guide focuses on the configuration of NetApp StorageGRID and partly Veeam Backup and Replication. This paper is written for storage and network administrators who are familiar with Linux systems and tasked with maintaining or implementing a NetApp StorageGRID system in combination with Veeam Backup and Replication.
@@ -150,3 +148,5 @@ To learn more about the information that is described in this document, review t
 
 * link:https://docs.netapp.com/us-en/storagegrid-117/[NetApp StorageGRID 11.7 Product Documentation^]
 * link:https://www.veeam.com/documentation-guides-datasheets.html?productId=8&version=product%3A8%2F221[Veeam Backup and Replication^]
+
+_By Oliver Haensel and Aron Klein_

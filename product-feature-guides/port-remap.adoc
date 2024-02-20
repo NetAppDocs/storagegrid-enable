@@ -5,10 +5,8 @@ keywords: port remap, port redirect, port, remap, redirect
 summary: 'How to use port remap.'
 ---
 = How to use port remap
-
 :icons: font
 :imagesdir: ../media/
-_Aron Klein_
 
 [.lead]
 You may have a need to remap an incoming or outbound port for multiple reasons. You may be moving from the legacy CLB load balancer service to the current nginx service load balancer endpoint and maintain the same port to reduce the impact to clients, wish to use port 443 for client S3 on an admin node client network, or for firewall restrictions.  
@@ -289,3 +287,4 @@ NOTE: Copying the Prometheus database might take an hour or more. Some Grid Mana
 . restore the mysql database from the database dump: `mysql -u _username_ -p _password_ -A mi < /var/local/tmp/mysql-mi.sql`
 . Restart all other services `service servermanager start`
  
+ _By Aron Klein_
