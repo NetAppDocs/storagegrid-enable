@@ -5,6 +5,7 @@ keywords: whats new, third-party applications, storagegrid, Guides, cookbooks
 summary: 'Here are recent changes to this site.'
 ---
 = What's new
+:hardbreaks:
 :icons: font
 :imagesdir: ../media/
 

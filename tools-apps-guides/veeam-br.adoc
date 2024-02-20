@@ -5,10 +5,9 @@ keywords: veeam,backup,veeam12,veeam11,
 summary: 'This guide focuses on the configuration of NetApp StorageGRID and partly Veeam Backup and Replication. This paper is written for storage and network administrators who are familiar with Linux systems and tasked with maintaining or implementing a NetApp StorageGRID system in combination with Veeam Backup and Replication.'
 ---
 = StorageGRID best practices for deployment with Veeam Backup and Replication
-
+:hardbreaks:
 :icons: font
-:imagesdir: ../media/
-_Oliver Haensel and Aron Klein_
+:imagesdir: ../media/veeam-bp/
 
 [.lead]
 This guide focuses on the configuration of NetApp StorageGRID and partly Veeam Backup and Replication. This paper is written for storage and network administrators who are familiar with Linux systems and tasked with maintaining or implementing a NetApp StorageGRID system in combination with Veeam Backup and Replication.
@@ -84,39 +83,39 @@ StorageGRID supports replication and erasure coding for object level protection 
 
 Ensure Object Lock is enabled on the StorageGRID system if immutability is required. Find the option in the management UI under Configuration/S3 Object Lock.
 
-image:veeam-bp/obj_lock_en.png[Grid wide Object Lock enable]
+image::obj_lock_en.png[Grid wide Object Lock enable]
 
 When creating the bucket, select “Enable S3 Object Lock” if this bucket is to be used for immutability backups. This will automatically enable bucket versioning. Leave default retention disabled as Veeam will set object retention explicitly. Versioning and S3 Object Lock should not be selected if Veeam isn't creating immutable backups.
 
-image:veeam-bp/obj_lock_bucket.png[Enable Object Lock on the bucket]
+image::obj_lock_bucket.png[Enable Object Lock on the bucket]
 
 Once the bucket is created go to the details page of the bucket created. Select the consistency level.
 
-image:veeam-bp/bucket_consist_1.png[Bucket options]
+image::bucket_consist_1.png[Bucket options]
 
 Veeam requires strong consistency for S3 buckets. So, for multi-site deployments with Veeam accessing the data from multiple locations, select “strong-global”. If Veeam backups and restores happen at a single site only, consistency level should be set to “strong-site”. Save the changes.
 
-image:veeam-bp/bucket_consist_2.png[Bucket Consistency]
+image::bucket_consist_2.png[Bucket Consistency]
 
 StorageGRID provides an integrated load balancer service on every admin node and dedicated gateway nodes. One of the many advantages of using this load balancer is the ability to configure Traffic Classification Policies (QoS). Though these are mainly used for limiting an applications impact on other client workloads or prioritizing a workload over others, they also provide a bonus of additional metrics collection to assist in monitoring.
 
 In the configuration tab, select “Traffic Classification” and create a new policy. Name the rule and select either the bucket(s) or tenant as the type. Enter the name(s) of the bucket(s) or tenant. If QoS is required, set a limit, but for most implementations, we just want to add the monitoring benefits this provides so do not set a limit.
 
-image:veeam-bp/tc_policy.png[Create TC Policy]
+image::tc_policy.png[Create TC Policy]
 
 === Veeam
 
 Depending on the model and quantity of StorageGRID appliances it may be necessary to select and configure a limit to the number of concurrent operations on the bucket.
 
-image:veeam-bp/veeam_concur_limit.png[Veeam concurrent task limit]
+image::veeam_concur_limit.png[Veeam concurrent task limit]
 
 Follow the Veeam documentation on backup job configuration in the Veeam console to start the wizard. After adding VMs select the SOBR repository.
 
-image:veeam-bp/veeam_1.png[Backup job]
+image::veeam_1.png[Backup job]
 
 Click Advanced settings and change storage optimization settings to 4 MB or larger. Compression and deduplication shall be enabled. Change guest settings according to your requirements and configure the backup job schedule.
 
-image:veeam-bp/veeam_blk_sz.png[A screenshot of a computer Description automatically generated,width=320,height=375]
+image::veeam_blk_sz.png[A screenshot of a computer Description automatically generated,width=320,height=375]
 
 == Monitoring StorageGRID
 
@@ -125,28 +124,30 @@ To get the full picture of how Veeam and StorageGRID are performing together you
 StorageGRID provides convenient charts to monitor the operation of the system located in the Support tab Metrics page. The primary dashboards to look at will be the S3 Overview, ILM, and Traffic Classification Policy if a policy was created. In the S3 Overview dashboard you will find information on the S3 operation rates, latencies, and request responses.
 
 Looking at the S3 rates and active requests you can see how much of the load each node is handling and the overall number of requests by type.
-image:veeam-bp/s3_over_rates.png[S3 Overview Rates]
+image::s3_over_rates.png[S3 Overview Rates]
 
 The Average Duration chart shows the average time each node is taking for each request type. This is the average latency of the request and may be a good indicator that additional tuning may be required, or there is room for the StorageGRID system to take on more load.
 
-image:veeam-bp/s3_over_duration.png[S3 Overview duration]
+image::s3_over_duration.png[S3 Overview duration]
 
 In the Total Completed Requests chart, you can see the requests by type and response codes. If you see responses other than 200 (Ok) for the responses this may indicate an issue like the StorageGRID system is getting heavily loaded sending 503 (Slow Down) responses and some additional tuning may be necessary, or the time has come to expand the system for the increased load.
 
-image:veeam-bp/s3_over_requests.png[S3 Overview Requests]
+image::s3_over_requests.png[S3 Overview Requests]
 
 In the ILM Dashboard you can monitor the Delete performance of your StorageGRID system. StorageGRID uses a combination of synchronous and asynchronous deletes on each node to try and optimize the overall performance for all requests.
 
-image:veeam-bp/ilm_delete.png[ILM Deletes]
+image::ilm_delete.png[ILM Deletes]
 
 With a Traffic Classification Policy, we can view metrics on the load balancer Request throughput, rates, duration, as well as the object sizes Veeam is sending and receiving.
 
-image:veeam-bp/tc_1.png[Traffic Classification Policy metrics]
+image::tc_1.png[Traffic Classification Policy metrics]
 
-image:veeam-bp/tc_2.png[Traffic Classification Policy metrics]
+image::tc_2.png[Traffic Classification Policy metrics]
 
 == Where to find additional information
 To learn more about the information that is described in this document, review the following documents and/or websites:
 
 * link:https://docs.netapp.com/us-en/storagegrid-117/[NetApp StorageGRID 11.7 Product Documentation^]
 * link:https://www.veeam.com/documentation-guides-datasheets.html?productId=8&version=product%3A8%2F221[Veeam Backup and Replication^]
+
+_By Oliver Haensel and Aron Klein_

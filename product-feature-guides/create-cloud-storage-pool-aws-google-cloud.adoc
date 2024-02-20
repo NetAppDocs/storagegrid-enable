@@ -5,10 +5,9 @@ keywords: cloud storage pool, aws, S3, amazon web services, google cloud
 summary: 'You can use a Cloud Storage Pool if you want to move StorageGRID objects to an external S3 bucket. The external bucket can belong to Amazon S3 (AWS) or Google Cloud.'
 ---
 = Create Cloud Storage Pool for AWS or Google Cloud
-
+:hardbreaks:
 :icons: font
 :imagesdir: ../media/
-_Jonathan Wong_
 
 [.lead]
 You can use a Cloud Storage Pool if you want to move StorageGRID objects to an external S3 bucket. The external bucket can belong to Amazon S3 (AWS) or Google Cloud. 
@@ -51,3 +50,5 @@ The name you specify must exactly match the S3 bucket's name; otherwise, Cloud S
 
 .Expected result
 Confirm that a Cloud Storage Pool has been created for Amazon S3 or Google Cloud.
+
+_By Jonathan Wong_
