@@ -5,6 +5,7 @@ keywords: port remap, port redirect, port, remap, redirect
 summary: 'How to use port remap.'
 ---
 = How to use port remap
+:hardbreaks:
 :icons: font
 :imagesdir: ../media/port-remap/
 
@@ -287,4 +288,5 @@ NOTE: Copying the Prometheus database might take an hour or more. Some Grid Mana
 . restore the mysql database from the database dump: `mysql -u _username_ -p _password_ -A mi < /var/local/tmp/mysql-mi.sql`
 . Restart all other services `service servermanager start`
  
- _By Aron Klein_
+_By Aron Klein_
+
