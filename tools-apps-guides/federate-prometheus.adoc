@@ -6,7 +6,7 @@ summary: 'This technical report provides detailed instructions for configuring N
 ---
 = Use Prometheus and Grafana to extend your metrics retention
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ../media/prometheus/
 
 [.lead]
 This technical report provides detailed instructions for configuring NetApp StorageGRID 11.6 with external Prometheus and Grafana services.
@@ -28,10 +28,10 @@ In order to gain access to StorageGRIDs stored prometheus metrics you must gener
 . On the Certificates page select the "Client" tab and click on the "Add" button.
 . Provide a name for the client that will be granted access and use this certificate. Click on the box under "Permissions", in front of "Allow Prometheus" and click the Continue button.
 +
-image::../media/prometheus/cert_name.png[certificate name]
+image::cert_name.png[certificate name]
 . If you have a CA signed certificate you can select the radio button for "Upload certificate", but in our case we are going to let storageGRID generate the client certificate by selecting the radio button for "Generate Certificate". The required fields will be displayed to be filled in.  Enter the FQDN for the client server, the IP of the server, the subject, and Days valid.  Then click the "Generate" button.  
 +
-image::../media/prometheus/cert_detail.png[certificate detail]
+image::cert_detail.png[certificate detail]
 
 [NOTE]
 ====
@@ -40,7 +40,7 @@ image::../media/prometheus/cert_detail.png[certificate detail]
 
 . Download the certificate pem file, and the private key pem file.
 +
-image::../media/prometheus/cert_download.png[certificate download]
+image::cert_download.png[certificate download]
 
 [NOTE]
 ====
@@ -223,15 +223,15 @@ Aug 22 15:14:24 aj-deb-prom01 prometheus[6498]: ts=2022-08-22T19:14:24.832Z call
 ----
 . You should now be able to browse to the UI of your prometheus server http://Prometheus-server:9090 and see the UI
 +
-image::../media/prometheus/prometheus_ui.png[prometheus UI page]
+image::prometheus_ui.png[prometheus UI page]
 . Under "Status" Targets you can see the status of the StorageGRID endpoint we configured in prometheus.yml
 +
-image::../media/prometheus/prometheus_targets.png[prometheus status menu]
+image::prometheus_targets.png[prometheus status menu]
 +
-image::../media/prometheus/prometheus_target_status.png[prometheus targets page]
+image::prometheus_target_status.png[prometheus targets page]
 . On the Graph page, you can execute a test query and verify the data is successfully being scraped. for example enter "storagegrid_node_cpu_utilization_percentage" into the query bar and click the Execute button.
 +
-image::../media/prometheus/prometheus_execute.png[prometheus query execute]
+image::prometheus_execute.png[prometheus query execute]
 
 == Install and configure Grafana
 Now that prometheus is installed and working, we can move on to installing Grafana and configuring a dashboard
@@ -277,41 +277,41 @@ With Grafana and Prometheus installed and running, now its time to connect the t
 . Prometheus will be one of the top data sources to choose from. If it is not, then use the search bar to locate "Prometheus"
 . Configure the Prometheus source by entering the URL of the prometheus instance, and the scrape interval to match the Prometheus interval.  I also disabled the alerting section as I did not configure the alert manager on prometheus.
 +
-image::../media/prometheus/grafana_prometheus_conf.png[grafana prometheus configuration]
+image::grafana_prometheus_conf.png[grafana prometheus configuration]
 . With the desired settings entered, scroll down to the bottom and click on "Save & test"
 . After the configuration test is successful, click on the explore button.
 .. In the explore window you can use the same metric we tested Prometheus with "storagegrid_node_cpu_utilization_percentage", and click the "Run query" button
 +
-image::../media/prometheus/grafana_source_explore.png[grafana prometheus metric explore]
+image::grafana_source_explore.png[grafana prometheus metric explore]
 . Now that we have the data source configured, we can create a dashboard.
 .. On the left hand pane expand "Dashboards", and select "+ new Dashboard"
 .. Select "Add a new panel"
 .. Configure the new panel by selecting a metric, again I will use "storagegrid_node_cpu_utilization_percentage", Enter a title for the panel, expand "Options" at the bottom and for legend change to custom and enter "{{instance}}" to define the node names", and on the right pane under "Standard options" set "Unit" to "Misc/Percent(0-100)". Then click "Apply" to save the panel to the dashboard.
 +
-image::../media/prometheus/grafana_panel_conf.png[configure grafana panel]
+image::grafana_panel_conf.png[configure grafana panel]
 . We could continue to build out our dashboard like this for each metric we want, but luckily StorageGRID already has dashboards with panels we can copy into our custom dashboards.
 .. From the StorageGRID management interface left hand pane, select "Support", and at the bottom of the "Tools" column click on "Metrics".
 .. Within metrics, I am going to select the "Grid" link on the top of the middle column.
 +
-image::../media/prometheus/storagegrid_metrics.png[StorageGRID metrics]
+image::storagegrid_metrics.png[StorageGRID metrics]
 .. From the Grid dashboard, lets select the "Storage Used - Object Metadata" panel.  Click the little down arrow and the end of the panel title to drop down a menu.  From this menu select "Inspect" and "Panel JSON".
 +
-image::../media/prometheus/storagegrid_dashboard_insp.png[StorageGRID dashboard]
+image::storagegrid_dashboard_insp.png[StorageGRID dashboard]
 .. Copy out the JSON code and close the window.
 +
-image::../media/prometheus/storagegrid_panel_inspect.png[StorageGRID JSON]
+image::storagegrid_panel_inspect.png[StorageGRID JSON]
 .. In our new dashboard, click on the icon to add a new panel.
 +
-image::../media/prometheus/grafana_add_panel.png[grafana add panel]
+image::grafana_add_panel.png[grafana add panel]
 .. Apply the new panel without making any changes
 .. Just like with the StorageGRID panel, inspect the JSON.  Remove all JSON code and replace it with the copied code from the StorageGRID panel.
 +
-image::../media/prometheus/grafana_panel_inspect.png[grafana inspect panel]
+image::grafana_panel_inspect.png[grafana inspect panel]
 .. Edit the new panel, and on the right hand side you will see a Migration message with a "Migrate" button.  Click the button and then click the "Apply" button.
 +
-image::../media/prometheus/grafana_panel_edit_menu.png[grafana edit panel menu]
+image::grafana_panel_edit_menu.png[grafana edit panel menu]
 +
-image::../media/prometheus/grafana_panel_edit.png[grafana edit panel]
+image::grafana_panel_edit.png[grafana edit panel]
 . Once you have all of the panels in place and configured as you like. Save the dashboard by clicking the disk icon in the upper right and give your dashboard a name.
 
 === Conclusion

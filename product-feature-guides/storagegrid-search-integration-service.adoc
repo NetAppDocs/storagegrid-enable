@@ -8,7 +8,7 @@ Elasticsearch.'
 ---
 = Configure StorageGRID search integration service
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ../media/storagegrid-search-integration-service/
 
 [.lead]
 This guide provides detailed instructions for configuring NetApp StorageGRID
@@ -34,7 +34,7 @@ Audiences should be familiar with Grid Manager, Tenant Manager, and have access 
 . On the Permission page, select the Allow Platform Services option. Optionally, select other permissions, if necessary.
 +
 
-image::../media/storagegrid-search-integration-service/sg-sis-select-permissions.png[Select permissions screenshot]
+image::sg-sis-select-permissions.png[Select permissions screenshot]
 
 . Set up the tenant root user initial password or, if identify federation is enabled on the grid, select which federated group has root access permission to configure the tenant account.
 
@@ -93,24 +93,24 @@ NOTE: You must have a valid AWS console login, access key, secret access key, an
     ]
 }
 ----
-image::../media/storagegrid-search-integration-service/sg-sis-search-integration-amazon-opensearch.png[Search integration screenshot]
+image::sg-sis-search-integration-amazon-opensearch.png[Search integration screenshot]
 
 . Wait 15 to 20 minutes for the domain to become active.
 +
 
-image::../media/storagegrid-search-integration-service/sg-sis-activating-domain.png[Activating domain screenshot]
+image::sg-sis-activating-domain.png[Activating domain screenshot]
 
 . Click OpenSearch Dashboards URL to open the domain in a new tab to access the dashboard. If you get an access denied error, verify that the access policy source IP address is correctly set to your computer public IP to allow access to the domain dashboard.
 . On the dashboard welcome page, select Explore On Your Own. From the menu, go to Management -> Dev Tools
 . Under Dev Tools -> Console , enter `PUT <index>` where you use the index for storing StorageGRID object metadata. We use the index name 'sgmetadata' in the following example. Click the small triangle symbol to execute the PUT command. The expected result displays on the right panel as shown in the following example screenshot.
 +
 
-image::../media/storagegrid-search-integration-service/sg-sis-using-put-command-for-index.png[Using put command for index screenshot]
+image::sg-sis-using-put-command-for-index.png[Using put command for index screenshot]
 
 . Verify that the index is visible from Amazon OpenSearch UI under sgdomain > Indices.
 +
 
-image::../media/storagegrid-search-integration-service/sg-sis-verifying-the-index.png[Verifying-the-index screenshot]
+image::sg-sis-verifying-the-index.png[Verifying-the-index screenshot]
 
 == Platform services endpoint configuration
 
@@ -128,18 +128,18 @@ To configure the platform services endpoints, follow these steps:
 In this example, URN becomes `arn:aws:es:us-east-1:211234567890:domain/sgdemo /sgmedata/_doc`.
 +
 
-image::../media/storagegrid-search-integration-service/sg-sis-enter-end-points-details.png[end-points-details screenshot]
+image::sg-sis-enter-end-points-details.png[end-points-details screenshot]
 
 
 . To access the Amazon OpenSearch sgdomain, choose Access Key as the authentication type and then enter the Amazon S3 access key and secret key. To go the next page, click Continue.
 +
 
-image::../media/storagegrid-search-integration-service/sg-sis-authenticate-connections-to-endpoints.png[authenticate connections to endpoints screenshot]
+image::sg-sis-authenticate-connections-to-endpoints.png[authenticate connections to endpoints screenshot]
 
 . To verify the endpoint, select Use Operating System CA Certificate and Test and Create Endpoint. If verification is successful, an endpoint screen similar to the following figure displays. If verification fails, verify that the URN includes `/<index>/_doc` at the end of the path and the AWS access key and secret key are correct.
 +
 
-image::../media/storagegrid-search-integration-service/sg-sis-platform-service-endpoints.png[platform service endpoints screenshot]
+image::sg-sis-platform-service-endpoints.png[platform service endpoints screenshot]
 
 == Search integration services with on premises Elasticsearch
 === On premises Elasticsearch setup
@@ -177,7 +177,7 @@ This procedure is for a quick setup of on premises Elasticsearch and Kibana usin
 TIP: Note down the user name/password and token created by Elasticsearch, you need these to start the Kibana UI and StorageGRID platform endpoint authentication.
 +
 
-image::../media/storagegrid-search-integration-service/sg-sis-search-integration-elasticsearch.png[search integration elasticsearch screenshot]
+image::sg-sis-search-integration-elasticsearch.png[search integration elasticsearch screenshot]
 +
 
 . After the Kibana docker container has started, the URL link `\https://0.0.0.0:5601` displays in the console. Replace 0.0.0.0 with the server IP address in the URL.
@@ -187,7 +187,7 @@ image::../media/storagegrid-search-integration-service/sg-sis-search-integration
 . On the Dev Tools Console screen, enter `PUT <index>` where you use this index for storing StorageGRID object metadata. We use the index name `sgmetadata` in this example. Click the small triangle symbol to execute the PUT command. The expected result displays on the right panel as shown in the following example screenshot.
 +
 
-image::../media/storagegrid-search-integration-service/sg-sis-execute-put-command.png[Execute put command screenshot]
+image::sg-sis-execute-put-command.png[Execute put command screenshot]
 
 == Platform services endpoint configuration
 
@@ -200,17 +200,17 @@ To configure endpoints for platform services, follow these steps:
 * URN: `urn:<something>:es:::<some-unique-text>/<index-name>/_doc` where the index-name is the name you used on the Kibana console.
 Example: `urn:local:es:::sgmd/sgmetadata/_doc`
 +
-image::../media/storagegrid-search-integration-service/sg-sis-platform-service-endpoint-details.png[Platform service endpoint details screenshot]
+image::sg-sis-platform-service-endpoint-details.png[Platform service endpoint details screenshot]
 
 . Select Basic HTTP as the authentication type, enter the user name `elastic` and the password generated by the Elasticsearch installation process. To go to the next page, click Continue.
 +
 
-image::../media/storagegrid-search-integration-service/sg-sis-platform-service-endpoint-authentication-type.png[Platform service endpoint authentication screenshot]
+image::sg-sis-platform-service-endpoint-authentication-type.png[Platform service endpoint authentication screenshot]
 
 . Select Do Not Verify Certificate and Test and Create Endpoint to verify the endpoint. If verification is successful, an endpoint screen similar to the following screenshot displays. If the verification fails, verify the URN, URI, and username/password entries are correct.
 +
 
-image::../media/storagegrid-search-integration-service/sg-sis-successfully-verified-endpoint.png[Successfully verified endpoint]
+image::sg-sis-successfully-verified-endpoint.png[Successfully verified endpoint]
 
 == Bucket search integration service configuration
 
@@ -248,7 +248,7 @@ In this example, we used no prefix, meaning that the metadata for every object i
 . Use S3 Browser to connect to StorageGRID with the tenant access/secret key, upload test objects to `sgmetadata-test` bucket and add tags or custom metadata to objects.
 +
 
-image::../media/storagegrid-search-integration-service/sg-sis-upload-test-objects.png[Upload test objects screenshot]
+image::sg-sis-upload-test-objects.png[Upload test objects screenshot]
 +
 
 . Use the Kibana UI to verify that the object metadata was loaded to sgmetadata’s index.
@@ -269,7 +269,7 @@ GET sgmetadata/_search
 ----
 +
 
-image::../media/storagegrid-search-integration-service/sg-sis-query1-sample-result.png[Query 1 sample result screenshot]
+image::sg-sis-query1-sample-result.png[Query 1 sample result screenshot]
 +
 
 The query 2 sample result in the following screenshot shows two records with tag type jpg.
@@ -288,7 +288,7 @@ GET sgmetadata/_search
 ----
 +
 
-image::../media/storagegrid-search-integration-service/sg-sis-query-two-sample.png[Query 2 sample]
+image::sg-sis-query-two-sample.png[Query 2 sample]
 
 == Where to find additional information
 To learn more about the information that is described in this document, review the following documents and/or websites:
