@@ -6,7 +6,7 @@ summary: 'How to use port remap.'
 ---
 = How to use port remap
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ../media/port-remap/
 
 [.lead]
 You may have a need to remap an incoming or outbound port for multiple reasons. You may be moving from the legacy CLB load balancer service to the current nginx service load balancer endpoint and maintain the same port to reduce the impact to clients, wish to use port 443 for client S3 on an admin node client network, or for firewall restrictions.  
@@ -54,27 +54,27 @@ To deploy the replacement Gateway Node, follow these steps:
 
 . After the VM has been deployed, select it from the list of VMs, select the Configure tab vApp Options.
 +
-image:port-remap/vapp_options.png[vApp options tab]
+image:vapp_options.png[vApp options tab]
 
 . Scroll down to the Properties section and select the PORT_REMAP_INBOUND property
 +
-image:port-remap/remap_inbound.png[port remap inbound]
+image:remap_inbound.png[port remap inbound]
 
 . Scroll to the top of the Properties list and click Edit
 +
-image:port-remap/edit_button.png[edit button]
+image:edit_button.png[edit button]
 
 . Select the Type tab, confirm that the User Configurable checkbox is selected, and then click Save.
 +
-image:port-remap/type_tab.png[type tab]
+image:type_tab.png[type tab]
 
 . At the top of the Properties list, with the “PORT_REMAP_INBOUND” property still selected, click Set Value.
 +
-image:port-remap/edit_button.png[set value button]
+image:edit_button.png[set value button]
 
 . In the Property Value field, enter the network (grid, admin, or client), TCP, the original port (8082), and the new port (10443) with “/” in between each value as depicted following.
 +
-image:port-remap/value.png[property value]
+image:value.png[property value]
 
 . If you are using multiple networks, use a comma (,) to separate the network strings, for example, grid/tcp/8082/10443,admin/tcp/8082/10443,client/tcp/8082/10443
 
@@ -84,11 +84,11 @@ To recover the Gateway Node, follow these steps:
 
 . Navigate to the Maintenance/Recovery section of the Grid Management UI.
 +
-image:port-remap/maint_menu.png[maintenance menu]
+image:maint_menu.png[maintenance menu]
 
 . Power on the VM node and wait for the node to appear in the Maintenance/Recovery Pending Nodes section of the Grid Management UI.
 +
-image:port-remap/recover_pend.png[recovery pending]
+image:recover_pend.png[recovery pending]
 +
 
 [NOTE]
@@ -216,13 +216,13 @@ Initiating a reboot to trigger the StorageGRID Webscale appliance installation w
 . After some time has passed the appliance will reboot and you will be able to access the node PGE UI.
 . Browse to the Configure Networking 
 +
-image:port-remap/remap_link.png[Select remap ports]
+image:remap_link.png[Select remap ports]
 +
 . Select the desired network, protocol, direction and ports then click the Add Rule button. 
 +
 NOTE: Remap of inbound port 443 on on the GRID network will break install, and expansion procedures. It is not recommended to remap port 443 on the GRID network. 
 +
-image:port-remap/app_remap.png[add port remap to networks]
+app_remap.png[add port remap to networks]
 
 . One the desired port remaps have been added, you can return to the home tab and click on the Start Installation button. 
 
