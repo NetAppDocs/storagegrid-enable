@@ -1,5 +1,5 @@
 ---
-permalink: tools-apps-guides/configure-Dremio-StorageGRID.html
+permalink: tools-apps-guides/configure-dremio-storagegrid.html
 sidebar: sidebar
 keywords: Dremio, StorageGRID, lakehouse, object storage, s3
 summary: Configure Dremio data source with StorageGRID
@@ -7,7 +7,7 @@ summary: Configure Dremio data source with StorageGRID
 = Configure Dremio data source with StorageGRID
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/dremio/
+:imagesdir: ../media/
 
 [.lead]
 Dremio supports a varity of data sources, including cloud-based or on-premises object storage.  You can configure Dremio to use StorageGRID as object storage data source. 
@@ -31,7 +31,7 @@ https://docs.dremio.com/current/sonar/data-sources/object/s3/[Connecting to Amaz
 If using self-signed CA cert for this s3 endpoint, follow Dremio guide instrution to add this CA cert into Dremio server's <JAVA_HOME>/jre/lib/security +
 *Sample screenshot*
 +
-image::dremio-add-source-general.png[New Source - General]
+image::dremio/dremio-add-source-general.png[New Source - General]
 
 . Click 'Advanced Options', check 'Enable compatibility mode'
 . Under Connection properties, click + Add Properties and add these s3a properties.
@@ -60,13 +60,13 @@ image::dremio-add-source-general.png[New Source - General]
 +
 *Sample screenshot*
 +
-image::dremio-add-source-advanced.png[New Source - Advanced Options]
+image::dremio/dremio-add-source-advanced.png[New Source - Advanced Options]
 
 . Configure other Dremio options as per your organization or application requirements. 
 . Click the Save button to create this new data source.
 . Once StorageGRID data source is added successfully, a list of buckets will be displayed on the left panel. +
 *Sample screenshot*
 +
-image::dremio-source-added.png[New data source added]
+image::dremio/dremio-source-added.png[New data source added]
 
 _By Angela Cheng_
