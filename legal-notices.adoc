@@ -5,6 +5,7 @@ keywords:
 summary:
 ---
 = Legal notices
+:hardbreaks:
 :icons: font
 :imagesdir: ../media/
 

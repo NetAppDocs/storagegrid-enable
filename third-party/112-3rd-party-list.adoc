@@ -5,13 +5,11 @@ keywords: 11.2, third-party applications, storagegrid, ISV
 summary: 'Third-Party solutions validated for StorageGRID 11.2'
 ---
 = StorageGRID 11.2 validated third-party solutions
-
-
+:hardbreaks:
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-
 The following third-party solutions have been validated for use with StorageGRID 11.2. + 
 If the solution you are looking for is not listed, please contact your NetApp account representative.
 

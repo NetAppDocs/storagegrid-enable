@@ -18,4 +18,4 @@ entries:
   - title: Use Veeam Backup and Replication with StorageGRID
     url: "/tools-apps-guides/veeam-br.html"  
   - title: Configure Dremio with StorageGRID
-    url: "/tools-apps-guides/configure-Dremio-StorageGRID.html"
+    url: "/tools-apps-guides/configure-dremio-storagegrid.html"

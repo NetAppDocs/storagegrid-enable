@@ -5,10 +5,9 @@ keywords: cli, aws, S3, rclone, api
 summary: 'rclone is a free command line tool and client for S3 operations. You can use rclone to to migrate, copy, and delete object data on StorageGRID.'
 ---
 = Use rclone to migrate, PUT, and DELETE objects on StorageGRID
-
+:hardbreaks:
 :icons: font
 :imagesdir: ../media/
-_Siegfried Hepp and Aron Klein_
 
 [.lead]
 rclone is a free command line tool and client for S3 operations. You can use rclone to to migrate, copy, and delete object data on StorageGRID. rclone includes the capability to delete buckets even when not empty with a "purge" function as seen in an example below.
@@ -406,3 +405,5 @@ NOTE: Use --progress or -P to display the progress of the task. Otherwise there 
 
    2023/04/14 09:40:51 Failed to ls: directory not found
 ====
+
+_By Siegfried Hepp and Aron Klein_

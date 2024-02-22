@@ -5,10 +5,9 @@ keywords: hadoop, cloudera, s3a
 summary: Hadoop allows for distributed processing of large data sets across clusters of computers using simple programing frameworks. Hadoop was designed to scale up from single servers to thousands of machines where each machine offered its local compute and storage.
 ---
 = Use Cloudera Hadoop S3A connector with StorageGRID
-
+:hardbreaks:
 :icons: font
 :imagesdir: ../media/
-_Angela Cheng_
 
 [.lead]
 Hadoop has been a favorite of data scientist for some time now. Hadoop allows for the distributed processing of large data sets across clusters of computers using simple programing frameworks. Hadoop was designed to scale up from single servers to thousands of machines, with each machine possessing local compute and storage.
@@ -111,11 +110,11 @@ source /etc/profile
 +
 *Sample screenshot*
 +
-image::../media/hadoop-s3a/hadoop-s3a-configuration.png[S3A Configuration]
+image::hadoop-s3a/hadoop-s3a-configuration.png[S3A Configuration]
 
 . Click the Save Changes button. Select the Stale Configuration icon from the HDFS menu bar, select Restart Stale Services on the next page, and select Restart Now.
 +
-image::../media/hadoop-s3a/hadoop-restart-stale-service-icon.png[restart stale service icon for Hadoop]
+image::hadoop-s3a/hadoop-restart-stale-service-icon.png[restart stale service icon for Hadoop]
 
 
 == Test S3A connection to StorageGRID
@@ -210,3 +209,5 @@ keytool -import -trustcacerts -keystore $JAVA_HOME/lib/security/cacerts -storepa
 . Execute the command, and direct the log messages to error.log.
 +
 `hadoop fs -ls s3a://_<bucket-name>_/ &>error.log`
+
+_By Angela Cheng_
