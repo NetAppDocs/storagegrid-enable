@@ -1,5 +1,7 @@
 indexpage:
-  lead: NetApp StorageGRID is a software-defined object storage suite that supports a wide range of use cases across public, private, and hybrid multicloud environments. StorageGRID offers native support for the Amazon S3 API and delivers industry-leading innovations such as automated lifecycle management to store, secure, protect, and preserve unstructured data cost effectively over long periods.
+  title: How to enable StorageGRID in your environment
+  lead: "NetApp StorageGRID is a software-defined object storage suite that supports a wide range of use cases across public, private, and hybrid multi-cloud environments. StorageGRID offers native support for the Amazon S3 API and delivers industry-leading innovations such as automated lifecycle management to store, secure, protect, and preserve unstructured data cost effectively over long periods."
+  summary: "NetApp StorageGRID is a software-defined object storage suite that supports a wide range of use cases across public, private, and hybrid multi-cloud environments. StorageGRID uses industry leading innovations such as automated lifecycle management to store, secure, protect, and preserve unstructured data for multi-purpose use over long periods of time."
   tiles:
     - title: Validated third-party solutions
       links:
