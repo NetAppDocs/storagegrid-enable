@@ -26,7 +26,7 @@ Eon Mode separates the computational resources from the communal storage layer o
 
 Eon Mode stores data in a shared object store called communal storage—an S3 bucket, either hosted on premises or on Amazon S3.
 
-image::vertica-eon/sg-vertica-eon-mode-cluster-with-communal-storage.png[Vertica Eon Mode cluster with communal storage]
+image:vertica-eon/sg-vertica-eon-mode-cluster-with-communal-storage.png[Vertica Eon Mode cluster with communal storage]
 
 === Communal storage
 Instead of storing data locally, Eon Mode uses a single communal storage location for all data and the catalog (metadata). Communal storage is the database's centralized storage location, shared among the database nodes.
