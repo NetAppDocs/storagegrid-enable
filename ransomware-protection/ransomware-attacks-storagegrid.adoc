@@ -1,0 +1,31 @@
+---
+sidebar: sidebar
+permalink: ransomware-protection/ransomware-attacks-storagegrid.html
+keywords: ransomware attacks, storagegrid, best practices
+summary: Learn about ransomware attacks and how to protect data with StorageGRID security best practices.
+
+---
+
+= Ransomware attacks and StorageGRID best practices
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Learn about ransomware attacks and how to protect data with StorageGRID security best practices.
+
+Ransomware attacks are on the rise. This document provides some recommendations on how to protect your object data on StorageGRID. 
+
+Ransomware today is the ever-present danger in the data center. Ransomware is designed to encrypt data and make it unusable by the users and applications that rely on it. Protection starts with the usual defenses of hardened networking and solid user security practices, and we need to follow through with data access security practices.  
+
+Ransomware is one of today’s largest security threats. The NetApp StorageGRID team is working with our customers to keep ahead of these threats. With the use of object lock and versioning, you can protect against unwanted alterations and recover from malicious attacks. Data security is a multi-layer venture, with your object storage being just one part in your data center.
+
+== StorageGRID best practices
+
+For StorageGRID, security best practices should include using HTTPS with signed certificates for both management and object access. Create dedicated user accounts for applications and individuals, and do not use the tenant root accounts for application access or user data access. In other words, follow the least privilege principle. Use security groups with defined Identity and Access Management (IAM) policies to govern user rights, and access accounts specific to the applications and users. With these measures in place, you still must ensure that your data is protected. In the case of Simple Storage Service (S3), when objects are modified to encrypt them, it is accomplished by an overwrite of the original object. 
+
+== Methods of defense
+
+The primary ransomware protection mechanism in the S3 API is to implement object lock. Not all applications are compatible with object lock, so there are two other options to protect your objects that are described in this report: replication to another bucket with versioning enabled and versioning with IAM policies. 

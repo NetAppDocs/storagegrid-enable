@@ -1,0 +1,117 @@
+---
+sidebar: sidebar
+permalink: ransomware-protection/understand-object-lock-storagegrid.html
+keywords: object lock, storagegrid
+summary: Explore how object lock in StorageGRID provides a WORM model to prevent data deletion or overwrite, and how it meets regulatory requirements.
+
+---
+
+= Learn about Object Lock in StorageGRID
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+
+[.lead]
+Explore how object lock in StorageGRID provides a WORM model to prevent data deletion or overwrite, and how it meets regulatory requirements.
+
+Object lock provides a WORM model to prevent objects from being deleted or overwritten. StorageGRID implementation of object lock is https://www.netapp.com/media/9041-ar-cohasset-netapp-storagegrid-sec-assessment.pdf[Cohasset assessed^] to help meet regulatory requirements, supporting legal hold, compliance mode, and governance mode for object retention, and default bucket retention policies. You must enable object lock as part of the bucket creation and versioning. A specific version of an object is locked, and if no version ID is defined, the retention is placed on the current version of the object. If the current version has the retention configured and an attempt is made to delete, modify, or overwrite the object, a new version is created with either a delete marker, or the new revision of the object as the current version, and the locked version is retained as a non-current version. For applications that are not yet compatible, you might still be able to make use of object lock and a default retention configuration placed on the bucket. After the configuration is defined, this applies an object retention to each new object put into the bucket. This works as long as the application is configured to not delete or overwrite the objects before the retention time has passed.
+
+Here are a few examples using the object lock API:
+
+Object lock legal hold is a simple on/off status applied to an object.
+
+----
+aws s3api put-object-legal-hold --bucket mybucket --key myfile.txt --legal-hold Status=ON --endpoint-url https://s3.company.com
+
+----
+Setting the legal hold status does not return any value if successful, so it can be verified with a GET operation.
+
+----
+aws s3api get-object-legal-hold --bucket mybucket --key myfile.txt --endpoint-url https://s3.company.com
+{
+    "LegalHold": {
+        "Status": "ON"
+    }
+}
+----
+
+To turn legal hold off, apply the OFF status.
+
+----
+aws s3api put-object-legal-hold --bucket mybucket --key myfile.txt --legal-hold Status=OFF --endpoint-url https://s3.company.com
+aws s3api get-object-legal-hold --bucket mybucket --key myfile.txt --endpoint-url https://s3.company.com
+{
+    "LegalHold": {
+        "Status": "OFF"
+    }
+}
+
+----
+
+Setting the object retention is done with a retain until timestamp. 
+
+----
+aws s3api put-object-retention --bucket mybucket --key myfile.txt --retention '{"Mode":"COMPLIANCE", "RetainUntilDate": "2022-06-10T16:00:00"}'  --endpoint-url https://s3.company.com
+----
+
+Again, there is no returned value on success, so you can verify the retention status similarly with a get call.
+
+----
+aws s3api get-object-retention --bucket mybucket --key myfile.txt  --endpoint-url https://s3.company.com
+{
+    "Retention": {
+        "Mode": "COMPLIANCE",
+        "RetainUntilDate": "2022-06-10T16:00:00+00:00"
+    }
+----
+
+Putting a default retention on an object lock enabled bucket uses a retention period in days and years.
+
+----
+aws s3api put-object-lock-configuration --bucket mybucket --object-lock-configuration '{ "ObjectLockEnabled": "Enabled", "Rule": { "DefaultRetention": { "Mode": "COMPLIANCE", "Days": 1 }}}' --endpoint-url https://s3.company.com
+----
+
+As with most of these operations, no response is returned on success so, we can perform a GET for the configuration to verify.
+
+----
+aws s3api get-object-lock-configuration --bucket mybucket --endpoint-url https://s3.company.com
+{
+    "ObjectLockConfiguration": {
+        "ObjectLockEnabled": "Enabled",
+        "Rule": {
+            "DefaultRetention": {
+                "Mode": "COMPLIANCE",
+                "Days": 1
+            }
+        }
+    }
+}
+----
+
+Next, you can put an object in the bucket with the retention configuration applied.
+
+----
+aws s3 cp myfile.txt s3://mybucket --endpoint-url https://s3.company.com
+----
+
+The PUT operation does return a response.
+
+----
+upload: ./myfile.txt to s3://mybucket/myfile.txt
+----
+
+On the retention object, the retention duration set on the bucket in the preceding example is converted to a retention timestamp on the object.
+
+----
+aws s3api get-object-retention --bucket mybucket --key myfile.txt --endpoint-url https://s3.company.com
+{
+    "Retention": {
+        "Mode": "COMPLIANCE",
+        "RetainUntilDate": "2022-03-02T15:22:47.202000+00:00"
+    }
+}
+----
+
