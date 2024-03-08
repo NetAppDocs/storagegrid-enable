@@ -1,0 +1,17 @@
+section: trintro
+title: Introduction to StorageGRID technical reports
+entries:
+  - title: Introduction to load balancers and how to configure third-party  load balancers for StorageGRI
+    url: "/load-balancer/object-storage-load-balancer.html"
+  - title: Learn how to implement SSL certificates for HTTPS in StorageGRID
+    url: "/load-balancer/ssl-certificates-storagegrid.html"
+  - title: Configure trusted third-party load balancer in StorageGRID
+    url: "/load-balancer/third-party-load-balancer-configuration.html"
+  - title: Learn about local traffic manager load balancers 
+    url: "/load-balancer/local-traffic-manager-load-balancer.html"
+  - title: Learn about few use cases for StorageGRID configurations 
+    url: "/load-balancer/example-configuration-storagegrid.html"
+  - title: Validate SSL connection in StorageGRID 
+    url: "/load-balancer/validate-ssl-connection-storagegrid.html"
+  - title: Understand global load balancing requirements for StorageGRID
+    url: "/load-balancer/global-load-balancing-design.html"

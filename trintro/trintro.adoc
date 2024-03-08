@@ -1,0 +1,16 @@
+---
+permalink: trintro/trintro.html
+sidebar: sidebar
+keywords: intro, technical, reports, storagegrid
+summary: 'An intro page for StorageGRID technical reports.'
+---
+= Introduction
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+An intro page for StorageGRID technical reports.
+
+More content to be added later.
+

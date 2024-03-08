@@ -1,0 +1,164 @@
+---
+sidebar: sidebar
+permalink: data-security/data-access-security.html
+keywords: data access security, storagegrid
+summary: Learn about the data access security features in StorageGRID.
+
+---
+
+= Data access security features in StorageGRID
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Learn about the data access security features in StorageGRID.
+
+[cols="20,30a,30,20"*,options="header"]
+|===
+|Feature
+|Function
+|Impact
+|Regulatory compliance
+
+|Configurable Transport Layer Security (TLS)
+|TLS establishes a handshake protocol for communication between a client and a StorageGRID gateway node, storage node, or load balancer endpoint.
+
+StorageGRID supports the following cipher suites for TLS:
+
+* TLS_AES_256_GCM_SHA384
+* TLS_AES_128_GCM_SHA256
+* ECDHE-ECDSA-AES256-GCM-SHA384
+* ECDHE-RSA-AES256-GCM-SHA384
+* ECDHE-ECDSA-AES128-GCM-SHA256
+* ECDHE-RSA-AES128-GCM-SHA256
+* TLS_AES_256_GCM_SHA384
+* DHE-RSA-AES128-GCM-SHA256
+* DHE-RSA-AES256-GCM-SHA384
+* AES256-GCM-SHA384
+* AES128-GCM-SHA256
+* TLS_CHACHA20_POLY1305_SHA256
+* ECDHE-ECDSA-CHACHA20-POLY1305
+* ECDHE-RSA-CHACHA20-POLY1305
+
+TLS v1.2 & 1.3 supported.
+
+SSLv3, TLS v1.1 and earlier are no longer supported.
+|Enables a client and StorageGRID to identify and authenticate each other and communicate with confidentiality and data integrity. Ensures use of a recent TLS version. Ciphers are now configurable under the Configuration/Security settings
+|--
+
+|Configurable Server Certificate (Load Balancer Endpoint)
+|Grid administrators can configure Load Balancer Endpoints to generate or use a server certificate.
+|Enables the use of digital certificates signed by their standard trusted certificate authority (CA) to authenticate object API operations between grid and client per Load Balancer Endpoint.
+|--
+
+|Configurable Server Certificate (API endpoint)
+|Grid administrators can centrally configure all StorageGRID API endpoints to use a server certificate signed by their organization’s trusted CA.
+|Enables the use of digital certificates signed by their standard, trusted CA to authenticate object API operations between a client and the grid.
+|--
+
+|Multitenancy
+|StorageGRID supports multiple tenants per grid; each tenant has its own namespace. A tenant provides S3 protocol; by default, access to buckets/containers and objects is restricted to users within the account. Tenants can have one user (for example, an enterprise deployment, in which each user has their own account) or multiple users (for example, a service provider deployment, in which each account is a company and a customer of the service provider). Users can be local or federated; federated users are defined by Active Directory or Lightweight Directory Access Protocol (LDAP). StorageGRID provides a per-tenant dashboard, where users log in using their local or federated account credentials. Users can access visualized reports on tenant usage against the quota assigned by the grid administrator, including usage information in data and objects stored by buckets. Users with administrative permission can perform tenant-level system administration tasks, such as managing users and groups and access keys.
+|Allows StorageGRID administrators to host data from multiple tenants while isolating tenant access, and to establish user identity by federating users with an external identity provider, such as Active Directory or LDAP.
+|SEC Rule 17a-4(f)
+CTFC 1.31(c)-(d)
+(FINRA) Rule 4511(c)
+
+|Nonrepudiation of access credentials
+|Every S3 operation is identified and logged with a unique tenant account, user, and access key.
+|Allows Grid administrators to establish what API actions are performed by which individuals.
+|--
+
+|Disabled anonymous access
+|By default, anonymous access is disabled for S3 accounts. A requester must have a valid access credential for a valid user in the tenant account to access buckets, containers, or objects within the account. Anonymous access to S3 buckets or objects can be enabled with an explicit IAM policy.
+|Allows Grid administrators to disable or control anonymous access to buckets/containers and objects.
+|--
+
+|Compliance WORM
+|Designed to meet the requirements of SEC Rule 17a-4(f) and validated by Cohasset. Customers can enable compliance at the bucket level. Retention can be extended but never reduced. information lifecycle management (ILM) rules enforce minimum data protection levels.
+|Allows tenants with regulatory data retention requirements to enable WORM protection on stored objects and object metadata.
+|SEC Rule 17a-4(f)
+CTFC 1.31(c)-(d)
+(FINRA) Rule 4511(c)
+
+|WORM
+|Grid administrators can enable grid-wide WORM by enabling the Disable Client Modify option, which prevents clients from overwriting or deleting objects or object metadata in all tenant accounts.
+
+S3 Tenant admins can also enable WORM by tenant, bucket, or object prefix by specifying IAM policy, which includes the custom S3: PutOverwriteObject permission for object and metadata overwrite.
+|Allows Grid administrators and tenant admins to control WORM protection on stored objects and object metadata.
+|SEC Rule 17a-4(f)
+CTFC 1.31(c)-(d)
+(FINRA) Rule 4511(c)
+
+|KMS host server encryption key management
+|Grid administrators can configure one or more external key management servers (KMS) in the Grid Manager to provide encryption keys to StorageGRID services and storage appliances. Each KMS host server or KMS host server cluster uses the Key Management Interoperability Protocol (KMIP) to provide an encryption key to the appliance nodes at the associated StorageGRID site.
+|Data-at-rest encryption is achieved. After the appliance volumes are encrypted, you cannot access any data on the appliance unless the node can communicate with the KMS host server.
+|SEC Rule 17a-4(f)
+CTFC 1.31(c)-(d)
+(FINRA) Rule 4511(c)
+
+|Automated failover
+|StorageGRID provides built-in redundancy and automated failover. Access to tenant accounts, buckets, and objects can continue even if there are multiple failures, from disks or nodes to entire sites. StorageGRID is resource-aware and automatically redirects requests to available nodes and data locations. StorageGRID sites can even operate in islanded mode; if a WAN outage disconnects a site from the rest of the system, reads and writes can continue with local resources, and replication resumes automatically when the WAN is restored.
+|Enables Grid administrators to address uptime, SLA, and other contractual obligations and to implement business continuity plans.
+|--
+
+4+a|*S3-specific data access security features*
+
+|AWS Signature Version 2 and Version 4
+|Signing API requests provides authentication for S3 API operations. Amazon supports two versions of Signature Version 2 and Version 4. The signing process verifies the identity of the requester, protects data in transit, and protects against potential replay attacks.
+|Aligns with AWS recommendation for Signature Version 4 and enables backward compatibility with older applications with Signature Version 2.
+|--
+
+|S3 Object Lock
+|The S3 Object Lock feature in StorageGRID is an object-protection solution that is equivalent to S3 Object Lock in Amazon S3.
+|Allows tenants to create buckets with S3 Object Lock enabled to comply with regulations that require certain objects to be retained for a fixed amount of time or indefinitely.
+|SEC Rule 17a-4(f)
+CTFC 1.31(c)-(d)
+(FINRA) Rule 4511(c)
+
+|Secured storage of S3 credentials
+|S3 access keys are stored in a format that is protected by a password hashing function (SHA-2).
+|Enables secure storage of access keys by a combination of key length (a 1031 randomly generated number) and a password hashing algorithm.
+|--
+
+|Time-bound S3 access keys
+|When creating an S3 access key for a user, customers can set an expiration date and time on the access key.
+|Gives Grid administrators the option to provision temporary S3 access keys.
+|--
+
+|Multiple access keys per user account
+|StorageGRID enables multiple access keys to be created and simultaneously active for a user account. Because each API action is logged with a tenant user account and access key, nonrepudiation is preserved despite multiple keys being active.
+|Enables clients to non-disruptively rotate access keys and allows each client to have its own key, discouraging key sharing across clients.
+|--
+
+|S3 IAM access policy
+|StorageGRID supports S3 IAM policies, enabling Grid administrators to specify granular access control by tenant, bucket, or object prefix. StorageGRID also supports IAM policy conditions and variables, allowing more dynamic access control policies.
+|Allows Grid administrators to specify access control by user groups for the whole tenant; also enables tenant users to specify access control for their own buckets and objects.
+|--
+
+|Server-side encryption with StorageGRID-managed keys (SSE)
+|StorageGRID supports SSE, allowing multitenant protection of data at rest with encryption keys managed by StorageGRID.
+|Enables tenants to encrypt objects.
+
+Encryption key is required to write and retrieve these objects.
+|SEC Rule 17a-4(f)
+CTFC 1.31(c)-(d)
+(FINRA) Rule 4511(c)
+
+|Server-side encryption with customer-provided encryption keys (SSE-C)
+|StorageGRID supports SSE-C, enabling multitenant protection of data at rest with encryption keys managed by the client.
+
+Although StorageGRID manages all object encryption and decryption operations, with SSE-C, the client must manage the encryption keys themselves.
+|Enables clients to encrypt objects with keys they control.
+
+Encryption key is required to write and retrieve these objects.
+|SEC Rule 17a-4(f)
+CTFC 1.31(c)-(d)
+(FINRA) Rule 4511(c)
+
+|===
+
+
+

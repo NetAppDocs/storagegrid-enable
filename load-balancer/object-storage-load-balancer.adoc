@@ -1,0 +1,71 @@
+---
+sidebar: sidebar
+permalink: load-balancer/object-storage-load-balancer.html
+keywords: object storage, load balancer
+summary: Learn about the role of a third-party and global load balancers in an object storage systems like StorageGRID.
+---
+
+= Introduction to load balancers and how to configure third-party  load balancers for StorageGRID
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Learn about the role of a third-party and global load balancers in an object storage systems like StorageGRID.
+
+General guidance for implementing NetApp StorageGRID with third-party load balancers.
+
+Object storage is synonymous with the term cloud storage, and, as you would expect, applications that leverage cloud storage address that storage through a URL. Behind that simple URL, StorageGRID can scale capacity, performance, and durability in a single site or over geo-distributed sites. The component that makes this simplicity possible is a load balancer. 
+The purpose of this document is to educate StorageGRID customers about load balancer options and provide general guidance for the configuration of third-party load balancers.
+
+== Where to find additional information
+To learn more about the information that is described in this document, review the following documents and/or websites:
+
+* NetApp StorageGRID Documentation Center
+https://docs.netapp.com/us-en/storagegrid-118/
+* NetApp StorageGRID Enablement
+https://docs.netapp.com/us-en/storagegrid-enable/
+* StorageGRID f5 load balancer design considerations
+https://www.netapp.com/blog/storagegrid-f5-load-balancer-design-considerations/
+* Loadbalancer.org—Load balancing NetApp StorageGRID
+https://www.loadbalancer.org/applications/load-balancing-netapp-storagegrid/
+* Kemp—Load balancing NetApp StorageGRID
+https://support.kemptechnologies.com/hc/en-us/articles/360045186451-NetApp-StorageGRID
+
+== Load balancer basics
+Load balancers are an essential component of an enterprise grade object storage system such as StorageGRID. StorageGRID consists of multiple storage nodes, each of which can present the entire Simple Storage Service (S3) name space for a given StorageGRID instance. Load balancers create a highly available endpoint behind which we can place StorageGRID nodes. StorageGRID is unique among S3-compatible object storage systems in that it provides its own load balancer, but it also supports third-party or general-purpose load balancers such as F5, Citrix Netscaler, HA Proxy, NGINX, and so on.
+
+The following figure uses the example URL/ fully qualified domain name (FQDN) “s3.company.com”. The load balancer creates a virtual IP (VIP) that resolves to the FQDN through DNS, then directs any requests from applications to a pool of StorageGRID nodes. The load balancer performs a health check on each node and only establishes connections to healthy nodes.
+
+image:load-balancer-local-traffic-manager-load-balancer.png[Local traffic manager load balancer]
+
+The figure shows the StorageGRID provided load balancer, but the concept is the same for third-party load balancers. Applications establish an HTTP session using the VIP on the load balancer and the traffic passes through the load balancer to the storage nodes. By default, all traffic, from application to load balancer, and from load balancer to storage node is encrypted through HTTPS. HTTP is a supported option.
+
+=== Local and global load balancers
+There are two types of load balancers:
+
+* *Local Traffic Managers (LTM)*. Spreads connections over a pool of nodes in a single site.
+* *Global Service Load Balancer (GSLB)*. Spreads connections over multiple sites, effectively load balancing LTM load balancers. Think of a GSLB as an intelligent DNS server. When a client requests a StorageGRID endpoint URL, the GSLB resolves it to the VIP of an LTM based on availability or other factors (for example, which site can provide lower latency to the application).
+While an LTM is always required, a GSLB is optional depending on the number of StorageGRID sites and your application requirements.
+
+=== StorageGRID Gateway Node load balancer versus third-party load balancer
+StorageGRID is unique among S3-compatible object storage vendors in that it provides a native load balancer available as a purpose-built appliance, VM, or container. The StorageGRID provided load balancer is also referred to as a Gateway Node. 
+
+For customers that do not already own a load balancer such as F5, Citrix, and so on, implementation of a third-party load balancer can be very complex. The StorageGRID load balancer greatly simplifies load balancer operations.
+
+The Gateway Node is an enterprise grade, highly available, and high-performance load balancer. Customers can choose to implement the Gateway Node, third-party load balancer, or even both, in the same grid. The Gateway Node is a local traffic manager versus a GSLB. 
+
+The StorageGRID load balancer provides the following advantages:
+
+* *Simplicity*. Automatic configuration of resource pools, health checks, patching, and maintenance, all managed by StorageGRID.
+* *Performance*. The StorageGRID load balancer is dedicated to StorageGRID, you do not compete with other applications for bandwidth.
+* *Cost*. The virtual machine (VM) and container versions are provided at no additional cost.
+* *Traffic classifications*. The Advanced Traffic Classification feature allows for StorageGRID-specific QoS rules along with workload analytics.
+* *Future StorageGRID specific features*. StorageGRID will continue to optimize and add innovative features to the load balancer over upcoming releases.
+
+For details about deploying the StorageGRID Gateway Node, see the https://docs.netapp.com/us-en/storagegrid-117/[StorageGRID documentation^].
+
+
+
