@@ -1,0 +1,36 @@
+---
+permalink: third-party/commvault-storagegrid-data-protection.html
+sidebar: sidebar
+keywords: commvault, storagegrid, data protection
+summary: Learn how Commvault Complete Backup and Recovery uses StorageGRID for data protection.
+---
+= Learn how to use Commvault Complete Backup and Receovery with StorageGRID for data protection.
+
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Learn how Commvault Complete Backup and Recovery uses StorageGRID for data protection.
+
+This report describes the data protection solution provided jointly by Commvault and NetApp using Commvault Complete Backup and Recovery for NetApp and NetApp StorageGRID. The report describes an example baseline configuration as well as performance and sizing guidelines.
+
+== Target audience
+
+This document is intended for data administrators and architects using Commvault and StorageGRID 
+backup and recovery solutions.
+
+== Where to Find Additional Information
+
+To learn more about the information that is described in this document, review the following documents 
+and/or websites:
+
+* StorageGRID 11.4 Documentation Center
+https://docs.netapp.com/sgws-114/index.jsp
+
+* StorageGRID documentation resources page
+https://www.netapp.com/data-storage/storagegrid/documentation/
+
+* NetApp Product Documentation
+https://docs.netapp.com
+

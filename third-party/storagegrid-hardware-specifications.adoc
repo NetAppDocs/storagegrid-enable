@@ -1,0 +1,35 @@
+---
+permalink: third-party/storagegrid-hardware-specifications.html
+sidebar: sidebar
+keywords: hardware specifications, storagegrid
+summary: Understand the hardware specifications of StorageGRID used in qualification.
+
+---
+= StorageGRID hardware specifications
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Understand the hardware specifications of StorageGRID used in qualification.
+
+The following table describes the NetApp StorageGRID hardware used in this testing. The StorageGRID SG5712 
+appliance with 10Gbps networking is the entry-level option and represents a baseline configuration. 
+Optionally the SG5712 can be configured for 25Gbps networking. 
+
+Choosing higher-performance appliance options such as the NetApp StorageGRID SG5760 or SG6060 
+appliance can provide significant performance benefits. Consult your NetApp StorageGRID solution 
+architect for sizing assistance.
+
+[cols=2*,options="header",cols="30,10,30,15,15"]
+|===
+| Hardware
+| Quantity
+| Disk
+| Usable Capacity
+| Network
+| StorageGRID SG5712 appliances | 4 | 48 x 4TB (near-line SAS HDD) | 136TB | 10Gbps
+|===
+
+
+

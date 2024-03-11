@@ -3,39 +3,63 @@ title: Introduction to StorageGRID technical reports
 entries:
   - title: Introduction
     url: "/trintro/trintro.html"
-    entries:
-    - title: Introduction to load balancers and how to configure third-party  load balancers for StorageGRID
-      url: "/load-balancer/object-storage-load-balancer.html"
-    - title: Learn how to implement SSL certificates for HTTPS in StorageGRID
-      url: "/load-balancer/ssl-certificates-storagegrid.html"
-    - title: Configure trusted third-party load balancer in StorageGRID
-      url: "/load-balancer/third-party-load-balancer-configuration.html"
-    - title: Learn about local traffic manager load balancers 
-      url: "/load-balancer/local-traffic-manager-load-balancer.html"
-    - title: Learn about few use cases for StorageGRID configurations 
-      url: "/load-balancer/example-configuration-storagegrid.html"
-    - title: Validate SSL connection in StorageGRID 
-      url: "/load-balancer/validate-ssl-connection-storagegrid.html"
-    - title: Understand global load balancing requirements for StorageGRID
-      url: "/load-balancer/global-load-balancing-design.html"
-    - title: Overview of Security features in StorageGRID
-      url: "/data-security/security-features-storagegrid.html"
-    - title: Data access security features in StorageGRID
-      url: "/data-security/data-access-security.html"
-    - title: Object and metadata security features in StorageGRID
-      url: "/data-security/object-metadata-security.html"
-    - title: Administration security features in StorageGRID
-      url: "/data-security/administration-security.html"
-    - title: Platform security features in StorageGRID 
-      url: "/data-security/platform-security.html"
-    - title: Cloud integration in StorageGRID
-      url: "/data-security/cloud-integration-storagegrid.html"
-    - title: Ransomware attacks and StorageGRID best practices
-      url: "/ransomware-protection/ransomware-attacks-storagegrid.html"
-    - title: Learn about Object Lock in StorageGRID
-      url: "/ransomware-protection/understand-object-lock-storagegrid.html"
-    - title: Replicate to a bucket with versioning in StorageGRID
-      url: "/ransomware-protection/replicate-bucket-versioning-storagegrid.html"
-    - title: Implement versioning with a protective IAM policy in StorageGRID
-      url: "/ransomware-protection/versioning-protective-iam-policy-storagegrid.html"
+    entries: 
+    - title: TR-4626
+      entries:
+        - title: Introduction to load balancers and how to configure third-party  load balancers for StorageGRID
+          url: "/load-balancer/object-storage-load-balancer.html"
+        - title: Learn how to implement SSL certificates for HTTPS in StorageGRID
+          url: "/load-balancer/ssl-certificates-storagegrid.html"
+        - title: Configure trusted third-party load balancer in StorageGRID
+          url: "/load-balancer/third-party-load-balancer-configuration.html"
+        - title: Learn about local traffic manager load balancers 
+          url: "/load-balancer/local-traffic-manager-load-balancer.html"
+        - title: Learn about few use cases for StorageGRID configurations 
+          url: "/load-balancer/example-configuration-storagegrid.html"
+        - title: Validate SSL connection in StorageGRID 
+          url: "/load-balancer/validate-ssl-connection-storagegrid.html"
+        - title: Understand global load balancing requirements for StorageGRID
+          url: "/load-balancer/global-load-balancing-design.html"
+    - title: TR-4645
+      entries:
+        - title: Overview of Security features in StorageGRID
+          url: "/data-security/security-features-storagegrid.html"
+        - title: Data access security features in StorageGRID
+          url: "/data-security/data-access-security.html"
+        - title: Object and metadata security features in StorageGRID
+          url: "/data-security/object-metadata-security.html"
+        - title: Administration security features in StorageGRID
+          url: "/data-security/administration-security.html"
+        - title: Platform security features in StorageGRID 
+          url: "/data-security/platform-security.html"
+        - title: Cloud integration in StorageGRID
+          url: "/data-security/cloud-integration-storagegrid.html"
+    - title: TR-4921
+      entries:
+        - title: Ransomware attacks and StorageGRID best practices
+          url: "/ransomware-protection/ransomware-attacks-storagegrid.html"
+        - title: Learn about Object Lock in StorageGRID
+          url: "/ransomware-protection/understand-object-lock-storagegrid.html"
+        - title: Replicate to a bucket with versioning in StorageGRID
+          url: "/ransomware-protection/replicate-bucket-versioning-storagegrid.html"
+        - title: Implement versioning with a protective IAM policy in StorageGRID
+          url: "/ransomware-protection/versioning-protective-iam-policy-storagegrid.html"
+    - title: TR-4871
+      entries:
+        - title: Learn how to use Commvault Complete Backup and Receovery with StorageGRID for data protection
+          url: "/commvault-storagegrid-data-protection.html"
+        - title: Commvault Complete Backup and Recovery for NetApp and StorageGRID - Solution overview
+          url: "/commvault-storagegrid-overview.html"
+        - title: StorageGRID sizing guidance
+          url: "/storagegrid-sizing-guidance.html"
+        - title: StorageGRID hardware specifications
+          url: "/storagegrid-hardware-specifications.html"
+        - title: Commvault and StorageGRID software requirements
+          url: "/commvault-storagegrid-software-requirement.html"          
+        - title: Run data protection jobs using Commvault and StorageGRID as primary storage
+          url: "/running-data-protection-job.html"
+        - title: Review baseline performance tests for Commvault and StorageGRID
+          url: "/baseline-performance-tests.html"
+        - title: Configure StorageGRID consistency levels for operations on S3 buckets
+          url: "/set-consistency-level-s3.html"          
 

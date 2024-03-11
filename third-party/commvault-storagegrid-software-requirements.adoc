@@ -1,0 +1,48 @@
+---
+permalink: third-party/commvault-storagegrid-software-requirements.html
+sidebar: sidebar
+keywords: software requirements, commvault, storagegrid
+summary: Understand the software requirements for Commvault and StorageGRID installed on VMware.
+
+---
+= Commvault and StorageGRID software requirements
+
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Understand the software requirements for Commvault and StorageGRID installed on VMware.
+
+The following tables list the software requirements for the Commvault and NetApp StorageGRID software installed on VMware software for this test. Four MediaAgent data transmission managers and one CommServe server were installed on NetApp HCI compute nodes. In the test, 10Gbps networking was implemented for the VMware infrastructure.
+
+[cols=6*,options="header",cols="20,10,20,15,15,20"]
+|===
+| Component
+| Quantity
+| Datastore
+| Size
+| Total
+| Total Required IOPS
+ 
+.2+a|CommServe Server
+.2+a|1
+|===
+
+In the test environment, one virtual primary Admin node and one virtual Gateway node were deployed on VMware on a NetApp E-Series E2812 storage array. Each node was on a separate server with the minimum production environment requirements described in the following table.
+
+[cols=5*,options="header",cols="20,20,10,10,40"]
+|===
+| Node type 
+| Quantity
+| vCPU
+| RAM 
+| Storage
+| Gateway node  | 1 | 8 | 24GB | 100GB LUN for the OS
+| Admin node | 1 | 8 | 24GB | 100GB LUN for the OS 
+                              200GB LUN for Admin node tables
+                              200GB LUN for the Admin node audit log
+|===
+
+
+
