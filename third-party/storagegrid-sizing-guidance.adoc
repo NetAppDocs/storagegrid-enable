@@ -38,21 +38,11 @@ The following table lists average object sizes by type of backup and describes w
 | Direct the backup to StorageGRID (deduplication disabled) | 32MB | Full read of 32MB object
 |===
 
-In addition, understanding your performance requirements for full backups and incremental backups 
-helps you determine sizing for the StorageGRID storage nodes. StorageGRID information lifecycle 
-management (ILM) policy data protection methods determine the capacity needed to store Commvault 
-backups and affect the sizing of the grid.
+In addition, understanding your performance requirements for full backups and incremental backups helps you determine sizing for the StorageGRID storage nodes. StorageGRID information lifecycle management (ILM) policy data protection methods determine the capacity needed to store Commvault backups and affect the sizing of the grid.
 
-StorageGRID ILM replication is one of two mechanisms used by StorageGRID to store object data. When 
-StorageGRID assigns objects to an ILM rule that replicates data, the system creates exact copies of the 
-objects’ data and stores the copies on storage nodes.
+StorageGRID ILM replication is one of two mechanisms used by StorageGRID to store object data. When StorageGRID assigns objects to an ILM rule that replicates data, the system creates exact copies of the objects’ data and stores the copies on storage nodes.
 
-Erasure coding is the second method used by StorageGRID to store object data. When StorageGRID 
-assigns objects to an ILM rule that is configured to create erasure-coded copies, it slices object data into 
-data fragments. It then computes additional parity fragments and stores each fragment on a different 
-storage node. When an object is accessed, it is reassembled using the stored fragments. If a data 
-fragment or a parity fragment becomes corrupt or is lost, the erasure-coding algorithm can re-create that 
-fragment using a subset of the remaining data and parity fragments. 
+Erasure coding is the second method used by StorageGRID to store object data. When StorageGRID assigns objects to an ILM rule that is configured to create erasure-coded copies, it slices object data into data fragments. It then computes additional parity fragments and stores each fragment on a different storage node. When an object is accessed, it is reassembled using the stored fragments. If a data fragment or a parity fragment becomes corrupt or is lost, the erasure-coding algorithm can re-create that fragment using a subset of the remaining data and parity fragments. 
 
 The two mechanisms require different amounts of storage, as these examples demonstrate:
 
@@ -71,8 +61,7 @@ represents an entry-level StorageGRID deployment on a single site:
 
 * Primary Admin node and Gateway node: VMware VMs with the minimum production workload requirements 
 
-StorageGRID is typically deployed in two or more sites with data protection policies that replicate data to 
-protect against node and site-level failures. By backing up your data to StorageGRID, your data is protected by multiple copies or by erasure coding that separates and reassembles data dependably through an algorithm.
+StorageGRID is typically deployed in two or more sites with data protection policies that replicate data to protect against node and site-level failures. By backing up your data to StorageGRID, your data is protected by multiple copies or by erasure coding that separates and reassembles data dependably through an algorithm.
 
 You can use the https://fieldportal.netapp.com/content/593648[StorageGRID Solution Designer tool^] to size your grid.
 

@@ -55,7 +55,7 @@ entries:
         - title: StorageGRID hardware specifications
           url: "/third-party/storagegrid-hardware-specifications.html"
         - title: Commvault and StorageGRID software requirements
-          url: "/third-party/commvault-storagegrid-software-requirement.html"          
+          url: "/third-party/commvault-storagegrid-software-requirements.html"          
         - title: Run data protection jobs using Commvault and StorageGRID as primary storage
           url: "/third-party/running-data-protection-job.html"
         - title: Review baseline performance tests for Commvault and StorageGRID
