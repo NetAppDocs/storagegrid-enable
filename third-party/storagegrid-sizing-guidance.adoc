@@ -20,11 +20,9 @@ Before you perform NetApp StorageGRID sizing, consider these aspects of your wor
 * Performance requirements 
 * ILM policy applied
 
-The amount of usable capacity needs to accommodate the size of the backup workload you have tiered 
-to StorageGRID. 
+The amount of usable capacity needs to accommodate the size of the backup workload you have tiered to StorageGRID. 
 
-Average object size is an input parameter that helps with sizing for performance in a StorageGRID 
-environment. The average object sizes used for a Commvault workload depend on the type of backup.
+Average object size is an input parameter that helps with sizing for performance in a StorageGRID environment. The average object sizes used for a Commvault workload depend on the type of backup.
 
 The following table lists average object sizes by type of backup and describes what the restore process reads from the object store.
 
