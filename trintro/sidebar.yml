@@ -47,19 +47,19 @@ entries:
     - title: TR-4871
       entries:
         - title: Learn how to use Commvault Complete Backup and Receovery with StorageGRID for data protection
-          url: "/commvault-storagegrid-data-protection.html"
+          url: "/third-party/commvault-storagegrid-data-protection.html"
         - title: Commvault Complete Backup and Recovery for NetApp and StorageGRID - Solution overview
-          url: "/commvault-storagegrid-overview.html"
+          url: "/third-party/commvault-storagegrid-overview.html"
         - title: StorageGRID sizing guidance
-          url: "/storagegrid-sizing-guidance.html"
+          url: "/third-party/storagegrid-sizing-guidance.html"
         - title: StorageGRID hardware specifications
-          url: "/storagegrid-hardware-specifications.html"
+          url: "/third-party/storagegrid-hardware-specifications.html"
         - title: Commvault and StorageGRID software requirements
-          url: "/commvault-storagegrid-software-requirement.html"          
+          url: "/third-party/commvault-storagegrid-software-requirement.html"          
         - title: Run data protection jobs using Commvault and StorageGRID as primary storage
-          url: "/running-data-protection-job.html"
+          url: "/third-party/running-data-protection-job.html"
         - title: Review baseline performance tests for Commvault and StorageGRID
-          url: "/baseline-performance-tests.html"
+          url: "/third-party/baseline-performance-tests.html"
         - title: Configure StorageGRID consistency levels for operations on S3 buckets
-          url: "/set-consistency-level-s3.html"          
+          url: "/third-party/set-consistency-level-s3.html"          
 
