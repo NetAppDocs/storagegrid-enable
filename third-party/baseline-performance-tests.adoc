@@ -27,5 +27,7 @@ The tests were performed with 100 VMs and 1000 VMs, both tests with a 50/50 mix 
 
 To test age-off performance, 2.5 million objects were deleted. As shown in the following figures, delete run was completed in less than 3 hours and freed up more than 80TB of space. The delete run started at 10:30 AM.
 
-image:third-party-deletion-objects.png[third-party-deletion-objects]
+image:third-party-s3-and-swift-object.png[third-party-s3-and-swift-object]
+
+image:third-party-storage-used-object-data.png[third-party-storage-used-object-data]
 

@@ -6,7 +6,7 @@ summary: Explore the object and metadata security features in StorageGRID.
 
 ---
 
-= Object and metadata security features in StorageGRID
+= Object and metadata security
 :hardbreaks:
 :nofooter:
 :icons: font

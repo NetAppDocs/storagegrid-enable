@@ -6,7 +6,7 @@ summary: Discover the administration security features in StorageGRID.
 
 ---
 
-= Administration security features in StorageGRID
+= Administration security features
 :hardbreaks:
 :nofooter:
 :icons: font

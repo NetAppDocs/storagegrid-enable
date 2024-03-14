@@ -5,7 +5,7 @@ keywords: object storage, load balancer
 summary: Learn about the role of a third-party and global load balancers in an object storage systems like StorageGRID.
 ---
 
-= Introduction to load balancers and how to configure third-party  load balancers for StorageGRID
+= Use third-party load balancers with StorageGRID
 :hardbreaks:
 :nofooter:
 :icons: font

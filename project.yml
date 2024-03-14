@@ -12,13 +12,13 @@ sidebar:
   entries:
     - title: How to enable StorageGRID
       url: /index.html      
-    - section: trintro    
     - section: third-party
     - section: product-feature-guides
     - section: tools-apps-guides
     - section: examples    
     - title: Blog posts
       url: /blogs.html
+    - section: trintro    
     - title: StorageGRID documentation
       url: /storagegrid-documentation.html
     - title: Legal notices

@@ -6,7 +6,7 @@ summary: Learn how to replicate objects to a secondary bucket using StorageGRID 
 
 ---
 
-= Replicate to a bucket with versioning in StorageGRID
+= Ransomware defense using replicated bucket with versioning
 
 :hardbreaks:
 :nofooter:

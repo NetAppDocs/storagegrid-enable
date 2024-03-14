@@ -6,7 +6,7 @@ summary: Learn about the platform security features in StorageGRID.
 
 ---
 
-= Platform security features in StorageGRID
+= Platform security features
 :hardbreaks:
 :nofooter:
 :icons: font

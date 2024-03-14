@@ -6,7 +6,7 @@ summary: Learn about ransomware attacks and how to protect data with StorageGRID
 
 ---
 
-= Ransomware attacks and StorageGRID best practices
+= Protect StorageGRID S3 objects from ransomware
 :hardbreaks:
 :nofooter:
 :icons: font

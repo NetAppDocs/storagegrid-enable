@@ -1,10 +1,11 @@
 section: trintro
-title: Introduction to StorageGRID technical reports
+title: Technical reports '(TRs)'
 entries:
   - title: Introduction
-    url: "/trintro/trintro.html"
+    url: "/trintro/index.html"
     entries: 
-    - title: TR-4626
+    - title: Load balancers
+    - pdf-filename: StorageGRID load balancer - Third-party and global load balancers
       entries:
         - title: Introduction to load balancers and how to configure third-party  load balancers for StorageGRID
           url: "/load-balancer/object-storage-load-balancer.html"
@@ -20,7 +21,8 @@ entries:
           url: "/load-balancer/validate-ssl-connection-storagegrid.html"
         - title: Understand global load balancing requirements for StorageGRID
           url: "/load-balancer/global-load-balancing-design.html"
-    - title: TR-4645
+    - title: Security features
+    - pdf-filename: Security features in StorageGRID 11.7 - Securing your data and metadata in an object store
       entries:
         - title: Overview of Security features in StorageGRID
           url: "/data-security/security-features-storagegrid.html"
@@ -34,7 +36,8 @@ entries:
           url: "/data-security/platform-security.html"
         - title: Cloud integration in StorageGRID
           url: "/data-security/cloud-integration-storagegrid.html"
-    - title: TR-4921
+    - title: Ransomware defense
+    - pdf-filename: Ransomware Defense with StorageGRID - Protecting your S3 objects
       entries:
         - title: Ransomware attacks and StorageGRID best practices
           url: "/ransomware-protection/ransomware-attacks-storagegrid.html"
@@ -44,9 +47,10 @@ entries:
           url: "/ransomware-protection/replicate-bucket-versioning-storagegrid.html"
         - title: Implement versioning with a protective IAM policy in StorageGRID
           url: "/ransomware-protection/versioning-protective-iam-policy-storagegrid.html"
-    - title: TR-4871
+    - title: Commvault backup and recovery
+    - pdf-filename: Commvault Complete Backup and Recovery - and NetApp StorageGRID
       entries:
-        - title: Learn how to use Commvault Complete Backup and Receovery with StorageGRID for data protection
+        - title: Learn how to use Commvault Complete Backup and Recovery with StorageGRID for data protection
           url: "/third-party/commvault-storagegrid-data-protection.html"
         - title: Commvault Complete Backup and Recovery for NetApp and StorageGRID - Solution overview
           url: "/third-party/commvault-storagegrid-overview.html"

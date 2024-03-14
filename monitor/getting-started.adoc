@@ -1,0 +1,26 @@
+---
+permalink: monitor/getting-started.html
+sidebar: sidebar
+keywords: get started, storagegrid
+summary: Begin your journey of monitoring NetApp StorageGRID with the GMI Dashboard, providing a high-level overview of the grid and its core components.
+
+---
+= Get started with monitoring StorageGRID
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Begin your journey of monitoring NetApp StorageGRID with the GMI Dashboard, providing a high-level overview of the grid and its core components.
+
+A logical place to begin is the StorageGRID Grid Management Interface (GMI) dashboard. It gives you a high-level overview of the grid, and from there you can examine each core component of the grid.
+
+image:monitor-storagegrid-gmi-dashboard.png[monitor-storagegrid-gmi-dashboard]
+
+== Information that you should monitor regularly
+
+A previous version of this technical report listed the metrics to check periodically versus trends. That information is now included in the https://docs.netapp.com/sgws-114/topic/com.netapp.doc.sg-admin/home.html[Administrator’s guide^].
+
+== Monitor storage
+
+A previous version of this technical report listed where to monitor important metrics, such as Object Storage Space, Metadata Space, Network Resources and so on. That information is now included in the https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61023[Monitoring and Troubleshooting guide].

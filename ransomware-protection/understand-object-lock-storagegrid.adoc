@@ -6,7 +6,7 @@ summary: Explore how object lock in StorageGRID provides a WORM model to prevent
 
 ---
 
-= Learn about Object Lock in StorageGRID
+= Ransomware defense using object lock
 :hardbreaks:
 :nofooter:
 :icons: font

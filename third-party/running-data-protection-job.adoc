@@ -1,7 +1,7 @@
 ---
 permalink: third-party/running-data-protection-job.html
 sidebar: sidebar
-keywords: data protection, commvault complete backup receovery, storagegrid
+keywords: data protection, commvault complete backup recovery, storagegrid
 summary: Learn how to start a backup job with Commvault Complete Backup and Recovery, and configure StorageGRID as the backup destination.
 ---
 = Run data protection jobs using Commvault and StorageGRID as primary storage

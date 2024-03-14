@@ -6,7 +6,7 @@ summary: Understand how StorageGRID integrates with cloud services.
 
 ---
 
-= Cloud integration in StorageGRID
+= Cloud integration
 :hardbreaks:
 :nofooter:
 :icons: font

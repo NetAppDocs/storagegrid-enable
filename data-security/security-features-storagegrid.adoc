@@ -6,7 +6,7 @@ summary: Discover the integral security features of the StorageGRID object stora
 
 ---
 
-= Overview of Security features in StorageGRID
+= Secure StorageGRID data and metadata in an object store
 :hardbreaks:
 :nofooter:
 :icons: font

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: commvault, storagegrid, data protection
 summary: Learn how Commvault Complete Backup and Recovery uses StorageGRID for data protection.
 ---
-= Learn how to use Commvault Complete Backup and Receovery with StorageGRID for data protection.
+= Protect StorageGRID data with Commvault
 
 :hardbreaks:
 :icons: font

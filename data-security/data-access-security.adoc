@@ -6,7 +6,7 @@ summary: Learn about the data access security features in StorageGRID.
 
 ---
 
-= Data access security features in StorageGRID
+= Data access security features
 :hardbreaks:
 :nofooter:
 :icons: font
