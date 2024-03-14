@@ -1,0 +1,102 @@
+---
+permalink: third-party/data-tiering-jobs.html
+sidebar: sidebar
+keywords: data tiering, backup jobs, manual offload, network traffic, metadata, capacity tier, source-side, deduplication, block-level, veeam
+summary: Learn about the data tiering backup jobs in Veeam that can be executed automatically or manually, and how they contribute to efficient data management.
+
+---
+= Data tiering backup jobs in Veeam
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Learn about the data tiering backup jobs in Veeam that can be executed automatically or manually, and how they contribute to efficient data management.
+
+Tiering operations can be executed automatically (every 4 hours), or they can be performed manually. The automated operation cannot be disabled.
+
+== Manual Offload Operations
+
+Manually initiated offload operations are primarily used to run offload jobs to the capacity tier instead of waiting for the next scheduled automated run. This feature comes handy in scenarios like these:
+
+**  The performance tier is getting low on space and an expedited offload operation is desired for the data stored on the performance tier backup chains.
+
+** There is a modified (reduced) restore operational window (the age of backup chains before they are eligible for offloading to the capacity tier).
+
+The below figure shows how to initiate a manual offload operation. Select an inactive backup chain from the Backup Properties window.
+
+image:third-party-manual-offload-operation.png[third-party-manual-offload-operation]
+
+== Data Transfer Considerations
+
+To optimize network traffic flow when working with the capacity tier during the configuration of the StorageGRID object storage repository, NetApp recommends retaining the default settings for the gateway server. You should also make sure that all extents of the scale-out backup repository that are configured with the capacity tier have direct internet access.
+
+If your organization uses NAT or different types of firewalls and access to the internet is limited, NetApp recommends specifying a gateway server in the configuration for the object storage repository.
+
+== Metadata and Indexes
+
+Metadata files are maintained for each backup file; they contain information about the structure of the files.
+
+The Offload Job process identifies any inactive backup chains that are subject to transfer to the capacity tier. During the data transfer process, metadata is copied along with the backup chain files to the capacity 
+tier. The “dehydrated” files with metadata information about the offloaded backup chain files are also 
+stored on the performance tier as shown in the figure.
+
+image:third-party-overview-of-Veeam-backup-procedure-tiering-to-object-storage.png[third-party-overview-of-Veeam-backup-procedure-tiering-to-object-storage]
+
+The system maintains a copy of metadata at both locations. Therefore, it can perform operations like synchronizing backup chains between the SOBR extents and the capacity tier, restoring data back to production systems, and downloading data back to the performance tier. Additionally, metadata files serve as the source of information for indexes created during each offload operation.
+
+Indexes serve the purpose of delivering an optimized solution for data transfer operations. Storing hash information about offloaded blocks and maintaining it for each backup chain ensures that any blocks already transferred to the capacity tier won’t be transferred again. This arrangement delivers a balance between cost and efficiency for the whole system.
+
+Index files are stored in the ArchiveIndex directory on the source extents from which the data was offloaded. The following figure shows the folder structure and below table lists and describes the kinds of indexes.
+
+image:third-party-archive-index.png[third-party-archive-index]
+
+[cols=2*,options="header",cols="50,50"]
+|===
+| Index
+| Description
+| ArchiveIndex | The root directory for keeping indexes. This directory is created in the repository of an extent.
+|<backup_id> | Contains objects in a backup file.
+|<objects_in_backup_id> | An identifier of an object in a backup file.If a backup was created using the https://helpcenter.veeam.com/docs/backup/vsphere/per_vm_backup_files.html[Per-VM^] method, each VM is placed in its own directory.If a backup was created as single storage, all the VMs are placed in a single directory.
+|stg_index | Contains actual indexes of the offloaded backup files(.vbk, .vib, or .vrb).
+|index_data.vbk | Contains meta information about hash values stored in index files.|
+|===
+
+Indexes are modified whenever changes are made to the backup chain, and the hash table, consecutively, also needs to be updated. When an index file is rebuilt, the scale-out repository rescan operation initiates the process as shown in the table.
+
+== Capacity Tier with Existent Backups
+
+Due to the efficiency of storing indexes and metadata on the performance and capacity tiers, the system prompts to initiate a synchronization process if you add an object repository with backup data already stored on it.
+
+image:third-party-new-scale-out-backup-repository-window.png[third-party-new-scale-out-backup-repository-window]
+
+During the synchronization process, Veeam downloads backup files with metadata located in the object storage repository to the extents that are part of a scale-out backup repository that is being added. The placement of the downloaded files is automated and based on resource availability. Disk space availability is the primary metric used during the automated resource-availability placement process.
+
+== Source-Side Deduplication
+
+The availability of metadata and index files allows the blocks of data to be offloaded to the capacity tier 
+only once. If the block has already been transferred to the capacity tier and logged in the index file, the 
+block is not transferred again. This reduces the amount of traffic required for the operations and also reduces general disk space consumption on the StorageGRID bucket.
+
+For example, in a per-VM backup chain consisting of two full and three incremental backups, the incremental backups depend on a single full backup and are considered to be a sealed backup chain. In other words, the creation of the highlighted full backup allowed the previous chain to become inactive as shown in the figure.
+
+image:third-party-creation-of-full-backup.png[third-party-creation-of-full-backup]
+
+The creation of another full backup effectively seals the previous full backup still residing on the performance tier. The scheduled Offload Job process transfers data to the capacity tier. It also now applies source-side optimizations for data transfers and transfers only the blocks not found on the capacity tier for this backup chain as shown in the below figure.
+
+image:third-party-backup-files-being-offloaded-onto-capacity-tier.png[third-party-backup-files-being-offloaded-onto-capacity-tier]
+
+By using metadata and index file information about blocks of transferred data and where they exist, the system recognized only 59.4MB of new blocks to be transferred to the capacity tier. That’s because the majority of 21.6GB of the full backup blocks were already present for this backup chain in the object storage repository.
+
+== Intelligent Block Recovery
+
+Based on the availability of metadata files at source extents and the capacity tier, the intelligent block retrieval procedure is applied during the recovery operation. If blocks of data requested are also present 
+on the performance tier, they do not need to be retrieved from the capacity tier to complete the requested 
+operations. Also, the blocks not present on the performance tier are retrieved from object storage.
+
+Not only is this functionality cost and resource effective, it also expedites operations like instant VM 
+recovery, for which the location of blocks of data directly affects the overall speed of recovery.
+
+
+
+

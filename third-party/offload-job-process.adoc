@@ -1,0 +1,105 @@
+---
+permalink: third-party/offload-job-process.html
+sidebar: sidebar
+keywords: offload job process, backup chain, seal, capacity tier, backup modes, veeam
+summary: Learn how the offload job process validates, verifies, and transfers data to object storage in the capacity tier, and how it manages backup chains.
+
+---
+= Learn about offload job process in Veeam
+
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Learn how the offload job process validates, verifies, and transfers data to object storage in the capacity tier, and how it manages backup chains.
+
+The capacity tier employs the automated Offload Job process to handle the validation, verification, and transfer of data to object storage. The Veeam Offload Job process includes the following tasks:
+
+** Verifying the eligibility of the backup chain to be processed and offloaded to the capacity tier  (policy-based). Only “sealed” chains are subject to the offload operations.
+
+** Collecting verified backup chains from the extent of each SOBR and sending them directly or through 
+the designated gateway service to StorageGRID.
+
+** Logging session results for further access and review upon request at History > System > ‘<Name of 
+SOBR Target> Offload’.
+
+== Sealed Backup Chains
+
+The concept of “sealed” backup chains is simple, but it is fundamental to the successful use of capacity 
+tier functionality in your environment. Sealed backup chains are backup chains that do not have any ongoing active operations toward them and have no scheduled operations that might require modification of the backup chain’s files.
+
+Veeam backup and replication allows the following types of jobs to be configured with SOBR as the target 
+repository:
+
+** Backup jobs (forever forward incremental, forward incremental, and reverse incremental).
+** Backup copy jobs (simple or https://helpcenter.veeam.com/docs/backup/vsphere/backup_copy_gfs.html?ver=95u4[GFS-enabled^])
+** Backup jobs created by Veeam Agent for Linux 2.0 or later
+** Backup jobs created by Veeam Agent for Microsoft Windows 2.0 or later
+
+Inherently, these backup job types are subject to the capacity tier offload operations based on the policy 
+configured, except for the following:
+
+** Backup. Forever forward incremental
+** Backup copy. Simple (without GFS policy configured)
+
+== Backup job options for scale-out backup repository
+
+Configuration settings chosen for the backup job using SOBR with the capacity tier as the target define the type of backup chain as it gets stored in the scale-out backup repository and is further processed by the capacity tier’s Offload Job process.
+
+In addition to the type of backup chain configured, the Storage Optimization and Compression settings define the block size for the backup data. The block size in turn defines the number of blocks consumed on the object storage as the backup chains are offloaded to the capacity tier as shown in figure.
+
+image:third-party-storage-configuration-settings.png[third-party-storage-configuration-settings]
+
+== Backup modes and sealing backup chains
+
+Sealing of backup chains directly depends on the type of the selected backup mode.
+
+=== Forward Incremental
+
+The main difference between forever forward incremental, which is not eligible for capacity tier offload operations because it is an “active” backup chain, and forward incremental is the creation of a periodic full 
+or synthetic full backup as shown in the following figure.
+
+image:third-party-backup-advanced-settings.png[third-party-backup-advanced-settings]
+
+The creation of full and synthetic backups allows the preceding backups and their respectively dependent restore points (incremental backups) to become “sealed” as shown in the following figure.
+
+image:third-party-inactive-and-active-backup-chain.png[third-party-inactive-and-active-backup-chain]
+
+The inactive backup chain is considered sealed, and it can be further validated by the Offload Job engine for eligibility to be moved to the capacity tier.
+
+The next time that synthetic full and active full files are successfully created (.vbk), Veeam software seals the previous chain.
+
+=== Reverse Incremental
+
+Using this backup type ensures that the changes retrieved through incremental backups are injected into the full backup file.
+
+The latest full backup (.vbk) and the first two dependent incremental backups (.vib) are considered active while all older incremental files are considered inactive and can be offloaded as shown in the following figure.
+
+image:third-party-inactive-backup-chain-available-to-be-offloaded.png[third-party-inactive-backup-chain-available-to-be-offloaded]
+
+image:third-party-inactive-backup-chain-available-to-be-offloaded-2.png[third-party-inactive-backup-chain-available-to-be-offloaded-2]
+
+=== Backup Copy Jobs
+
+Backup copy jobs with configured retention policies are validated for backup chain activity status based on a simple logic. Only full backup files created as a part of a retention policy can be offloaded to the capacity tier (weekly, monthly, quarterly, or yearly backups).
+
+In the below figure the Backup Copy Job retention policy is configured to store four weekly backups, which are 
+subject to offload operations to the capacity tier.
+
+image:third-party-new-backup-copy-job.png[third-party-new-backup-copy-job]
+
+=== Veeam Agent Jobs
+
+Backup jobs or backup copy jobs sourced from Veeam Agent for Windows or Veeam Agent for Linux are subject to the same policies as those applied to VM backup jobs or VM backup copy jobs.
+
+
+
+
+
+
+
+
+
+
+

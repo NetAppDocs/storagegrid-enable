@@ -1,0 +1,42 @@
+---
+permalink: third-party/storagegrid-archiving-backups.html
+sidebar: sidebar
+keywords: archiving backups, storagegrid, veeam
+summary: Learn how Veeam uses StorageGRID as secondary storage to enable the scale-out backup repository, facilitating efficient data offloading and archiving.
+
+---
+= Learn about archiving backups in Veeam using StorageGRID
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Learn how Veeam uses StorageGRID as secondary storage to enable the scale-out backup repository, facilitating efficient data offloading and archiving.
+
+This document describes the steps required to configure Veeam to use NetApp StorageGRID as an object storage target. It also explains the Veeam backup procedure in detail, including configuring various settings.
+
+Archiving backups is one of the many workloads that can take advantage of the NetApp StorageGRID object storage solution. Veeam uses StorageGRID as secondary storage to enable the Veeam scale-out backup repository (SOBR). Backup data is first moved into primary storage configured by the user. It is then offloaded from primary storage into object storage (or, in Veeam terminology, the capacity tier). Veeam collects data and transfers it to the Netapp StorageGRID repository by running a background activity called SOBR offload, which is executed every 4 hours. The default behavior is to move data that is 30 days old.
+
+The backup and replication software uses a logical grouping of several backup repositories, called a scale-out backup repository. This logical grouping is used to create a pool of storage devices to offload data from primary storage into object storage as shown in the following figure.
+
+image:third-party-overview-of-Veeam-backup-procedure.png[third-party-overview-of-Veeam-backup-procedure]
+
+== Prerequisites to configure Veeam with StorageGRID
+
+The following list of prerequisites is needed to configure Veeam with StorageGRID:
+
+** StorageGRID 11.1.1.3 or later
+
+* Configuration: For the SSL certificate, make sure that an object-storage API service-endpoints server certificate is installed. A self-signed SSL is adequate.
+
+* DNS-configured hostname for S3 endpoint.
+
+* S3 tenant with credentials.
+
+* A bucket configured to store the backed-up data.
+
+** Veeam 9.5.4.2399
+
+
+
+

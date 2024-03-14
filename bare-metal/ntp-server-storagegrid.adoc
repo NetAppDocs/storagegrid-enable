@@ -1,0 +1,39 @@
+---
+sidebar: sidebar
+permalink: bare-metal/ntp-server-storagegrid.html
+keywords: ntp server , storagegrid
+summary: Learn how to configure NTP server for StorageGRID.
+
+---
+
+= Specify NTP Server details for StorageGRID
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Learn how to configure NTP server for StorageGRID.
+
+You must specify the NTP configuration information for the StorageGRID system so that operations performed on separate servers can be kept synchronized.
+
+To prevent issues with time drift, you must specify four external NTP server references of Stratum 3 or higher.
+
+NOTE: When specifying the external NTP source for a production-level StorageGRID installation, do not use the Windows Time (W32Time) service on a version of Windows earlier than Windows Server 2016. The time service on earlier versions of Windows is not sufficiently accurate and is not supported by Microsoft for use in demanding environments like StorageGRID.
+
+Support boundary to configure the Windows Time service for high-accuracy environments.
+
+The external NTP servers are used by the nodes to which you previously assigned the primary NTP roles.
+
+CAUTION: The Client Network is not enabled early enough in the installation process to be the only source of NTP servers. Make sure that at least one NTP server can be reached over the grid network or admin network.
+
+To specify NTP server information, complete the following steps:
+
+.Steps
+. In the Server 1 to Server 4 text boxes, specify the IP addresses for at least four NTP servers.
+. If necessary, click the plus sign next the last entry to add more server entries.
++
+image:bare-metal-add-server-entries.png[bare-metal-add-server-entries]
++
+. Click Next.

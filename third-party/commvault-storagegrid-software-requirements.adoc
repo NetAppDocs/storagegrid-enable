@@ -24,13 +24,13 @@ The following tables list the software requirements for the Commvault and NetApp
 | Size
 | Total
 | Total Required IOPS
-|CommServe Server |1 | OS | 500GB | 500GB | n/a
-|CommServe Server |1 | SQL | 500GB | 500GB | n/a
-|MediaAgent |4 | Virtual CPU (vCPU) | 16 | 64 | n/a
-|MediaAgent |4 | RAM | 128GB | 512 | n/a
-|MediaAgent |4 | OS | 500GB | 2TB | n/a
-|MediaAgent |4 | Index Cache | 2TB | 8TB | 200+
-|MediaAgent |4 | Virtual CPU (vCPU) | 2TB | 8TB | 200-80,000K
+.2+a|CommServe Server .2+a|1 | OS | 500GB | 500GB | n/a
+| SQL | 500GB | 500GB | n/a
+.4+a|MediaAgent .4+a|4 | Virtual CPU (vCPU) | 16 | 64 | n/a
+| RAM | 128GB | 512 | n/a
+| OS | 500GB | 2TB | n/a
+| Index Cache | 2TB | 8TB | 200+
+| Virtual CPU (vCPU) | 2TB | 8TB | 200-80,000K
 |===
 
 In the test environment, one virtual primary Admin node and one virtual Gateway node were deployed on VMware on a NetApp E-Series E2812 storage array. Each node was on a separate server with the minimum production environment requirements described in the following table.

@@ -1,0 +1,38 @@
+---
+permalink: third-party/configure-storagegrid-primary-storage.html
+sidebar: sidebar
+keywords: storagegrid, primary storage, configure, veritas, enterprise vault
+summary: Learn how Veritas Enterprise Vault uses StorageGRID as a primary storage target for disaster recovery.
+---
+= Learn how to configure StorageGRID as a primary storage target for Veritas Enterprise Vault archives.
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Learn how Veritas Enterprise Vault uses StorageGRID as a primary storage target for disaster recovery.
+
+This configuration guide provides the steps to configure NetApp® StorageGRID® as a primary storage target with Veritas Enterprise Vault. It also describes how to configure StorageGRID for site failover in a disaster recovery (DR) scenario.
+
+== Reference architecture
+
+StorageGRID provides an on-premises, S3-compatible cloud backup target for Veritas Enterprise Vault. Below Figure illustrates the Veritas Enterprise Vault and StorageGRID architecture.
+
+image:third-party-veritas-enterprise-vault-and-storagegrid-architecture.png[third-party-veritas-enterprise-vault-and-storagegrid-architecture]
+
+== Where to find additional information
+
+To learn more about the information that is described in this document, review the following documents and/or websites:
+
+* NetApp StorageGRID Product Documentation
++
+https://docs.netapp.com/us-en/storagegrid-116
+
+* StorageGRID documentation resources
++
+https://www.netapp.com/data-storage/storagegrid/documentation/
+
+* Veritas Enterprise Vault Product Documentation
++
+https://www.veritas.com/support/en_US/article.100049763
+
