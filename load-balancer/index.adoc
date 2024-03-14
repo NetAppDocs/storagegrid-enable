@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: load-balancer/object-storage-load-balancer.html
+permalink: load-balancer/index.html
 keywords: object storage, load balancer
 summary: Learn about the role of a third-party and global load balancers in an object storage systems like StorageGRID.
 ---

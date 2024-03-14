@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: ransomware-protection/ransomware-attacks-storagegrid.html
+permalink: ransomware-protection/index.html
 keywords: ransomware attacks, storagegrid, best practices
 summary: Learn about ransomware attacks and how to protect data with StorageGRID security best practices.
 

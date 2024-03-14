@@ -25,26 +25,26 @@ entries:
     entries:
       - title: Secure StorageGRID data and metadata in an object store
         url: "/data-security/index.html"
-      - title: Data access security features in StorageGRID
+      - title: Data access security features
         url: "/data-security/data-access-security.html"
-      - title: Object and metadata security features in StorageGRID
+      - title: Object and metadata security
         url: "/data-security/object-metadata-security.html"
-      - title: Administration security features in StorageGRID
+      - title: Administration security features
         url: "/data-security/administration-security.html"
-      - title: Platform security features in StorageGRID 
+      - title: Platform security features 
         url: "/data-security/platform-security.html"
-      - title: Cloud integration in StorageGRID
+      - title: Cloud integration
         url: "/data-security/cloud-integration-storagegrid.html"
   - title: Ransomware defense
     pdf-filename: Ransomware Defense with StorageGRID - Protecting your S3 objects
     entries:
       - title: Protect StorageGRID S3 objects from ransomware
         url: "/ransomware-protection/index.html"
-      - title: Learn about Object Lock in StorageGRID
+      - title: Ransomware defense using object lock
         url: "/ransomware-protection/understand-object-lock-storagegrid.html"
-      - title: Replicate to a bucket with versioning in StorageGRID
+      - title: Ransomware defense using replicated bucket with versioning
         url: "/ransomware-protection/replicate-bucket-versioning-storagegrid.html"
-      - title: Implement versioning with a protective IAM policy in StorageGRID
+      - title: Ransomware defense using versioning with protective IAM policy
         url: "/ransomware-protection/versioning-protective-iam-policy-storagegrid.html"
   - title: Commvault backup and recovery
     pdf-filename: Commvault Complete Backup and Recovery - and NetApp StorageGRID
