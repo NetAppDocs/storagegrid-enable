@@ -4,7 +4,7 @@ entries:
   - title: Introduction
     url: "/trintro/index.html"
   - title: Load balancers
-  - pdf-filename: StorageGRID load balancer - Third-party and global load balancers
+    pdf-filename: StorageGRID load balancer - Third-party and global load balancers
     entries:
       - title: Introduction to load balancers and how to configure third-party  load balancers for StorageGRID
         url: "/load-balancer/object-storage-load-balancer.html"
@@ -21,7 +21,7 @@ entries:
       - title: Understand global load balancing requirements for StorageGRID
         url: "/load-balancer/global-load-balancing-design.html"
   - title: Security features
-  - pdf-filename: Security features in StorageGRID 11.7 - Securing your data and metadata in an object store
+    pdf-filename: Security features in StorageGRID 11.7 - Securing your data and metadata in an object store
     entries:
       - title: Overview of Security features in StorageGRID
         url: "/data-security/security-features-storagegrid.html"
@@ -36,7 +36,7 @@ entries:
       - title: Cloud integration in StorageGRID
         url: "/data-security/cloud-integration-storagegrid.html"
   - title: Ransomware defense
-  - pdf-filename: Ransomware Defense with StorageGRID - Protecting your S3 objects
+    pdf-filename: Ransomware Defense with StorageGRID - Protecting your S3 objects
     entries:
       - title: Ransomware attacks and StorageGRID best practices
         url: "/ransomware-protection/ransomware-attacks-storagegrid.html"
@@ -47,7 +47,7 @@ entries:
       - title: Implement versioning with a protective IAM policy in StorageGRID
         url: "/ransomware-protection/versioning-protective-iam-policy-storagegrid.html"
   - title: Commvault backup and recovery
-  - pdf-filename: Commvault Complete Backup and Recovery - and NetApp StorageGRID
+    pdf-filename: Commvault Complete Backup and Recovery - and NetApp StorageGRID
     entries:
       - title: Learn how to use Commvault Complete Backup and Recovery with StorageGRID for data protection
         url: "/third-party/commvault-storagegrid-data-protection.html"
