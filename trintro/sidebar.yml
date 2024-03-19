@@ -65,4 +65,62 @@ entries:
         url: "/third-party/baseline-performance-tests.html"
       - title: Configure StorageGRID consistency levels for operations on S3 buckets
         url: "/third-party/set-consistency-level-s3.html"          
+  - title: TR-4765
+    pdf-filename: TR-4765-temp
+    entries:
+      - title: Introduction to StorageGRID monitoring
+        url: "/monitor/storagegrid-monitoring.html"
+      - title: Get started with monitoring StorageGRID
+        url: "/monitor/getting-started.html"
+      - title: Use alerts to monitor StorageGRID
+        url: "/monitor/alerts-monitoring.html"
+      - title: Advanced Monitoring in StorageGRID
+        url: "/monitor/advanced-monitor-storagegrid.html"
+      - title: Access metrics through cURL in StorageGRID
+        url: "/monitor/access-metrics-curl.html"          
+      - title: View metrics through Grafana dashboard in StorageGRID
+        url: "/monitor/storagegrid-monitoring.html"
+      - title: Use traffic classification policies to monitor StorageGRID
+        url: "/monitor/traffic-classification-policies.html"
+      - title: Use audit logs to monitor StorageGRID
+        url: "/monitor/audit-log-monitoring.html"          
+      - title: Use StorageGRID App for Splunk
+        url: "/monitor/storagegrid-monitoring.html"          
+  - title: TR-4882
+    pdf-filename: TR-4882-temp
+    entries:
+      - title: Quick start guide to install StorageGRID on bare metal grid
+        url: "/bare-metal/quick-start-storagegrid-install.html"
+      - title: Prerequisites to install StorageGRID
+        url: "/bare-metal/prerequisites-install-storagegrid.html"
+      - title: Install Docker for StorageGRID
+        url: "/bare-metal/install-docker-storagegrid.html"
+      - title: Node configuration files for StorageGRID
+        url: "/bare-metal/node-config-file-storagegrid.html"
+      - title: Install StorageGRID dependencies and packages
+        url: "/bare-metal/install-storagegrid-dependencies.html"          
+      - title: Validate the StorageGRID configuration files
+        url: "/bare-metal/validate-storagegrid-config-files.html"
+      - title: Start the StorageGRID host service
+        url: "/bare-metal/start-storagegrid-host-service.html"
+      - title: Configure the Grid Manager in StorageGRID
+        url: "/bare-metal/configure-grid-manager-storagegrid.html"          
+      - title: Add StorageGRID license details
+        url: "/bare-metal/storagegrid-license.html"          
+      - title: Add sites to StorageGRID
+        url: "/bare-metal/add-sites-storagegrid.html"          
+      - title: Specify grid network subnets for StorageGRID
+        url: "/bare-metal/grid-network-subnets-storagegrid.html"          
+      - title: Approve grid nodes for StorageGRID
+        url: "/bare-metal/approve-grid-nodes-storagegrid.html"          
+      - title: Specify NTP Server details for StorageGRID
+        url: "/bare-metal/ntp-server-storagegrid.html"          
+      - title: Specify DNS server details for StorageGRID
+        url: "/bare-metal/dns-server-storagegrid.html"          
+      - title: Specify the system passwords for StorageGRID
+        url: "/bare-metal/system-passwords-storagegrid.html"          
+      - title: Review configuration and complete StorageGRID install
+        url: "/bare-metal/review-config-complete-storagegrid-install.html"          
+      - title: Upgrade bare-metal nodes in StorageGRID
+        url: "/bare-metal/upgrading-bare-metal-nodes-storagegrid.html"          
 
