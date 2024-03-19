@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, primary storage, configure, veritas, enterprise vault
 summary: Learn how Veritas Enterprise Vault uses StorageGRID as a primary storage target for disaster recovery.
 ---
-= Learn how to configure StorageGRID as a primary storage target for Veritas Enterprise Vault archives.
+= Learn how to configure StorageGRID as a primary storage target for Veritas Enterprise Vault archives
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
