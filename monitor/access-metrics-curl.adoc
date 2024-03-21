@@ -6,6 +6,7 @@ summary: Learn how to access metrics through CLI using cURL and authorization to
 
 ---
 = Access metrics through cURL in StorageGRID
+:experimental:
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
@@ -17,7 +18,7 @@ You can also access metrics through the CLI by using cURL. To perform this opera
 
 To request a token, follow these steps:
 
-. From the GMI, select Help →API Documentation.
+. From the GMI, select menu:Help[API Documentation].
 . Scroll down to Auth to find operations on authorization. The following screenshot shows the parameters for the POST method.
 +
 image:monitor-post-method.png[monitor-post-method]

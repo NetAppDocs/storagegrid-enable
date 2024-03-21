@@ -1,5 +1,5 @@
 ---
-permalink: monitor/storagegrid-monitoring.html
+permalink: monitor/storagegrid-app-splunk.html
 sidebar: sidebar
 keywords: storagegrid app, splunk
 summary: Explore the NetApp StorageGRID App for Splunk that imports and enriches data from StorageGRID, providing powerful search and analysis features.

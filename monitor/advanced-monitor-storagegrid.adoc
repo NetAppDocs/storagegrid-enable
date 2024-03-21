@@ -5,7 +5,8 @@ keywords: monitor, storagegrid
 summary: Learn how to monitor StorageGRID using metrics API.
 
 ---
-= Advanced Monitoring in StorageGRID
+= Advanced monitoring in StorageGRID
+:experimental:
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
@@ -15,7 +16,7 @@ Learn how to monitor StorageGRID using metrics API.
 
 == View metrics API through a Prometheus query
 
-Prometheus is an open-source software for collecting metrics. To access StorageGRID’s embedded Prometheus through the GMI, go to Support → Metrics.
+Prometheus is an open-source software for collecting metrics. To access StorageGRID’s embedded Prometheus through the GMI, go to menu:Support[Metrics].
 
 image:monitor-metrics-page.png[monitor-metrics-page]
 
@@ -29,7 +30,7 @@ To make a Prometheus URL query, follow these steps:
 
 . Start typing in the query text box. As you type, metrics are listed. For our purposes, only metrics that start with StorageGRID and Node are important.
 
-. To see the number of HTTP sessions for each node, type `storagegrid_http` and select `storagegrid_http_sessions_incoming_currently_established`. Click Execute and display the information in a graph or console format.
+. To see the number of HTTP sessions for each node, type `storagegrid_http` and select `storagegrid_http_sessions_incoming_currently_established`. Click *Execute and display the information in a graph or console format*.
 
 +
 image:monitor-http-sessions.png[monitor-http-sessions]
@@ -44,7 +45,7 @@ You can also access the same data through the StorageGRID management API.
 
 To export metrics through the API, follow these steps:
 
-. From the GMI, select Help → API Documentation.
+. From the GMI, select menu:Help[API Documentation].
 . Scroll down to Metrics and select GET /grid/metric-query.
 +
 image:monitor-metrics-query.png[monitor-metrics-query]
