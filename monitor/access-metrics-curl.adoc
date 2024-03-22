@@ -18,12 +18,14 @@ You can also access metrics through the CLI by using cURL. To perform this opera
 
 To request a token, follow these steps:
 
+.Steps
+
 . From the GMI, select menu:Help[API Documentation].
 . Scroll down to Auth to find operations on authorization. The following screenshot shows the parameters for the POST method.
 +
 image:monitor-post-method.png[monitor-post-method]
 . Click Try It Out and edit the body with your GMI username and password.
-. Click Execute
+. Click Execute.
 . Copy the cURL command that is provided in the cURL section and paste it in a terminal window. The command looks like the following:
 +
 ----

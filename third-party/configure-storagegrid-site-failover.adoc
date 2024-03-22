@@ -27,7 +27,7 @@ Before you configure StorageGRID site failover, verify the following prerequisit
 To configure StorageGRID site failover, complete the followings steps:
 
 .Steps
-. To ensure connectivity to StorageGRID during site failures, configure a high-availability (HA) group. From StorageGRID Grid Manager Interface (GMI), click Configuration, High Availability Groups, and +Create.
+. To ensure connectivity to StorageGRID during site failures, configure a high-availability (HA) group. From StorageGRID Grid Manager Interface (GMI), click Configuration, High Availability Groups, and + Create.
 +
 image:third-party-create-high-availability-group.png[third-party-create-high-availability-group]
 +
@@ -35,7 +35,7 @@ image:third-party-create-high-availability-group.png[third-party-create-high-ava
 +
 image:third-party-edit-high-availability-group.png[third-party-edit-high-availability-group]
 +
-. This virtual IP (VIP) address should be associated to the S3 host name used during Veritas Enterprise Vault ’s partition configuration. The VIP address resolves traffic to SITE1—and during SITE1 failure, the VIP address transparently reroutes traffic to SITE2.
+. This virtual IP (VIP) address should be associated to the S3 host name used during Veritas Enterprise Vault’s partition configuration. The VIP address resolves traffic to SITE1—and during SITE1 failure, the VIP address transparently reroutes traffic to SITE2.
 +
 . Make sure the data is replicated to both SITE1 and SITE2. That way if SITE1 fails, the object data is 
 still available from SITE2. This is done by first configuring the storage pools.

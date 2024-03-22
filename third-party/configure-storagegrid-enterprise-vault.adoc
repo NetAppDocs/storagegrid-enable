@@ -41,6 +41,7 @@ such as NetApp StorageGRID. For more information, see this https://www.veritas.c
 == Configure StorageGRID with Veritas Enterprise Vault
 
 To configure StorageGRID with Veritas Enterprise Vault, compete the following steps:
+
 .Steps
 
 . Launch the Enterprise Vault Administration console.

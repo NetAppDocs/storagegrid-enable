@@ -28,6 +28,8 @@ With this view, you can access the Prometheus interface. From there, you can sea
 
 To make a Prometheus URL query, follow these steps:
 
+.Steps
+
 . Start typing in the query text box. As you type, metrics are listed. For our purposes, only metrics that start with StorageGRID and Node are important.
 
 . To see the number of HTTP sessions for each node, type `storagegrid_http` and select `storagegrid_http_sessions_incoming_currently_established`. Click *Execute and display the information in a graph or console format*.

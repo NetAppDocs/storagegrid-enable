@@ -18,6 +18,8 @@ Grafana is an open-source software for metric visualization. By default, we have
 
 These preconstructed dashboards are not only useful for monitoring but also for troubleshooting an issue. Some are intended for use by technical support. For example, to view the metrics of a storage node, follow these steps.
 
+.Steps
+
 . From the GMI, menu:Support[Metrics].
 . Under the Grafana section, select the Node dashboard.
 +

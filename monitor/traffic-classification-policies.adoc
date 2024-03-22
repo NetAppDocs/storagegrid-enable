@@ -18,6 +18,8 @@ Traffic Classification Policies are new to StorageGRID 11.4 and provide a method
 
 To configure a Traffic Classification Policy, follow these steps:
 
+.Steps
+
 . On the GMI, navigate to menu:Configuration[System Settings > Traffic Classification].
 . Click Create +
 . Enter a name and description for your policy.

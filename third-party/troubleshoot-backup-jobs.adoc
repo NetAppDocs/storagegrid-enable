@@ -13,32 +13,31 @@ summary: Learn how to put any scale-out backup repository extents into maintenan
 [.lead]
 Learn how to put any scale-out backup repository extents into maintenance mode, and evacuate backups from extents in Veeam.
 
-== Switching to Maintenance Mode
+== Switching to maintenance mode
 
 If you need to perform service actions on an extent (for example, to upgrade it or install a patch on it), you 
 can put an extent of the scale-out backup repository in Maintenance mode. You must also put the extent in Maintenance mode before you evacuate backups from this extent.
 
 To put an extent in Maintenance mode, complete the following steps:
 
-.Steps: 
+.Steps
 . Open the Backup Infrastructure view.
 . In the inventory pane under Scale-out Repositories, select a scale-out backup repository.
 . In the working area, select the extent and click Maintenance Mode in the ribbon, or right-click the extent and select Maintenance Mode.
 
-To bring the extent back to the normal operational mode, select the extent and click Maintenance Mode in 
-the ribbon, or right-click it and select Maintenance Mode as shown in the figure.
+To bring the extent back to the normal operational mode, select the extent and click Maintenance Mode in the ribbon, or right-click it and select Maintenance Mode as shown in the following figure.
 
 image:third-party-selecting-maintenance-mode.png[third-party-selecting-maintenance-mode]
 
-== Evacuating Backups from Extents
+== Evacuating backups from extents
 
 To remove an extent from the scale-out backup repository, you must first evacuate backups from the extent. When you evacuate backups, Veeam Backup & Replication moves backup files from the extent to other extents that belong to the same scale-out backup repository.
 
-You must put the extent in Maintenance mode before you evacuate backups from it. For more information, see https://helpcenter.veeam.com/docs/backup/vsphere/sobr_maintenance.html[Switching to Maintenance Mode in the Veeam Help Center].
+You must put the extent in Maintenance mode before you evacuate backups from it. For more information, see https://helpcenter.veeam.com/docs/backup/vsphere/sobr_maintenance.html[Switching to Maintenance Mode in the Veeam Help Center^].
 
 To evacuate backup files from the extent, follow these steps.
 
-.Steps:
+.Steps
 
 . [Recommended] Stop and disable jobs that are targeted at the extent from which you plan to 
 evacuate backups.
@@ -49,6 +48,6 @@ extent and select Evacuate Backups.
 . If you have disabled jobs, reenable them.
 
 After you evacuate backups, you can remove the extent from the scale-out backup repository. For more
-information on this process, see https://helpcenter.veeam.com/docs/backup/vsphere/sobr_remove_extent.html[Removing Extents from Scale-Out Repositories in the Veeam Help Center].
+information on this process, see https://helpcenter.veeam.com/docs/backup/vsphere/sobr_remove_extent.html[Removing Extents from Scale-Out Repositories in the Veeam Help Center^].
 
 image:third-party-evacuating-backups.png[third-party-evacuating-backups]

@@ -21,10 +21,9 @@ The capacity tier employs the automated Offload Job process to handle the valida
 ** Collecting verified backup chains from the extent of each SOBR and sending them directly or through 
 the designated gateway service to StorageGRID.
 
-** Logging session results for further access and review upon request at menu:History[System > Name of 
-SOBR Target> Offload].
+** Logging session results for further access and review upon request at menu:History[System > 'Name of SOBR Target'> Offload].
 
-== Sealed Backup Chains
+== Sealed backup chains
 
 The concept of “sealed” backup chains is simple, but it is fundamental to the successful use of capacity 
 tier functionality in your environment. Sealed backup chains are backup chains that do not have any ongoing active operations toward them and have no scheduled operations that might require modification of the backup chain’s files.
@@ -47,7 +46,7 @@ configured, except for the following:
 
 Configuration settings chosen for the backup job using SOBR with the capacity tier as the target define the type of backup chain as it gets stored in the scale-out backup repository and is further processed by the capacity tier’s Offload Job process.
 
-In addition to the type of backup chain configured, the Storage Optimization and Compression settings define the block size for the backup data. The block size in turn defines the number of blocks consumed on the object storage as the backup chains are offloaded to the capacity tier as shown in figure.
+In addition to the type of backup chain configured, the Storage Optimization and Compression settings define the block size for the backup data. The block size in turn defines the number of blocks consumed on the object storage as the backup chains are offloaded to the capacity tier as shown in the following figure.
 
 image:third-party-storage-configuration-settings.png[third-party-storage-configuration-settings]
 
@@ -55,7 +54,7 @@ image:third-party-storage-configuration-settings.png[third-party-storage-configu
 
 Sealing of backup chains directly depends on the type of the selected backup mode.
 
-=== Forward Incremental
+=== Forward incremental
 
 The main difference between forever forward incremental, which is not eligible for capacity tier offload operations because it is an “active” backup chain, and forward incremental is the creation of a periodic full 
 or synthetic full backup as shown in the following figure.
@@ -70,7 +69,7 @@ The inactive backup chain is considered sealed, and it can be further validated 
 
 The next time that synthetic full and active full files are successfully created (.vbk), Veeam software seals the previous chain.
 
-=== Reverse Incremental
+=== Reverse incremental
 
 Using this backup type ensures that the changes retrieved through incremental backups are injected into the full backup file.
 
@@ -80,7 +79,7 @@ image:third-party-inactive-backup-chain-available-to-be-offloaded.png[third-part
 
 image:third-party-inactive-backup-chain-available-to-be-offloaded-2.png[third-party-inactive-backup-chain-available-to-be-offloaded-2]
 
-=== Backup Copy Jobs
+=== Backup copy jobs
 
 Backup copy jobs with configured retention policies are validated for backup chain activity status based on a simple logic. Only full backup files created as a part of a retention policy can be offloaded to the capacity tier (weekly, monthly, quarterly, or yearly backups).
 
@@ -89,7 +88,7 @@ subject to offload operations to the capacity tier.
 
 image:third-party-new-backup-copy-job.png[third-party-new-backup-copy-job]
 
-=== Veeam Agent Jobs
+=== Veeam Agent jobs
 
 Backup jobs or backup copy jobs sourced from Veeam Agent for Windows or Veeam Agent for Linux are subject to the same policies as those applied to VM backup jobs or VM backup copy jobs.
 
