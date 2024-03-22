@@ -16,7 +16,7 @@ Learn about the compute, storage, network, docker, and node reqiurements to depl
 
 == Compute requirements
 
-The table below lists the supported minimum resource requirements for each type of StorageGRID node These are the minimum resources required for StorageGRID nodes.
+The table below lists the supported minimum resource requirements for each type of StorageGRID node. These are the minimum resources required for StorageGRID nodes.
 
 [cols=3*,options="header",cols="30,35,35"]
 |===
@@ -131,7 +131,7 @@ BLOCK_DEVICE_RANGEDB_001 = /dev/mapper/SN-Db01
 BLOCK_DEVICE_RANGEDB_002 = /dev/mapper/SN-Db02`
 |===
 
-In this example, the disk sizes shown in the above table are needed per container type. The requirements per physical host are described in link:prerequisites-install-storagegrid.html#physical-host-layout-and-requirements[Physical host layout and requirements], later in this document.
+In this example, the disk sizes shown in the following table are needed per container type. The requirements per physical host are described in link:prerequisites-install-storagegrid.html#physical-host-layout-and-requirements[Physical host layout and requirements], later in this document.
 
 == Disk sizes per container type
 === Admin container
@@ -192,14 +192,14 @@ In this example, the disk sizes shown in the above table are needed per containe
 |===
 
 == Physical host layout and requirements
-By combining the compute and network requirements shown in Table 3, you can get a basic set of hardware required for this installation of three physical (or virtual) servers with 16 cores, 64GB of RAM, and two network interfaces. If higher throughput is desired, it is possible to bond two or more interfaces on the grid or Client Network and use a VLAN-tagged interface such as bond0.520 in the node config file. If you expect more intense workloads, more memory for both the host and the containers is better.
+By combining the compute and network requirements shown in table above, you can get a basic set of hardware required for this installation of three physical (or virtual) servers with 16 cores, 64GB of RAM, and two network interfaces. If higher throughput is desired, it is possible to bond two or more interfaces on the grid or Client Network and use a VLAN-tagged interface such as bond0.520 in the node config file. If you expect more intense workloads, more memory for both the host and the containers is better.
 
 As shown in the figure, these servers will host six Docker containers, two per host. The RAM is calculated by providing 24GB per container and 16GB for the host OS itself.
 
 image:bare-metal-layout-for-three-hosts.png[Sample layout for three hosts.]
 
 Total RAM required per physical host (or VM) is 24 x 2 + 16 = 64GB.
-Table 6 through Table 8 list the required disk storage for hosts 1, 2, and 3.
+The following tables list the required disk storage for hosts 1, 2, and 3.
 
 [cols=2*,options="header",cols="50,50"]
 |===

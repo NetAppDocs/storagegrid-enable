@@ -82,7 +82,7 @@ lrwxrwxrwx 1 root root 9 Dec 21 16:42 pci-0000:03:00.0-scsi-0:0:8:0 -> ../../sdh
 lrwxrwxrwx 1 root root 9 Dec 21 16:42 pci-0000:03:00.0-scsi-0:0:9:0 -> ../../sdi
 ----
 
-== Example for primary Admin Node
+== Example for primary Admin node
 
 Example file name:
 ----
@@ -135,7 +135,7 @@ GRID_NETWORK_MASK = 255.255.255.0
 GRID_NETWORK_GATEWAY = 10.193.204.1
 ----
 
-== Example for Gateway Node
+== Example for gateway node
 
 Example file name:
 
