@@ -6,7 +6,7 @@ summary: Learn how the offload job process validates, verifies, and transfers da
 
 ---
 = Learn about offload job process in Veeam
-
+:experimental:
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
@@ -21,8 +21,8 @@ The capacity tier employs the automated Offload Job process to handle the valida
 ** Collecting verified backup chains from the extent of each SOBR and sending them directly or through 
 the designated gateway service to StorageGRID.
 
-** Logging session results for further access and review upon request at History > System > ‘<Name of 
-SOBR Target> Offload’.
+** Logging session results for further access and review upon request at menu:History[System > Name of 
+SOBR Target> Offload].
 
 == Sealed Backup Chains
 
@@ -84,7 +84,7 @@ image:third-party-inactive-backup-chain-available-to-be-offloaded-2.png[third-pa
 
 Backup copy jobs with configured retention policies are validated for backup chain activity status based on a simple logic. Only full backup files created as a part of a retention policy can be offloaded to the capacity tier (weekly, monthly, quarterly, or yearly backups).
 
-In the below figure the Backup Copy Job retention policy is configured to store four weekly backups, which are 
+In the following figure the Backup Copy Job retention policy is configured to store four weekly backups, which are 
 subject to offload operations to the capacity tier.
 
 image:third-party-new-backup-copy-job.png[third-party-new-backup-copy-job]

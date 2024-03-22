@@ -6,6 +6,7 @@ summary: Learn how to set up and monitor Traffic Classification Policies in Stor
 
 ---
 = Use traffic classification policies to monitor StorageGRID
+:experimental:
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
@@ -17,7 +18,7 @@ Traffic Classification Policies are new to StorageGRID 11.4 and provide a method
 
 To configure a Traffic Classification Policy, follow these steps:
 
-. On the GMI, navigate to Configuration → System Settings → Traffic Classification.
+. On the GMI, navigate to menu:Configuration[System Settings > Traffic Classification].
 . Click Create +
 . Enter a name and description for your policy.
 . Create a matching rule.

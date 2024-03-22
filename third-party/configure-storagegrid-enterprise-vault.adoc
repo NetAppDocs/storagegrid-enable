@@ -5,6 +5,7 @@ keywords: storagegrid, enterprise vault, configure
 summary: Learn how to implement basic configurations for StorageGRID 11.5 and Veritas Enterprise Vault 14.1.
 ---
 = Configure StorageGRID and Veritas Enterprise Vault
+:experimental:
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
@@ -47,7 +48,7 @@ To configure StorageGRID with Veritas Enterprise Vault, compete the following st
 image:third-party-enterprise-vault.png[media/third-party-enterprise-vault]
 +
 . Create a new vault store partition in the appropriate vault store. Expand the Vault Store Groups folder 
-and then the appropriate vault store. Right-click Partition and select New > Partition.
+and then the appropriate vault store. Right-click Partition and select menu:New[Partition].
 +
 image:third-party-enterprise-vault-2.png[media/third-party-enterprise-vault-2]
 +

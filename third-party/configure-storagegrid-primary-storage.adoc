@@ -16,7 +16,7 @@ This configuration guide provides the steps to configure NetApp® StorageGRID® 
 
 == Reference architecture
 
-StorageGRID provides an on-premises, S3-compatible cloud backup target for Veritas Enterprise Vault. Below Figure illustrates the Veritas Enterprise Vault and StorageGRID architecture.
+StorageGRID provides an on-premises, S3-compatible cloud backup target for Veritas Enterprise Vault. The following figure illustrates the Veritas Enterprise Vault and StorageGRID architecture.
 
 image:third-party-veritas-enterprise-vault-and-storagegrid-architecture.png[third-party-veritas-enterprise-vault-and-storagegrid-architecture]
 

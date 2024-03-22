@@ -23,7 +23,7 @@ Manually initiated offload operations are primarily used to run offload jobs to 
 
 ** There is a modified (reduced) restore operational window (the age of backup chains before they are eligible for offloading to the capacity tier).
 
-The below figure shows how to initiate a manual offload operation. Select an inactive backup chain from the Backup Properties window.
+The following figure shows how to initiate a manual offload operation. Select an inactive backup chain from the Backup Properties window.
 
 image:third-party-manual-offload-operation.png[third-party-manual-offload-operation]
 
@@ -47,7 +47,7 @@ The system maintains a copy of metadata at both locations. Therefore, it can per
 
 Indexes serve the purpose of delivering an optimized solution for data transfer operations. Storing hash information about offloaded blocks and maintaining it for each backup chain ensures that any blocks already transferred to the capacity tier won’t be transferred again. This arrangement delivers a balance between cost and efficiency for the whole system.
 
-Index files are stored in the ArchiveIndex directory on the source extents from which the data was offloaded. The following figure shows the folder structure and below table lists and describes the kinds of indexes.
+Index files are stored in the ArchiveIndex directory on the source extents from which the data was offloaded. The following figure shows the folder structure and the table below lists and describes the kinds of indexes.
 
 image:third-party-archive-index.png[third-party-archive-index]
 
@@ -82,7 +82,7 @@ For example, in a per-VM backup chain consisting of two full and three increment
 
 image:third-party-creation-of-full-backup.png[third-party-creation-of-full-backup]
 
-The creation of another full backup effectively seals the previous full backup still residing on the performance tier. The scheduled Offload Job process transfers data to the capacity tier. It also now applies source-side optimizations for data transfers and transfers only the blocks not found on the capacity tier for this backup chain as shown in the below figure.
+The creation of another full backup effectively seals the previous full backup still residing on the performance tier. The scheduled Offload Job process transfers data to the capacity tier. It also now applies source-side optimizations for data transfers and transfers only the blocks not found on the capacity tier for this backup chain as shown in the following figure.
 
 image:third-party-backup-files-being-offloaded-onto-capacity-tier.png[third-party-backup-files-being-offloaded-onto-capacity-tier]
 

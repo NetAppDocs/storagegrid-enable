@@ -3,9 +3,7 @@ sidebar: sidebar
 permalink: bare-metal/prerequisites-install-storagegrid.html
 keywords: prerequisites, install storagegrid
 summary: Learn about the compute, storage, network, docker, and node reqiurements to deploy StorageGRID. 
-
 ---
-
 = Prerequisites to install StorageGRID
 :hardbreaks:
 :nofooter:
@@ -74,7 +72,7 @@ If running in VMWare vSphere, you must accept promiscuous mode, MAC address chan
 
 The nodes each require either SAN-based or local disk devices of the sizes shown in the following table.
 
-NOTE: The numbers in the table are for each StorageGRID service type, not for the entire grid or each physical host. Based on the deployment choices, we will calculate numbers for each physical host in “Physical host layout and requirements,” later in this document.
+NOTE: The numbers in the table are for each StorageGRID service type, not for the entire grid or each physical host. Based on the deployment choices, we will calculate numbers for each physical host in link:prerequisites-install-storagegrid.html#physical-host-layout-and-requirements[Physical host layout and requirements], later in this document.
 ++ ++
 The paths or file systems marked with an asterisk will be created in the StorageGRID container itself by the installer. No manual configuration or file system creation is required by the administrator, but the hosts need block devices to satisfy these requirements. In other words, the block device should appear by using the command `lsblk` but not be formatted or mounted within the host OS.
 ++ ++
@@ -133,7 +131,7 @@ BLOCK_DEVICE_RANGEDB_001 = /dev/mapper/SN-Db01
 BLOCK_DEVICE_RANGEDB_002 = /dev/mapper/SN-Db02`
 |===
 
-In this example, the disk sizes shown in the above table are needed per container type. The requirements per physical host are described in “Physical host layout and requirements,” later in this document.
+In this example, the disk sizes shown in the above table are needed per container type. The requirements per physical host are described in link:prerequisites-install-storagegrid.html#physical-host-layout-and-requirements[Physical host layout and requirements], later in this document.
 
 == Disk sizes per container type
 === Admin container
