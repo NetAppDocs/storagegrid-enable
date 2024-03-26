@@ -48,7 +48,7 @@ To configure Enterprise Vault, complete the following steps:
 
 .Steps
 
-. Repeat steps 1-3 in the “Basic configuration” section, but this time select the Store data in WORM Mode Using S3 Object Lock option. Click Next.
+. Repeat steps 1-3 in the link:configure-storagegrid-s3-object-lock.html#configure-storagegrid-s3-object-lock-default-bucket-retention[Basic configuration] section, but this time select the Store data in WORM Mode Using S3 Object Lock option. Click Next.
 +
 image:third-party-new-partition-8.png[third-party-new-partition-8]
 +

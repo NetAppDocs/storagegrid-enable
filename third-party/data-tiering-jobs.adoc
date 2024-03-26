@@ -39,7 +39,7 @@ Metadata files are maintained for each backup file; they contain information abo
 
 The Offload Job process identifies any inactive backup chains that are subject to transfer to the capacity tier. During the data transfer process, metadata is copied along with the backup chain files to the capacity 
 tier. The “dehydrated” files with metadata information about the offloaded backup chain files are also 
-stored on the performance tier as shown in the figure.
+stored on the performance tier as shown in the following figure.
 
 image:third-party-overview-of-Veeam-backup-procedure-tiering-to-object-storage.png[third-party-overview-of-Veeam-backup-procedure-tiering-to-object-storage]
 
@@ -76,7 +76,7 @@ During the synchronization process, Veeam downloads backup files with metadata l
 
 The availability of metadata and index files allows the blocks of data to be offloaded to the capacity tier only once. If the block has already been transferred to the capacity tier and logged in the index file, the block is not transferred again. This reduces the amount of traffic required for the operations and also reduces general disk space consumption on the StorageGRID bucket.
 
-For example, in a per-VM backup chain consisting of two full and three incremental backups, the incremental backups depend on a single full backup and are considered to be a sealed backup chain. In other words, the creation of the highlighted full backup allowed the previous chain to become inactive as shown in the figure.
+For example, in a per-VM backup chain consisting of two full and three incremental backups, the incremental backups depend on a single full backup and are considered to be a sealed backup chain. In other words, the creation of the highlighted full backup allowed the previous chain to become inactive as shown in the following figure.
 
 image:third-party-creation-of-full-backup.png[third-party-creation-of-full-backup]
 

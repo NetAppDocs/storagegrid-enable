@@ -33,7 +33,7 @@ image:third-party-object-storage.png[third-party-object-storage]
 +
 image:third-party-new-object-storage-repository.png[third-party-new-object-storage-repository]
 
-. Provide the service endpoint, the region, and the credentials used for the tenant account. The endpoint must be a host name that can be resolved by DNS and configured with an SSL certificate, as noted in section 2“Prerequisites.” Click Next.
+. Provide the service endpoint, the region, and the credentials used for the tenant account. The endpoint must be a host name that can be resolved by DNS and configured with an SSL certificate, as noted in section link:storagegrid-archiving-backups.html#prerequisites-to-configure-veeam-with-storagegrid[Prerequisites]. Click Next.
 +
 image:third-party-new-object-storage-repository-1.png[third-party-new-object-storage-repository-1]
 
@@ -61,7 +61,7 @@ image:third-party-edit-scale-out-backup-repository.png[third-party-edit-scale-ou
 . Select the scale-out repository that you created earlier as your capacity tier.
 +
 image:third-party-edit-scale-out-backup-repository-2.png[third-party-edit-scale-out-backup-repository-2]
-
++
 Veeam allows you to move the oldest backup files sooner if the backup repository is reaching capacity.
 +
 image:third-party-edit-scale-out-backup-repository-2-follow.png[third-party-edit-scale-out-backup-repository-2-follow]

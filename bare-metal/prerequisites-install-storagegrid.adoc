@@ -194,7 +194,7 @@ In this example, the disk sizes shown in the following table are needed per cont
 == Physical host layout and requirements
 By combining the compute and network requirements shown in table above, you can get a basic set of hardware required for this installation of three physical (or virtual) servers with 16 cores, 64GB of RAM, and two network interfaces. If higher throughput is desired, it is possible to bond two or more interfaces on the grid or Client Network and use a VLAN-tagged interface such as bond0.520 in the node config file. If you expect more intense workloads, more memory for both the host and the containers is better.
 
-As shown in the figure, these servers will host six Docker containers, two per host. The RAM is calculated by providing 24GB per container and 16GB for the host OS itself.
+As shown in the following figure, these servers will host six Docker containers, two per host. The RAM is calculated by providing 24GB per container and 16GB for the host OS itself.
 
 image:bare-metal-layout-for-three-hosts.png[Sample layout for three hosts.]
 
@@ -334,7 +334,7 @@ This example assumes that your physical network device for the grid network is e
 
 == Optional storage setup with iSCSI
 
-If you are not using iSCSI storage, you must ensure that host1, host2, and host3 contain block devices of sufficient size to meet their requirements. See Table 4 for host1, host2, and host3 storage requirements.
+If you are not using iSCSI storage, you must ensure that host1, host2, and host3 contain block devices of sufficient size to meet their requirements. See link:prerequisites-install-storagegrid.html#disk-sizes-per-container-type[Disk sizes per container type] for host1, host2, and host3 storage requirements.
 
 To set up storage with iSCSI, complete the following steps:
 
@@ -353,7 +353,7 @@ sudo yum install device-mapper-multipath
 InitiatorName=iqn.2006-04.com.example.node1
 ----
 +
-. Using the initiator name from step 2, map LUNs on your storage device (of the number and size found in Table 2) to each storage node.
+. Using the initiator name from step 2, map LUNs on your storage device (of the number and size shown in the link:prerequisites-install-storagegrid.html#storage-requirements[Storage requirements] table) to each storage node.
 . Discover the newly created LUNs with `iscsiadm` and log in to them.
 +
 ----

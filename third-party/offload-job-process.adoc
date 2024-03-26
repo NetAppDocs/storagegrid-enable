@@ -83,8 +83,7 @@ image:third-party-inactive-backup-chain-available-to-be-offloaded-2.png[third-pa
 
 Backup copy jobs with configured retention policies are validated for backup chain activity status based on a simple logic. Only full backup files created as a part of a retention policy can be offloaded to the capacity tier (weekly, monthly, quarterly, or yearly backups).
 
-In the following figure the Backup Copy Job retention policy is configured to store four weekly backups, which are 
-subject to offload operations to the capacity tier.
+In the following figure the Backup Copy Job retention policy is configured to store four weekly backups, which are subject to offload operations to the capacity tier.
 
 image:third-party-new-backup-copy-job.png[third-party-new-backup-copy-job]
 

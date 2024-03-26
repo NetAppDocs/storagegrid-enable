@@ -30,7 +30,7 @@ In the test environment described in http://www.netapp.com/us/media/tr-4831.pdf[
 NOTE: There are T-shirt sizing samples available for NetApp StorageGRID and Commvault as part of 
 the NetApp Validated Architecture that use NetApp HCI for compute and NetApp ONTAP on the primary disk with StorageGRID for an auxiliary copy. Ask your NetApp representative for more details. 
 
-Following table lists the benefits of each backup option with StorageGRID.
+The following table lists the benefits of each backup option with StorageGRID.
 
 [cols=4*,options="header",cols="25,55,50"]
 |===
