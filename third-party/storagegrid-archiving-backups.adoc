@@ -13,7 +13,7 @@ summary: Learn how Veeam uses StorageGRID as secondary storage to enable the sca
 [.lead]
 Learn how Veeam uses StorageGRID as secondary storage to enable the scale-out backup repository, facilitating efficient data offloading and archiving.
 
-This document describes the steps required to configure Veeam to use NetApp StorageGRID as an object storage target. It also explains the Veeam backup procedure in detail, including configuring various settings.
+This document describes the steps required to configure Veeam to use NetApp® StorageGRID® as an object storage target. It also explains the Veeam backup procedure in detail, including configuring various settings.
 
 Archiving backups is one of the many workloads that can take advantage of the NetApp StorageGRID object storage solution. Veeam uses StorageGRID as secondary storage to enable the Veeam scale-out backup repository (SOBR). Backup data is first moved into primary storage configured by the user. It is then offloaded from primary storage into object storage (or, in Veeam terminology, the capacity tier). Veeam collects data and transfers it to the Netapp StorageGRID repository by running a background activity called SOBR offload, which is executed every 4 hours. The default behavior is to move data that is 30 days old.
 
@@ -37,6 +37,12 @@ The following list of prerequisites is needed to configure Veeam with StorageGRI
 
 ** Veeam 9.5.4.2399
 
+== Where to find additional information
 
+To learn more about the information that is described in this document, review the following documents 
+and/or websites:
 
-
+* NetApp StorageGRID as Veeam Cloud Tier
+https://www.netapp.com/us/media/sb-3982.pdf
+* NetApp Product Documentation
+https://docs.netapp.com/
