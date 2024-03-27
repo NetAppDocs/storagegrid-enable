@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: bare-metal/quick-start-storagegrid-install.html
+permalink: bare-metal/index.html
 keywords: install, storagegrid, deploy, bare metal
 summary: Learn how to install StorageGRID on a bare metal grid.
 

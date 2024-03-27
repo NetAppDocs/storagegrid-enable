@@ -3,7 +3,6 @@ sidebar: sidebar
 permalink: load-balancer/example-configuration-storagegrid.html
 keywords: example configuration, use cases, storagegrid
 summary: Explore few use cases for StorageGRID configurations implemented by customers and NetApp IT.
-
 ---
 
 = Learn about few use cases for StorageGRID configurations
@@ -43,13 +42,13 @@ image:load-balancer-monitor-configuration-page.png[Monitor configuration page]
 == Citrix NetScaler
 Citrix NetScaler creates a virtual server for the storage endpoint and refers to StorageGRID Storage Nodes as Application Servers, which are then grouped into Services.
 
-Use the HTTPS-ECV health check monitor to create a custom monitor to perform the recommended health check by using the OPTIONS request and receiving 200. HTTP-ECV is configured with a send string and validates a receive string.
+Use the HTTPS-ECV health check monitor to create a custom monitor to perform the recommended health check by using the OPTIONS request and receiving `200`. HTTP-ECV is configured with a send string and validates a receive string.
 
 For more information, see the Citrix documentation, https://docs.citrix.com/en-us/citrix-adc/current-release/load-balancing/load-balancing-builtin-monitors/monitor-ssl-services.html#sample-configuration-for-https-ecv-health-check-monitor[Sample configuration for HTTP-ECV health check monitor^]. 
 
 image:load-balancer-citrix-netscaler-configuration-page.png[Citrix Netscaler Monitor configuration page]
 
-image:load-balancer-configure-monitor.png[configure-monitor.png]
+image:load-balancer-configure-monitor.png[Configure-monitor.png]
 
 == Loadbalancer.org
 Loadbalancer.org has conducted their own integration testing with StorageGRID and has an extensive configuration guide: https://pdfs.loadbalancer.org/NetApp_StorageGRID_Deployment_Guide.pdf.

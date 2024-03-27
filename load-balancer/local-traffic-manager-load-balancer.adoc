@@ -95,7 +95,7 @@ There are three supported configurations:
 * *SSL termination with HTTP.* In this configuration, SSL is terminated on the third-party load balancer and communication from the load balancer to StorageGRID is nonencrypted to take advantage of SSL off-load (with SSL libraries embedded in modern processors this is of limited benefit).
 
 == Pass through configuration
-If you prefer to configure your load balancer for pass through, you must install the certificate on StorageGRID. menu:Go to Configuration[Server Certificates > Object Storage API Service Endpoints Server Certificate].
+If you prefer to configure your load balancer for pass through, you must install the certificate on StorageGRID. Go to menu:Configuration[Server Certificates > Object Storage API Service Endpoints Server Certificate].
 
 == Source client IP visibility
 StorageGRID 11.4 introduced the concept of a trusted third-party load balancer. In order to forward the client application IP to StorageGRID, you must configure this feature. For more information, see 
@@ -105,7 +105,7 @@ To enable the XFF header to be used to view the IP of the client application, fo
 
 .Steps
 . Record the client IP in the audit log.
-. Use aws:SourceIp S3 bucket or group policy.
+. Use `aws:SourceIp` S3 bucket or group policy.
 
 === Load balancing strategies
 Most load balancing solutions offer multiple strategies for load balancing. The following are common strategies: 
@@ -121,7 +121,7 @@ All data flows through local traffic manager load balancers. StorageGRID does no
 ==== Verifying distribution of connections
 To verify that your method is distributing the load evenly across Storage Nodes, check the established sessions on each node in a given site:
 
-* *UI Method.* menu:Go to Support[Metrics > S3 Overview > LDR HTTP Sessions]
+* *UI Method.* Go to menu:Support[Metrics > S3 Overview > LDR HTTP Sessions]
 * *Metrics API.* Use `storagegrid_http_sessions_incoming_currently_established`
 
 

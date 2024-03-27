@@ -69,7 +69,7 @@ entries:
     pdf-filename: TR-4765-temp
     entries:
       - title: Introduction to StorageGRID monitoring
-        url: "/monitor/storagegrid-monitoring.html"
+        url: "/monitor/index.html"
       - title: Get started with monitoring StorageGRID
         url: "/monitor/getting-started.html"
       - title: Use alerts to monitor StorageGRID
@@ -90,7 +90,7 @@ entries:
     pdf-filename: TR-4882-temp
     entries:
       - title: Quick start guide to install StorageGRID on bare metal grid
-        url: "/bare-metal/quick-start-storagegrid-install.html"
+        url: "/bare-metal/index.html"
       - title: Prerequisites to install StorageGRID
         url: "/bare-metal/prerequisites-install-storagegrid.html"
       - title: Install Docker for StorageGRID

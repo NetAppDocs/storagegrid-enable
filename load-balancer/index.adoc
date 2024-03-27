@@ -15,24 +15,11 @@ summary: Learn about the role of a third-party and global load balancers in an o
 [.lead]
 Learn about the role of a third-party and global load balancers in an object storage systems like StorageGRID.
 
-General guidance for implementing NetApp StorageGRID with third-party load balancers.
+General guidance for implementing NetApp® StorageGRID® with third-party load balancers.
 
-Object storage is synonymous with the term cloud storage, and, as you would expect, applications that leverage cloud storage address that storage through a URL. Behind that simple URL, StorageGRID can scale capacity, performance, and durability in a single site or over geo-distributed sites. The component that makes this simplicity possible is a load balancer. 
+Object storage is synonymous with the term cloud storage, and, as you would expect, applications that leverage cloud storage address that storage through a URL. Behind that simple URL, StorageGRID can scale capacity, performance, and durability in a single site or over geo-distributed sites. The component that makes this simplicity possible is a load balancer.
+
 The purpose of this document is to educate StorageGRID customers about load balancer options and provide general guidance for the configuration of third-party load balancers.
-
-== Where to find additional information
-To learn more about the information that is described in this document, review the following documents and/or websites:
-
-* NetApp StorageGRID Documentation Center
-https://docs.netapp.com/us-en/storagegrid-118/
-* NetApp StorageGRID Enablement
-https://docs.netapp.com/us-en/storagegrid-enable/
-* StorageGRID f5 load balancer design considerations
-https://www.netapp.com/blog/storagegrid-f5-load-balancer-design-considerations/
-* Loadbalancer.org—Load balancing NetApp StorageGRID
-https://www.loadbalancer.org/applications/load-balancing-netapp-storagegrid/
-* Kemp—Load balancing NetApp StorageGRID
-https://support.kemptechnologies.com/hc/en-us/articles/360045186451-NetApp-StorageGRID
 
 == Load balancer basics
 Load balancers are an essential component of an enterprise grade object storage system such as StorageGRID. StorageGRID consists of multiple storage nodes, each of which can present the entire Simple Storage Service (S3) name space for a given StorageGRID instance. Load balancers create a highly available endpoint behind which we can place StorageGRID nodes. StorageGRID is unique among S3-compatible object storage systems in that it provides its own load balancer, but it also supports third-party or general-purpose load balancers such as F5, Citrix Netscaler, HA Proxy, NGINX, and so on.
@@ -67,5 +54,17 @@ The StorageGRID load balancer provides the following advantages:
 
 For details about deploying the StorageGRID Gateway Node, see the https://docs.netapp.com/us-en/storagegrid-117/[StorageGRID documentation^].
 
+== Where to find additional information
+To learn more about the information that is described in this document, review the following documents and/or websites:
 
+* NetApp StorageGRID Documentation Center
+https://docs.netapp.com/us-en/storagegrid-118/
+* NetApp StorageGRID Enablement
+https://docs.netapp.com/us-en/storagegrid-enable/
+* StorageGRID f5 load balancer design considerations
+https://www.netapp.com/blog/storagegrid-f5-load-balancer-design-considerations/
+* Loadbalancer.org—Load balancing NetApp StorageGRID
+https://www.loadbalancer.org/applications/load-balancing-netapp-storagegrid/
+* Kemp—Load balancing NetApp StorageGRID
+https://support.kemptechnologies.com/hc/en-us/articles/360045186451-NetApp-StorageGRID
 
