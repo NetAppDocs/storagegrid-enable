@@ -15,7 +15,7 @@ summary: Explore few use cases for StorageGRID configurations implemented by cus
 [.lead]
 Explore few use cases for StorageGRID configurations implemented by customers and NetApp IT.
 
-The following examples illustrate configurations as implemented by StorageGRID customers, including NetApp IT
+The following examples illustrate configurations as implemented by StorageGRID customers, including NetApp IT.
 
 == F5 BIG-IP local traffic manager health check monitor for S3 bucket
 
@@ -90,8 +90,5 @@ backend s3-servers
        server dc1-s2 10.63.174.72:18082 check-ssl verify none inter 3000
        server dc1-s3 10.63.174.73:18082 check-ssl verify none inter 3000
 ----
-For full examples of configurations for StorageGRID, see https://github.com/NetApp-StorageGRID/HAProxy-Configuration[Examples for HAProxy Configuration on GitHub^].
-
-
-
+For full examples of configurations for StorageGRID, see https://github.com/NetApp-StorageGRID/HAProxy-Configuration[Examples for HAProxy Configuration^] on GitHub.
 

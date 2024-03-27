@@ -35,14 +35,16 @@ Third-party load balancers require a method to determine the health of each node
 
 If any Storage Node does not provide a `200` response, that node is not able to service storage requests. Your application and business requirements should determine the timeout for these checks and the action your load balancer takes.
 
-For example, if three of four Storage Nodes in data center 1 are down, you might direct all traffic to data center 2.
+For example, if three of four Storage Nodes in data center 1 are down, you might direct all traffic to data center 2. 
+
 The recommended polling interval is once per second, marking the node offline after three failed checks.
 
 === S3 health check example
 In the following example, we send `OPTIONS` and check for `200 OK`. We use `OPTIONS` because Amazon S3) does not support unauthorized requests. 
 
+[subs="verbatim,quotes"]
 ----
-curl -X OPTIONS https://10.63.174.75:18082 --verbose --insecure
+##curl -X OPTIONS https://10.63.174.75:18082 --verbose --insecure##
 * Rebuilt URL to: https://10.63.174.75:18082/
 *   Trying 10.63.174.75...
 * TCP_NODELAY set
@@ -56,7 +58,7 @@ curl -X OPTIONS https://10.63.174.75:18082 --verbose --insecure
 > User-Agent: curl/7.51.0
 > Accept: */*
 > 
-< HTTP/1.1 200 OK
+< HTTP/1.1 ##200 OK##
 < Date: Mon, 22 May 2017 15:17:30 GMT
 < Connection: KEEP-ALIVE
 < Server: StorageGRID/10.4.0
