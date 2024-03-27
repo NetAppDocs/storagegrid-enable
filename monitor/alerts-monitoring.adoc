@@ -21,4 +21,4 @@ We provide a variety of default alerting rules that aim to help monitor and trou
 
 Alerts are also extensible through SNMP or email notification.
 
-For more information on alerts, see the https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61023[product documentation] available online and in PDF format.
+For more information on alerts, see the https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61023[product documentation^] available online and in PDF format.

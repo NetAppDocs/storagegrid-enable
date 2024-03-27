@@ -3,7 +3,6 @@ sidebar: sidebar
 permalink: data-security/index.html
 keywords: security features, storagegrid
 summary: Discover the integral security features of the StorageGRID object storage solution.
-
 ---
 
 = Secure StorageGRID data and metadata in an object store
@@ -16,7 +15,7 @@ summary: Discover the integral security features of the StorageGRID object stora
 [.lead]
 Discover the integral security features of the StorageGRID object storage solution.
 
-This is an overview of the many security features in NetApp StorageGRID, covering data access, objects and metadata, administrative access, and platform security. It has been updated to include the newest features released with StorageGRID 11.8.
+This is an overview of the many security features in NetApp® StorageGRID®, covering data access, objects and metadata, administrative access, and platform security. It has been updated to include the newest features released with StorageGRID 11.8.
 
 Security is an integral part of the NetApp StorageGRID object storage solution. Security is particularly important because many types of rich content data that are well suited for object storage are also sensitive in nature and subject to regulations and compliance. As StorageGRID capabilities continue to evolve, the software makes available many security features that are invaluable for protecting an organization’s security posture and helping the organization adhere to industry best practices.
 

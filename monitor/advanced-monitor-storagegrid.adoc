@@ -32,7 +32,7 @@ To make a Prometheus URL query, follow these steps:
 
 . Start typing in the query text box. As you type, metrics are listed. For our purposes, only metrics that start with StorageGRID and Node are important.
 
-. To see the number of HTTP sessions for each node, type `storagegrid_http` and select `storagegrid_http_sessions_incoming_currently_established`. Click *Execute and display the information in a graph or console format*.
+. To see the number of HTTP sessions for each node, type `storagegrid_http` and select `storagegrid_http_sessions_incoming_currently_established`. Click Execute and display the information in a graph or console format.
 
 +
 image:monitor-http-sessions.png[monitor-http-sessions]
@@ -51,9 +51,9 @@ To export metrics through the API, follow these steps:
 . Scroll down to Metrics and select GET /grid/metric-query.
 +
 image:monitor-metrics-query.png[monitor-metrics-query]
-
++
 The response includes the same information that you can obtain through a Prometheus URL query. You can again see the number of HTTP sessions that are currently established on each storage node. You can also download the response in JSON format for readability. The following figure shows sample Prometheus query responses.
-
++
 image:monitor-sample-prometheus-query-responses.png[monitor-sample-prometheus-query-responses]
 
 NOTE: The advantage of using the API is that it enables you to perform authenticated queries

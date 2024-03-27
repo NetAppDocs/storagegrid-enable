@@ -20,7 +20,7 @@ This report describes the data protection solution provided jointly by Commvault
 This document is intended for data administrators and architects using Commvault and StorageGRID 
 backup and recovery solutions.
 
-== Where to Find Additional Information
+== Where to find additional information
 
 To learn more about the information that is described in this document, review the following documents 
 and/or websites:

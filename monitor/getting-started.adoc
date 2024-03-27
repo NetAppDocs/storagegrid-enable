@@ -23,4 +23,4 @@ A previous version of this technical report listed the metrics to check periodic
 
 == Monitor storage
 
-A previous version of this technical report listed where to monitor important metrics, such as Object Storage Space, Metadata Space, Network Resources and so on. That information is now included in the https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61023[Monitoring and Troubleshooting guide].
+A previous version of this technical report listed where to monitor important metrics, such as Object Storage Space, Metadata Space, Network Resources and so on. That information is now included in the https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61023[Monitoring and Troubleshooting guide^].

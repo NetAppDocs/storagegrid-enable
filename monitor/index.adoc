@@ -28,9 +28,7 @@ To successfully monitor NetApp StorageGRID, it is important to know where to gat
 * *Audit Logs.* StorageGRID keeps granular audit logs of tenant actions such as PUT, GET, and DELETE. You can also trace the lifecycle of an object from ingest to the application of data management rules.
 * *Metrics API.* Underlying the StorageGRID GMI are open APIs, as the UI is API-driven. This approach enables you to extract data by using external monitoring and analysis tools.
 
-
-
-== Where to Find Additional Information
+== Where to find additional information
 
 To learn more about the information that is described in this document, review the following documents and/or websites:
 

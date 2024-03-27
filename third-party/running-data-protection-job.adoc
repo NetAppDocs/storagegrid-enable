@@ -33,7 +33,7 @@ Follow the steps in StorageGRID documentation on https://docs.netapp.com/sgws-11
 database location.
 . Click Save.
 
-== Create a Backup Plan with NetApp StorageGRID as the Primary Target
+== Create a backup plan with NetApp StorageGRID as the primary target
 
 .Steps
 .  On the left panel, select menu:Manage[Plans to see] and respond to the Create Server Backup Plan dialog box.
@@ -45,7 +45,7 @@ image:third-party-create-server-backup-plan.png[third-party-create-server-backup
 . Enter the backup retention period and recovery point objective (RPO) that you want.
 . Click Save.
 
-== Start a Backup Job to Protect Your Workloads Using Commvault Software and StorageGRID 
+== Start a backup job to protect your workloads using Commvault software and StorageGRID 
 
 To start a backup job from Commvault Complete Backup and Recovery to StorageGRID, follow these 
 steps:
