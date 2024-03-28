@@ -56,10 +56,10 @@ image:third-party-archive-index.png[third-party-archive-index]
 | Index
 | Description
 | `ArchiveIndex` | The root directory for keeping indexes. This directory is created in the repository of an extent.
-|<backup_id> | Contains objects in a backup file.
-|<objects_in_backup_id> | An identifier of an object in a backup file.If a backup was created using the https://helpcenter.veeam.com/docs/backup/vsphere/per_vm_backup_files.html[Per-VM^] method, each VM is placed in its own directory.If a backup was created as single storage, all the VMs are placed in a single directory.
-|stg_index | Contains actual indexes of the offloaded backup files (.vbk, .vib, or .vrb).
-|index_data.vbk | Contains meta information about hash values stored in index files.|
+|`<backup_id>` | Contains objects in a backup file.
+|`<objects_in_backup_id>` | An identifier of an object in a backup file.If a backup was created using the https://helpcenter.veeam.com/docs/backup/vsphere/per_vm_backup_files.html[Per-VM^] method, each VM is placed in its own directory.If a backup was created as single storage, all the VMs are placed in a single directory.
+|`stg_index` | Contains actual indexes of the offloaded backup files (.vbk, .vib, or .vrb).
+|`index_data.vbk` | Contains meta information about hash values stored in index files.|
 |===
 
 Indexes are modified whenever changes are made to the backup chain, and the hash table, consecutively, also needs to be updated. When an index file is rebuilt, the scale-out repository rescan operation initiates the process as shown in the table.
