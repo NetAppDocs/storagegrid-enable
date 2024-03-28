@@ -1,5 +1,5 @@
 ---
-permalink: monitor/storagegrid-monitoring.html
+permalink: monitor/index.html
 sidebar: sidebar
 keywords: monitoring, storagegrid
 summary: Dive into understanding NetApp StorageGRID, its error conditions, and how to monitor it effectively using external applications like Splunk.

@@ -24,7 +24,7 @@ Configuring the grid and completing the installation involves the following task
 .Steps
 . <<Navigate to Grid Manager>>
 . link:storagegrid-license.html[Specify the StorageGRID license information]
-. link:add-sites-storagegrid.html[Add sites]
+. link:add-sites-storagegrid.html[Add sites to StorageGRID]
 . link:grid-network-subnets-storagegrid.html[Specify grid network subnets]
 . link:approve-grid-nodes-storagegrid.html[Approve pending grid nodes]
 . link:ntp-server-storagegrid.html[Specify NTP server information]
