@@ -55,6 +55,8 @@ indexpage:
         url: "/tools-apps-guides/veeam-br.html"  
       - title: Configure Dremio with StorageGRID
         url: "/tools-apps-guides/configure-dremio-storagegrid.html"
+      - title: Configure GitLab with StorageGRID
+        url: "/tools-apps-guides/integrate-gitlab.html"
     - title: Procedures and API examples
       links:
       - title: Test and demonstrate S3 encryption
