@@ -57,6 +57,12 @@ indexpage:
         url: "/tools-apps-guides/configure-dremio-storagegrid.html"
       - title: Configure GitLab with StorageGRID
         url: "/tools-apps-guides/integrate-gitlab.html"
+    - title: Technical reports
+      links:
+      - title: NetApp StorageGRID and Big Data Analytics
+        url: "/technical-reports/datalake-analytics.adoc"
+      - title: Hadoop S3A Tuning Best Practices
+        url: "/technical-reports/s3a-tuning.adoc"
     - title: Procedures and API examples
       links:
       - title: Test and demonstrate S3 encryption
