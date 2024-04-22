@@ -60,9 +60,9 @@ indexpage:
     - title: Technical reports
       links:
       - title: NetApp StorageGRID and Big Data Analytics
-        url: "/technical-reports/datalake-analytics.adoc"
+        url: "/technical-reports/datalake-analytics.html"
       - title: Hadoop S3A Tuning Best Practices
-        url: "/technical-reports/s3a-tuning.adoc"
+        url: "/technical-reports/s3a-tuning.html"
     - title: Procedures and API examples
       links:
       - title: Test and demonstrate S3 encryption

@@ -65,7 +65,7 @@ Experiment with both to determine which best suits your workload and requirement
 
 In summary, the S3A Committers provide a solution to the fundamental challenge of consistent, high-performance, and reliable output commitment to S3. Their internal design ensures efficient data transfer while maintaining data integrity.
 
-image:../media/s3a-tuning-tuning/image1.emf[../media/s3a-tuning-tuning/image1]
+image:../media/s3a-tuning/image1.emf[../media/s3a-tuning/image1]
 
 . Thread, Connection Pool Sizes and Block size
 
@@ -74,7 +74,7 @@ image:../media/s3a-tuning-tuning/image1.emf[../media/s3a-tuning-tuning/image1]
 * When uploading data to S3, it is divided into blocks. The default block size is 32 MB. You can customize this value by setting the fs.s3a.block.size property.
 * Larger block sizes can improve performance for large data uploads by reducing the overhead of managing multipart parts during upload. Recommended value is 256 MB or above for large data set.
 
-image:../media/s3a-tuning-tuning/image2.emf[../media/s3a-tuning-tuning/image2]
+image:../media/s3a-tuning/image2.emf[../media/s3a-tuning/image2]
 
 . Multipart Upload
 
@@ -118,14 +118,14 @@ A multipart upload is a https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverv
 
 If the complete multipart upload request isn’t sent successfully, the parts stay in StorageGRID and will not create any object. This happens when jobs are interrupted, failed, or aborted. The parts remain in the Grid until multipart upload completes or is aborted or StorageGRID purges these parts if 15 days elapsed since upload was initiated. If there are many (few hundreds thousand to millions) in-progress multipart uploads in a bucket, when Hadoop sends ‘list-multipart-uploads’ (this request does not filter by upload id), the request may take a long time to complete or eventually time out. You may consider set fs.s3a.mutlipart.purge to true with an appropriate fs.s3a.multipart.purge.age value (e.g. 5 to 7 days, do not use default value of 86400 i.e. 1 day). Or engage NetApp support to investigate the situation.
 
-image:../media/s3a-tuning-tuning/image3.emf[../media/s3a-tuning-tuning/image3]
+image:../media/s3a-tuning/image3.emf[../media/s3a-tuning/image3]
 
 
 . Buffer write data in memory
 
 To enhance performance, you can buffer write data in memory before uploading it to S3. This can reduce the number of small writes and improve efficiency.
 
-image:../media/s3a-tuning-tuning/image4.emf[../media/s3a-tuning-tuning/image4]
+image:../media/s3a-tuning/image4.emf[../media/s3a-tuning/image4]
 
 
 Remember that S3 and HDFS work in distinct ways. Careful tuning/test/experiment is necessary to make the most efficient use of S3 resources.

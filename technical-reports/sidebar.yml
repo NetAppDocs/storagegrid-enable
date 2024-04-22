@@ -2,6 +2,6 @@ section: technical-reports
 title: Technical reports
 entries:
   - title: NetApp StorageGRID and Big Data Analytics
-    url: "/technical-reports/datalake-analytics.adoc"  
+    url: "/technical-reports/datalake-analytics.html"  
   - title: Hadoop S3A Tuning
-    url: "/technical-reports/s3a-tuning.adoc"
+    url: "/technical-reports/s3a-tuning.html"
