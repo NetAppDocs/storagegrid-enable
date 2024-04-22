@@ -46,7 +46,7 @@ image:../media/datalake-analytics/image2.png[StorageGRID datalake example,width=
 
 == Which data warehouse or data lake works best with S3 object storage
 
-NetApp benchmarked StorageGRID with three data warehouse/lake house ecosystems - Hive, Delta Lake and Dremio. Apache Iceberg: The Definitive Guide includes brief introduction of data warehouse and data lake house and pro/cons of these two architectures.
+NetApp benchmarked StorageGRID with three data warehouse/lake house ecosystems - Hive, Delta Lake and Dremio. https://www.dremio.com/wp-content/uploads/2023/02/apache-iceberg-TDG_ER1.pdf?aliId=eyJpIjoieDRUYjFKN2ZMbXhTRnFRWCIsInQiOiJIUUw0djJsWnlJa21iNUsyQURRalNnPT0ifQ%253D%253D[Apache Iceberg: The Definitive Guide] includes brief introduction of data warehouse and data lake house and pro/cons of these two architectures.
 
 * Benchmark Tool - TPC-DS - https://www.tpc.org/tpcds/
 
