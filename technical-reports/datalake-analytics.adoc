@@ -82,7 +82,6 @@ total minutes |1084 ^2^ |55 |47
 *TPC-DS queries - S3 requests breakdown*
 [width="100%",cols="24%,24%,27%,25%",options="header",]
 |===
-|StorageGRID | | |
 |S3 Requests |Hive |Delta Lake |Dremio
 |GET |1,117,184 |2,074,610 |4,414,227
 |observation: +
