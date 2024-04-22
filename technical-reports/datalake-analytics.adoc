@@ -27,7 +27,7 @@ NetApp StorageGRID object storage solution offers scalability, data availability
 
 *Object storage use cases*
 
-image:../media/datalake-analytics/image1.png[A diagram of different types of dataDescription automatically generated,width=396,height=394]
+image:../media/datalake-analytics/image1.png[StorageGRID use case diagram,width=396,height=394]
 
 Among the above, big data analytics is one of the topmost use cases and its usage is trending upward.
 
@@ -42,7 +42,7 @@ Among the above, big data analytics is one of the topmost use cases and its usag
 
 *StorageGRID S3 Data Lakes*
 
-image:../media/datalake-analytics/image2.png[media/media/image2,width=614,height=345]
+image:../media/datalake-analytics/image2.png[StorageGRID datalake example,width=614,height=345]
 
 == Which data warehouse or data lake works best with S3 object storage
 
