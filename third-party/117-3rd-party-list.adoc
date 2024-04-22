@@ -24,6 +24,7 @@ These solutions have been tested in collaboration with the respective partners.
 * Bridgestor
 * Cantemo
 * Citrix Content Collaboration
+* Collibra (Minimum Collibra Data Quality version 2024.02)
 * Commvault 11
 * Ctera Portal 6
 * Dalet
