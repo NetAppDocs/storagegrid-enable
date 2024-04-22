@@ -61,9 +61,9 @@ NetApp benchmarked StorageGRID with three data warehouse/lake house ecosystems -
 * Database size 1000GB
 * Cache disabled on all 3 ecosystems to get consistent result for each query test.
 
-TPC-DS comes with 99 complex SQL queries for query benchmarking. We measured the total minutes to complete all 99 queries and we dove deeper by breaking down the type and number of S3 requests to analyze the result. Table 1 shows the total duration of all 99 queries and table 2 summarizes the number and types of S3 requests each ecosystem sent to StorageGRID.
+TPC-DS comes with 99 complex SQL queries for query benchmarking. We measured the total minutes to complete all 99 queries and we dove deeper by breaking down the type and number of S3 requests to analyze the result. The first table below shows the total duration of all 99 queries and the second table summarizes the number and types of S3 requests each ecosystem sent to StorageGRID.
 
-.TPC-DS query result
+*TPC-DS query result*
 [width="100%",cols="35%,20%,23%,22%",options="header",]
 |===
 |Ecosystem |Hive |Delta Lake |Dremio
@@ -79,7 +79,7 @@ total minutes |1084 ^2^ |55 |47
 
 ^2^ Hive unable to complete query number 72.
 
-.TPC-DS queries - S3 requests breakdown
+*TPC-DS queries - S3 requests breakdown*
 [width="100%",cols="24%,24%,27%,25%",options="header",]
 |===
 |StorageGRID | | |
@@ -95,7 +95,7 @@ all range GET |80% range get of 2KB to 2MB from 32MB objects, 50 - 100 requests/
 |Total requests |2,567,390 |3,033,603 |4,416,504
 |===
 
-From table 1, we can see Delta Lake and Dremio are much faster than Hive. From table 2, we notice that Hive sent lots of S3 list-objects requests which is typically slow in all object storage platforms, especially if dealing with a bucket containing many objects. This increases overall query duration significantly. Another observation is Dremio was able to send high number of GET requests in parallel, 2,000 to 2,300 requests per second versus 50 - 100 requests per second in Hive. Hive and Hadoop S3A mimic standard filesystem contributes to Hive slowness to S3 object storage.
+From the first table, we can see Delta Lake and Dremio are much faster than Hive. From the second table, we notice that Hive sent lots of S3 list-objects requests which is typically slow in all object storage platforms, especially if dealing with a bucket containing many objects. This increases overall query duration significantly. Another observation is Dremio was able to send high number of GET requests in parallel, 2,000 to 2,300 requests per second versus 50 - 100 requests per second in Hive. Hive and Hadoop S3A mimic standard filesystem contributes to Hive slowness to S3 object storage.
 
 Using Hadoop (either on HDFS or S3 object storage) with Hive or Spark requires extensive knowledge of Hadoop and Hive/Spark and how the settings from each service interact - together they have 1000+ settings. Very often, the settings are inter-related and cannot be changed alone. It takes tremendous amounts of time and effort to find the optimal combination of settings and values to use.
 
