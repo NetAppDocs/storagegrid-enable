@@ -1,0 +1,73 @@
+---
+permalink: product-feature-guides/site-relocation-and-network-change.html
+sidebar: sidebar
+keywords: relocation move network change
+summary: 'This guide describes the preparation and procedure for StorageGRID site relocation in a multi-sites Grid.'
+---
+= Grid site relocation and site-wide network change procedure
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+This guide describes the preparation and procedure for StorageGRID site relocation in a multi-sites Grid. You should have a complete understand of this procedure and plan ahead to ensure smooth process and minimize interruption to clients. 
+
+If you need to change the Grid network of entire Grid, see 
+link:https://docs.netapp.com/us-en/storagegrid-118/maintain/changing-nodes-network-configuration.html[Change IP addresses for all nodes in grid].
+
+== Considerations before site relocation
+
+* Site move should be completed, and all nodes online within 15 days to avoid Cassandra database rebuild.
+link:https://docs.netapp.com/us-en/storagegrid-118/maintain/recovering-storage-node-that-has-been-down-more-than-15-days.html[Recover Storage Node down more than 15 days^]
+* If any ILM rule in active policy is using strict ingest behavior, consider changing it to balance or dual commit if customer wants to continue to PUT objects into the Grid during site relocation.
+* For storage appliances with 60 drives or more, never move the shelf with disk drives installed.  Label each disk drives and remove them from storage enclosure before pack/move.
+* Change StorageGRID appliance Grid network VLAN can be performed remotely over admin network or client network.  Or else plan to be onsite to perform the change before or after the relocation. 
+* Check if customer application is using HEAD or GET nonexistence object before PUT. If yes, change the bucket consistency to strong-site to avoid HTTP 500 error.  If you are not sure, check S3 overview Grafana charts *Grid manager > Support > Metrics*, mouse over the 'Total Completed Request' chart.  If there is very high count of 404 get Object or 404 head object, likely one or more applications are using head or get nonexistence object. The count is accumulative, mouse over different timeline to see the difference. 
++
+image:site-relocation/s3-completed-request.png[S3 Overview Grafana chart sample]
+
+=== Procedure to change Grid IP address before site relocation
+.Steps
+
+. If new Grid network subnet will be used at the new location, 
+link:https://docs.netapp.com/us-en/storagegrid-118/expand/updating-subnets-for-grid-network.htmll[add the subnet to Grid network subnet list^]   
+. Log in to the primary Admin Node, use change-ip to make Grid IP change, must *stage* the change before shutdown the node for relocation.  
+.. Select 2 then 1 for Grid IP change
++
+image:site-relocation/ip-change-1.png[]
+
+.. select 5 to show changes
++
+image:site-relocation/ip-change-2.png[]
+.. select 10 to validate and apply the change.
++
+image:site-relocation/ip-change-3.png[]
+.. Must select *stage* in this step.
++
+image:site-relocation/ip-change-4.png[]
+.. If primary admin node is included in above change, Enter *'a' to restart primary admin node manually*
++
+image:site-relocation/ip-change-5.png[]
+.. Press enter to return to previous menu and exit from change-ip interface.
++
+image:site-relocation/ip-change-6.png[]
+. From Grid Manager, download the new recovery package. *Grid manager* > *Maintenance* > *Recovery package*
+. If VLAN change is required on StorageGRID appliance, see the section <<Appliance VLAN change>>.
+. Shutdown all nodes and/or appliances at the site, label/remove disk drives if necessary, unrack, pack and move. 
+. If you plan to change admin network ip and/or client VLAN and ip address, you can perform the change after the relocation. 
+
+=== Appliance VLAN change
+The procedure below assume you have remote access to StorageGRID appliance's admin or client network to perform the change remotely.
+
+.Steps
+
+. Before shutdown the appliance, 
+link:https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/placing-appliance-into-maintenance-mode.html[place the appliance in maintenance mode]. 
+. Using a browser to access the StorageGRID appliance installer GUI using https://<admin-or-client-network-ip>:8443.  Cannot use Grid IP as the new Grid IP already in place once the appliance is boot into maintenance mode. 
+. Change the VLAN for Grid network.  If you are accessing the appliance over client network, you cannot change Client VLAN at this time, you can change it after the move.   
+. ssh to the appliance and shutdown the node using 'shutdoown -h now' 
+. After the appliances are ready at new site, access to the StorageGRID appliance installer GUI using https://<grid-network-ip>:8443.  Confirm the storage are in optimal state and network connectivity to other Grid nodes using ping/nmap tools in the GUI.
+. If plan to change client network IP, you can change the client VLAN at this stage.  The client network is not ready until you update the client network ip using change-ip tool in later step.
+. Exit maintenance mode. From the StorageGRID Appliance Installer, select *Advanced* > *Reboot Controller*, and then select *Reboot into StorageGRID*.
++
+. After all nodes are up and Grid shows no connectivity issue, use change-ip to update the appliance admin network and client network if necessary. 
