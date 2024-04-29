@@ -43,6 +43,6 @@ To learn more about the information that is described in this document, review t
 and/or websites:
 
 * NetApp StorageGRID as Veeam Cloud Tier
-https://www.netapp.com/us/media/sb-3982.pdf
+https://www.netapp.com/it/media/7947-sb-3982.pdf
 * NetApp Product Documentation
 https://docs.netapp.com/
