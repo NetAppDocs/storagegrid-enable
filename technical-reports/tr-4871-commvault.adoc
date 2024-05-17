@@ -87,7 +87,7 @@ The ILM 2 Copy rule is the default rule. The Erasure Coding 2+1 rule was applied
 
 For technical details about this test environment, read the Solution Design and Best Practices section in the https://www.netapp.com/us/media/tr-4831.pdf[NetApp Scale-out Data Protection with Commvault] technical report.
 
-== StorageGRID Sizing Guidance
+=== StorageGRID Sizing Guidance
 
 Before you perform NetApp StorageGRID sizing, consider these aspects of your workload:
 
@@ -137,7 +137,7 @@ StorageGRID is typically deployed in two or more sites with data protection poli
 
 You can use the https://fieldportal.netapp.com/content/593648[StorageGRID Solution Designer tool] to size your grid.
 
-== StorageGRID Hardware Specifications 
+=== StorageGRID Hardware Specifications 
 
 Table 4 describes the NetApp StorageGRID hardware used in this testing. The StorageGRID SG5712 appliance with 10Gbps networking is the entry-level option and represents a baseline configuration. Optionally the SG5712 can be configured for 25Gbps networking.
 
@@ -151,7 +151,7 @@ Choosing higher-performance appliance options such as the NetApp StorageGRID SG5
 |StorageGRID SG5712 appliances |4 |48 x 4TB (near-line SAS HDD) |136TB |10Gbps
 |===
 
-== Commvault and StorageGRID Software Requirements
+=== Commvault and StorageGRID Software Requirements
 
 Tables 5 and 6 list the software requirements for the Commvault and NetApp StorageGRID software installed on VMware software for our testing. Four MediaAgent data transmission managers and one CommServe server were installed. In the test, 10Gbps networking was implemented for the VMware infrastructure.
 
@@ -186,7 +186,7 @@ In the test environment, one virtual primary Admin node and one virtual Gateway 
 
 |===
 
-== Running a Data Protection Job with Commvault Complete Backup and Recovery and NetApp StorageGRID
+=== Running a Data Protection Job with Commvault Complete Backup and Recovery and NetApp StorageGRID
 
 To configure NetApp StorageGRID with Commvault Complete Backup and Recovery for NetApp, the following steps were performed to add StorageGRID as a cloud library within the Commvault software.
 
@@ -240,8 +240,8 @@ image:commvault/backup-level.png[Backup level]
 . Navigate to the job summary page to view the job metrics:
 +
 image:commvault/job-summary.png[Job Summary]
-+
-== Baseline Performance Tests
+
+=== Baseline Performance Tests
 
 Table 7 shows the results from our baseline performance tests. In the Aux Copy operation, four Commvault MediaAgents backed up data to a NetApp AFF A300 system and an auxiliary copy was created on NetApp StorageGRID. For details on the test setup environment, read the Solution Design and Best Practices section in the https://www.netapp.com/us/media/tr-4831.pdf[NetApp Scale-out Data Protection with Commvault] technical report.
 
@@ -266,7 +266,7 @@ image:commvault/obj-time.png[Objects over time]
 
 image:commvault/storage-time.png[Storage over time]
 
-== Bucket Consistency Level Recommendation
+=== Bucket Consistency Level Recommendation
 
 NetApp StorageGRID allows the end user to select the consistency level for operations performed on the objects in Simple Storage Service (S3) buckets.
 
@@ -280,7 +280,7 @@ Commvault MediaAgents are the data movers in a Commvault environment. In most ca
 * Commvault versions earlier than 11.0.0 - Service Pack 16.* In versions earlier than 11.0.0 - Service Pack 16, Commvault performs S3 HEAD and GET operations on non-existent objects as part of restore and pruning process. Set the bucket consistency level to Strong-site to achieve the optimal consistency level for Commvault backups to StorageGRID.
 * Commvault versions 11.0.0 - Service Pack 16 and later.* In versions 11.0.0 - Service Pack 16 and later, the number of S3 HEAD and GET operations performed on non-existent objects are minimized. Set the default bucket consistency level to Read-after-new-write to ensure high consistency level in the Commvault and StorageGRID environment.
 
-== Where to Find Additional Information
+=== Where to Find Additional Information
 
 To learn more about the information that is described in this document, review the following documents and/or websites:
 
