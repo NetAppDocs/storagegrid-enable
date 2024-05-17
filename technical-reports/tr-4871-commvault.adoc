@@ -87,6 +87,21 @@ The ILM 2 Copy rule is the default rule. The Erasure Coding 2+1 rule was applied
 
 For technical details about this test environment, read the Solution Design and Best Practices section in the https://www.netapp.com/us/media/tr-4831.pdf[NetApp Scale-out Data Protection with Commvault] technical report.
 
+=== Sizing
+Consult your NetApp data protection specialists for specific sizing for your environment. NetApp data protection specialists can use the Commvault Total Backup Storage Calculator tool to estimate the backup infrastructure requirements. The tool requires Commvault Partner Portal access. Sign up for access, if needed. 
+
+=== Commvault Sizing Inputs
+
+The following tasks can be used to perform discovery for sizing of the data protection solution: 
+* Identify the system or application/database workloads and corresponding front-end capacity (in terabytes [TB]) that will need to be protected.
+* Identify the VM/file workload and similar front-end capacity (TB) that will need to be protected.
+* Identify short-term and long-term retention requirements. 
+* Identify the daily % change rate for the datasets/workloads identified.
+* Identify projected data growth over the next 12, 24, and 36 months.
+* Define the RTO and RPO for data protection/recovery according to business needs.
+
+When this information is available, the backup infrastructure sizing can be done resulting in a breakdown of required storage capacities. 
+
 === StorageGRID Sizing Guidance
 
 Before you perform NetApp StorageGRID sizing, consider these aspects of your workload:
@@ -126,16 +141,32 @@ The two mechanisms require different amounts of storage, as these examples demon
 * If you store two replicated copies, your storage overhead doubles.
 * If you store a 2+1 erasure-coded copy, your storage overhead increases by 1.5 times.
 
-For the solution tested, StorageGRID is used as secondary storage. In this solution, a baseline system represents an entry-level StorageGRID deployment on a single site:
+For the solution tested, an entry-level StorageGRID deployment on a single site was used:
 
 * Admin node: VMware virtual machine (VM)
 * Load balancer: VMware VM
 * Storage nodes: 4x SG5712 with 4TB drives
 * Primary Admin node and Gateway node: VMware VMs with the minimum production workload requirements
 
+
+[NOTE]
+====
+StorageGRID also supports third-party load balancers.
+====
+
 StorageGRID is typically deployed in two or more sites with data protection policies that replicate data to protect against node and site-level failures. By backing up your data to StorageGRID, your data is protected by multiple copies or by erasure coding that separates and reassembles data dependably through an algorithm.
 
-You can use the https://fieldportal.netapp.com/content/593648[StorageGRID Solution Designer tool] to size your grid.
+You can use the sizing tool https://fusion.netapp.com[Fusion] to size your grid.
+
+=== Scaling
+
+You can expand a NetApp StorageGRID system by adding storage to storage nodes, adding new grid nodes to an existing site, or adding a new data center site. You can perform expansions without interrupting the operation of your current system.
+StorageGRID scales performance by using either higher performance nodes for storage nodes or the physical appliance which runs the load balancer and the admin nodes or by simply adding additional nodes. 
+
+[NOTE]
+====
+For more information about expanding the StorageGRID system, see https://docs.netapp.com/us-en/storagegrid-118/landing-expand/index.html[StorageGRID 11.8 Expansion Guide].
+====
 
 === StorageGRID Hardware Specifications 
 
