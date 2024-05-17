@@ -193,9 +193,9 @@ To configure NetApp StorageGRID with Commvault Complete Backup and Recovery for 
 === Configure Commvault with NetApp StorageGRID
 
 . Log in to the Commvault Command Center. On the left panel, click Storage > Cloud > Add to see and respond to the Add Cloud dialog box:
-
++
 image:commvault/add-cloud.png[Add Cloud]
-
++
 . For Type, select NetApp StorageGRID.
 . For MediaAgent, select all that are associated with the cloud library.
 . For Server Host, enter the IP address or the host name of the StorageGRID endpoint and the port number.
@@ -207,9 +207,9 @@ Follow the steps in StorageGRID documentation on https://docs.netapp.com/sgws-11
 === Create a Backup Plan with NetApp StorageGRID as the Primary Target
 
 . On the left panel, select Manage > Plans to see and respond to the Create Server Backup Plan dialog box.
-
++
 image:commvault/create-server.png[Create server backup plan]
-
++
 . Enter a plan name.
 . Select the StorageGRID Simple Storage Service (S3) storage backup destination that you created earlier.
 . Enter the backup retention period and recovery point objective (RPO) that you want.
@@ -223,24 +223,24 @@ To start a backup job from Commvault Complete Backup and Recovery to StorageGRID
 . Add a VMware vCenter Server hypervisor.
 . Click the hypervisor that you just added.
 . Click Add VM group to respond to the Add VM Group dialog box so that you can see the vCenter environment that you plan to protect.
-
++
 image:commvault/add-vm-group.png[Add VM group]
-
++
 . Select a datastore, a VM, or a collection of VMs, and enter a name for it.
 . Select the backup plan that you created in the previous task.
 . Click Save to see the VM group you created.
 . In the upper-right corner of the VM group window, select Backup:
-
++
 image:commvault/vm-group.png[VM Group]
-
++
 . Select Full as the backup level, (optionally) request an email when the backup is finished, then click OK to have your backup job start:
-
++
 image:commvault/backup-level.png[Backup level]
-
++
 . Navigate to the job summary page to view the job metrics:
-
++
 image:commvault/job-summary.png[Job Summary]
-
++
 == Baseline Performance Tests
 
 Table 7 shows the results from our baseline performance tests. In the Aux Copy operation, four Commvault MediaAgents backed up data to a NetApp AFF A300 system and an auxiliary copy was created on NetApp StorageGRID. For details on the test setup environment, read the Solution Design and Best Practices section in the https://www.netapp.com/us/media/tr-4831.pdf[NetApp Scale-out Data Protection with Commvault] technical report.
@@ -272,10 +272,13 @@ NetApp StorageGRID allows the end user to select the consistency level for opera
 
 Commvault MediaAgents are the data movers in a Commvault environment. In most cases, MediaAgents are configured to write locally into a primary StorageGRID site. For this reason, a high consistency level within a local primary site is recommended. Use the following guidelines when you set the consistency level on Commvault buckets created in StorageGRID.
 
-. If you have a Commvault version earlier than 11.0.0 - Service Pack 16, consider upgrading Commvault to the newest version. If that is not an option, be sure to follow the guidelines for your version.
+[NOTE]
+====
+ If you have a Commvault version earlier than 11.0.0 - Service Pack 16, consider upgrading Commvault to the newest version. If that is not an option, be sure to follow the guidelines for your version.
+====
 
-* *Commvault versions earlier than 11.0.0 - Service Pack 16.* In versions earlier than 11.0.0 - Service Pack 16, Commvault performs S3 HEAD and GET operations on non-existent objects as part of restore and pruning process. Set the bucket consistency level to Strong-site to achieve the optimal consistency level for Commvault backups to StorageGRID.
-* *Commvault versions 11.0.0 - Service Pack 16 and later.* In versions 11.0.0 - Service Pack 16 and later, the number of S3 HEAD and GET operations performed on non-existent objects are minimized. Set the default bucket consistency level to Read-after-new-write to ensure high consistency level in the Commvault and StorageGRID environment.
+* Commvault versions earlier than 11.0.0 - Service Pack 16.* In versions earlier than 11.0.0 - Service Pack 16, Commvault performs S3 HEAD and GET operations on non-existent objects as part of restore and pruning process. Set the bucket consistency level to Strong-site to achieve the optimal consistency level for Commvault backups to StorageGRID.
+* Commvault versions 11.0.0 - Service Pack 16 and later.* In versions 11.0.0 - Service Pack 16 and later, the number of S3 HEAD and GET operations performed on non-existent objects are minimized. Set the default bucket consistency level to Read-after-new-write to ensure high consistency level in the Commvault and StorageGRID environment.
 
 == Where to Find Additional Information
 
