@@ -74,7 +74,7 @@ In the lab setup, the StorageGRID environment consisted of four NetApp StorageGR
 
 For its data protection policy, StorageGRID uses an integrated lifecycle management (ILM) policy to manage and protect data. ILM rules are evaluated in a policy from top to bottom. We implemented the ILM policy shown in Table 2.
 
-[#_Toc56174152 .anchor]####Table 2) StorageGRID ILM policy.
+==== Table 2) StorageGRID ILM policy.
 
 [cols="1a,1a,1a",options="header",]
 |===
@@ -93,6 +93,7 @@ Consult your NetApp data protection specialists for specific sizing for your env
 === Commvault Sizing Inputs
 
 The following tasks can be used to perform discovery for sizing of the data protection solution: 
+
 * Identify the system or application/database workloads and corresponding front-end capacity (in terabytes [TB]) that will need to be protected.
 * Identify the VM/file workload and similar front-end capacity (TB) that will need to be protected.
 * Identify short-term and long-term retention requirements. 
