@@ -1,14 +1,14 @@
 section: technical-reports
 title: Technical reports
 entries:
+  - title: Introduction
+    url: "/trintro/index.html"
   - title: NetApp StorageGRID and Big Data Analytics
     url: "/technical-reports/datalake-analytics.html"  
   - title: Hadoop S3A Tuning
     url: "/technical-reports/s3a-tuning.html"
   - title: TR-4871 - Commvault Complete Backup and Recovery and NetApp StorageGRID
     url: "/technical-reports/tr-4871-commvault.html"
-  - title: Introduction
-    url: "/trintro/index.html"
   - title: Load balancers
     pdf-filename: StorageGRID load balancer - Third-party and global load balancers
     entries:
