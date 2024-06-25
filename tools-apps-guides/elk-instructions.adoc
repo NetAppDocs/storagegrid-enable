@@ -45,11 +45,11 @@ match => {"message" => '<%{POSINT:syslog_pri}>%{SYSLOGBASE} %{GREEDYDATA:msg-det
 
 *Logstash 7.17 sample*
 
-image::elk-config/logstash-7.17.fields-sample.png[Logstash 7.17 sample]
+image:elk-config/logstash-7.17.fields-sample.png[Logstash 7.17 sample]
 
 *Logstash 8.23 sample*
 
-image::elk-config/logstash-8.x.fields-sample.png[Logstash 8.23 sample]
+image:elk-config/logstash-8.x.fields-sample.png[Logstash 8.23 sample]
 
 *Steps*
 
@@ -105,12 +105,12 @@ GET /_cat/indices/*?v=true&s=index
 . From Kibana GUI, enter 'saved objects' in the search box which is located in the top center. +
 On the Saved Objects page, select Import. Under Import options, select 'Request action on conflict'  
 +
-image::elk-config/kibana-import-options.png[Kibana Import options]
+image:elk-config/kibana-import-options.png[Kibana Import options]
 +
 Import elk<version>-query-chart-sample.ndjson. +
 When prompted to resolve the conflict, select the index pattern or data view you created in step 8.
 +
-image::elk-config/kibana-import-conflict.png[Kibana Conflict]
+image:elk-config/kibana-import-conflict.png[Kibana Conflict]
 +
 The following Kibana objects are imported: + 
 *Query* +

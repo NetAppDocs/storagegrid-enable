@@ -1,5 +1,6 @@
 settings:
   name: "How to enable StorageGRID in your environment"
+  search: "storagegrid-enable,storagegrid-118,storagegrid-appliances"
   internal:
     pdf_enabled: true
     termcheck_enabled: false
@@ -15,7 +16,8 @@ sidebar:
     - section: third-party
     - section: product-feature-guides
     - section: tools-apps-guides
-    - section: examples    
+    - section: examples
+    - section: technical-reports
     - title: Blog posts
       url: /blogs.html
     - section: trintro    

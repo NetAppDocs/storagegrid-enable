@@ -1,5 +1,7 @@
 indexpage:
-  lead: NetApp StorageGRID is a software-defined object storage suite that supports a wide range of use cases across public, private, and hybrid multicloud environments. StorageGRID offers native support for the Amazon S3 API and delivers industry-leading innovations such as automated lifecycle management to store, secure, protect, and preserve unstructured data cost effectively over long periods.
+  title: How to enable StorageGRID in your environment
+  lead: "NetApp StorageGRID is a software-defined object storage suite that supports a wide range of use cases across public, private, and hybrid multi-cloud environments. StorageGRID offers native support for the Amazon S3 API and delivers industry-leading innovations such as automated lifecycle management to store, secure, protect, and preserve unstructured data cost effectively over long periods."
+  summary: "NetApp StorageGRID is a software-defined object storage suite that supports a wide range of use cases across public, private, and hybrid multi-cloud environments. StorageGRID uses industry leading innovations such as automated lifecycle management to store, secure, protect, and preserve unstructured data for multi-purpose use over long periods of time."
   tiles:
     - title: Validated third-party solutions
       links:
@@ -33,6 +35,8 @@ indexpage:
         url: "/product-feature-guides/node-clone.html"
       - title: How to use port remap
         url: "/product-feature-guides/port-remap.html"
+      - title: How to relocate a site and change networking
+        url: "/product-feature-guides/site-relocation-and-network-change.html"
     - title: Tool and application guides
       links:
       - title: Use Cloudera Hadoop S3A connector
@@ -53,6 +57,16 @@ indexpage:
         url: "/tools-apps-guides/veeam-br.html"  
       - title: Configure Dremio with StorageGRID
         url: "/tools-apps-guides/configure-dremio-storagegrid.html"
+      - title: Configure GitLab with StorageGRID
+        url: "/tools-apps-guides/integrate-gitlab.html"
+    - title: Technical reports
+      links:
+      - title: NetApp StorageGRID and Big Data Analytics
+        url: "/technical-reports/datalake-analytics.html"
+      - title: Hadoop S3A Tuning Best Practices
+        url: "/technical-reports/s3a-tuning.html"
+      - title: TR-4871 - Commvault Complete Backup and Recovery and NetApp StorageGRID
+        url: "/technical-reports/tr-4871-commvault.html"
     - title: Procedures and API examples
       links:
       - title: Test and demonstrate S3 encryption
