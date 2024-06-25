@@ -20,7 +20,6 @@ sidebar:
     - section: technical-reports
     - title: Blog posts
       url: /blogs.html
-    - section: trintro    
     - title: StorageGRID documentation
       url: /storagegrid-documentation.html
     - title: Legal notices
