@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: bare-metal/ntp-server-storagegrid.html
 keywords: ntp server , storagegrid
-summary: Learn how to configure NTP server for StorageGRID.
+summary: Learn how to specify the NTP configuration information for your StorageGRID system so that operations performed on separate servers can be kept synchronized.
 
 ---
 
@@ -14,9 +14,7 @@ summary: Learn how to configure NTP server for StorageGRID.
 :imagesdir: ../media/
 
 [.lead]
-Learn how to configure NTP server for StorageGRID.
-
-You must specify the NTP configuration information for the StorageGRID system so that operations performed on separate servers can be kept synchronized.
+Learn how to specify the NTP configuration information for your StorageGRID system so that operations performed on separate servers can be kept synchronized.
 
 To prevent issues with time drift, you must specify four external NTP server references of Stratum 3 or higher.
 

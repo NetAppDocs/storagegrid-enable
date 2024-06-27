@@ -5,14 +5,14 @@ keywords: traffic classification policies, storagegrid
 summary: Learn how to set up and monitor Traffic Classification Policies in StorageGRID 11.4 for efficient traffic management and network bandwidth optimization.
 
 ---
-= Use traffic classification policies to monitor StorageGRID
+= Use traffic classification policies in StorageGRID
 :experimental:
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Learn how to set up and monitor Traffic Classification Policies in StorageGRID 11.4 for efficient traffic management and network bandwidth optimization.
+Learn how to set up and configure traffic classification policies to manage and optimize network traffic in StorageGRID.
 
 Traffic Classification Policies are new to StorageGRID 11.4 and provide a method to monitor and/or limit traffic based on a specific tenant, buckets, IP subnets, or load balancer endpoints. Network connectivity and bandwidth are especially important metrics for StorageGRID.
 

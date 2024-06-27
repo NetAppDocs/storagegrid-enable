@@ -57,32 +57,32 @@ entries:
     entries:
       - title: Introduction to StorageGRID monitoring
         url: "/monitor/index.html"
-      - title: Get started with monitoring StorageGRID
+      - title: Use the GMI dashboard to monitor StorageGRID
         url: "/monitor/getting-started.html"
       - title: Use alerts to monitor StorageGRID
         url: "/monitor/alerts-monitoring.html"
-      - title: Advanced Monitoring in StorageGRID
+      - title: Advanced monitoring in StorageGRID
         url: "/monitor/advanced-monitor-storagegrid.html"
-      - title: Access metrics through cURL in StorageGRID
+      - title: Access metrics using cURL in StorageGRID
         url: "/monitor/access-metrics-curl.html"          
-      - title: View metrics through Grafana dashboard in StorageGRID
+      - title: View metrics using Grafana in StorageGRID
         url: "/monitor/grafana-dashboard.html"
-      - title: Use traffic classification policies to monitor StorageGRID
+      - title: Use traffic classification policies in StorageGRID
         url: "/monitor/traffic-classification-policies.html"
       - title: Use audit logs to monitor StorageGRID
         url: "/monitor/audit-log-monitoring.html"          
-      - title: Use StorageGRID App for Splunk
+      - title: Use the StorageGRID app for Splunk
         url: "/monitor/storagegrid-app-splunk.html"          
   - title: "TR-4882: Install StorageGRID as a bare metal grid"
     pdf-filename: TR-4882-temp
     entries:
-      - title: Quick start guide to install StorageGRID on bare metal grid
+      - title: Introduction to installing StorageGRID
         url: "/bare-metal/index.html"
       - title: Prerequisites to install StorageGRID
         url: "/bare-metal/prerequisites-install-storagegrid.html"
       - title: Install Docker for StorageGRID
         url: "/bare-metal/install-docker-storagegrid.html"
-      - title: Node configuration files for StorageGRID
+      - title: Prepare node configuration files for StorageGRID
         url: "/bare-metal/node-config-file-storagegrid.html"
       - title: Install StorageGRID dependencies and packages
         url: "/bare-metal/install-storagegrid-dependencies.html"          
@@ -100,7 +100,7 @@ entries:
         url: "/bare-metal/grid-network-subnets-storagegrid.html"          
       - title: Approve grid nodes for StorageGRID
         url: "/bare-metal/approve-grid-nodes-storagegrid.html"          
-      - title: Specify NTP Server details for StorageGRID
+      - title: Specify NTP server details for StorageGRID
         url: "/bare-metal/ntp-server-storagegrid.html"          
       - title: Specify DNS server details for StorageGRID
         url: "/bare-metal/dns-server-storagegrid.html"          
@@ -113,11 +113,11 @@ entries:
   - title: "TR-4907: Configure StorageGRID with Veritas Enterprise Vault"
     pdf-filename: TR-4907-temp
     entries:
-      - title: Learn how to configure StorageGRID as a primary storage target for Veritas Enterprise Vault archives
+      - title: Introduction to configuring StorageGRID for site failover
         url: "/third-party/configure-storagegrid-primary-storage.html"
       - title: Configure StorageGRID and Veritas Enterprise Vault
         url: "/third-party/configure-storagegrid-enterprise-vault.html"
-      - title: Configure StorageGRID S3 Object Lock for WORM storage
+      - title: Configure StorageGRID for WORM storage
         url: "/third-party/configure-storagegrid-s3-object-lock.html"
-      - title: Configure StorageGRID site failover for disaster recovery
-        url: "/third-party/configure-storagegrid-site-failover.html"  
+      - title: Configure StorageGRID for disaster recovery
+        url: "/third-party/configure-storagegrid-site-failover.html"

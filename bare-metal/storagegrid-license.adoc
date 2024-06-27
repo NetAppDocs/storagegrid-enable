@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: bare-metal/storagegrid-license.html
 keywords: license, storagegrid 
-summary: Learn how to upload StorageGRID license details.
+summary: Learn how to upload the StorageGRID license file.
 
 ---
 
@@ -14,7 +14,7 @@ summary: Learn how to upload StorageGRID license details.
 :imagesdir: ../media/
 
 [.lead]
-Learn how to upload StorageGRID license details.
+Learn how to upload the StorageGRID license file.
 
 You must specify the name for your StorageGRID system and upload the license file provided by NetApp.
 
