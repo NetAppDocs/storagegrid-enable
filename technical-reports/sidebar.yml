@@ -51,26 +51,7 @@ entries:
       - title: Ransomware defense using replicated bucket with versioning
         url: "/ransomware-protection/replicate-bucket-versioning-storagegrid.html"
       - title: Ransomware defense using versioning with protective IAM policy
-        url: "/ransomware-protection/versioning-protective-iam-policy-storagegrid.html"
-  - title: Commvault backup and recovery
-    pdf-filename: Commvault Complete Backup and Recovery - and NetApp StorageGRID
-    entries:
-      - title: Protect StorageGRID data with Commvault
-        url: "/third-party/commvault-storagegrid-data-protection.html"
-      - title: Commvault Complete Backup and Recovery for NetApp and StorageGRID - Solution overview
-        url: "/third-party/commvault-storagegrid-overview.html"
-      - title: StorageGRID sizing guidance
-        url: "/third-party/storagegrid-sizing-guidance.html"
-      - title: StorageGRID hardware specifications
-        url: "/third-party/storagegrid-hardware-specifications.html"
-      - title: Commvault and StorageGRID software requirements
-        url: "/third-party/commvault-storagegrid-software-requirements.html"          
-      - title: Run data protection jobs using Commvault and StorageGRID as primary storage
-        url: "/third-party/running-data-protection-job.html"
-      - title: Review baseline performance tests for Commvault and StorageGRID
-        url: "/third-party/baseline-performance-tests.html"
-      - title: Configure StorageGRID consistency levels for operations on S3 buckets
-        url: "/third-party/set-consistency-level-s3.html"          
+        url: "/ransomware-protection/versioning-protective-iam-policy-storagegrid.html"       
   - title: TR-4765
     pdf-filename: TR-4765-temp
     entries:
@@ -139,17 +120,4 @@ entries:
       - title: Configure StorageGRID S3 Object Lock for WORM storage
         url: "/third-party/configure-storagegrid-s3-object-lock.html"
       - title: Configure StorageGRID site failover for disaster recovery
-        url: "/third-party/configure-storagegrid-site-failover.html"
-  - title: TR-4777
-    pdf-filename: TR-4777-temp
-    entries:
-      - title: Learn about archiving backups in Veeam using StorageGRID
-        url: "/third-party/storagegrid-archiving-backups.html"
-      - title: Configure Veeam with StorageGRID
-        url: "/third-party/configure-storagegrid.html"
-      - title: Learn about offload job process in Veeam
-        url: "/third-party/offload-job-process.html"
-      - title: Data tiering backup jobs in Veeam
-        url: "/third-party/data-tiering-jobs.html"
-      - title: Troubleshoot backup job operations in Veeam
-        url: "/third-party/troubleshoot-backup-jobs.html"    
+        url: "/third-party/configure-storagegrid-site-failover.html"  
