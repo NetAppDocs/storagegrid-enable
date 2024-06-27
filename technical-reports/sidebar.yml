@@ -76,21 +76,21 @@ entries:
     entries:
       - title: Introduction to StorageGRID monitoring
         url: "/monitor/index.html"
-      - title: Get started with monitoring StorageGRID
+      - title: Use the GMI dashboard to monitor StorageGRID
         url: "/monitor/getting-started.html"
       - title: Use alerts to monitor StorageGRID
         url: "/monitor/alerts-monitoring.html"
-      - title: Advanced Monitoring in StorageGRID
+      - title: Advanced monitoring in StorageGRID
         url: "/monitor/advanced-monitor-storagegrid.html"
-      - title: Access metrics through cURL in StorageGRID
+      - title: Access metrics using cURL in StorageGRID
         url: "/monitor/access-metrics-curl.html"          
-      - title: View metrics through Grafana dashboard in StorageGRID
+      - title: View metrics using Grafana in StorageGRID
         url: "/monitor/grafana-dashboard.html"
-      - title: Use traffic classification policies to monitor StorageGRID
+      - title: Use traffic classification policies in StorageGRID
         url: "/monitor/traffic-classification-policies.html"
       - title: Use audit logs to monitor StorageGRID
         url: "/monitor/audit-log-monitoring.html"          
-      - title: Use StorageGRID App for Splunk
+      - title: Use the StorageGRID app for Splunk
         url: "/monitor/storagegrid-app-splunk.html"          
   - title: TR-4882
     pdf-filename: TR-4882-temp

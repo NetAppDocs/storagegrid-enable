@@ -11,9 +11,9 @@ summary: Dive into understanding NetApp StorageGRID, its error conditions, and h
 :imagesdir: ../media/
 
 [.lead]
-Dive into understanding NetApp StorageGRID, its error conditions, and how to monitor it effectively using external applications like Splunk.
+Learn how to monitor your StorageGRID system by using external applications, such as Splunk.
 
-Effective monitoring of NetApp® StorageGRID® object-based storage enables administrators to quickly respond to urgent issues and to proactively add resources to handle growing workloads. This report provides general guidance about how to monitor key metrics and how to leverage external monitoring applications. It is meant to supplement the existing Monitoring and Troubleshooting guide. 
+Effective monitoring of NetApp StorageGRID object-based storage enables administrators to quickly respond to urgent issues and to proactively add resources to handle growing workloads. This report provides general guidance about how to monitor key metrics and how to leverage external monitoring applications. It is meant to supplement the existing Monitoring and Troubleshooting guide. 
 
 A NetApp StorageGRID deployment typically consists of multiple sites and many nodes that operate to create a distributed and fault-tolerant object storage system. In a distributed and resilient storage system such as StorageGRID, it is normal for error conditions to exist while the grid continues to operate normally. The challenge for you as an administrator is to understand the threshold at which error conditions (such as nodes down) present a problem that should be immediately addressed versus information that should be analyzed. By analyzing the data that StorageGRID presents, you can understand your workload and make informed decisions, such as when to add more resources.
 

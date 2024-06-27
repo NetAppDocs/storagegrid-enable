@@ -5,14 +5,14 @@ keywords: grafana dashboard, storagegrid
 summary: Discover how to use Grafana for metric visualization in NetApp StorageGRID, including accessing preconstructed dashboards for monitoring and troubleshooting.
 
 ---
-= View metrics through Grafana dashboard in StorageGRID
+= View metrics using the Grafana dashboard in StorageGRID
 :experimental:
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Discover how to use Grafana for metric visualization in NetApp StorageGRID, including accessing preconstructed dashboards for monitoring and troubleshooting.
+Learn how to use the Grafana interface to visualize and monitor your StorageGRID data.
 
 Grafana is an open-source software for metric visualization. By default, we have preconstructed dashboards that provide useful and powerful information regarding your StorageGRID system.
 
