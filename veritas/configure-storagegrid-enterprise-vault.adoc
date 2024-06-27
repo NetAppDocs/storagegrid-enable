@@ -1,5 +1,5 @@
 ---
-permalink: third-party/configure-storagegrid-enterprise-vault.html
+permalink: veritas/configure-storagegrid-enterprise-vault.html
 sidebar: sidebar
 keywords: storagegrid, enterprise vault, configure
 summary: Learn how to implement basic configurations for StorageGRID 11.5 and Veritas Enterprise Vault 14.1.

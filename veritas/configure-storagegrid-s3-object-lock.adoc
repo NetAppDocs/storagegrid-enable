@@ -1,5 +1,5 @@
 ---
-permalink: third-party/configure-storagegrid-s3-object-lock.html
+permalink: veritas/configure-storagegrid-s3-object-lock.html
 sidebar: sidebar
 keywords: object lock, s3, configure, storagegrid 
 

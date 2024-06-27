@@ -133,13 +133,13 @@ entries:
     pdf-filename: TR-4907-temp
     entries:
       - title: Learn how to configure StorageGRID as a primary storage target for Veritas Enterprise Vault archives
-        url: "/third-party/configure-storagegrid-primary-storage.html"
+        url: "/veritas/index.html"
       - title: Configure StorageGRID and Veritas Enterprise Vault
-        url: "/third-party/configure-storagegrid-enterprise-vault.html"
+        url: "/veritas/configure-storagegrid-enterprise-vault.html"
       - title: Configure StorageGRID S3 Object Lock for WORM storage
-        url: "/third-party/configure-storagegrid-s3-object-lock.html"
+        url: "/veritas/configure-storagegrid-s3-object-lock.html"
       - title: Configure StorageGRID site failover for disaster recovery
-        url: "/third-party/configure-storagegrid-site-failover.html"
+        url: "/veritas/configure-storagegrid-site-failover.html"
   - title: TR-4777
     pdf-filename: TR-4777-temp
     entries:
