@@ -5,18 +5,16 @@ keywords: access metrics, curl, storagegrid
 summary: Learn how to access metrics through CLI using cURL and authorization tokens in NetApp StorageGRID for efficient data retrieval.
 
 ---
-= Access metrics through cURL in StorageGRID
+= Access metrics using cURL in StorageGRID
 :experimental:
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
 
 [.lead]
-Learn how to access metrics through CLI using cURL and authorization tokens in NetApp StorageGRID for efficient data retrieval.
+Learn how to access metrics through the CLI using cURL.
 
-You can also access metrics through the CLI by using cURL. To perform this operation, you must first obtain an authorization token.
-
-To request a token, follow these steps:
+To perform this operation, you must first obtain an authorization token. To request a token, follow these steps:
 
 .Steps
 

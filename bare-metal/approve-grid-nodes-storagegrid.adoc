@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: bare-metal/approve-grid-nodes-storagegrid.html
 keywords: grid nodes, approve, storagegrid 
-summary: Learn how to review and approve any pending grid nodes that joins the StorageGRID system.
+summary: Learn how to review and approve any pending grid nodes that join the StorageGRID system.
 
 ---
 
@@ -15,7 +15,7 @@ summary: Learn how to review and approve any pending grid nodes that joins the S
 :imagesdir: ../media/
 
 [.lead]
-Learn how to review and approve any pending grid nodes that joins the StorageGRID system.
+Learn how to review and approve any pending grid nodes that join the StorageGRID system.
 
 You must approve each grid node before it joins the StorageGRID system.
 

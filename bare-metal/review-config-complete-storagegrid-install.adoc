@@ -2,8 +2,7 @@
 sidebar: sidebar
 permalink: bare-metal/review-config-complete-storagegrid-install.html
 keywords: summary page, storagegrid install
-summary: Learn how to validate the configurations in the summary page and complete the StorageGRID install process.
-
+summary: Learn how to validate the grid configuration information and complete the StorageGRID install process.
 ---
 
 = Review configuration and complete StorageGRID install
@@ -14,7 +13,7 @@ summary: Learn how to validate the configurations in the summary page and comple
 :imagesdir: ../media/
 
 [.lead]
-Learn how to validate the configurations in the summary page and complete the StorageGRID install process.
+Learn how to validate the grid configuration information and complete the StorageGRID install process.
 
 To make sure that the installation completes successfully, carefully review the configuration information you have entered. Follow these steps.
 

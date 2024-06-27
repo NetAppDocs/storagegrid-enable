@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: bare-metal/add-sites-storagegrid.html
 keywords: add sites, storagegrid
-summary: Learn how to add sites to a StorageGRID to increase reliability and storage capacity.
+summary: Learn how to add sites to StorageGRID to increase reliability and storage capacity.
 
 ---
 
@@ -14,7 +14,7 @@ summary: Learn how to add sites to a StorageGRID to increase reliability and sto
 :imagesdir: ../media/
 
 [.lead]
-Learn how to add sites to a StorageGRID to increase reliability and storage capacity.
+Learn how to add sites to StorageGRID to increase reliability and storage capacity.
 
 When you are installing StorageGRID, you must create at least one site. You can create additional sites to increase the reliability and storage capacity of your StorageGRID system.
 
