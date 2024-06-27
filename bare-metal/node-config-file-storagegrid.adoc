@@ -6,7 +6,7 @@ summary: Understand how to prepare the node configuration files for StorageGRID.
 
 ---
 
-= Node configuration files for StorageGRID
+= Prepare node configuration files for StorageGRID
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -14,7 +14,7 @@ summary: Understand how to prepare the node configuration files for StorageGRID.
 :imagesdir: ./media/
 
 [.lead]
-Understand how to prepare the node configuration files for StorageGRID.
+Learn how to prepare the node configuration files for StorageGRID.
 
 At a high level, the node configuration process includes the following steps:
 

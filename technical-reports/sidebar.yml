@@ -95,13 +95,13 @@ entries:
   - title: TR-4882
     pdf-filename: TR-4882-temp
     entries:
-      - title: Quick start guide to install StorageGRID on bare metal grid
+      - title: Introduction to installing StorageGRID
         url: "/bare-metal/index.html"
       - title: Prerequisites to install StorageGRID
         url: "/bare-metal/prerequisites-install-storagegrid.html"
       - title: Install Docker for StorageGRID
         url: "/bare-metal/install-docker-storagegrid.html"
-      - title: Node configuration files for StorageGRID
+      - title: Prepare node configuration files for StorageGRID
         url: "/bare-metal/node-config-file-storagegrid.html"
       - title: Install StorageGRID dependencies and packages
         url: "/bare-metal/install-storagegrid-dependencies.html"          
@@ -119,7 +119,7 @@ entries:
         url: "/bare-metal/grid-network-subnets-storagegrid.html"          
       - title: Approve grid nodes for StorageGRID
         url: "/bare-metal/approve-grid-nodes-storagegrid.html"          
-      - title: Specify NTP Server details for StorageGRID
+      - title: Specify NTP server details for StorageGRID
         url: "/bare-metal/ntp-server-storagegrid.html"          
       - title: Specify DNS server details for StorageGRID
         url: "/bare-metal/dns-server-storagegrid.html"          
