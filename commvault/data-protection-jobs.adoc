@@ -17,6 +17,8 @@ To configure StorageGRID with Commvault Complete Backup and Recovery for NetApp,
 
 == Step 1: Configure Commvault with StorageGRID
 
+.Steps
+
 . Log in to the Commvault Command Center. On the left panel, click Storage > Cloud > Add to see and respond to the Add Cloud dialog box:
 +
 image:commvault/add-cloud.png[Add Cloud]
@@ -31,6 +33,8 @@ Follow the steps in StorageGRID documentation on https://docs.netapp.com/sgws-11
 
 == Step 2: Create a Backup Plan with StorageGRID as the primary target
 
+.Steps
+
 . On the left panel, select Manage > Plans to see and respond to the Create Server Backup Plan dialog box.
 +
 image:commvault/create-server.png[Create server backup plan]
@@ -42,7 +46,7 @@ image:commvault/create-server.png[Create server backup plan]
 
 == Step 3: Start a Backup Job to Protect Your Workloads
 
-To start a backup job from Commvault Complete Backup and Recovery to StorageGRID, follow these steps:
+.Steps
 
 . On the Commvault Command Center, navigate to Protect > Virtualization.
 . Add a VMware vCenter Server hypervisor.

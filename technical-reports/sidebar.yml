@@ -14,7 +14,7 @@ entries:
         url: "/commvault/index.html"
       - title: StorageGRID sizing guidance
         url: "/commvault/sizing.html"
-      - title: Tested solution Overview
+      - title: Tested solution overview
         url: "/commvault/solution-overview.html"
       - title: Run a data protection job
         url: "/commvault/data-protection-jobs.html"
