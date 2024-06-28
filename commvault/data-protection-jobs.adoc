@@ -31,7 +31,7 @@ Follow the steps in StorageGRID documentation on https://docs.netapp.com/sgws-11
 . If you want to use deduplication, turn on this option and provide the path to the deduplication database location.
 . Click Save.
 
-== Step 2: Create a Backup Plan with StorageGRID as the primary target
+== Step 2: Create a backup plan with StorageGRID as the primary target
 
 .Steps
 
@@ -44,7 +44,7 @@ image:commvault/create-server.png[Create server backup plan]
 . Enter the backup retention period and recovery point objective (RPO) that you want.
 . Click Save.
 
-== Step 3: Start a Backup Job to Protect Your Workloads
+== Step 3: Start a backup job to protect your workloads
 
 .Steps
 

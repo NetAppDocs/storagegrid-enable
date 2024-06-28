@@ -15,7 +15,7 @@ summary: Explore few use cases for StorageGRID configurations implemented by cus
 [.lead]
 Consult your NetApp data protection specialists for specific sizing for your environment. NetApp data protection specialists can use the Commvault Total Backup Storage Calculator tool to estimate the backup infrastructure requirements. The tool requires Commvault Partner Portal access. Sign up for access, if needed. 
 
-== Commvault Sizing Inputs
+== Commvault sizing inputs
 
 The following tasks can be used to perform discovery for sizing of the data protection solution: 
 
@@ -28,7 +28,7 @@ The following tasks can be used to perform discovery for sizing of the data prot
 
 When this information is available, the backup infrastructure sizing can be done resulting in a breakdown of required storage capacities. 
 
-== StorageGRID Sizing Guidance
+== StorageGRID sizing guidance
 
 Before you perform NetApp StorageGRID sizing, consider these aspects of your workload:
 
