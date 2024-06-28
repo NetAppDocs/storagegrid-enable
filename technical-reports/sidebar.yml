@@ -2,7 +2,7 @@ section: technical-reports
 title: Technical reports
 entries:
   - title: Introduction
-    url: "/trintro/index.html"
+    url: "/technical-reports/index.html"
   - title: "TR-xxxx: NetApp StorageGRID and big data analytics"
     url: "/technical-reports/datalake-analytics.html"  
   - title: "TR-xxxx: Hadoop S3A tuning"
