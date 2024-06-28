@@ -1,0 +1,94 @@
+---
+sidebar: sidebar
+permalink: commvault/sizing.html
+keywords: Backup, on-premises, commvault, storagegrid, object, S3, WORM
+summary: Explore few use cases for StorageGRID configurations implemented by customers and NetApp IT.
+---
+
+= StorageGRID sizing guidance
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Consult your NetApp data protection specialists for specific sizing for your environment. NetApp data protection specialists can use the Commvault Total Backup Storage Calculator tool to estimate the backup infrastructure requirements. The tool requires Commvault Partner Portal access. Sign up for access, if needed. 
+
+== Commvault sizing inputs
+
+The following tasks can be used to perform discovery for sizing of the data protection solution: 
+
+* Identify the system or application/database workloads and corresponding front-end capacity (in terabytes [TB]) that will need to be protected.
+* Identify the VM/file workload and similar front-end capacity (TB) that will need to be protected.
+* Identify short-term and long-term retention requirements. 
+* Identify the daily % change rate for the datasets/workloads identified.
+* Identify projected data growth over the next 12, 24, and 36 months.
+* Define the RTO and RPO for data protection/recovery according to business needs.
+
+When this information is available, the backup infrastructure sizing can be done resulting in a breakdown of required storage capacities. 
+
+== StorageGRID sizing guidance
+
+Before you perform NetApp StorageGRID sizing, consider these aspects of your workload:
+
+* Usable capacity
+* WORM mode
+* Average object size
+* Performance requirements
+* ILM policy applied
+
+The amount of usable capacity needs to accommodate the size of the backup workload you have tiered to StorageGRID and the retention schedule.
+
+Will WORM mode be enabled or not? With WORM enabled in Commvault, this will configure object lock on StorageGRID. This will increase the object storage capacity required. The amount of capacity required will vary based on the retention duration and number of object changes with each backup.
+
+Average object size is an input parameter that helps with sizing for performance in a StorageGRID environment. The average object sizes used for a Commvault workload depend on the type of backup.
+
+The following table lists average object sizes by type of backup and describes what the restore process reads from the object store:
+
+[cols="1a,1a,1a",options="header",]
+|===
+|Backup Type |Average Object Size |Restore Behavior
+|Make an auxiliary copy in StorageGRID |32MB |Full read of 32MB object
+|Direct the backup to StorageGRID (deduplication enabled) |8MB |1MB random-range read
+|Direct the backup to StorageGRID (deduplication disabled) |32MB |Full read of 32MB object
+|===
+
+In addition, understanding your performance requirements for full backups and incremental backups helps you determine sizing for the StorageGRID storage nodes. StorageGRID information lifecycle management (ILM) policy data protection methods determine the capacity needed to store Commvault backups and affect the sizing of the grid.
+
+StorageGRID ILM replication is one of two mechanisms used by StorageGRID to store object data. When StorageGRID assigns objects to an ILM rule that replicates data, the system creates exact copies of the objects’ data and stores the copies on storage nodes.
+
+Erasure coding is the second method used by StorageGRID to store object data. When StorageGRID assigns objects to an ILM rule that is configured to create erasure-coded copies, it slices object data into data fragments. It then computes additional parity fragments and stores each fragment on a different storage node. When an object is accessed, it is reassembled using the stored fragments. If a data fragment or a parity fragment becomes corrupt or is lost, the erasure-coding algorithm can re-create that fragment using a subset of the remaining data and parity fragments.
+
+The two mechanisms require different amounts of storage, as these examples demonstrate:
+
+* If you store two replicated copies, your storage overhead doubles.
+* If you store a 2+1 erasure-coded copy, your storage overhead increases by 1.5 times.
+
+For the solution tested, an entry-level StorageGRID deployment on a single site was used:
+
+* Admin node: VMware virtual machine (VM)
+* Load balancer: VMware VM
+* Storage nodes: 4x SG5712 with 4TB drives
+* Primary Admin node and Gateway node: VMware VMs with the minimum production workload requirements
+
+
+[NOTE]
+====
+StorageGRID also supports third-party load balancers.
+====
+
+StorageGRID is typically deployed in two or more sites with data protection policies that replicate data to protect against node and site-level failures. By backing up your data to StorageGRID, your data is protected by multiple copies or by erasure coding that separates and reassembles data dependably through an algorithm.
+
+You can use the sizing tool https://fusion.netapp.com[Fusion] to size your grid.
+
+== Scaling
+
+You can expand a NetApp StorageGRID system by adding storage to storage nodes, adding new grid nodes to an existing site, or adding a new data center site. You can perform expansions without interrupting the operation of your current system.
+StorageGRID scales performance by using either higher performance nodes for storage nodes or the physical appliance which runs the load balancer and the admin nodes or by simply adding additional nodes. 
+
+[NOTE]
+====
+For more information about expanding the StorageGRID system, see https://docs.netapp.com/us-en/storagegrid-118/landing-expand/index.html[StorageGRID 11.8 Expansion Guide].
+====
+

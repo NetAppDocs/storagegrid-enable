@@ -1,0 +1,71 @@
+---
+sidebar: sidebar
+permalink: commvault/data-protection-jobs.html
+keywords: Backup, on-premises, commvault, storagegrid, object, S3, WORM
+summary: Explore few use cases for StorageGRID configurations implemented by customers and NetApp IT.
+---
+
+= Run a data protection job
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+To configure StorageGRID with Commvault Complete Backup and Recovery for NetApp, the following steps were performed to add StorageGRID as a cloud library within the Commvault software.
+
+== Step 1: Configure Commvault with StorageGRID
+
+.Steps
+
+. Log in to the Commvault Command Center. On the left panel, click Storage > Cloud > Add to see and respond to the Add Cloud dialog box:
++
+image:commvault/add-cloud.png[Add Cloud]
++
+. For Type, select NetApp StorageGRID.
+. For MediaAgent, select all that are associated with the cloud library.
+. For Server Host, enter the IP address or the host name of the StorageGRID endpoint and the port number.
++
+Follow the steps in StorageGRID documentation on https://docs.netapp.com/sgws-113/topic/com.netapp.doc.sg-admin/GUID-54FCAB84-143C-4A5D-B078-A837886BB242.html[how to configure a load balancer endpoint (port)]. Make sure you have an HTTPS port with a self-signed certificate and the IP address or the domain name of the StorageGRID endpoint.
+. If you want to use deduplication, turn on this option and provide the path to the deduplication database location.
+. Click Save.
+
+== Step 2: Create a backup plan with StorageGRID as the primary target
+
+.Steps
+
+. On the left panel, select Manage > Plans to see and respond to the Create Server Backup Plan dialog box.
++
+image:commvault/create-server.png[Create server backup plan]
++
+. Enter a plan name.
+. Select the StorageGRID Simple Storage Service (S3) storage backup destination that you created earlier.
+. Enter the backup retention period and recovery point objective (RPO) that you want.
+. Click Save.
+
+== Step 3: Start a backup job to protect your workloads
+
+.Steps
+
+. On the Commvault Command Center, navigate to Protect > Virtualization.
+. Add a VMware vCenter Server hypervisor.
+. Click the hypervisor that you just added.
+. Click Add VM group to respond to the Add VM Group dialog box so that you can see the vCenter environment that you plan to protect.
++
+image:commvault/add-vm-group.png[Add VM group]
++
+. Select a datastore, a VM, or a collection of VMs, and enter a name for it.
+. Select the backup plan that you created in the previous task.
+. Click Save to see the VM group you created.
+. In the upper-right corner of the VM group window, select Backup:
++
+image:commvault/vm-group.png[VM Group]
++
+. Select Full as the backup level, (optionally) request an email when the backup is finished, then click OK to have your backup job start:
++
+image:commvault/backup-level.png[Backup level]
++
+. Navigate to the job summary page to view the job metrics:
++
+image:commvault/job-summary.png[Job Summary]

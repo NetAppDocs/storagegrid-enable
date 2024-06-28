@@ -76,7 +76,7 @@ indexpage:
       - title: "TR-4882: Install StorageGRID as a bare metal grid"
         url: "/bare-metal/index.html"
       - title: "TR-4907: Configure StorageGRID with Veritas Enterprise Vault"
-        url: "/third-party/configure-storagegrid-primary-storage.html"
+        url: "/veritas/index.html"
     - title: Procedures and API examples
       links:
       - title: Test and demonstrate S3 encryption

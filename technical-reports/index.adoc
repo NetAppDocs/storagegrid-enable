@@ -1,10 +1,10 @@
 ---
-permalink: trintro/index.html
+permalink: technical-reports/index.html
 sidebar: sidebar
 keywords: intro, technical, reports, storagegrid
 summary: 'An intro page for StorageGRID technical reports.'
 ---
-= Introduction
+= Introduction to StorageGRID technical reports
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
@@ -12,6 +12,6 @@ summary: 'An intro page for StorageGRID technical reports.'
 [.lead]
 NetApp StorageGRID is a software-defined object storage suite that supports a wide range of use cases across public, private, and hybrid multicloud environments. StorageGRID offers native support for the Amazon S3 API and delivers industry-leading innovations such as automated lifecycle management to store, secure, protect, and preserve unstructured data cost effectively over long periods. 
 
-This page is a repository of public StorageGRID technical reports (TRs). These documents cover best practices and recommendations for several StorageGRID features and integrations.
+StorageGRID provides documentation to cover best practices and recommendations for several StorageGRID features and integrations.
 
 

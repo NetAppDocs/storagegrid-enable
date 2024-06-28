@@ -1,0 +1,80 @@
+---
+sidebar: sidebar
+permalink: commvault/solution-overview.html
+keywords: Backup, on-premises, commvault, storagegrid, object, S3, WORM
+summary: Explore few use cases for StorageGRID configurations implemented by customers and NetApp IT.
+---
+
+= Tested solution overview
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+The tested solution combines Commvault and NetApp solutions to make a powerful joint solution.
+
+== Solution setup 
+
+In the lab setup, the StorageGRID environment consisted of four NetApp StorageGRID SG5712 appliances, one virtual primary Admin node and one virtual Gateway node. The SG5712 appliance is the entry level option—a baseline configuration. Choosing higher performance appliance options such as the NetApp StorageGRID SG5760 or SG6060 can provide significant performance benefits. Consult your NetApp StorageGRID solution architect for sizing assistance.
+
+For its data protection policy, StorageGRID uses an integrated lifecycle management (ILM) policy to manage and protect data. ILM rules are evaluated in a policy from top to bottom. We implemented the ILM policy shown in the following table:
+
+[cols="1a,1a,1a",options="header",]
+|===
+|ILM Rule |Qualifiers |Ingest Behavior
+|Erasure Coding 2+1 |Objects over 200KB |Balanced
+|2 Copy |All objects |Dual Commit
+|===
+
+The ILM 2 Copy rule is the default rule. The Erasure Coding 2+1 rule was applied for this testing to any object 200KB or larger. The default rule was applied to objects smaller than 200KB. Application of the rules in this way is a StorageGRID best practice.
+
+For technical details about this test environment, read the Solution Design and Best Practices section in the https://www.netapp.com/us/media/tr-4831.pdf[NetApp Scale-out Data Protection with Commvault] technical report.
+
+== StorageGRID hardware specifications 
+
+The following table describes the NetApp StorageGRID hardware used in this testing. The StorageGRID SG5712 appliance with 10Gbps networking is the entry-level option and represents a baseline configuration. Optionally the SG5712 can be configured for 25Gbps networking.
+
+[cols="1a,1a,1a,1a,1a",options="header",]
+|===
+|Hardware |Quantity |Disk |Usable Capacity |Network
+|StorageGRID SG5712 appliances |4 |48 x 4TB (near-line SAS HDD) |136TB |10Gbps
+|===
+
+Choosing higher-performance appliance options such as the NetApp StorageGRID SG5760, SG6060, or all flash SGF6112 appliances can provide significant performance benefits. Consult your NetApp StorageGRID solution architect for sizing assistance.
+
+== Commvault and StorageGRID software requirements
+
+The following tables list the software requirements for the Commvault and NetApp StorageGRID software installed on VMware software for our testing. Four MediaAgent data transmission managers and one CommServe server were installed. In the test, 10Gbps networking was implemented for the VMware infrastructure. The following table 
+
+The following table lists Commvault software total system requirements:
+
+[cols="1a,1a,1a,1a,1a,1a",options="header",]
+|===
+|Component |Quantity |Datastore |Size |Total |Total Required IOPS
+|CommServe Server |1 |OS |500GB |500GB |n/a
+| | |SQL |500GB |500GB |n/a
+|MediaAgent |4 |Virtual CPU (vCPU) |16 |64 |n/a
+| | |RAM |128GB |512 |n/a
+| | |OS |500GB |2TB |n/a
+| | |Index Cache |2TB |8TB |200+
+| | |DDB |2TB |8TB |200-80,000K
+|===
+
+In the test environment, one virtual primary Admin node and one virtual Gateway node were deployed on VMware on a NetApp E-Series E2812 storage array. Each node was on a separate server with the minimum production environment requirements described in the following table:
+
+The following table list requirements for StorageGRID virtual Admin nodes and Gateway nodes:
+
+[cols="1a,1a,1a,1a,1a",options="header",]
+|===
+|Node type |Quantity |vCPU |RAM |Storage
+|Gateway node |1 |8 |24GB |100GB LUN for the OS
+|Admin node |1 |8 |24GB a|
+100GB LUN for the OS
+
+200GB LUN for Admin node tables
+
+200GB LUN for the Admin node audit log
+
+|===

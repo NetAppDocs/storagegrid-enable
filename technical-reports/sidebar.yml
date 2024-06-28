@@ -1,14 +1,27 @@
 section: technical-reports
 title: Technical reports
 entries:
-  - title: Introduction
-    url: "/trintro/index.html"
+  - title: Introduction to StorageGRID technical reports
+    url: "/technical-reports/index.html"
   - title: NetApp StorageGRID and big data analytics
     url: "/technical-reports/datalake-analytics.html"  
   - title: Hadoop S3A tuning
     url: "/technical-reports/s3a-tuning.html"
-  - title: "TR-4871: Commvault complete backup and recovery and NetApp StorageGRID"
-    url: "/technical-reports/tr-4871-commvault.html"
+  - title: "TR-4871: Configure StorageGRID for backup and recovery with Commvault"
+    pdf-filename: StorageGRID backup and recovery - Using Commvault to store and recover data
+    entries: 
+      - title: Backup and recover data using StorageGRID and Commvault
+        url: "/commvault/index.html"
+      - title: Tested solution overview
+        url: "/commvault/solution-overview.html"
+      - title: StorageGRID sizing guidance
+        url: "/commvault/sizing.html"
+      - title: Run a data protection job
+        url: "/commvault/data-protection-jobs.html"
+      - title: Review baseline performance tests
+        url: "/commvault/baseline-performance-tests.html"
+      - title: Bucket consistency level recommendation
+        url: "/commvault/s3-consistency-levels.html"
   - title: "TR-4626: Load balancers"
     pdf-filename: StorageGRID load balancer - Third-party and global load balancers
     entries:
@@ -53,7 +66,7 @@ entries:
       - title: Ransomware defense using versioning with protective IAM policy
         url: "/ransomware-protection/versioning-protective-iam-policy-storagegrid.html"       
   - title: "TR-4765: Monitor StorageGRID"
-    pdf-filename: TR-4765-temp
+    pdf-filename: Monitor StorageGRID using external applications
     entries:
       - title: Introduction to StorageGRID monitoring
         url: "/monitor/index.html"
@@ -74,7 +87,7 @@ entries:
       - title: Use the StorageGRID app for Splunk
         url: "/monitor/storagegrid-app-splunk.html"          
   - title: "TR-4882: Install StorageGRID as a bare metal grid"
-    pdf-filename: TR-4882-temp
+    pdf-filename: Install StorageGRID on bare metal hosts
     entries:
       - title: Introduction to installing StorageGRID
         url: "/bare-metal/index.html"
@@ -111,7 +124,7 @@ entries:
       - title: Upgrade bare-metal nodes in StorageGRID
         url: "/bare-metal/upgrading-bare-metal-nodes-storagegrid.html"          
   - title: "TR-4907: Configure StorageGRID with Veritas Enterprise Vault"
-    pdf-filename: TR-4907-temp
+    pdf-filename: StorageGRID disaster recovery – Configuring StorageGRID for site failover using Veritas Enterprise Vault
     entries:
       - title: Introduction to configuring StorageGRID for site failover
         url: "/veritas/index.html"
