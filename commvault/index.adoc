@@ -81,7 +81,7 @@ The following table lists the benefits of each backup option with StorageGRID:
 |===
 
 
-=== Where to Find Additional Information
+== Where to Find Additional Information
 
 To learn more about the information that is described in this document, review the following documents and/or websites:
 
