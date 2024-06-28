@@ -5,7 +5,7 @@ keywords: Backup, on-premises, commvault, storagegrid, object, S3, WORM
 summary: Explore few use cases for StorageGRID configurations implemented by customers and NetApp IT.
 ---
 
-= Solution setup
+= Tested solution overview
 :hardbreaks:
 :nofooter:
 :icons: font
