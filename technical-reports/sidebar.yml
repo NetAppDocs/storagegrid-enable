@@ -132,7 +132,7 @@ entries:
   - title: TR-4907
     pdf-filename: TR-4907-temp
     entries:
-      - title: Learn how to configure StorageGRID as a primary storage target for Veritas Enterprise Vault archives
+      - title: Introduction to configuring StorageGRID for site failover
         url: "/veritas/index.html"
       - title: Configure StorageGRID and Veritas Enterprise Vault
         url: "/veritas/configure-storagegrid-enterprise-vault.html"
