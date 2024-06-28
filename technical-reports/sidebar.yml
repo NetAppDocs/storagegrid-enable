@@ -7,7 +7,7 @@ entries:
     url: "/technical-reports/datalake-analytics.html"  
   - title: Hadoop S3A tuning
     url: "/technical-reports/s3a-tuning.html"
-  - title: "TR-4871: Commvault complete backup and recovery and NetApp StorageGRID"
+  - title: "TR-4871: Configure StorageGRID for backup and recovery with Commvault"
     pdf-filename: StorageGRID backup and recovery - Using Commvault to store and recover data
     entries: 
       - title: Backup and recover data using StorageGRID and Commvault
@@ -18,6 +18,8 @@ entries:
         url: "/commvault/solution-overview.html"
       - title: Run a data protection job
         url: "/commvault/data-protection-jobs.html"
+      - title: Review baseline performance tests
+        url: "/commvault/baseline-performance-tests.html"
       - title: Bucket consistency level recommendation
         url: "/commvault/s3-consistency-levels.html"
   - title: "TR-4626: Load balancers"

@@ -5,7 +5,7 @@ keywords: Backup, on-premises, commvault, storagegrid, object, S3, WORM
 summary: Explore few use cases for StorageGRID configurations implemented by customers and NetApp IT.
 ---
 
-= Tested solution Overview
+= Tested solution overview
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -60,7 +60,7 @@ The ILM 2 Copy rule is the default rule. The Erasure Coding 2+1 rule was applied
 
 For technical details about this test environment, read the Solution Design and Best Practices section in the https://www.netapp.com/us/media/tr-4831.pdf[NetApp Scale-out Data Protection with Commvault] technical report.
 
-=== StorageGRID Hardware Specifications 
+== StorageGRID Hardware Specifications 
 
 The following table describes the NetApp StorageGRID hardware used in this testing. The StorageGRID SG5712 appliance with 10Gbps networking is the entry-level option and represents a baseline configuration. Optionally the SG5712 can be configured for 25Gbps networking.
 
@@ -72,7 +72,7 @@ The following table describes the NetApp StorageGRID hardware used in this testi
 
 Choosing higher-performance appliance options such as the NetApp StorageGRID SG5760, SG6060, or all flash SGF6112 appliances can provide significant performance benefits. Consult your NetApp StorageGRID solution architect for sizing assistance.
 
-=== Commvault and StorageGRID Software Requirements
+== Commvault and StorageGRID Software Requirements
 
 The following tables list the software requirements for the Commvault and NetApp StorageGRID software installed on VMware software for our testing. Four MediaAgent data transmission managers and one CommServe server were installed. In the test, 10Gbps networking was implemented for the VMware infrastructure. The following table 
 
