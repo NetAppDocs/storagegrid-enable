@@ -12,7 +12,7 @@ summary: Learn how to monitor StorageGRID using metrics API.
 :imagesdir: ../media/
 
 [.lead]
-Learn how to monitor StorageGRID using metrics API.
+Learn how to access and export metrics to help troubleshoot issues.
 
 == View metrics API through a Prometheus query
 

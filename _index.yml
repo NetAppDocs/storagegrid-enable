@@ -65,8 +65,18 @@ indexpage:
         url: "/technical-reports/datalake-analytics.html"
       - title: Hadoop S3A Tuning Best Practices
         url: "/technical-reports/s3a-tuning.html"
-      - title: TR-4871 - Commvault Complete Backup and Recovery and NetApp StorageGRID
+      - title: "TR-4871: Commvault Complete Backup and Recovery and NetApp StorageGRID"
         url: "/technical-reports/tr-4871-commvault.html"
+      - title: "TR-4645: Security features"
+        url: "/data-security/index.html"
+      - title: "TR-4921: Ransomware defense"
+        url: "/ransomware-protection/index.html"
+      - title: "TR-4765: Monitor StorageGRID"
+        url: "/monitor/index.html"
+      - title: "TR-4882: Install StorageGRID as a bare metal grid"
+        url: "/bare-metal/index.html"
+      - title: "TR-4907: Configure StorageGRID with Veritas Enterprise Vault"
+        url: "/third-party/configure-storagegrid-primary-storage.html"
     - title: Procedures and API examples
       links:
       - title: Test and demonstrate S3 encryption
