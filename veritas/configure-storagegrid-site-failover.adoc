@@ -1,5 +1,5 @@
 ---
-permalink: third-party/configure-storagegrid-site-failover.html
+permalink: veritas/configure-storagegrid-site-failover.html
 sidebar: sidebar
 keywords: site failover, configure, storagegrid
 summary: Learn how to configure StorageGRID site failover in a disaster recovery scenario.

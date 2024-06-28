@@ -1,15 +1,9 @@
-section: technical-reports
-title: Technical reports
+section: trintro
+title: 'Technical reports (TRs)'
 entries:
   - title: Introduction
     url: "/trintro/index.html"
-  - title: NetApp StorageGRID and big data analytics
-    url: "/technical-reports/datalake-analytics.html"  
-  - title: Hadoop S3A tuning
-    url: "/technical-reports/s3a-tuning.html"
-  - title: "TR-4871: Commvault complete backup and recovery and NetApp StorageGRID"
-    url: "/technical-reports/tr-4871-commvault.html"
-  - title: "TR-4626: Load balancers"
+  - title: Load balancers
     pdf-filename: StorageGRID load balancer - Third-party and global load balancers
     entries:
       - title: Use third-party load balancers with StorageGRID
@@ -26,7 +20,7 @@ entries:
         url: "/load-balancer/validate-ssl-connection-storagegrid.html"
       - title: Understand global load balancing requirements for StorageGRID
         url: "/load-balancer/global-load-balancing-design.html"
-  - title: "TR-4645: Security features"
+  - title: Security features
     pdf-filename: Security features in StorageGRID 11.7 - Securing your data and metadata in an object store
     entries:
       - title: Secure StorageGRID data and metadata in an object store
@@ -41,7 +35,7 @@ entries:
         url: "/data-security/platform-security.html"
       - title: Cloud integration
         url: "/data-security/cloud-integration-storagegrid.html"
-  - title: "TR-4921: Ransomware defense"
+  - title: Ransomware defense
     pdf-filename: Ransomware Defense with StorageGRID - Protecting your S3 objects
     entries:
       - title: Protect StorageGRID S3 objects from ransomware
@@ -51,38 +45,57 @@ entries:
       - title: Ransomware defense using replicated bucket with versioning
         url: "/ransomware-protection/replicate-bucket-versioning-storagegrid.html"
       - title: Ransomware defense using versioning with protective IAM policy
-        url: "/ransomware-protection/versioning-protective-iam-policy-storagegrid.html"       
-  - title: "TR-4765: Monitor StorageGRID"
+        url: "/ransomware-protection/versioning-protective-iam-policy-storagegrid.html"
+  - title: Commvault backup and recovery
+    pdf-filename: Commvault Complete Backup and Recovery - and NetApp StorageGRID
+    entries:
+      - title: Protect StorageGRID data with Commvault
+        url: "/third-party/commvault-storagegrid-data-protection.html"
+      - title: Commvault Complete Backup and Recovery for NetApp and StorageGRID - Solution overview
+        url: "/third-party/commvault-storagegrid-overview.html"
+      - title: StorageGRID sizing guidance
+        url: "/third-party/storagegrid-sizing-guidance.html"
+      - title: StorageGRID hardware specifications
+        url: "/third-party/storagegrid-hardware-specifications.html"
+      - title: Commvault and StorageGRID software requirements
+        url: "/third-party/commvault-storagegrid-software-requirements.html"          
+      - title: Run data protection jobs using Commvault and StorageGRID as primary storage
+        url: "/third-party/running-data-protection-job.html"
+      - title: Review baseline performance tests for Commvault and StorageGRID
+        url: "/third-party/baseline-performance-tests.html"
+      - title: Configure StorageGRID consistency levels for operations on S3 buckets
+        url: "/third-party/set-consistency-level-s3.html"          
+  - title: TR-4765
     pdf-filename: TR-4765-temp
     entries:
       - title: Introduction to StorageGRID monitoring
         url: "/monitor/index.html"
-      - title: Use the GMI dashboard to monitor StorageGRID
+      - title: Get started with monitoring StorageGRID
         url: "/monitor/getting-started.html"
       - title: Use alerts to monitor StorageGRID
         url: "/monitor/alerts-monitoring.html"
-      - title: Advanced monitoring in StorageGRID
+      - title: Advanced Monitoring in StorageGRID
         url: "/monitor/advanced-monitor-storagegrid.html"
-      - title: Access metrics using cURL in StorageGRID
+      - title: Access metrics through cURL in StorageGRID
         url: "/monitor/access-metrics-curl.html"          
-      - title: View metrics using Grafana in StorageGRID
+      - title: View metrics through Grafana dashboard in StorageGRID
         url: "/monitor/grafana-dashboard.html"
-      - title: Use traffic classification policies in StorageGRID
+      - title: Use traffic classification policies to monitor StorageGRID
         url: "/monitor/traffic-classification-policies.html"
       - title: Use audit logs to monitor StorageGRID
         url: "/monitor/audit-log-monitoring.html"          
-      - title: Use the StorageGRID app for Splunk
+      - title: Use StorageGRID App for Splunk
         url: "/monitor/storagegrid-app-splunk.html"          
-  - title: "TR-4882: Install StorageGRID as a bare metal grid"
+  - title: TR-4882
     pdf-filename: TR-4882-temp
     entries:
-      - title: Introduction to installing StorageGRID
+      - title: Quick start guide to install StorageGRID on bare metal grid
         url: "/bare-metal/index.html"
       - title: Prerequisites to install StorageGRID
         url: "/bare-metal/prerequisites-install-storagegrid.html"
       - title: Install Docker for StorageGRID
         url: "/bare-metal/install-docker-storagegrid.html"
-      - title: Prepare node configuration files for StorageGRID
+      - title: Node configuration files for StorageGRID
         url: "/bare-metal/node-config-file-storagegrid.html"
       - title: Install StorageGRID dependencies and packages
         url: "/bare-metal/install-storagegrid-dependencies.html"          
@@ -100,7 +113,7 @@ entries:
         url: "/bare-metal/grid-network-subnets-storagegrid.html"          
       - title: Approve grid nodes for StorageGRID
         url: "/bare-metal/approve-grid-nodes-storagegrid.html"          
-      - title: Specify NTP server details for StorageGRID
+      - title: Specify NTP Server details for StorageGRID
         url: "/bare-metal/ntp-server-storagegrid.html"          
       - title: Specify DNS server details for StorageGRID
         url: "/bare-metal/dns-server-storagegrid.html"          
@@ -110,14 +123,28 @@ entries:
         url: "/bare-metal/review-config-complete-storagegrid-install.html"          
       - title: Upgrade bare-metal nodes in StorageGRID
         url: "/bare-metal/upgrading-bare-metal-nodes-storagegrid.html"          
-  - title: "TR-4907: Configure StorageGRID with Veritas Enterprise Vault"
+  - title: TR-4907
     pdf-filename: TR-4907-temp
     entries:
       - title: Introduction to configuring StorageGRID for site failover
-        url: "/veritas/index.html"
+        url: "/veritas/configure-storagegrid-primary-storage.html"
       - title: Configure StorageGRID and Veritas Enterprise Vault
         url: "/veritas/configure-storagegrid-enterprise-vault.html"
-      - title: Configure StorageGRID for WORM storage
+      - title: Configure StorageGRID S3 Object Lock for WORM storage
         url: "/veritas/configure-storagegrid-s3-object-lock.html"
-      - title: Configure StorageGRID for disaster recovery
+      - title: Configure StorageGRID site failover for disaster recovery
         url: "/veritas/configure-storagegrid-site-failover.html"
+  - title: TR-4777
+    pdf-filename: TR-4777-temp
+    entries:
+      - title: Learn about archiving backups in Veeam using StorageGRID
+        url: "/third-party/storagegrid-archiving-backups.html"
+      - title: Configure Veeam with StorageGRID
+        url: "/third-party/configure-storagegrid.html"
+      - title: Learn about offload job process in Veeam
+        url: "/third-party/offload-job-process.html"
+      - title: Data tiering backup jobs in Veeam
+        url: "/third-party/data-tiering-jobs.html"
+      - title: Troubleshoot backup job operations in Veeam
+        url: "/third-party/troubleshoot-backup-jobs.html"          
+ 
