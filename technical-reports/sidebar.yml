@@ -1,11 +1,11 @@
 section: technical-reports
 title: Technical reports
 entries:
-  - title: Introduction to StorageGRID technical reports
-    url: "/technical-reports/index.html"
-  - title: NetApp StorageGRID and big data analytics
+  - title: Introduction
+    url: "/trintro/index.html"
+  - title: "TR-xxxx: NetApp StorageGRID and big data analytics"
     url: "/technical-reports/datalake-analytics.html"  
-  - title: Hadoop S3A tuning
+  - title: "TR-xxxx: Hadoop S3A tuning"
     url: "/technical-reports/s3a-tuning.html"
   - title: "TR-4871: Configure StorageGRID for backup and recovery with Commvault"
     pdf-filename: StorageGRID backup and recovery - Using Commvault to store and recover data
@@ -86,7 +86,7 @@ entries:
         url: "/monitor/audit-log-monitoring.html"          
       - title: Use the StorageGRID app for Splunk
         url: "/monitor/storagegrid-app-splunk.html"          
-  - title: "TR-4882: Install StorageGRID as a bare metal grid"
+  - title: "TR-4882: Install a StorageGRID bare metal grid"
     pdf-filename: Install StorageGRID on bare metal hosts
     entries:
       - title: Introduction to installing StorageGRID

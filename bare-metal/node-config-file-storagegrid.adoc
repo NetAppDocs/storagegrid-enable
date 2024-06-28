@@ -90,7 +90,7 @@ Example file name:
 ----
 Example file contents:
 
-NOTE: Disk paths can follow the examples below or use `/dev/mapper/alias` style naming. Do not use block device names such as `/dev/sdb` because they can change on reboot and cause great damager to your grid.
+NOTE: Disk paths can follow the examples below or use `/dev/mapper/alias` style naming. Do not use block device names such as `/dev/sdb` because they can change on reboot and cause great damage to your grid.
 
 ----
 NODE_TYPE = VM_Admin_Node

@@ -32,7 +32,13 @@ To successfully monitor NetApp StorageGRID, it is important to know where to gat
 
 To learn more about the information that is described in this document, review the following documents and/or websites:
 
-* StorageGRID documentation
-http://docs.netapp.com/sgws-114/topic/com.netapp.doc.ic-base/resources/home.html
+* NetApp StorageGRID Documentation Center
+https://docs.netapp.com/us-en/storagegrid-118/
+* NetApp StorageGRID Enablement
+https://docs.netapp.com/us-en/storagegrid-enable/
+* StorageGRID Documentation Resources page 
+https://www.netapp.com/data-storage/storagegrid/documentation/
+* NetApp Product Documentation 
+https://www.netapp.com/support-and-training/documentation/ 
 * NetApp StorageGRID App for Splunk
 https://splunkbase.splunk.com/app/3898/#/details

@@ -37,7 +37,7 @@ image:bare-metal-approve-configure-grid-nodes.png[media/bare-metal-approve-confi
 +
 image:bare-metal-admin-node-configuration.png[bare-metal-admin-node-configuration]
 +
--- *Site*: The name of the site with which this grid node will be associated.
+-- *Site*: The system name of the site for this grid node.
 +
 -- *Name*: The host name that will be assigned to the node, and the name that will be displayed in Grid Manager. The name defaults to the name you specified during node deployment, but you can change the name as needed.
 +

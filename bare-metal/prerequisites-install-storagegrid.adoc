@@ -88,7 +88,7 @@ The paths or file systems marked with an asterisk will be created in the Storage
 
 |All
 |Admin Node system space
-*`/var/local` (SSD helpful here)
+`/var/local` (SSD helpful here)
 |One for each Admin Node
 |90GB
 |No
@@ -104,7 +104,7 @@ The paths or file systems marked with an asterisk will be created in the Storage
 
 |Admin
 |Admin Node audit logs (system data in Admin container) 
-*`/var/local/audit/export`
+`/var/local/audit/export`
 |One for each Admin Node
 |200GB
 |No
@@ -112,7 +112,7 @@ The paths or file systems marked with an asterisk will be created in the Storage
 
 |Admin
 |Admin Node tables (system data in Admin container)
-*`/var/local/mysql_ibdata`
+`/var/local/mysql_ibdata`
 |One for each Admin Node
 |200GB
 |No
@@ -120,9 +120,9 @@ The paths or file systems marked with an asterisk will be created in the Storage
 
 |Storage nodes
 |Object storage (block devices)
-* `/var/local/rangedb0` (SSD helpful here)
-* `/var/local/rangedb1`
-* `/var/local/rangedb2`
+ `/var/local/rangedb0` (SSD helpful here)
+ `/var/local/rangedb1`
+ `/var/local/rangedb2`
 |Three for each storage container
 |4000GB
 |No
@@ -225,19 +225,19 @@ The following tables list the required disk storage for hosts 1, 2, and 3.
 2+a|*Storage container*
 
 |SN-OS
-*`/var/local`
+`/var/local`
 (Device)
 |90
 
-|*Rangedb-0
+|Rangedb-0
 (Device)
 |4096
 
-|*Rangedb-1
+|Rangedb-1
 (Device)
 |4096
 
-|*Rangedb-2
+|Rangedb-2
 (Device)
 |4096
 
@@ -308,7 +308,7 @@ The following tables list the required disk storage for hosts 1, 2, and 3.
 The Docker Store was calculated by allowing 100GB per /var/local (per container) x two containers = 200GB.
 
 == Preparing the nodes
-To prepare for the initial installation of StorageGRID, first install CentOS or RHEL version 7.8 and enable SSH. Set up network interfaces, Network Time Protocol (NTP), DNS, and the host name according to best practices. You need at least one enabled network interface on the grid network and another for the Client Network. If you are using a VLAN-tagged interface, configure it as per the examples below. Otherwise, a simple standard network interface configuration will suffice.
+To prepare for the initial installation of StorageGRID, first install CentOS or RHEL version 9.2 and enable SSH. Set up network interfaces, Network Time Protocol (NTP), DNS, and the host name according to best practices. You need at least one enabled network interface on the grid network and another for the Client Network. If you are using a VLAN-tagged interface, configure it as per the examples below. Otherwise, a simple standard network interface configuration will suffice.
 
 If you need to use a VLAN tag on the grid network interface, your configuration should have two files in `/etc/sysconfig/network-scripts/` in the following format:
 
