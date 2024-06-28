@@ -12,10 +12,10 @@ entries:
     entries: 
       - title: Backup and recover data using StorageGRID and Commvault
         url: "/commvault/index.html"
+      - title: Solution setup
+        url: "/commvault/solution-overview.html"
       - title: StorageGRID sizing guidance
         url: "/commvault/sizing.html"
-      - title: Tested solution overview
-        url: "/commvault/solution-overview.html"
       - title: Run a data protection job
         url: "/commvault/data-protection-jobs.html"
       - title: Review baseline performance tests
