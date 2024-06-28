@@ -20,6 +20,6 @@ To install the StorageGRID dependencies and packages, run the following commands
 
 ----
 [root@host1 rpms]# yum install -y python-netaddr
-[root@host1 rpms]# rpm -ivh StorageGRID-Webscale-Images-11-4-0-11.4.0*.x86_64.rpm
-[root@host1 rpms]# rpm -ivh StorageGRID-Webscale-Service-11-4-0-11.4.0*.x86_64.rpm
+[root@host1 rpms]# rpm -ivh StorageGRID-Webscale-Images-*.rpm
+[root@host1 rpms]# rpm -ivh StorageGRID-Webscale-Service-*.rpm
 ----

@@ -29,3 +29,15 @@ For StorageGRID, security best practices should include using HTTPS with signed 
 == Methods of defense
 
 The primary ransomware protection mechanism in the S3 API is to implement object lock. Not all applications are compatible with object lock, so there are two other options to protect your objects that are described in this report: replication to another bucket with versioning enabled and versioning with IAM policies. 
+
+== Where to find additional information
+To learn more about the information that is described in this document, review the following documents and/or websites:
+
+* NetApp StorageGRID Documentation Center
+https://docs.netapp.com/us-en/storagegrid-118/
+* NetApp StorageGRID Enablement
+https://docs.netapp.com/us-en/storagegrid-enable/
+* StorageGRID Documentation Resources page 
+https://www.netapp.com/data-storage/storagegrid/documentation/
+* NetApp Product Documentation 
+https://www.netapp.com/support-and-training/documentation/ 

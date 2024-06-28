@@ -11,19 +11,19 @@ summary: Learn how to implement basic configurations for StorageGRID 11.5 and Ve
 :imagesdir: ../media/
 
 [.lead]
-Learn how to implement basic configurations for StorageGRID 11.5 and Veritas Enterprise Vault 14.1.
+Learn how to implement basic configurations for StorageGRID 11.5 or higher and Veritas Enterprise Vault 14.1 or higher.
 
-This configuration guide is based on StorageGRID 11.5 and Enterprise Vault 14.1. For write once, read many (WORM) mode storage using S3 Object Lock, StorageGRID 11.6 and Enterprise Vault 14.2.2 was used. For more detailed information about these guidelines, see the https://docs.netapp.com/us-en/storagegrid-116/[StorageGRID 11.6 Documentation^] page or contact a StorageGRID expert.
+This configuration guide is based on StorageGRID 11.5 and Enterprise Vault 14.1. For write once, read many (WORM) mode storage using S3 Object Lock, StorageGRID 11.6 and Enterprise Vault 14.2.2 was used. For more detailed information about these guidelines, see the https://docs.netapp.com/us-en/storagegrid-118/[StorageGRID Documentation^] page or contact a StorageGRID expert.
 
 == Prerequisites to configure StorageGRID and Veritas Enterprise Vault
 
 ** Before you configure StorageGRID with Veritas Enterprise Vault, verify the following prerequisites:
 
-NOTE: For WORM storage (Object Lock), StorageGRID 11.6 is required.
+NOTE: For WORM storage (Object Lock), StorageGRID 11.6 or higher is required.
 
-** Veritas Enterprise Vault 14.1+ is installed.
+** Veritas Enterprise Vault 14.1 or higher is installed.
 
-NOTE: For WORM storage (Object Lock), Enterprise Vault version 14.2.2 is required.
+NOTE: For WORM storage (Object Lock), Enterprise Vault version 14.2.2 or higher is required.
 
 ** Vault store groups and a vault store has been created.
 For more information, see the Veritas Enterprise Vault Administration Guide.

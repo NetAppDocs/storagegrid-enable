@@ -17,5 +17,5 @@ The StorageGRID audit log enables you to collect detailed information about tena
 
 After the audit has been exported, you can use log analysis tools such as Splunk or Logstash + Elasticsearch to understand tenant activity or to create detailed billing and chargeback reports.
 
-Details about audit messages are included in StorageGRID documentation. See https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=61023[Audit messages^].
+Details about audit messages are included in StorageGRID documentation. See https://docs.netapp.com/us-en/storagegrid-118/audit/audit-messages-main.html[Audit messages^].
 

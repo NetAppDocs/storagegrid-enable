@@ -18,21 +18,20 @@ Learn how to install StorageGRID on bare metal hosts.
 
 TR-4882 provides a practical, step-by-step set of instructions that produces a working installation of NetApp StorageGRID. The installation could be either on bare metal or on virtual machines (VMs) running on CentOS or Red Hat Enterprise Linux (RHEL) 7.8. The approach is to perform an “opinionated” installation of six StorageGRID containerized services onto three physical (or virtual) machines in a suggested layout and storage configuration. Some customers might find it easier to understand the deployment process by following the example deployment in this TR.
 
-Updated for StorageGRID 11.4 deployed on CentOS or RHEL 7.8.
-
-For a more in-depth understanding about StorageGRID and the installation process, see https://docs.netapp.com/us-en/storagegrid-118/ubuntu/index.html[Ubuntu or Debian installation] in the product documentation.
+For a more in-depth understanding about StorageGRID and the installation process, see https://docs.netapp.com/us-en/storagegrid-118/landing-install-upgrade/index.html [Install, upgrade, and hotfix StorageGRID] in the product documentation.
 
 Before you start your deployment, let’s examine the compute, storage, and networking requirements for NetApp StorageGRID software. StorageGRID runs as a containerized service within Docker. In this model, some requirements refer to the host operating system (the OS that hosts Docker, which is running the StorageGRID software). And some of the resources are allocated directly to the Docker containers running within each host. In this deployment, in order to maximize hardware usage, we are deploying two services per physical host. For more information, continue on to the next section, link:prerequisites-install-storagegrid.html[Prerequisites to install StorageGRID].
 
-The steps outlined in this TR result in a working StorageGRID installation on six bare metal hosts. You now have a working grid and Client Network, which are useful in most testing scenarios.
+The steps outlined in this TR result in a working StorageGRID installation on six bare metal hosts. You now have a working grid and client network, which are useful in most testing scenarios.
 
 == Where to find additional information
 To learn more about the information that is described in this TR, review the following documentation resources:
 
-* StorageGRID documentation resources 
+* NetApp StorageGRID Documentation Center
+https://docs.netapp.com/us-en/storagegrid-118/
+* NetApp StorageGRID Enablement
+https://docs.netapp.com/us-en/storagegrid-enable/
+* StorageGRID Documentation Resources page 
 https://www.netapp.com/data-storage/storagegrid/documentation/
-* StorageGRID 11.4 Documentation Center 
-https://docs.netapp.com/sgws-114/index.jsp
 * NetApp Product Documentation 
-https://www.netapp.com/support-and-training/documentation/
-
+https://www.netapp.com/support-and-training/documentation/ 

@@ -120,7 +120,7 @@ CTFC 1.31(c)-(d)
 
 |Secured storage of S3 credentials
 |S3 access keys are stored in a format that is protected by a password hashing function (SHA-2).
-|Enables secure storage of access keys by a combination of key length (a 1031 randomly generated number) and a password hashing algorithm.
+|Enables secure storage of access keys by a combination of key length (a 10^31^ randomly generated number) and a password hashing algorithm.
 |--
 
 |Time-bound S3 access keys

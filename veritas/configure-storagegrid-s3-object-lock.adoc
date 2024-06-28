@@ -15,7 +15,7 @@ Learn how to configure StorageGRID for WORM storage using S3 Object Lock.
 
 == Prerequisites to configure  StorageGRID for WORM storage
 
-For WORM storage, StorageGRID uses S3 Object Lock to retain objects for compliance. This requires StorageGRID 11.6, where S3 Object Lock default bucket retention was introduced. Enterprise Vault also requires version 14.2.2
+For WORM storage, StorageGRID uses S3 Object Lock to retain objects for compliance. This requires StorageGRID 11.6 or higher, where S3 Object Lock default bucket retention was introduced. Enterprise Vault also requires version 14.2.2 or higher.
 
 == Configure StorageGRID S3 Object Lock default bucket retention
 
