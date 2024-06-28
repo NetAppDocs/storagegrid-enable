@@ -1,0 +1,58 @@
+---
+sidebar: sidebar
+permalink: commvault/index.html
+keywords: Backup, on-premises, commvault, storagegrid, object, S3, WORM
+summary: Explore few use cases for StorageGRID configurations implemented by customers and NetApp IT.
+---
+
+= Backup and recover data using StorageGRID and Commvault
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Commvault and NetApp have partnered to create a joint data protection solution combining Commvault Complete Backup and Recovery for NetApp software with NetApp StorageGRID software for cloud storage. Many organizations want to migrate their storage to the cloud, scale their systems, and automate their policy for long-term retention of data. Commvault Complete Backup and Recovery and NetApp StorageGRID provide unique, easy-to-use solutions that work together to help you meet demands of rapid data growth and increasing regulations around the world. Cloud-based object storage is known for its resilience, ability to scale, and operational and cost efficiencies that make it a natural choice as a target for your backup. Commvault and NetApp jointly certified their combined solution in 2014 and since then have engineered deeper integration between their two solutions. Customers of all types around the world have adopted the Commvault Complete Backup and Recovery and StorageGRID combined solution.
+
+When you implement Commvault Complete Backup and Recovery software with cloud storage, you have two backup options:
+
+* Back up to a primary disk target and also back up an auxiliary copy to cloud storage.
+* Back up to cloud storage as the primary target.
+
+In the past, cloud or object storage was considered to be too low-performing to be used for primary backup. The use of a primary disk target allowed customers to have faster backup and restore processes and to keep an auxiliary copy on the cloud as a cold backup. StorageGRID represents the next generation of object storage. StorageGRID is capable of high performance and massive throughput as well as performance and flexibility beyond what other object-storage vendors offer.
+
+The following table lists the benefits of each backup option with StorageGRID:
+
+[cols="1a,1a,1a",options="header",]
+|===
+| |Primary Backup to Disk and an Auxiliary Copy to StorageGRID |Primary Backup to StorageGRID
+
+|Performance |Fastest recovery time, using live mount or live recovery: best for Tier0/Tier1 workloads. 
+
+|Cannot be used for live mount or live recovery operations. Ideal for streaming restore operation and for long-term retention.
+
+|Deployment architecture 
+
+|Uses all flash or a spinning disk as a first backup landing tier. StorageGRID is used as a secondary tier. 
+
+|Simplifies the deployment by using StorageGRID as the all-inclusive backup target.
+
+|Advanced features (live restore) 
+
+|Supported 
+
+|Not supported
+|===
+
+
+=== Where to Find Additional Information
+
+To learn more about the information that is described in this document, review the following documents and/or websites:
+
+* StorageGRID 11.8 Documentation Center +
+https://docs.netapp.com/us-en/storagegrid-118/
+* NetApp Product Documentation +
+https://docs.netapp.com
+* Commvault documentation +
+https://documentation.commvault.com/2024/essential/index.html
