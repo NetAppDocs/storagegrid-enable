@@ -11,7 +11,7 @@ summary: Learn how to validate the content of the configuration files for Storag
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../media/
+:imagesdir: /media/
 
 [.lead]
 Learn how to validate the content of the configuration files for StorageGRID.

@@ -7,7 +7,7 @@ summary: 'This guide describes the preparation and procedure for StorageGRID sit
 = Grid site relocation and site-wide network change procedure
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/
+:imagesdir: /media/
 
 [.lead]
 This guide describes the preparation and procedure for StorageGRID site relocation in a multi-sites Grid. You should have a complete understand of this procedure and plan ahead to ensure smooth process and minimize interruption to clients. 

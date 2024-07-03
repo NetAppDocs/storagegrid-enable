@@ -7,7 +7,7 @@ summary: Learn how Veritas Enterprise Vault uses StorageGRID as a primary storag
 = Introduction to configuring StorageGRID for site failover
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/
+:imagesdir: /media/
 
 [.lead]
 Learn how Veritas Enterprise Vault uses StorageGRID as a primary storage target for disaster recovery.

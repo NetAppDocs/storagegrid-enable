@@ -6,7 +6,7 @@ summary: 'NetApp, in collaboration with our partners, has validated these soluti
 ---
 = Validated third-party solutions: Overview
 :icons: font
-:imagesdir: ../media/
+:imagesdir: /media/
 
 NetApp, in collaboration with our partners, has validated these solutions for use with StorageGRID. Review the information in this section to learn what solutions have been validated, and to obtain additional instructions if applicable.
 

@@ -9,7 +9,7 @@ summary: Discover how to use Grafana for metric visualization in NetApp StorageG
 :experimental:
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/
+:imagesdir: /media/
 
 [.lead]
 Learn how to use the Grafana interface to visualize and monitor your StorageGRID data.

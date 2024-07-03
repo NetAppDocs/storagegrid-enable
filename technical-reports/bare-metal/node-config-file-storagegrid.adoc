@@ -11,7 +11,7 @@ summary: Understand how to prepare the node configuration files for StorageGRID.
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ./media/
+:imagesdir: /media/
 
 [.lead]
 Learn how to prepare the node configuration files for StorageGRID.

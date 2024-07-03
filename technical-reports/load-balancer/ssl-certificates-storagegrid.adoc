@@ -10,7 +10,7 @@ summary: Understand the importance and the steps to implement of SSL certificate
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../media/
+:imagesdir: /media/
 
 [.lead]
 Understand the importance and the steps to implement of SSL certificates in StorageGRID.

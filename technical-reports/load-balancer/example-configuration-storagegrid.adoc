@@ -10,7 +10,7 @@ summary: Explore few use cases for StorageGRID configurations implemented by cus
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../media/
+:imagesdir: /media/
 
 [.lead]
 Explore few use cases for StorageGRID configurations implemented by customers and NetApp IT.

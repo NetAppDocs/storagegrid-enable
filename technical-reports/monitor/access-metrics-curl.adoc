@@ -9,7 +9,7 @@ summary: Learn how to access metrics through CLI using cURL and authorization to
 :experimental:
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/
+:imagesdir: /media/
 
 [.lead]
 Learn how to access metrics through the CLI using cURL.

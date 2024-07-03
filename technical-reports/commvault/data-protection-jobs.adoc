@@ -10,7 +10,7 @@ summary: Explore few use cases for StorageGRID configurations implemented by cus
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../media/
+:imagesdir: /media/
 
 [.lead]
 To configure StorageGRID with Commvault Complete Backup and Recovery for NetApp, the following steps were performed to add StorageGRID as a cloud library within the Commvault software.

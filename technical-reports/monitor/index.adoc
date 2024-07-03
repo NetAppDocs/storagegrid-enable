@@ -8,7 +8,7 @@ summary: Dive into understanding NetApp StorageGRID, its error conditions, and h
 = Introduction to StorageGRID monitoring
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/
+:imagesdir: /media/
 
 [.lead]
 Learn how to monitor your StorageGRID system by using external applications, such as Splunk.

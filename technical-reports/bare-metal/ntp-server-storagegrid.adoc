@@ -11,7 +11,7 @@ summary: Learn how to specify the NTP configuration information for your Storage
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../media/
+:imagesdir: /media/
 
 [.lead]
 Learn how to specify the NTP configuration information for your StorageGRID system so that operations performed on separate servers can be kept synchronized.

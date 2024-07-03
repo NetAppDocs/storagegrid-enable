@@ -7,7 +7,7 @@ summary: 'This guide describes the procedure to create a Vertica Eon Mode databa
 = Vertica Eon mode database using NetApp StorageGRID as communal storage
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/
+:imagesdir: /media/
 
 [.lead]
 This guide describes the procedure to create a Vertica Eon Mode database with communal storage on NetApp StorageGRID.

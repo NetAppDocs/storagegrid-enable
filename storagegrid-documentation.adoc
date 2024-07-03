@@ -7,7 +7,7 @@ summary: 'You can find the complete documentation for each NetApp StorageGRID re
 = NetApp StorageGRID documentation
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/
+:imagesdir: /media/
 
 [.lead]
 You can find the complete documentation for each NetApp StorageGRID release here:

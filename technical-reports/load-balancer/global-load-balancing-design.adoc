@@ -11,7 +11,7 @@ summary: Explore the design considerations and requirements for global load bala
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../media/
+:imagesdir: /media/
 
 [.lead]
 Explore the design considerations and requirements for global load balancing in StorageGRID.

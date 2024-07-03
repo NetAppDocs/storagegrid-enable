@@ -7,7 +7,7 @@ summary: 'Node clone performance and best practices.'
 = Node Clone
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/
+:imagesdir: /media/
 
 [.lead]
 Node clone considerations and performance. 

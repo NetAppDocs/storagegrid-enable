@@ -8,7 +8,7 @@ summary: Learn how to configure StorageGRID for WORM storage using S3 Object Loc
 = Configure StorageGRID S3 Object Lock for WORM storage
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/
+:imagesdir: /media/
 
 [.lead]
 Learn how to configure StorageGRID for WORM storage using S3 Object Lock.
