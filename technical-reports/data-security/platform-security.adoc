@@ -1,0 +1,100 @@
+---
+sidebar: sidebar
+permalink: technical-reports/data-security/platform-security.html
+keywords: platform security, storagegrid 
+summary: Learn about the platform security features in StorageGRID.
+
+---
+
+= Platform security features
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../../media/
+
+[.lead]
+Learn about the platform security features in StorageGRID.
+
+[cols="20,30a,30,20"*,options="header"]
+|===
+|Feature
+|Function
+|Impact
+|Regulatory compliance
+
+|Internal public-key infrastructure (PKI), node certificates, and TLS
+|StorageGRID uses an internal PKI and node certificates to authenticate and encrypt internode communication. Internode communication is secured by TLS.
+|Helps secure system traffic over the LAN or WAN, especially in a multisite deployment.
+|SEC Rule 17a-4(f)
+CTFC 1.31(c)-(d)
+(FINRA) Rule 4511(c)
+
+|Node firewall
+|StorageGRID automatically configures IP tables and firewalling rules to control incoming and outgoing network traffic, as well as closing unused ports.
+|Helps protect the StorageGRID system, data, and metadata against unsolicited network traffic.
+|--
+
+|OS hardening
+|The base operating system of StorageGRID physical appliances and virtual nodes is hardened; unrelated software packages are removed.
+|Helps minimize potential attack surfaces.
+|SEC Rule 17a-4(f)
+CTFC 1.31(c)-(d)
+(FINRA) Rule 4511(c)
+
+|Periodic platform and software updates
+|StorageGRID provides regular software releases that include operating system, applications binaries, and software updates.
+|Helps keep the StorageGRID system updated with current software and application binaries.
+|--
+
+|Disabled Root Login Over Secure Shell (SSH)
+|Root login over SSH is disabled on all StorageGRID nodes. SSH access uses certificate authentication.
+|Helps customers protect against potential remote password cracking of the root login.
+|SEC Rule 17a-4(f)
+CTFC 1.31(c)-(d)
+(FINRA) Rule 4511(c)
+
+|Automated time synchronization
+|StorageGRID automatically synchronizes system clocks of each node against multiple external time Network Time Protocol (NTP) servers. At least four NTP servers of Stratum 3 or later are required.
+|Ensures the same time reference across all nodes.
+|SEC Rule 17a-4(f)
+CTFC 1.31(c)-(d)
+(FINRA) Rule 4511(c)
+
+|Separate networks for client, admin, and internal grid traffic
+|StorageGRID software nodes and hardware appliances support multiple virtual and physical network interfaces, so that customers can separate client, administration, and internal grid traffic over different networks.
+|Allow Grid administrators to segregate internal and external network traffic and deliver traffic over networks with different SLAs.
+|--
+
+|Multiple virtual LAN (VLAN) interfaces
+|StorageGRID supports configuring VLAN interfaces on your StorageGRID client and grid networks.
+|Allow Grid administrators to partition and isolate application traffic for security, flexibility, and performance.
+|
+
+|Untrusted Client Network
+|The Untrusted Client Network interface accepts inbound connections only on ports that have been explicitly configured as load-balancer endpoints.
+|Ensures that interfaces exposed to untrusted networks are secured.
+|--
+
+|Configurable Firewall
+|Manage open and closed ports for Admin,Grid, and client networks.
+|Allow grid administrators to control access on ports and manage approved device access to the ports.
+|
+
+|Enhanced SSH behavior
+|New SSH host certificates and host keys are generated when upgrading a node to StorageGRID 11.5.
+|Enhances man-in-the-middle attack protection.
+|SEC Rule 17a-4(f)
+CTFC 1.31(c)-(d)
+(FINRA) Rule 4511(c)
+
+|Node encryption
+|As part of the new KMS host server encryption feature, a new Node Encryption setting is added to the StorageGRID Appliance Installer.
+|This setting must be enabled during the hardware configuration stage of appliance installation.
+|SEC Rule 17a-4(f)
+CTFC 1.31(c)-(d)
+(FINRA) Rule 4511(c)
+
+|===
+
+
