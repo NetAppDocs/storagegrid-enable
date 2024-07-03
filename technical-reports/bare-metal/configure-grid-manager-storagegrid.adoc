@@ -1,0 +1,58 @@
+---
+sidebar: sidebar
+permalink: technical-reports/bare-metal/configure-grid-manager-storagegrid.html
+keywords: grid manager, storagegrid
+summary: Learn how to configure the Grid Manager in StorageGRID on the primary admin node.
+
+---
+
+= Configure the Grid Manager in StorageGRID
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../../media/
+
+[.lead]
+Learn how to configure the Grid Manager in StorageGRID on the primary admin node.
+
+Complete the installation by configuring the StorageGRID system from the Grid Manager user interface on the primary Admin Node.
+
+== High-level steps
+Configuring the grid and completing the installation involves the following tasks:
+
+.Steps
+. <<Navigate to Grid Manager>>
+. link:storagegrid-license.html[Specify the StorageGRID license information]
+. link:add-sites-storagegrid.html[Add sites to StorageGRID]
+. link:grid-network-subnets-storagegrid.html[Specify grid network subnets]
+. link:approve-grid-nodes-storagegrid.html[Approve pending grid nodes]
+. link:ntp-server-storagegrid.html[Specify NTP server information]
+. link:dns-server-storagegrid.html[Specify domain name system server information]
+. link:system-passwords-storagegrid.html[Specify the StorageGRID system passwords]
+. link:review-config-complete-storagegrid-install.html[Review your configuration and complete installation]
+
+== Navigate to Grid Manager
+Use Grid Manager to define all of the information required to configure your StorageGRID system.
+
+Before you begin, the primary Admin Node must be deployed and have completed the initial startup sequence.
+
+To use Grid Manager to define information, complete the following steps.
+
+.Steps
+. Access Grid Manager at the following address:
++
+----
+https://primary_admin_node_grid_ip
+----
++
+Alternatively, you can access Grid Manager on port 8443.
++
+----
+https://primary_admin_node_ip:8443
+----
++
+. Click Install a StorageGRID System.
+The page used to configure a StorageGRID grid is displayed.
+
+image:bare-metal-configure-storagegrid-grid.png[bare-metal-configure-storagegrid-grid]
