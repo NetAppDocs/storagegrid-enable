@@ -62,21 +62,21 @@ indexpage:
     - title: Technical reports
       links:
       - title: "TR-4993: NetApp StorageGRID and Big Data Analytics"
-        url: "/technical-reports/datalake-analytics.html"
+        url: "/technical-reports/technical-reports/datalake-analytics.html"
       - title: "TR-4994: Hadoop S3A Tuning Best Practices"
-        url: "/technical-reports/s3a-tuning.html"
+        url: "/technical-reports/technical-reports/s3a-tuning.html"
       - title: "TR-4871: Commvault Complete Backup and Recovery and NetApp StorageGRID"
-        url: "/technical-reports/tr-4871-commvault.html"
+        url: "/technical-reports/technical-reports/tr-4871-commvault.html"
       - title: "TR-4645: Security features"
-        url: "/data-security/index.html"
+        url: "/technical-reports/data-security/index.html"
       - title: "TR-4921: Ransomware defense"
-        url: "/ransomware-protection/index.html"
+        url: "/technical-reports/ransomware-protection/index.html"
       - title: "TR-4765: Monitor StorageGRID"
-        url: "/monitor/index.html"
+        url: "/technical-reports/monitor/index.html"
       - title: "TR-4882: Install a StorageGRID bare metal grid"
-        url: "/bare-metal/index.html"
+        url: "/technical-reports/bare-metal/index.html"
       - title: "TR-4907: Configure StorageGRID with Veritas Enterprise Vault"
-        url: "/veritas/index.html"
+        url: "/technical-reports/veritas/index.html"
     - title: Procedures and API examples
       links:
       - title: Test and demonstrate S3 encryption

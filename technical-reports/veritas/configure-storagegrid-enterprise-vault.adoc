@@ -1,0 +1,94 @@
+---
+permalink: technical-reports/veritas/configure-storagegrid-enterprise-vault.html
+sidebar: sidebar
+keywords: storagegrid, enterprise vault, configure
+summary: Learn how to implement basic configurations for StorageGRID 11.5 and Veritas Enterprise Vault 14.1.
+---
+= Configure StorageGRID and Veritas Enterprise Vault
+:experimental:
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Learn how to implement basic configurations for StorageGRID 11.5 or higher and Veritas Enterprise Vault 14.1 or higher.
+
+This configuration guide is based on StorageGRID 11.5 and Enterprise Vault 14.1. For write once, read many (WORM) mode storage using S3 Object Lock, StorageGRID 11.6 and Enterprise Vault 14.2.2 was used. For more detailed information about these guidelines, see the https://docs.netapp.com/us-en/storagegrid-118/[StorageGRID Documentation^] page or contact a StorageGRID expert.
+
+== Prerequisites to configure StorageGRID and Veritas Enterprise Vault
+
+** Before you configure StorageGRID with Veritas Enterprise Vault, verify the following prerequisites:
+
+NOTE: For WORM storage (Object Lock), StorageGRID 11.6 or higher is required.
+
+** Veritas Enterprise Vault 14.1 or higher is installed.
+
+NOTE: For WORM storage (Object Lock), Enterprise Vault version 14.2.2 or higher is required.
+
+** Vault store groups and a vault store has been created.
+For more information, see the Veritas Enterprise Vault Administration Guide.
+
+** A StorageGRID tenant, access key, secret key and bucket have been created.
+
+** A StorageGRID load balancer endpoint has been created (either HTTP or HTTPS).
+
+** If using a self-signed certificate, add the StorageGRID self-signed CA certificate to the Enterprise 
+Vault Servers. For more information, see this https://www.veritas.com/support/en_US/article.100049744[Veritas Knowledge Base article^].
+
+** Update and apply the latest Enterprise Vault configuration file to enable supported storage solutions 
+such as NetApp StorageGRID. For more information, see this https://www.veritas.com/content/support/en_US/article.100039174[Veritas Knowledge Base article^].
+
+== Configure StorageGRID with Veritas Enterprise Vault
+
+To configure StorageGRID with Veritas Enterprise Vault, compete the following steps:
+
+.Steps
+
+. Launch the Enterprise Vault Administration console.
++
+image:third-party-enterprise-vault.png[media/third-party-enterprise-vault]
++
+. Create a new vault store partition in the appropriate vault store. Expand the Vault Store Groups folder 
+and then the appropriate vault store. Right-click Partition and select menu:New[Partition].
++
+image:third-party-enterprise-vault-2.png[media/third-party-enterprise-vault-2]
++
+. Follow the New Partition creation wizard. From the Storage Type drop-down menu, select NetApp 
+StorageGRID (S3). Click Next.
++
+image:third-party-new-partition.png[third-party-new-partition]
++
+. Leave the Store Data in WORM Mode Using S3 Object Lock option unchecked. Click Next.
++
+image:third-party-new-partition-2.png[third-party-new-partition-2]
++
+. On the connection settings page, provide the following information:
+* Access key ID
+* Secret access key
+* Service host name: Ensure to include the load balancer endpoint (LBE) port configured in 
+StorageGRID (such as \https://<hostname>:<LBE_port>)
+* Bucket name: Name of the pre created target bucket. Veritas Enterprise Vault does not create the 
+bucket.
+* Bucket region: `us-east-1` is the default value.
++
+image:third-party-new-partition-3.png[third-party-new-partition-3]
++
+. To verify the connection to the StorageGRID bucket, click Test. Verify that the connection test was successful. Click OK and then Next.
++
+image:third-party-new-partition-4.png[third-party-new-partition-4]
++
+. StorageGRID does not support the S3 replication parameter. To protect your objects, StorageGRID uses Information Lifecycle Management (ILM) rules to specify data protection schemes - multiple copies or erasure coding. Select the When Archived Files Exist on the Storage Option and click Next.
++
+image:third-party-new-partition-5.png[third-party-new-partition-5]
++
+. Verify the information on the summary page and click Finish.
++
+image:third-party-new-partition-6.png[third-party-new-partition-6]
++
+. After the new vault store partition has been successfully created, you can archive, restore, and 
+search data in Enterprise Vault with StorageGRID as the primary storage.
++
+image:third-party-new-partition-7.png[third-party-new-partition-7]
+
+
+

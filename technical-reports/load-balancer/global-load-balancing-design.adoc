@@ -1,0 +1,21 @@
+---
+sidebar: sidebar
+permalink: technical-reports/load-balancer/global-load-balancing-design.html
+keywords: global load balancing, storagegrid
+summary: Explore the design considerations and requirements for global load balancing in StorageGRID.
+
+---
+
+= Understand global load balancing requirements for StorageGRID
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Explore the design considerations and requirements for global load balancing in StorageGRID.
+
+Global load balancing requires integrating with DNS to provide intelligent routing across multiple StorageGRID sites. This function falls outside of the StorageGRID domain and must be provided by a third-party solution such as the load balancer products discussed previously and/or a DNS traffic control solution such as Infoblox. This top level load balancing provides smart routing to the closest destination site in the namespace, as well as outage detection and redirection to the next site in the namespace. A typical GSLB implementation consists of the top level GSLB with site pools containing site-local load balancers. The site load balancers contain pools of the local site Storage Nodes. This can include a combination of third-party load balancers for GSLB functions and StorageGRID providing the site-local load balancing, or a combination of third parties, or many of the third parties discussed previously can provide both GSLB and site-local load balancing.
+
+image:load-balancer-generic-gslb.png[generic-gslb]
