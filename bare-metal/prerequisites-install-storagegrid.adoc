@@ -65,7 +65,7 @@ StorageGRID uses networking differently from some Docker container implementatio
 
 NOTE: The new MAC address of the container network device might require promiscuous mode to be enabled in some network and virtual environments. This mode allows the physical device to receive and send packets for MAC addresses that differ from the known physical MAC address.
 ++ ++
-If running in VMWare vSphere, you must accept promiscuous mode, MAC address changes, and forged transmits in the port groups that will serve StorageGRID traffic when running CentOS or RHEL. Ubuntu or Debian works without these changes in most circumstances.
+If running in VMWare vSphere, you must accept promiscuous mode, MAC address changes, and forged transmits in the port groups that will serve StorageGRID traffic when running RHEL. Ubuntu or Debian works without these changes in most circumstances.
 ++ ++
 
 == Storage requirements
@@ -308,7 +308,7 @@ The following tables list the required disk storage for hosts 1, 2, and 3.
 The Docker Store was calculated by allowing 100GB per /var/local (per container) x two containers = 200GB.
 
 == Preparing the nodes
-To prepare for the initial installation of StorageGRID, first install CentOS or RHEL version 9.2 and enable SSH. Set up network interfaces, Network Time Protocol (NTP), DNS, and the host name according to best practices. You need at least one enabled network interface on the grid network and another for the Client Network. If you are using a VLAN-tagged interface, configure it as per the examples below. Otherwise, a simple standard network interface configuration will suffice.
+To prepare for the initial installation of StorageGRID, first install RHEL version 9.2 and enable SSH. Set up network interfaces, Network Time Protocol (NTP), DNS, and the host name according to best practices. You need at least one enabled network interface on the grid network and another for the Client Network. If you are using a VLAN-tagged interface, configure it as per the examples below. Otherwise, a simple standard network interface configuration will suffice.
 
 If you need to use a VLAN tag on the grid network interface, your configuration should have two files in `/etc/sysconfig/network-scripts/` in the following format:
 
@@ -478,7 +478,7 @@ $ sudo swapoff --all
 . To persist the settings, remove all swap entries from /etc/fstab such as:
 +
 ----
-/dev/mapper/centos-swap swap defaults 0 0
+/dev/mapper/rhel-swap swap defaults 0 0
 ----
 +
 NOTE: Failing to disable swap entirely can severely lower performance.
