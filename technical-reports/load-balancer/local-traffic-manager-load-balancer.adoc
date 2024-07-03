@@ -12,7 +12,7 @@ summary: Explore the guidance for local traffic manager load balancers and deter
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ../../media/
 
 [.lead]
 Explore the guidance for local traffic manager load balancers and determine the optimal configuration.

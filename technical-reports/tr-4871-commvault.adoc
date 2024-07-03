@@ -7,7 +7,7 @@ summary: 'This report describes the data protection solution provided jointly by
 = TR-4871 - Commvault Complete Backup and Recovery and NetApp StorageGRID
 :hardbreaks:
 :icons: font
-:imagesdir: /media/
+:imagesdir: ../media/
 
 == Solution Overview
 

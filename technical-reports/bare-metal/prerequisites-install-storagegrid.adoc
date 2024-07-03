@@ -9,7 +9,7 @@ summary: Learn about the compute, storage, network, docker, and node reqiurement
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ../../media/
 
 [.lead]
 Learn about the compute, storage, network, docker, and node reqiurements to deploy StorageGRID. 

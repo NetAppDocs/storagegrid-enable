@@ -7,7 +7,7 @@ summary: Learn how to configure StorageGRID site failover in a disaster recovery
 = Configure StorageGRID site failover for disaster recovery
 :hardbreaks:
 :icons: font
-:imagesdir: /media/
+:imagesdir: ../../media/
 
 [.lead]
 Learn how to configure StorageGRID site failover in a disaster recovery scenario.

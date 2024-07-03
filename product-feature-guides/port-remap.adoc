@@ -7,7 +7,7 @@ summary: 'How to use port remap.'
 = How to use port remap
 :hardbreaks:
 :icons: font
-:imagesdir: /media/
+:imagesdir: ../media/
 
 [.lead]
 You may have a need to remap an incoming or outbound port for multiple reasons. You may be moving from the legacy CLB load balancer service to the current nginx service load balancer endpoint and maintain the same port to reduce the impact to clients, wish to use port 443 for client S3 on an admin node client network, or for firewall restrictions.  

@@ -8,7 +8,7 @@ summary: Explore the NetApp StorageGRID App for Splunk that imports and enriches
 = Use the StorageGRID app for Splunk
 :hardbreaks:
 :icons: font
-:imagesdir: /media/
+:imagesdir: ../../media/
 
 [.lead]
 Learn about the NetApp StorageGRID app for Splunk that allows you to monitor and analyze your StorageGRID environment within the Splunk platform.

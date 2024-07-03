@@ -7,7 +7,7 @@ summary: 'You can use a Cloud Storage Pool if you want to move StorageGRID objec
 = Create Cloud Storage Pool for AWS or Google Cloud
 :hardbreaks:
 :icons: font
-:imagesdir: /media/
+:imagesdir: ../media/
 
 [.lead]
 You can use a Cloud Storage Pool if you want to move StorageGRID objects to an external S3 bucket. The external bucket can belong to Amazon S3 (AWS) or Google Cloud. 

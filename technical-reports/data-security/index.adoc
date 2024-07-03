@@ -10,7 +10,7 @@ summary: Discover the integral security features of the StorageGRID object stora
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ../../media/
 
 [.lead]
 Discover the integral security features of the StorageGRID object storage solution.

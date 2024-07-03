@@ -7,7 +7,7 @@ summary: 'This report covers tuning S3A for StorageGRID.'
 = Hadoop S3A tuning
 :hardbreaks:
 :icons: font
-:imagesdir: /media/
+:imagesdir: ../media/
 
 [.lead]
 Hadoop S3A connector facilitates seamless interaction between Hadoop-based applications and S3 object storage. Tuning the Hadoop S3A Connector is essential to optimize performance when working with S3 object storage. Before we go into tuning details, let’s have a basic understanding of Hadoop and its components.

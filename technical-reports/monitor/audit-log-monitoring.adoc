@@ -8,7 +8,7 @@ summary: Discover how to use the StorageGRID audit log for detailed insights int
 = Use audit logs to monitor StorageGRID
 :hardbreaks:
 :icons: font
-:imagesdir: /media/
+:imagesdir: ../../media/
 
 [.lead]
 Learn how to use the StorageGRID audit log for detailed insights into tenant and grid activity, and how to leverage tools like Splunk for log analysis.

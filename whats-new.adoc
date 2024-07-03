@@ -7,7 +7,7 @@ summary: 'Here are recent changes to this site.'
 = What's new
 :hardbreaks:
 :icons: font
-:imagesdir: /media/
+:imagesdir: ../media/
 
 [.lead]
 Use this collection of documents to learn how to enable applications and tools in your environment and test features with StorageGRID.  Here you will find examples and cookbooks that expand upon the product documentation and provide some next steps in evaluating and integrating with StorageGRID.

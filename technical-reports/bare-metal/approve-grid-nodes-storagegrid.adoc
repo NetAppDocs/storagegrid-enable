@@ -12,7 +12,7 @@ summary: Learn how to review and approve any pending grid nodes that join the St
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ../../media/
 
 [.lead]
 Learn how to review and approve any pending grid nodes that join the StorageGRID system.

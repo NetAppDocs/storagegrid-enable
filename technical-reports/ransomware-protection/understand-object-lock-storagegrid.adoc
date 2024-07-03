@@ -11,7 +11,7 @@ summary: Explore how object lock in StorageGRID provides a WORM model to prevent
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: /media/
+:imagesdir: ../../media/
 
 
 [.lead]

@@ -7,7 +7,7 @@ summary: 'Third-Party solutions validated for StorageGRID 11.8'
 = StorageGRID 11.8 validated third-party solutions
 :hardbreaks:
 :icons: font
-:imagesdir: /media/
+:imagesdir: ../media/
 
 [.lead]
 The following third-party solutions have been validated for use with StorageGRID 11.8. +

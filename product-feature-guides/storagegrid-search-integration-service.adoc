@@ -9,7 +9,7 @@ Elasticsearch.'
 = Configure StorageGRID search integration service
 :hardbreaks:
 :icons: font
-:imagesdir: /media/
+:imagesdir: ../media/
 
 [.lead]
 This guide provides detailed instructions for configuring NetApp StorageGRID

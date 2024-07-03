@@ -7,7 +7,7 @@ summary: 'This technical report provides detailed instructions for configuring N
 = Use Prometheus and Grafana to extend your metrics retention
 :hardbreaks:
 :icons: font
-:imagesdir: /media/
+:imagesdir: ../media/
 
 [.lead]
 This technical report provides detailed instructions for configuring NetApp StorageGRID 11.6 with external Prometheus and Grafana services.

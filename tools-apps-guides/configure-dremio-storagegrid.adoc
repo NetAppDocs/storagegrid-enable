@@ -7,7 +7,7 @@ summary: Configure Dremio data source with StorageGRID
 = Configure Dremio data source with StorageGRID
 :hardbreaks:
 :icons: font
-:imagesdir: /media/
+:imagesdir: ../media/
 
 [.lead]
 Dremio supports a varity of data sources, including cloud-based or on-premises object storage.  You can configure Dremio to use StorageGRID as object storage data source. 

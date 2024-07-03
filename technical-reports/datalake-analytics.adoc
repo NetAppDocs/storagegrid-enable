@@ -7,7 +7,7 @@ summary: 'This report covers big data analytics on StorageGRID.'
 = NetApp StorageGRID and big data analytics
 :hardbreaks:
 :icons: font
-:imagesdir: /media/
+:imagesdir: ../media/
 
 == NetApp StorageGRID use cases
 
