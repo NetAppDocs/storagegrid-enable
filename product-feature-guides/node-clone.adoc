@@ -23,7 +23,7 @@ Node clone can be a faster method for replacing existing appliance nodes for a t
 ** When going from SG5660 or SG5760 appliances to SG6060 appliances be aware that the SG5x60's have 60 capacity drives where the SG6060 only has 58.
 * The node clone process requires the source node to be offline to the grid for the duration of the cloning process. If an additional node goes offline during this time client services may be impacted.
 * A storage node can only be offline for 15 days. If the cloning process estimate is close to 15 days or will exceed 15 days, use the expansion and decommission procedures.
-* For a SG6060 with expansion shelves, you need to add the time for the correct shelf drive size to the time of the base appliance time to get the full clone duration. 
+* For a SG6060 or SG6160 with expansion shelves, you need to add the time for the correct shelf drive size to the time of the base appliance time to get the full clone duration. 
 * The number of volumes in a target storage appliance must be greater than or equal to the number of volumes in the source node. You cannot clone a source node with 16 object store volumes (rangedb) to a target storage appliance with 12 object store volumes even if the target appliance has larger capacity than the source node. Most storage appliances have 16 object store volumes, except the SGF6112 storage appliance that has only 12 object store volumes. For example, you cannot clone from a SG5760 to a SGF6112.
 
 == Node clone Performance estimates
@@ -44,7 +44,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 |25GB |1 Day |2 Days |2.5 Days |3 Days |4 Days |4.5 Days
 |===
 
-==== SG5712 -> Any
+==== SG5712/SG5812 -> Any
 
 [cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
@@ -57,7 +57,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 |25GB |1 Day |2 Days |2.5 Days |3 Days |4 Days |4.5 Days
 |===
 
-==== SG5660 -> SG5760
+==== SG5660 -> SG5760/SG5860
 
 [cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
@@ -70,7 +70,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 |25GB |3 Day |6 Days |7 Days |8.5 Days |11.5 Days |*13 Days*
 |===
 
-==== SG5660 -> SG6060
+==== SG5660 -> SG6060/SG6160
 
 [cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
@@ -83,7 +83,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 |25GB |2 Day |4 Days |5 Days |6 Days |8 Days |9 Days
 |===
 
-==== SG5760 -> SG5760
+==== SG5760/SG5860 -> SG5760/SG5860
 
 [cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
@@ -96,7 +96,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 |25GB |3 Day |6 Days |7 Days |8.5 Days |11.5 Days |*13 Days*
 |===
 
-==== SG5760 -> SG6060
+==== SG5760/SG5860 -> SG6060/SG6160
 
 [cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
@@ -109,7 +109,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 |25GB |1.5 Day |3 Days |3.5 Days |4.5 Days |6 Days |6.5 Days
 |===
 
-==== SG6060 -> SG6060
+==== SG6060/SG6160 -> SG6060/SG6160
 
 [cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
@@ -124,7 +124,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 
 === DDP16
 
-==== SG5760 -> SG5760
+==== SG5760/SG5860 -> SG5760/SG5860
 
 [cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
@@ -137,7 +137,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 |25GB |3.5 Day |6.5 Days |8 Days |9.5 Days |12.5 Days |*14 Days*
 |===
 
-==== SG5760 -> SG6060
+==== SG5760/SG5860 -> SG6060/SG6160
 
 [cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
@@ -150,7 +150,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 |25GB |2 Day |3.5 Days |4 Days |5 Days |6.5 Days |7 Days
 |===
 
-==== SG6060 -> SG6060 
+==== SG6060/SG6160 -> SG6060/SG6160 
 
 [cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
@@ -163,7 +163,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 |25GB |2 Day |3 Days |4 Days |4.5 Days |6 Days |7 Days
 |===
 
-==== Expansion shelf (add to above SG6060 for each shelf on source appliance) 
+==== Expansion shelf (add to above SG6060/SG6160 for each shelf on source appliance) 
 
 [cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
