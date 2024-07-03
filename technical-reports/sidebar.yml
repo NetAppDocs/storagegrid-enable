@@ -3,9 +3,9 @@ title: Technical reports
 entries:
   - title: Introduction to StorageGRID Technical Reports
     url: "/technical-reports/index.html"
-  - title: "TR-xxxx: NetApp StorageGRID and big data analytics"
+  - title: "TR-4993: NetApp StorageGRID and big data analytics"
     url: "/technical-reports/datalake-analytics.html"  
-  - title: "TR-xxxx: Hadoop S3A tuning"
+  - title: "TR-4994: Hadoop S3A tuning"
     url: "/technical-reports/s3a-tuning.html"
   - title: "TR-4871: Configure StorageGRID for backup and recovery with Commvault"
     pdf-filename: StorageGRID backup and recovery - Using Commvault to store and recover data

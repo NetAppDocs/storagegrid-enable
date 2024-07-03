@@ -61,9 +61,9 @@ indexpage:
         url: "/tools-apps-guides/integrate-gitlab.html"
     - title: Technical reports
       links:
-      - title: "TR-xxxx: NetApp StorageGRID and Big Data Analytics"
+      - title: "TR-4993: NetApp StorageGRID and Big Data Analytics"
         url: "/technical-reports/datalake-analytics.html"
-      - title: "TR-xxxx: Hadoop S3A Tuning Best Practices"
+      - title: "TR-4994: Hadoop S3A Tuning Best Practices"
         url: "/technical-reports/s3a-tuning.html"
       - title: "TR-4871: Commvault Complete Backup and Recovery and NetApp StorageGRID"
         url: "/technical-reports/tr-4871-commvault.html"
