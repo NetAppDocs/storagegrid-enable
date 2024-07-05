@@ -112,6 +112,7 @@ These solutions have been tested.
 == Key managers supported on StorageGRID
 These solutions have been tested.
 
+* Entrust KeyControl 10.2
 * Hashicorp Vault 1.15.0
 * Thales CipherTrust Manager 2.0
 * Thales CipherTrust Manager 2.1
@@ -125,5 +126,3 @@ These solutions have been tested.
 * Thales CipherTrust Manager 2.12
 * Thales CipherTrust Manager 2.13
 * Thales CipherTrust Manager 2.14
-* Entrust KeyControl 10.2
- 
