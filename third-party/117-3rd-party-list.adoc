@@ -110,6 +110,14 @@ These solutions have been tested.
 * Velasea
 
 
+== Key managers supported on StorageGRID
+These solutions have been tested.
 
-
+* Thales CipherTrust Manager 2.0
+* Thales CipherTrust Manager 2.1
+* Thales CipherTrust Manager 2.2
+* Thales CipherTrust Manager 2.3
+* Thales CipherTrust Manager 2.4
+* Thales CipherTrust Manager 2.8
+* Thales CipherTrust Manager 2.9
  
