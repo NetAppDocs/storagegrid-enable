@@ -125,5 +125,5 @@ These solutions have been tested.
 * Thales CipherTrust Manager 2.12
 * Thales CipherTrust Manager 2.13
 * Thales CipherTrust Manager 2.14
-* Entrust Key Control 10.2
+* Entrust KeyControl 10.2
  
