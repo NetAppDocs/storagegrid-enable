@@ -11,11 +11,15 @@ sidebar:
   entries:
     - title: How to enable StorageGRID
       url: /index.html      
+    - title: Try StorageGRID
+      url: /evaluation-software.html
     - section: third-party
     - section: product-feature-guides
     - section: tools-apps-guides
     - section: examples
     - section: technical-reports
+    - title: Try StorageGRID
+      url: /evaluation-software.html
     - title: Blog posts
       url: /blogs.html
     - title: StorageGRID documentation
