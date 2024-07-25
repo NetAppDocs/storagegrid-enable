@@ -1,5 +1,5 @@
 ---
-permalink: examples/evaluation-software.html
+permalink: evaluation-software.html
 sidebar: sidebar
 keywords: eval, StorageGRID, S3, software, download
 summary: 'Steps to access StorageGRID evaluation software for a prospective customer.'
