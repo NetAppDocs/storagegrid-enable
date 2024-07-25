@@ -27,9 +27,14 @@ This instruction is for NetApp sales, partners, and prospects engaged with NetAp
 
 [NOTE]
 ====
+The Eval license file is located within the zip file.  It is StorageGRID-Webscale-<version>\vsphere\NLF000000.txt once unzipped.
+====
+
+[NOTE]
+====
 Downloading the software is a process that involves trade compliance measures to adhere to legal requirements. To ensure compliance, users are required to create an account and open a support case before gaining access. This process helps us maintain proper control and documentation while providing prospects with the production-ready software they need.
 
 We provide the "production-ready" version of StorageGRID, which is not an open-source or alternative version. It is important to note that *support is not provided* unless the prospect upgrades to a production license.
 
-Please contact an ng-sg-product@netapp.com (for internal NetApp) or your NetApp contact (for partner) if your prospective customer has any trouble with the above steps.
+Please contact StorageGRID.Feedback@netapp.com for any trouble with the above steps.
 ====
