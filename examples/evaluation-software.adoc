@@ -1,0 +1,35 @@
+---
+permalink: examples/evaluation-software.html
+sidebar: sidebar
+keywords: eval, StorageGRID, S3, software, download
+summary: 'Steps to access StorageGRID evaluation software for a prospective customer.'
+---
+= Steps to access StorageGRID evaluation software
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Steps to access StorageGRID evaluation software for a prospective customer. 
+
+This instruction is for NetApp sales, partners, and prospects engaged with NetApp. Please ask your prospect to follow these steps:
+
+
+. Register for an account on the https://mysupport.netapp.com/site/user/registration[NetApp Support site] using your business email.
+.. If you already have an account, proceed with the next step.
+. Log in with the created account.
+. Create a non-technical support case to elevate access levels to "prospect." To do this, click on the "https://mysupport.netapp.com/site/help?relevanturl=%2Fuser%2Fregistration[Report an Issue]" link in the footer of the website.
+. Select "Registration Issue" as the feedback category.
+. In the comments section, write: "I would like to get prospect access to download the StorageGRID evaluation software."
+.. Mention the name of the NetApp internal person who suggested the request for prospect access.
+. After your support case has been reviewed and approved, NetApp support will notify you via email that your account has been granted prospect access.
+. Download the https://mysupport.netapp.com/site/downloads/evaluation/storagegrid[StorageGRID evaluation software].
+
+[NOTE]
+====
+Downloading the software is a process that involves trade compliance measures to adhere to legal requirements. To ensure compliance, users are required to create an account and open a support case before gaining access. This process helps us maintain proper control and documentation while providing prospects with the production-ready software they need.
+
+We provide the "production-ready" version of StorageGRID, which is not an open-source or alternative version. It is important to note that *support is not provided* unless the prospect upgrades to a production license.
+
+Please contact an ng-sg-product@netapp.com (for internal NetApp) or your NetApp contact (for partner) if your prospective customer has any trouble with the above steps.
+====

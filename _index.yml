@@ -79,6 +79,8 @@ indexpage:
         url: "/technical-reports/veritas/index.html"
     - title: Procedures and API examples
       links:
+      - title: StorageGRID evaluation software 
+        url: "/examples/evaluation-software.html"
       - title: Test and demonstrate S3 encryption
         url: "/examples/test-demonstrate-S3-encryption.html"
       - title: Test and demonstrate S3 Object Lock
