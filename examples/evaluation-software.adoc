@@ -12,7 +12,7 @@ summary: 'Steps to access StorageGRID evaluation software for a prospective cust
 [.lead]
 This instruction is for NetApp sales, partners, and prospects engaged with NetApp. Please ask your prospect to follow these steps:
 
-== Register for an Account
+== Register for an account
 . Register for an account on the https://mysupport.netapp.com/site/user/registration[NetApp Support site] using your business email.
 .. If you already have an account, proceed with the next step.
 . Log in with the created account.
