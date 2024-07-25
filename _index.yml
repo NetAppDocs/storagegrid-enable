@@ -4,7 +4,7 @@ indexpage:
   summary: "NetApp StorageGRID is a software-defined object storage suite that supports a wide range of use cases across public, private, and hybrid multi-cloud environments. StorageGRID uses industry leading innovations such as automated lifecycle management to store, secure, protect, and preserve unstructured data for multi-purpose use over long periods of time."
   tiles:
     - title: StorageGRID evaluation software 
-      url: "/examples/evaluation-software.html"
+      url: /evaluation-software.html
     - title: Validated third-party solutions
       links:
       - title: Overview
