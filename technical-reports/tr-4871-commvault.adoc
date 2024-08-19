@@ -85,7 +85,7 @@ For its data protection policy, StorageGRID uses an integrated lifecycle managem
 
 The ILM 2 Copy rule is the default rule. The Erasure Coding 2+1 rule was applied for this testing to any object 200KB or larger. The default rule was applied to objects smaller than 200KB. Application of the rules in this way is a StorageGRID best practice.
 
-For technical details about this test environment, read the Solution Design and Best Practices section in the https://www.netapp.com/us/media/tr-4831.pdf[NetApp Scale-out Data Protection with Commvault] technical report.
+For technical details about this test environment, read the Solution Design and Best Practices section in the https://www.netapp.com/pdf.html?item=/media/19372-tr-4831.pdf[NetApp Scale-out Data Protection with Commvault^] technical report.
 
 === Sizing
 Consult your NetApp data protection specialists for specific sizing for your environment. NetApp data protection specialists can use the Commvault Total Backup Storage Calculator tool to estimate the backup infrastructure requirements. The tool requires Commvault Partner Portal access. Sign up for access, if needed. 
@@ -275,7 +275,7 @@ image:commvault/job-summary.png[Job Summary]
 
 === Baseline Performance Tests
 
-Table 7 shows the results from our baseline performance tests. In the Aux Copy operation, four Commvault MediaAgents backed up data to a NetApp AFF A300 system and an auxiliary copy was created on NetApp StorageGRID. For details on the test setup environment, read the Solution Design and Best Practices section in the https://www.netapp.com/us/media/tr-4831.pdf[NetApp Scale-out Data Protection with Commvault] technical report.
+Table 7 shows the results from our baseline performance tests. In the Aux Copy operation, four Commvault MediaAgents backed up data to a NetApp AFF A300 system and an auxiliary copy was created on NetApp StorageGRID. For details on the test setup environment, read the Solution Design and Best Practices section in the https://www.netapp.com/pdf.html?item=/media/19372-tr-4831.pdf[NetApp Scale-out Data Protection with Commvault^] technical report.
 
 The tests were performed with 100 VMs and 1000 VMs, both tests with a 50/50 mix of Windows and CentOS VMs.
 
