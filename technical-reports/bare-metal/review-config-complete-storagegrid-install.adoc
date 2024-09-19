@@ -20,7 +20,7 @@ To make sure that the installation completes successfully, carefully review the 
 .Steps
 . View the Summary page.
 +
-image:bare-metal-summary-page.png[bare-metal-summary-page]
+image:bare-metal/bare-metal-summary-page.png[bare-metal-summary-page]
 +
 . Verify that all of the grid configuration information is correct. Use the Modify links on the Summary page to go back and correct any errors.
 . Click Install.
@@ -37,11 +37,11 @@ CAUTION: The Recovery Package file must be secured because it contains encryptio
 +
 . Select the I Have Successfully Downloaded and Verified the Recovery Package File option and then click Next.
 +
-image:bare-metal-download-recovery-package.png[bare-metal-download-recovery-package]
+image:bare-metal/bare-metal-download-recovery-package.png[bare-metal-download-recovery-package]
 +
 If the installation is still in progress, the Installation Status page opens. This page indicates the progress of the installation for each grid node.
 +
-image:bare-metal-installation-status.png[bare-metal-installation-status]
+image:bare-metal/bare-metal-installation-status.png[bare-metal-installation-status]
 +
 When the Complete stage is reached for all grid nodes, the sign-in page for Grid Manager opens.
 . Sign in to Grid Manager as the root user with the password that you specified during the installation.

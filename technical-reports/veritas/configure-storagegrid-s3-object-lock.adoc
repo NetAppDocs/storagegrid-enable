@@ -25,20 +25,20 @@ To configure the StorageGRID S3 Object Lock default bucket retention, complete t
 
 . In StorageGRID Tenant Manager, create a bucket and click Continue
 +
-image:third-party-create-bucket.png[third-party-create-bucket.png]
+image:vertias/veritas-create-bucket.png[vertias/veritas-create-bucket.png]
 +
 . Select the Enable S3 Object Lock option and click Create Bucket.
 +
-image:third-party-create-bucket-2.png[third-party-create-bucket-2.png]
+image:vertias/veritas-create-bucket-2.png[vertias/veritas-create-bucket-2.png]
 +
 . After the bucket is created, select the bucket to view the bucket options. Expand the S3 Object Lock 
 drop-down option.
 +
-image:third-party-overview.png[third-party-overview.png]
+image:vertias/veritas-overview.png[vertias/veritas-overview.png]
 +
 . Under Default Retention, select Enable and set a default retention period of 1 day. Click Save Changes.
 +
-image:third-party-s3-object-lock.png[third-party-s3-object-lock]
+image:vertias/veritas-s3-object-lock.png[vertias/veritas-s3-object-lock]
 +
 The bucket is now ready to be used by Enterprise Vault to store WORM data.
 
@@ -50,7 +50,7 @@ To configure Enterprise Vault, complete the following steps:
 
 . Repeat steps 1-3 in the link:configure-storagegrid-s3-object-lock.html#configure-storagegrid-s3-object-lock-default-bucket-retention[Basic configuration] section, but this time select the Store data in WORM Mode Using S3 Object Lock option. Click Next.
 +
-image:third-party-new-partition-8.png[third-party-new-partition-8]
+image:vertias/veritas-new-partition-8.png[vertias/veritas-new-partition-8]
 +
 . When entering your S3 Bucket connection settings, make sure you are entering the name of an S3 
 bucket that has the S3 Object Lock Default retention enabled.

@@ -33,6 +33,7 @@ These solutions have been tested in collaboration with the respective partners.
 * DefendX
 * Diskover Data
 * Dremio
+* Elasticsearch Snapshot (including frozen tier)
 * eMAM 
 * FujiFilm Object Archive
 * GitHub Enterprise Server
@@ -63,6 +64,7 @@ These solutions have been tested in collaboration with the respective partners.
 * Snowflake
 * Spectra Logic On-Prem Glacier
 * Splunk Smartstore
+* Starburst
 * Storage Made Easy
 * Trino
 * Varnish Enterprise 6.0.4

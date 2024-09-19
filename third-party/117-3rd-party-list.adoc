@@ -33,6 +33,7 @@ These solutions have been tested in collaboration with the respective partners.
 * DefendX
 * Diskover Data
 * Dremio
+* Elasticsearch Snapshot (including frozen tier)
 * eMAM 
 * FujiFilm Object Archive
 * GitHub Enterprise Server

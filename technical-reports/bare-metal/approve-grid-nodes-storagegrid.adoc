@@ -30,12 +30,12 @@ NOTE: If a grid node is missing, confirm that it was deployed successfully.
 +
 . Click the radio button next to a pending node that you want to approve.
 +
-image:bare-metal-approve-configure-grid-nodes.png[media/bare-metal-approve-configure-grid-nodes]
+image:bare-metal/bare-metal-approve-configure-grid-nodes.png[media/bare-metal-approve-configure-grid-nodes]
 +
 . Click Approve.
 . In General Settings, modify the settings for the following properties, as necessary.
 +
-image:bare-metal-admin-node-configuration.png[bare-metal-admin-node-configuration]
+image:bare-metal/bare-metal-admin-node-configuration.png[bare-metal-admin-node-configuration]
 +
 -- *Site*: The system name of the site for this grid node.
 +
@@ -91,7 +91,7 @@ NOTE: If you selected DHCP for the admin network configuration, and you change t
 . Click Save.
 The grid node entry moves to the Approved Nodes list.
 +
-image:bare-metal-approved-node-list.png[bare-metal-approved-node-list]
+image:bare-metal/bare-metal-approved-node-list.png[bare-metal-approved-node-list]
 
 . Repeat steps 1–8 for each pending grid node you want to approve.
 +

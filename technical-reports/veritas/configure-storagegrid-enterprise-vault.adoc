@@ -46,21 +46,21 @@ To configure StorageGRID with Veritas Enterprise Vault, compete the following st
 
 . Launch the Enterprise Vault Administration console.
 +
-image:third-party-enterprise-vault.png[media/third-party-enterprise-vault]
+image:veritas/veritas-enterprise-vault.png[media/vertias/veritas-enterprise-vault]
 +
 . Create a new vault store partition in the appropriate vault store. Expand the Vault Store Groups folder 
 and then the appropriate vault store. Right-click Partition and select menu:New[Partition].
 +
-image:third-party-enterprise-vault-2.png[media/third-party-enterprise-vault-2]
+image:veritas/veritas-enterprise-vault-2.png[media/vertias/veritas-enterprise-vault-2]
 +
 . Follow the New Partition creation wizard. From the Storage Type drop-down menu, select NetApp 
 StorageGRID (S3). Click Next.
 +
-image:third-party-new-partition.png[third-party-new-partition]
+image:veritas/veritas-new-partition.png[vertias/veritas-new-partition]
 +
 . Leave the Store Data in WORM Mode Using S3 Object Lock option unchecked. Click Next.
 +
-image:third-party-new-partition-2.png[third-party-new-partition-2]
+image:vertias/veritas-new-partition-2.png[vertias/veritas-new-partition-2]
 +
 . On the connection settings page, provide the following information:
 * Access key ID
@@ -71,24 +71,24 @@ StorageGRID (such as \https://<hostname>:<LBE_port>)
 bucket.
 * Bucket region: `us-east-1` is the default value.
 +
-image:third-party-new-partition-3.png[third-party-new-partition-3]
+image:vertias/veritas-new-partition-3.png[vertias/veritas-new-partition-3]
 +
 . To verify the connection to the StorageGRID bucket, click Test. Verify that the connection test was successful. Click OK and then Next.
 +
-image:third-party-new-partition-4.png[third-party-new-partition-4]
+image:vertias/veritas-new-partition-4.png[vertias/veritas-new-partition-4]
 +
 . StorageGRID does not support the S3 replication parameter. To protect your objects, StorageGRID uses Information Lifecycle Management (ILM) rules to specify data protection schemes - multiple copies or erasure coding. Select the When Archived Files Exist on the Storage Option and click Next.
 +
-image:third-party-new-partition-5.png[third-party-new-partition-5]
+image:vertias/veritas-new-partition-5.png[vertias/veritas-new-partition-5]
 +
 . Verify the information on the summary page and click Finish.
 +
-image:third-party-new-partition-6.png[third-party-new-partition-6]
+image:vertias/veritas-new-partition-6.png[vertias/veritas-new-partition-6]
 +
 . After the new vault store partition has been successfully created, you can archive, restore, and 
 search data in Enterprise Vault with StorageGRID as the primary storage.
 +
-image:third-party-new-partition-7.png[third-party-new-partition-7]
+image:vertias/veritas-new-partition-7.png[vertias/veritas-new-partition-7]
 
 
 

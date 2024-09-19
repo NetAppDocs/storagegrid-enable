@@ -29,11 +29,11 @@ To configure StorageGRID site failover, complete the followings steps:
 .Steps
 . To ensure connectivity to StorageGRID during site failures, configure a high-availability (HA) group. From StorageGRID Grid Manager Interface (GMI), click Configuration, High Availability Groups, and + Create.
 +
-image:third-party-create-high-availability-group.png[third-party-create-high-availability-group]
+image:vertias/veritas-create-high-availability-group.png[vertias/veritas-create-high-availability-group]
 +
 . Enter the required information. Click Select Interfaces and include both SITE1 and SITE2’s network interfaces where SITE1 (the primary site) is the preferred master. Assign a virtual IP address within the same subnet. Click Save.
 +
-image:third-party-edit-high-availability-group.png[third-party-edit-high-availability-group]
+image:vertias/veritas-edit-high-availability-group.png[vertias/veritas-edit-high-availability-group]
 +
 . This virtual IP (VIP) address should be associated to the S3 host name used during Veritas Enterprise Vault’s partition configuration. The VIP address resolves traffic to SITE1—and during SITE1 failure, the VIP address transparently reroutes traffic to SITE2.
 +
@@ -45,14 +45,14 @@ storage pools: one for SITE1 and another for SITE2.
 +
 Storage pools are logical groupings of nodes used to define object placement
 +
-image:third-party-storage-pool-details-site-1.png[third-party-storage-pool-details-site-1]
+image:vertias/veritas-storage-pool-details-site-1.png[vertias/veritas-storage-pool-details-site-1]
 +
-image:third-party-storage-pool-details-site-2.png[third-party-storage-pool-details-site-2]
+image:vertias/veritas-storage-pool-details-site-2.png[vertias/veritas-storage-pool-details-site-2]
 +
 . From StorageGRID GMI, click ILM, Rules, and then + Create. Follow the wizard to create an ILM rule 
 specifying one copy to be stored per site with an ingest behavior of Balanced.
 +
-image:third-party-storage-pool-details-site-3.png[third-party-storage-pool-details-site-3]
+image:vertias/veritas-storage-pool-details-site-3.png[vertias/veritas-storage-pool-details-site-3]
 +
 . Add the ILM rule into an ILM policy and activate the policy.
 

@@ -28,7 +28,7 @@ After the source and destination buckets are created and the destination is conf
 .Steps
 . To configure CloudMirror, create a platform services endpoint for the S3 destination.
 +
-image:ransomware-protection-create-endpoint.png[ransomware-protection-create-endpoint]
+image:ransomware/ransomware-protection-create-endpoint.png[ransomware-protection-create-endpoint]
 +
 . On the source bucket, configure replication to use the endpoint configured.
 +
@@ -48,9 +48,9 @@ image:ransomware-protection-create-endpoint.png[ransomware-protection-create-end
 +
 . Create ILM rules to manage the storage placement and version storage duration management. In this example, the non-current versions of the objects to store are configured. 
 +
-image:ransomware-protection-create-ilm-rule.png[ransomware-protection-create-ilm-rule]
+image:ransomware/ransomware-protection-create-ilm-rule.png[ransomware-protection-create-ilm-rule]
 +
-image:ransomware-protection-create-ilm-rule-step-2.png[ransomware-protection-create-ilm-rule-step-2]
+image:ransomware/ransomware-protection-create-ilm-rule-step-2.png[ransomware-protection-create-ilm-rule-step-2]
 +
 
 There are two copies in site 1 for 30 days. You also configure the rules for the current version of the objects based on using ingest time as reference time in the ILM rule to match the source bucket storage duration. The storage placement for the object versions can be erasure coded or replicated.

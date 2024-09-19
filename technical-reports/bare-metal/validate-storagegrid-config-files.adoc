@@ -25,11 +25,11 @@ sudo storagegrid node validate all
 
 If the files are correct, the output shows PASSED for each configuration file:
 
-image:bare-metal-output-shows-passed.png[base-metal-output-shows-passed]
+image:bare-metal/bare-metal-output-shows-passed.png[base-metal-output-shows-passed]
 
 If the configuration files are incorrect, the issues are shown as WARNING and ERROR. If any configuration errors are found, you must correct them before you continue with the installation.
 
-image:bare-metal-output-shows-warning-error.png[base-metal-output-shows-warning-error]
+image:bare-metal/bare-metal-output-shows-warning-error.png[base-metal-output-shows-warning-error]
 
 
 
