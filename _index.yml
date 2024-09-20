@@ -63,6 +63,8 @@ indexpage:
         url: "/tools-apps-guides/configure-dremio-storagegrid.html"
       - title: Configure GitLab with StorageGRID
         url: "/tools-apps-guides/integrate-gitlab.html"
+      - title: Migrate from ONTAP S3 to StorageGRID
+        url: "/tools-apps-guides/ontap-s3-migration.html"
     - title: Technical reports
       links:
       - title: "TR-4993: NetApp StorageGRID and Big Data Analytics"

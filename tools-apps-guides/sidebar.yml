@@ -21,3 +21,5 @@ entries:
     url: "/tools-apps-guides/configure-dremio-storagegrid.html"
   - title: Configure GitLab with StorageGRID
     url: "/tools-apps-guides/integrate-gitlab.html"
+  - title: Migrate from ONTAP S3 to StorageGRID
+    url: "/tools-apps-guides/ontap-s3-migration.html"
