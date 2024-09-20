@@ -93,7 +93,7 @@ The grid node entry moves to the Approved Nodes list.
 +
 image:bare-metal/bare-metal-approved-node-list.png[bare-metal-approved-node-list]
 
-. Repeat steps 1–8 for each pending grid node you want to approve.
+. Repeat steps 1-8 for each pending grid node you want to approve.
 +
 You must approve all nodes that you want in the grid. However, you can return to this page at any time before you click Install on the Summary page. To modify the properties of an approved grid node, click its radio button and then click Edit.
 
