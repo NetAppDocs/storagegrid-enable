@@ -81,7 +81,7 @@ indexpage:
         url: "/technical-reports/monitor/index.html"
       - title: "TR-4882: Install a StorageGRID bare metal grid"
         url: "/technical-reports/bare-metal/index.html"
-      - title: "TR-4907: Configure StorageGRID with Veritas Enterprise Vault"
+      - title: "TR-4907: Configure StorageGRID with veritas Enterprise Vault"
         url: "/technical-reports/veritas/index.html"
     - title: Procedures and API examples
       links:

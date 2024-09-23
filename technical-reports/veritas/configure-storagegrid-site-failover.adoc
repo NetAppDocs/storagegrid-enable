@@ -12,9 +12,9 @@ summary: Learn how to configure StorageGRID site failover in a disaster recovery
 [.lead]
 Learn how to configure StorageGRID site failover in a disaster recovery scenario.
 
-It is a common for a StorageGRID architecture deployment to be multisite. Sites can either be active-active or active-passive for DR. In a DR scenario, make sure that Veritas Enterprise Vault can maintain connection to its primary storage (StorageGRID) and continue to ingest and retrieve data during a site failure. This section provides high-level configuration guidance for a two-site, active-passive deployment.For detailed information about these guidelines, see the link:https://docs.netapp.com/us-en/storagegrid-118/[StorageGRID Documentation] page or contact a StorageGRID expert.
+It is a common for a StorageGRID architecture deployment to be multisite. Sites can either be active-active or active-passive for DR. In a DR scenario, make sure that veritas Enterprise Vault can maintain connection to its primary storage (StorageGRID) and continue to ingest and retrieve data during a site failure. This section provides high-level configuration guidance for a two-site, active-passive deployment.For detailed information about these guidelines, see the link:https://docs.netapp.com/us-en/storagegrid-118/[StorageGRID Documentation] page or contact a StorageGRID expert.
 
-== Prerequisites to configure  StorageGRID with Veritas Enterprise Vault
+== Prerequisites to configure  StorageGRID with veritas Enterprise Vault
 
 Before you configure StorageGRID site failover, verify the following prerequisites:
 
@@ -35,7 +35,7 @@ image:vertias/veritas-create-high-availability-group.png[vertias/veritas-create-
 +
 image:vertias/veritas-edit-high-availability-group.png[vertias/veritas-edit-high-availability-group]
 +
-. This virtual IP (VIP) address should be associated to the S3 host name used during Veritas Enterprise Vault’s partition configuration. The VIP address resolves traffic to SITE1—and during SITE1 failure, the VIP address transparently reroutes traffic to SITE2.
+. This virtual IP (VIP) address should be associated to the S3 host name used during veritas Enterprise Vault’s partition configuration. The VIP address resolves traffic to SITE1—and during SITE1 failure, the VIP address transparently reroutes traffic to SITE2.
 +
 . Make sure the data is replicated to both SITE1 and SITE2. That way if SITE1 fails, the object data is 
 still available from SITE2. This is done by first configuring the storage pools.
@@ -60,7 +60,7 @@ This configuration results in the following outcome:
 
 ** A virtual S3 endpoint IP where SITE1 is the primary and SITE2 is the secondary endpoint. If SITE1 fails, the VIP fails over to SITE2.
 
-** When archived data is sent from Veritas Enterprise Vault, StorageGRID ensures one copy is stored in SITE1 and another DR copy is stored in SITE2. If SITE1 fails, Enterprise Vault continues to ingest and retrieve from SITE2.
+** When archived data is sent from veritas Enterprise Vault, StorageGRID ensures one copy is stored in SITE1 and another DR copy is stored in SITE2. If SITE1 fails, Enterprise Vault continues to ingest and retrieve from SITE2.
 
-NOTE: Both of these configurations are transparent to Veritas Enterprise Vault. The S3 endpoint, bucket name, access keys, and so on are the same. There is no need to reconfigure the S3 connection settings on the Veritas Enterprise Vault partition.
+NOTE: Both of these configurations are transparent to veritas Enterprise Vault. The S3 endpoint, bucket name, access keys, and so on are the same. There is no need to reconfigure the S3 connection settings on the veritas Enterprise Vault partition.
 
