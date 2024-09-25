@@ -238,7 +238,7 @@ image:ontap-migrate/ontap-local-setting.png[Local policy settings]
 
 Edit the continuous policy and change the "Recovery point objective" from "1 Hours" to "3 Seconds".
 
-image:ontap-migrate/ontap-local-edit.png[Local policy settings edit]
+image:ontap-migrate/ontap-local-edit-01.png[Local policy settings edit]
 
 Now we can configure snapmirror to replicate the bucket. 
 
@@ -279,7 +279,7 @@ For a migration, most of the time you will want to migrate the credentials for t
 
 Logging into the StorageGRID management UI (not the tenant manager UI) open the API Documentation swagger page.
 
-image:ontap-migrate/sg-api-swagger.png[Open the API Documentation]
+image:ontap-migrate/sg-api-swagger-link.png[Open the API Documentation]
 
 Expand the "accounts" section, select the "POST /grid/account-enable-s3-key-import", click the "Try it out" button, then click on the execute button.
 
