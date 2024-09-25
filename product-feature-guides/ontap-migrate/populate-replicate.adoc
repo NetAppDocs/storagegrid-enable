@@ -1,0 +1,102 @@
+---
+permalink: product-feature-guides/ontap-migrate/populate-replicate.html
+sidebar: sidebar
+keywords: S3, ONTAP S3, ONTAP, StorageGRID, migration
+summary: Migrate from ONTAP S3 to StorageGRID. 
+---
+= Enabling enterprise-grade S3 by seamlessly migrating object-based storage from ONTAP S3 to StorageGRID
+:hardbreaks:
+:icons: font
+:imagesdir: ../../media/
+
+[.lead]
+Enabling enterprise-grade S3 by seamlessly migrating object-based storage from ONTAP S3 to StorageGRID
+
+== Populate the Source Bucket
+
+Lets put some objects in the source ONTAP bucket. We will use S3Browser for this demo but you could use any tool you are comfortable with.
+
+Using the ONTAP user s3 keys created above, configure S3Browser to connect to your ontap system.
+
+image:ontap-migrate/ontap-s3browser-conf.png[S3Browser-config]
+
+Now lets upload some files to the versioning enabled bucket. 
+
+image:ontap-migrate/ontap-s3browser-upload-01.png[Click on upload]
+
+image:ontap-migrate/ontap-s3browser-upload-02.png[Select files to upload]
+
+image:ontap-migrate/ontap-s3browser-upload-03.png[Files uploaded]
+
+Now lets create some object versions in the bucket.
+
+delete a file.
+
+image:ontap-migrate/ontap-s3browser-delete.png[Delete a file]
+
+Upload a file that already exists in the bucket to copy the file over itself and create a new version of it. 
+
+image:ontap-migrate/ontap-s3browser-overwrite.png[upload a file that already exists]
+
+In S3Browser we can view the versions of the objects we just created.
+
+image:ontap-migrate/ontap-s3browser-versions.png[View versions]
+
+=== Establish the replication relationship
+
+Lets start sending data from ONTAP to StorageGRID.
+
+In ONTAP System Manager navigate to "Protection/Overview". Scroll down to "Cloud object stores". and click the "Add" button and select "StorageGRID".
+
+image:ontap-migrate/ontap-protection-add-01.png[ONTAP Protection]
+
+Input the StorageGRID information by providing a name, URL style (for this demo we will use Path-styl URLs). Set the object store scope to "Storage VM".
+
+image:ontap-migrate/ontap-protection-configure-01.png[Input StorageGRID information]
+
+If you are using SSL, set the load balancer endpoint port and copy in the StorageGRID endpoint certificate here. otherwise uncheck the SSL box and input the HTTP endpoint port here.
+
+Input the StorageGRID user S3 keys and bucket name from the StorageGRID configuration above for the destination.
+
+image:ontap-migrate/ontap-protection-configure-02.png[Input StorageGRID information]
+
+Now that we have a destination target configured, we can configure the policy settings for the target.  Expand "Local policy settings" and select "continuous".
+
+image:ontap-migrate/ontap-local-setting.png[Local policy settings]
+
+Edit the continuous policy and change the "Recovery point objective" from "1 Hours" to "3 Seconds".
+
+image:ontap-migrate/ontap-local-edit-01.png[Local policy settings edit]
+
+Now we can configure snapmirror to replicate the bucket. 
+
+[source]
+====
+snapmirror create -source-path sv_demo: /bucket/bucket -destination-path sgws_demo: /objstore -policy Continuous
+====
+
+image:ontap-migrate/ontap-snapmirror-create.png[Create snapmirror relationship]
+
+The bucket will now show a cloud symbol in the bucket list under protection.
+
+image:ontap-migrate/ontap-bucket-protected.png[The bucket is protected to the cloud target]
+
+If we select the bucket and go to the "SnapMirror (ONTAP or Cloud)" tab we will see the snapmirror repationship status.
+
+image:ontap-migrate/ontap-snapmirror-status.png[Check snapmirror relationship]
+
+=== The replication details
+
+We now have a successfully replicating bucket from ONTAP to StorageGRID. But what is actually replicating? Our source and destination are both versioned buckets. Do the previous versions also replicate to the destination? If we look at our StorageGRID bucket with S3Browser we see that the existing versions did not replicate and our deleted object does not exist, nor does a delete marker for that object. Our duplicated object only has 1 version in the StorageGRID bucket.
+
+image:ontap-migrate/sg-s3browser-initial.png[S3browser view of the StorageGRID bucket after initial sync]
+
+In our ONTAP bucket, lets add a new version to our same object that we used previously and see how it replicates.
+
+image:ontap-migrate/ontap-s3browser-new-rep.png[S3browser view of the ONTAP bucket after new version uploaded]
+
+If we look on the StorageGRID side we see that a new version has been created in this bucket too, but is missing the initial version from before the snapmirror relationship.
+
+image:ontap-migrate/sg-s3browser-rep-ver.png[S3browser view of the ONTAP bucket after new version uploaded]
+
+This is because the ONTAP SnapMirror S3 process only replicates the current version of the object. This is why we created a versioned bucket on the StorageGRID side to be the destination. This way StorageGRID can maintain a version history of the objects. 
