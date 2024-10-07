@@ -26,7 +26,7 @@ Make sure to read the product documentation for https://www.veeam.com/documentat
 
 === Recommended version
 
-It is always recommended to stay current and apply the latest hotfixes for your Veeam Backup & Replication 12 system. Currently we recommend at a minimum installing Veeam patch P20230718.
+It is always recommended to stay current and apply the latest hotfixes for your Veeam Backup & Replication 12 or 12.1 system. Currently we recommend at a minimum installing Veeam 12 patch P20230718.
 
 === S3 Repository configuration
 

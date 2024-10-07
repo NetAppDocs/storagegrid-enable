@@ -53,4 +53,4 @@ image:ontap-migrate/sg-endpoint-domain.png[Set ONTAP group to read-only]
 Your clients will either need to wait for the TTL to expire, or flush DNS to resolve to the new system so you can test that everything is working.  All that is left is to clean up the initial temporary S3 keys we used to test the StorageGRID data access (NOT the imported keys), remove the snapmirror relationships, and remove the ONTAP data. 
 
 
-_By Rafael Guedes_
+_By Rafael Guedes, and Aron Klein_

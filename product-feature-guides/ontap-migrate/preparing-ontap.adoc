@@ -79,3 +79,5 @@ image: ontap-migrate/ontap-add-bucket-ver-01.png[Enable versioning]
 Repeat the process and create a second bucket without versioning enabled. Enter a name, the same capacity as bucket one, and deselect the "Enable ListBucket access..." check box. and click on the "Save" button.
 
 image:ontap-migrate/ontap-add-bucket2-01.png[Add bucket two]
+
+_By Rafael Guedes, and Aron Klein_

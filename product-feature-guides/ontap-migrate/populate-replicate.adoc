@@ -100,3 +100,5 @@ If we look on the StorageGRID side we see that a new version has been created in
 image:ontap-migrate/sg-s3browser-rep-ver.png[S3browser view of the ONTAP bucket after new version uploaded]
 
 This is because the ONTAP SnapMirror S3 process only replicates the current version of the object. This is why we created a versioned bucket on the StorageGRID side to be the destination. This way StorageGRID can maintain a version history of the objects. 
+
+_By Rafael Guedes, and Aron Klein_

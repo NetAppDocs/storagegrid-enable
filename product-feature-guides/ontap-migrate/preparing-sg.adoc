@@ -112,3 +112,5 @@ image:ontap-migrate/sg-create-bucket2.png[Create Second bucket]
 Do not enable versioning on this second bucket.
 
 image:ontap-migrate/sg-create-bucket2-nver.png[do not set versioning]
+
+_By Rafael Guedes, and Aron Klein_
