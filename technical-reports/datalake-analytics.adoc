@@ -65,7 +65,7 @@ https://www.dremio.com/wp-content/uploads/2023/02/apache-Iceberg-TDG_ER1.pdf?ali
 ** NetApp^®^ StorageGRID^®^ 11.8 with 3 x SG6060 + 1x SG1000 load balancer
 ** Object protection - 2 copies (result is similiar with EC 2+1)
 * Database size 1000GB
-* Cache disabled on all ecosystems to get consistent result for each query test.
+* Cache was disabled across all ecosystems for each query test using the Parquet format. For the Iceberg format, we compared the number of S3 GET requests and total query time between cache-disabled and cache-enabled scenarios.
 
 TPC-DS includes 99 complex SQL queries designed for benchmarking. We measured the total time taken to execute all 99 queries and conducted a detailed analysis by examining the type and number of S3 requests. Our tests compared the efficiency of two popular table formats: Parquet and Iceberg.
 
@@ -93,9 +93,12 @@ all range GET |80% range get of 2KB to 2MB from 32MB objects, 50 - 100 requests/
 |===
 |Ecosystem |Dremio |Trino |Starburst
 |TPCDS 99 queries +
-total minutes |30 |28 |22 
+total minutes (cache disabled) |30 |28 |22 
+|TPCDS 99 queries +
+total minutes (cache enabled) |22 |28 |21.5
 4+a|S3 Requests breakdown
-|GET |2,154,747 |938,639 |931,582
+|GET (cache disabled) |2,154,747 |938,639 |931,582
+|GET (cache enabled) |5,389 |30,158 |3,281
 |observation: +
 all range GET |Range GET size: 67% 1MB, 15% 100KB, 10% 500KB, 3000 - 4000 requests/sec |Range GET size: 42% below 100KB, 17% around 1MB, 33% 2MB-9MB, 3500 - 4000 requests/sec |Range GET size: 43% below 100KB, 17% around 1MB, 33% 2MB-9MB, 4000 - 5000 requests/sec
 |List objects |284 |0 |0 
@@ -103,7 +106,7 @@ all range GET |Range GET size: 67% 1MB, 15% 100KB, 10% 500KB, 3000 - 4000 reques
 (non-existent object) |284 |0 |0
 |HEAD +
 (existent object) |1,261 |509 |509
-|Total requests |2,156,578 |939,148 |932,071
+|Total requests (cache disabled) |2,156,578 |939,148 |932,071
 |===
 
 As shown in the first table, Hive is significantly slower than other modern data lakehouse ecosystems. We observed that Hive sent a large number of S3 list-objects requests, which are typically slow on all object storage platforms, especially when dealing with buckets containing many objects. This significantly increases the overall query duration. Additionally, modern lakehouse ecosystems can send a high number of GET requests in parallel, ranging from 2,000 to 5,000 requests per second, compared to Hive’s 50 to 100 requests per second. The standard filesystem mimicry by Hive and Hadoop S3A contributes to Hive’s slowness when interacting with S3 object storage.
