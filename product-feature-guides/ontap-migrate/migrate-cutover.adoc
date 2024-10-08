@@ -24,7 +24,7 @@ Expand the "accounts" section, select the "POST /grid/account-enable-s3-key-impo
 
 image:ontap-migrate/sg-import-enable.png[Enable S3 key import]
 
-now scroll down still under "accounts" to "POST /grid/accounts/{id}/users/{user_id}/s3-access-keys"
+Now scroll down still under "accounts" to "POST /grid/accounts/{id}/users/{user_id}/s3-access-keys"
 
 Here is where we are going to input the tenant ID and user account ID we collected earlier. fill in the fields and the keys from our ONTAP user in the json box. you can set the expiration of the keys, or remove the " , "expires": 123456789" and click on execute.
 

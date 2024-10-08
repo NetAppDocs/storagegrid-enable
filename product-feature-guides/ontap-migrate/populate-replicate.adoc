@@ -30,7 +30,7 @@ image:ontap-migrate/ontap-s3browser-upload-03.png[Files uploaded]
 
 Now lets create some object versions in the bucket.
 
-delete a file.
+Delete a file.
 
 image:ontap-migrate/ontap-s3browser-delete.png[Delete a file]
 

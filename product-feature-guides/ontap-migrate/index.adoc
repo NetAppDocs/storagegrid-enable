@@ -17,4 +17,3 @@ Enabling enterprise-grade S3 by seamlessly migrating object-based storage from O
 
 This is a demonstration on migrating users and buckets from ONTAP S3 to StorageGRID.
 
-_By Rafael Guedes, and Aron Klein_

@@ -22,7 +22,7 @@ Navigate to the "Tenants" tab and click on the "create" button
 
 image:ontap-migrate/sg-tenant-create-01.png[Add tenant button]
 
-Fill in the details for the tenant providing a tenant name, select S3 for the client type, and no quota is required. no need to select platform services or allow S3 select. You can choose to use own Identity source if you choose. Set the root password and click on the finish button.
+Fill in the details for the tenant providing a tenant name, select S3 for the client type, and no quota is required. No need to select platform services or allow S3 select. You can choose to use own Identity source if you choose. Set the root password and click on the finish button.
 
 Click on the tenant name to view the tenant details.  *You will need the tenant ID later so copy it off*.
 Click on the Sign in button. This will bring you to the tenant portal login.  Save the URL for future use.
@@ -51,7 +51,7 @@ To create the S3 keys click on the user name.
 
 image:ontap-migrate/sg-user-keys-create-01.png[Create S3 Keys]
 
-select the "Access keys" tab and click on the "Create Key" button. There is no need to set an expiration time. Download the S3 keys as they cannot be retrieved again once the window is closed.
+Select the "Access keys" tab and click on the "Create Key" button. There is no need to set an expiration time. Download the S3 keys as they cannot be retrieved again once the window is closed.
 
 image:ontap-migrate/sg-user-keys-create-02.png[Download keys]
 
@@ -65,7 +65,7 @@ Set the group permissions to Read-Only. This is the Tenant UI permissions, not t
 
 image:ontap-migrate/sg-group-permissions.png[Set group Permissions]
 
-S3 permissions are controlled with the group policy (IAM Policy). Set the Group policy to custom and paste the json policy in the box.
+S3 permissions are controlled with the group policy (IAM Policy). Set the Group policy to custom and paste the json policy in the box. This policy will allow users of this group to list the buckets of the tenant and perform any S3 operations in the bucket named "bucket" or sub-folders in the bucket named "bucket".  
 
 [source,json]
 ----
@@ -78,7 +78,7 @@ S3 permissions are controlled with the group policy (IAM Policy). Set the Group 
       },
       {
          "Effect": "Allow",
-        "Action": "s3:ListAllMyBuckets",
+        "Action": "s3:*",
         "Resource": ["arn:aws:s3:::bucket","arn:aws:s3:::bucket/*"]
       }
     ]
@@ -87,7 +87,7 @@ S3 permissions are controlled with the group policy (IAM Policy). Set the Group 
 
 image:ontap-migrate/sg-group-policy.png[Define group policy]
 
-finally, add the user to the group and finish.
+Finally, add the user to the group and finish.
 
 image:ontap-migrate/sg-group-add-user.png[Add user to group]
 

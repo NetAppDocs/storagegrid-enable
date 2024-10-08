@@ -26,29 +26,29 @@ Select the "Enable S3" and "Enable TLS" check boxes and configure the HTTP(S) po
 
 image:ontap-migrate/ontap-svm-create-01.png[configure new SVM]
 
-As part of the SVM creation a user will be created. download the S3 keys for this user and close the window.
+As part of the SVM creation a user will be created. Download the S3 keys for this user and close the window.
 
 image:ontap-migrate/ontap-s3-key.png[download S3 keys]
 
-Once the SVM has created, edit the SVM and add the DNS settings.
+Once the SVM has been created, edit the SVM and add the DNS settings.
 
 image:ontap-migrate/ontap-dns-01.png[configure DNS]
 
-Define the DNS name and IP
+Define the DNS name and IP.
 
 image:ontap-migrate/ontap-dns-02.png[configure DNS Server]
 
 ==== Create SVM S3 User
 
-Now we can configure the S3 users and group. Edit the S3 settings
+Now we can configure the S3 users and group. Edit the S3 settings.
 
 image:ontap-migrate/ontap-edit-s3.png[Configure S3]
 
-Add a new user
+Add a new user.
 
 image:ontap-migrate/ontap-user-create-01.png[Add a new user]
 
-Input the user name and key expiration
+Input the user name and key expiration.
 
 image:ontap-migrate/ontap-user-create-01.png[Add a new user]
 
@@ -72,7 +72,7 @@ Enter a name, capacity, and deselect the "Enable ListBucket access..." check box
 
 image:ontap-migrate/ontap-add-bucket-02.png[Add Bucket]
 
-In the "More options" section seletect the enable versioning check box. and click the "Save" button.
+In the "More options" section select the enable versioning check box. and click the "Save" button.
 
 image: ontap-migrate/ontap-add-bucket-ver-01.png[Enable versioning]
 
