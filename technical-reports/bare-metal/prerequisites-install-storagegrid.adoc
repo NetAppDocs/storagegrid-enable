@@ -196,7 +196,7 @@ By combining the compute and network requirements shown in table above, you can 
 
 As shown in the following figure, these servers will host six Docker containers, two per host. The RAM is calculated by providing 24GB per container and 16GB for the host OS itself.
 
-image:bare-metal-layout-for-three-hosts.png[Sample layout for three hosts.]
+image:bare-metal/bare-metal-layout-for-three-hosts.png[Sample layout for three hosts.]
 
 Total RAM required per physical host (or VM) is 24 x 2 + 16 = 64GB.
 The following tables list the required disk storage for hosts 1, 2, and 3.

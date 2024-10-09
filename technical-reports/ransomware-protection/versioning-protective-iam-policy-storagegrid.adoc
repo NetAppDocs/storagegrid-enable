@@ -22,7 +22,7 @@ A method to protect your data without using object lock or replication is to ena
 
 In StorageGRID 11.7 a new S3 group policy option “Ransomware Mitigation” has been introduced to make implementing this solution easier. When creating a user group in the tenant, after selecting the group permissions, you can see this new optional policy.
 
-image:ransomware-protection-create-group.png[ransomware-protection-create-group]
+image:ransomware/ransomware-protection-create-group.png[ransomware-protection-create-group]
 
 The following is the content of the group policy that includes most of the available operations explicitly allowed and the minimum required denied.
 

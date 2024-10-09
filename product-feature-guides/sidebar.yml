@@ -14,4 +14,17 @@ entries:
   - title: How to use port remap
     url: "/product-feature-guides/port-remap.html"
   - title: How to relocate a site and change networking
-    url: "/product-feature-guides/site-relocation-and-network-change.html"
+    url: "/product-feature-guides/site-relocation-and-network-change.html"   
+  - title: Migrating object-based storage from ONTAP S3 to StorageGRID
+    pdf-filename: Migrating object-based storage from ONTAP S3 to StorageGRID
+    entries: 
+      - title: Migrate from ONTAP S3 to StorageGRID
+        url: "/product-feature-guides/ontap-migrate/index.html"
+      - title: Preparing ONTAP
+        url: "/product-feature-guides/ontap-migrate/preparing-ontap.html"
+      - title: Preparing StorageGRID
+        url: "/product-feature-guides/ontap-migrate/preparing-sg.html"
+      - title: Populate and replicate the bucket
+        url: "/product-feature-guides/ontap-migrate/populate-replicate.html"
+      - title: Migrate users and keys then cutover
+        url: "/product-feature-guides/ontap-migrate/migrate-cutover.html"

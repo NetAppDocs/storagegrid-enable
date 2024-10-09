@@ -26,7 +26,7 @@ Make sure to read the product documentation for https://www.veeam.com/documentat
 
 === Recommended version
 
-It is always recommended to stay current and apply the latest hotfixes for your Veeam Backup & Replication 12 system. Currently we recommend at a minimum installing Veeam patch P20230718.
+It is always recommended to stay current and apply the latest hotfixes for your Veeam Backup & Replication 12 or 12.1 system. Currently we recommend at a minimum installing Veeam 12 patch P20230718.
 
 === S3 Repository configuration
 
@@ -63,7 +63,7 @@ Please work with your NetApp Account team for the recommended configuration base
 
 === Recommended version
 
-NetApp StorageGRID 11.6, 11.7, or 11.8 with the latest hotfix are the recommended versions for Veeam deployments. Many optimization features were introduced in the StorageGRID 11.6.0.11 and 11.7.0.4 which will be beneficial to Veeam workloads. It is always recommended to stay current and apply the latest hotfixes for your StorageGRID system.
+NetApp StorageGRID 11.7 or 11.8 with the latest hotfix are the recommended versions for Veeam deployments. It is always recommended to stay current and apply the latest hotfixes for your StorageGRID system.
 
 === Load balancer and S3 endpoint configuration
 

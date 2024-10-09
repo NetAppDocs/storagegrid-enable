@@ -30,6 +30,6 @@ To specify NTP server information, complete the following steps:
 . In the Server 1 to Server 4 text boxes, specify the IP addresses for at least four NTP servers.
 . If necessary, click the plus sign next the last entry to add more server entries.
 +
-image:bare-metal-add-server-entries.png[bare-metal-add-server-entries]
+image:bare-metal/bare-metal-add-server-entries.png[bare-metal-add-server-entries]
 +
 . Click Next.

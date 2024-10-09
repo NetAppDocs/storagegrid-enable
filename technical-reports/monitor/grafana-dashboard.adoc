@@ -23,8 +23,8 @@ These preconstructed dashboards are not only useful for monitoring but also for 
 . From the GMI, menu:Support[Metrics].
 . Under the Grafana section, select the Node dashboard.
 +
-image:monitor-node-dashboard.png[monitor-node-dashboard]
+image:monitor/monitor-node-dashboard.png[monitor-node-dashboard]
 . In Grafana, set the hosts to whichever node you want to view metrics on. In this case, a storage node is selected. More information is provided than the following screenshot captures.
 +
-image:monitor-grafana-metrics.png[monitor-grafana-metrics]
+image:monitor/monitor-grafana-metrics.png[monitor-grafana-metrics]
 

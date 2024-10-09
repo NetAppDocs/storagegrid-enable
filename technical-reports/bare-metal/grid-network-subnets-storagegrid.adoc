@@ -29,6 +29,6 @@ To specify grid network subnets, complete the following steps:
 . Click the plus sign next to the last entry to add an additional network entry.
 If you have already deployed at least one node, click Discover Grid Networks Subnets to automatically populate the grid network subnet list with the subnets reported by grid nodes that have registered with Grid Manager.
 +
-image:bare-metal-subnets-grid-network.png[bare-metal-subnets-grid-network]
+image:bare-metal/bare-metal-subnets-grid-network.png[bare-metal-subnets-grid-network]
 +
 . Click Next.

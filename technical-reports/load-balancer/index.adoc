@@ -26,7 +26,7 @@ Load balancers are an essential component of an enterprise grade object storage 
 
 The following figure uses the example URL/ fully qualified domain name (FQDN) “s3.company.com”. The load balancer creates a virtual IP (VIP) that resolves to the FQDN through DNS, then directs any requests from applications to a pool of StorageGRID nodes. The load balancer performs a health check on each node and only establishes connections to healthy nodes.
 
-image:load-balancer-local-traffic-manager-load-balancer.png[Local traffic manager load balancer]
+image:load-balancer/load-balancer-local-traffic-manager-load-balancer.png[Local traffic manager load balancer]
 
 The figure shows the StorageGRID provided load balancer, but the concept is the same for third-party load balancers. Applications establish an HTTP session using the VIP on the load balancer and the traffic passes through the load balancer to the storage nodes. By default, all traffic, from application to load balancer, and from load balancer to storage node is encrypted through HTTPS. HTTP is a supported option.
 
