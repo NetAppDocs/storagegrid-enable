@@ -147,7 +147,7 @@ image:veeam-bp/tc_2.png[Traffic Classification Policy metrics]
 == Where to find additional information
 To learn more about the information that is described in this document, review the following documents and/or websites:
 
-* link:https://docs.netapp.com/us-en/storagegrid-117/[NetApp StorageGRID 11.7 Product Documentation^]
+* link:https://docs.netapp.com/us-en/storagegrid-118/[NetApp StorageGRID 11.8 Product Documentation^]
 * link:https://www.veeam.com/documentation-guides-datasheets.html?productId=8&version=product%3A8%2F221[Veeam Backup and Replication^]
 
 _By Oliver Haensel and Aron Klein_
