@@ -28,6 +28,6 @@ The license file is validated, and the serial number and licensed storage capaci
 +
 NOTE: The StorageGRID installation archive includes a free license that does not provide any support entitlement for the product. You can update to a license that offers support after installation.
 +
-image:bare-metal-update-license.png[bare-metal-update-license]
+image:bare-metal/bare-metal-update-license.png[bare-metal-update-license]
 +
 . Click Next.

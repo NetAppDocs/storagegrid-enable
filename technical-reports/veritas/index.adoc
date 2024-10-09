@@ -2,7 +2,7 @@
 permalink: technical-reports/veritas/index.html
 sidebar: sidebar
 keywords: storagegrid, primary storage, configure, veritas, enterprise vault
-summary: Learn how Veritas Enterprise Vault uses StorageGRID as a primary storage target for disaster recovery.
+summary: Learn how veritas Enterprise Vault uses StorageGRID as a primary storage target for disaster recovery.
 ---
 = Introduction to configuring StorageGRID for site failover
 :hardbreaks:
@@ -10,15 +10,15 @@ summary: Learn how Veritas Enterprise Vault uses StorageGRID as a primary storag
 :imagesdir: ../../media/
 
 [.lead]
-Learn how Veritas Enterprise Vault uses StorageGRID as a primary storage target for disaster recovery.
+Learn how veritas Enterprise Vault uses StorageGRID as a primary storage target for disaster recovery.
 
-This configuration guide provides the steps to configure NetApp® StorageGRID® as a primary storage target with Veritas Enterprise Vault. It also describes how to configure StorageGRID for site failover in a disaster recovery (DR) scenario.
+This configuration guide provides the steps to configure NetApp® StorageGRID® as a primary storage target with veritas Enterprise Vault. It also describes how to configure StorageGRID for site failover in a disaster recovery (DR) scenario.
 
 == Reference architecture
 
-StorageGRID provides an on-premises, S3-compatible cloud backup target for Veritas Enterprise Vault. The following figure illustrates the Veritas Enterprise Vault and StorageGRID architecture.
+StorageGRID provides an on-premises, S3-compatible cloud backup target for veritas Enterprise Vault. The following figure illustrates the veritas Enterprise Vault and StorageGRID architecture.
 
-image:third-party-veritas-enterprise-vault-and-storagegrid-architecture.png[third-party-veritas-enterprise-vault-and-storagegrid-architecture]
+image:veritas/veritas-enterprise-vault-and-storagegrid-architecture.png[vertias/veritas-veritas-enterprise-vault-and-storagegrid-architecture]
 
 == Where to find additional information
 

@@ -25,6 +25,6 @@ To add sites, complete the following steps:
 . To add additional sites, click the plus sign next to the last site entry and enter the name in the new Site Name text box.
 Add as many additional sites as required for your grid topology. You can add up to 16 sites.
 +
-image:bare-metal-add-sites.png[bare-metal-add-sites]
+image:bare-metal/bare-metal-add-sites.png[bare-metal-add-sites]
 +
 . Click Next.

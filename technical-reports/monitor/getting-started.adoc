@@ -15,7 +15,7 @@ The StorageGrid Grid Management Interface (GMI) dashboard provides a centralized
 
 Use the GMI dashboard to examine each core component of the grid.
 
-image:monitor-storagegrid-gmi-dashboard.png[monitor-storagegrid-gmi-dashboard]
+image:monitor/monitor-storagegrid-gmi-dashboard.png[monitor-storagegrid-gmi-dashboard]
 
 == Information that you should monitor regularly
 

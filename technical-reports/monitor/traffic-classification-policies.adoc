@@ -25,14 +25,14 @@ To configure a Traffic Classification Policy, follow these steps:
 . Enter a name and description for your policy.
 . Create a matching rule.
 +
-image:monitor-matching-rule.png[monitor-matching-rule]
+image:monitor/monitor-matching-rule.png[monitor-matching-rule]
 . Set a limit (optional).
 +
-image:monitor-limit.png[monitor-limit]
+image:monitor/monitor-limit.png[monitor-limit]
 . Save your policy
 +
-image:monitor-traffic-policy.png[monitor-traffic-policy]
+image:monitor/monitor-traffic-policy.png[monitor-traffic-policy]
 +
 To view the metrics associated to your Traffic Classification Policy, select your policy and click Metrics. A Grafana dashboard is generated displaying information such as Load Balancer Request Traffic and Average Request Duration.
 +
-image:monitor-dashboard-showing-metrics.png[monitor-dashboard-showing-metrics]
+image:monitor/monitor-dashboard-showing-metrics.png[monitor-dashboard-showing-metrics]

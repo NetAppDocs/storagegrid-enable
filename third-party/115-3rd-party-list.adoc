@@ -49,9 +49,9 @@ These solutions have been tested in collaboration with the respective partners.
 * Trino
 * Varnish Enterprise 6.0.4
 * Veeam 11
-* Veritas Enterprise Vault 11
-* Veritas Enterprise Vault 12
-* Veritas NetBackup 8.0
+* veritas Enterprise Vault 11
+* veritas Enterprise Vault 12
+* veritas NetBackup 8.0
 * Vertica 10.x
 * Vidispine
 * Virtalica StorageFabric

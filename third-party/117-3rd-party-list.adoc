@@ -33,6 +33,7 @@ These solutions have been tested in collaboration with the respective partners.
 * DefendX
 * Diskover Data
 * Dremio
+* Elasticsearch Snapshot (including frozen tier)
 * eMAM 
 * FujiFilm Object Archive
 * GitHub Enterprise Server
@@ -67,8 +68,8 @@ These solutions have been tested in collaboration with the respective partners.
 * Trino
 * Varnish Enterprise 6.0.4
 * Veeam 12
-* Veritas Enterprise Vault 14
-* Veritas NetBackup 8.0
+* veritas Enterprise Vault 14
+* veritas NetBackup 8.0
 * Vertica 10.x
 * Vidispine
 * Virtalica StorageFabric
@@ -84,8 +85,8 @@ These solutions have been tested in collaboration with the respective partners.
 * OpenText Documentum 21.4
 * Rubrik
 * Veeam 12
-* Veritas Enterprise Vault 14.2.2
-* Veritas NetBackup 10.1.1 and later
+* veritas Enterprise Vault 14.2.2
+* veritas NetBackup 10.1.1 and later
 
 
 == Third-party solutions supported on StorageGRID

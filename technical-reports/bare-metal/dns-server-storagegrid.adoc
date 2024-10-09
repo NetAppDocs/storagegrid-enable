@@ -28,7 +28,7 @@ To specify DNS server information, complete the following steps:
 . In the Server 1 text box, specify the IP address for a DNS server.
 . If necessary, click the plus sign next to the last entry to add more servers.
 +
-image:bare-metal-add-more-servers-2.png[bare-metal-add-more-servers-2]
+image:bare-metal/bare-metal-add-more-servers-2.png[bare-metal-add-more-servers-2]
 +
 . Click Next.
 

@@ -30,7 +30,7 @@ To configure the F5 BIG-IP local traffic manager health check monitor, follow th
 \r\n are carriage returns; different versions of BIG-IP software require zero, one, or two sets of \r\n sequences. For more information, see https://support.f5.com/csp/article/K10655.
 .. In the Receive String field, enter: `HTTP/1.1 200 OK`.
 +
-image:load-balancer-monitor-configuration-page.png[Monitor configuration page]
+image:load-balancer/load-balancer-monitor-configuration-page.png[Monitor configuration page]
 +
 
 . In Create Pool, create one pool for each port required.
@@ -46,9 +46,9 @@ Use the HTTPS-ECV health check monitor to create a custom monitor to perform the
 
 For more information, see the Citrix documentation, https://docs.citrix.com/en-us/citrix-adc/current-release/load-balancing/load-balancing-builtin-monitors/monitor-ssl-services.html#sample-configuration-for-https-ecv-health-check-monitor[Sample configuration for HTTP-ECV health check monitor^]. 
 
-image:load-balancer-citrix-netscaler-configuration-page.png[Citrix Netscaler Monitor configuration page]
+image:load-balancer/load-balancer-citrix-netscaler-configuration-page.png[Citrix Netscaler Monitor configuration page]
 
-image:load-balancer-configure-monitor.png[Configure-monitor.png]
+image:load-balancer/load-balancer-configure-monitor.png[Configure-monitor.png]
 
 == Loadbalancer.org
 Loadbalancer.org has conducted their own integration testing with StorageGRID and has an extensive configuration guide: https://pdfs.loadbalancer.org/NetApp_StorageGRID_Deployment_Guide.pdf.
