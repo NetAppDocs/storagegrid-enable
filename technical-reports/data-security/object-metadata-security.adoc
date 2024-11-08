@@ -36,7 +36,7 @@ CTFC 1.31(c)-(d)
 |
 
 |Federal Information Processing Standard (FIPS) 140-2 compliant encryption disks
-|The SG5712, SG5760, SG6060, and SGF6024 StorageGRID appliances offer the option of FIPS 140-2 compliant encryption disks.
+|The SG5812, SG5860, SG6160, and SGF6024 StorageGRID appliances offer the option of FIPS 140-2 compliant encryption disks.
 Encryption keys for the disks can be optionally managed by an external KMIP server.
 |Enables secure storage of system data, metadata, and objects. Also provides StorageGRID software-based object encryption, which secures storage and transmission of objects.
 |SEC Rule 17a-4(f)
