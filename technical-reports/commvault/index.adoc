@@ -87,8 +87,8 @@ The following table lists the benefits of each backup option with StorageGRID:
 
 To learn more about the information that is described in this document, review the following documents and/or websites:
 
-* StorageGRID 11.8 Documentation Center +
-https://docs.netapp.com/us-en/storagegrid-118/
+* StorageGRID 11.9 Documentation Center +
+https://docs.netapp.com/us-en/storagegrid-119/
 * NetApp Product Documentation +
 https://docs.netapp.com
 * Commvault documentation +
