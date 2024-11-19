@@ -22,7 +22,8 @@ Node clone can be a faster method for replacing existing appliance nodes for a t
 ** If the destination appliance has the same size drives and is configured for DDP8, you can configure the destination for DDP16. If the source is already configured for DDP16 then node clone will not be possible.
 ** When going from SG5660 or SG5760 appliances to SG6060 appliances be aware that the SG5x60's have 60 capacity drives where the SG6060 only has 58.
 * The node clone process requires the source node to be offline to the grid for the duration of the cloning process. If an additional node goes offline during this time client services may be impacted.
-* A storage node can only be offline for 15 days. If the cloning process estimate is close to 15 days or will exceed 15 days, use the expansion and decommission procedures.
+* 11.8 and bellow: A storage node can only be offline for 15 days. If the cloning process estimate is close to 15 days or will exceed 15 days, use the expansion and decommission procedures.
+** 11.9: The 15 day limit has been removed.
 * For a SG6060 or SG6160 with expansion shelves, you need to add the time for the correct shelf drive size to the time of the base appliance time to get the full clone duration. 
 * The number of volumes in a target storage appliance must be greater than or equal to the number of volumes in the source node. You cannot clone a source node with 16 object store volumes (rangedb) to a target storage appliance with 12 object store volumes even if the target appliance has larger capacity than the source node. Most storage appliances have 16 object store volumes, except the SGF6112 storage appliance that has only 12 object store volumes. For example, you cannot clone from a SG5760 to a SGF6112.
 
@@ -31,149 +32,136 @@ The following tables contain calculated estimates for node clone duration. Condi
 
 === DDP8
 
-==== SG5612 -> Any
+==== SG5612/SG5712/SG5812 -> Any
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
-|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size |22TB Drive size
 
-|10GB |1 Day |2 Days |2.5 Days |3 Days |4 Days |4.5 Days 
+|10GB |1 Day |2 Days |2.5 Days |3 Days |4 Days |4.5 Days |5.5 Days
 
-|25GB |1 Day |2 Days |2.5 Days |3 Days |4 Days |4.5 Days
-|===
-
-==== SG5712/SG5812 -> Any
-
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
-|===
-// header row
-|Network Interface speed
-|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
-
-|10GB |1 Day |2 Days |2.5 Days |3 Days |4 Days |4.5 Days 
-
-|25GB |1 Day |2 Days |2.5 Days |3 Days |4 Days |4.5 Days
+|25GB |1 Day |2 Days |2.5 Days |3 Days |4 Days |4.5 Days |5.5 Days
 |===
 
 ==== SG5660 -> SG5760/SG5860
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
-|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size |22TB Drive size
 
-|10GB |3 Day |6 Days |7 Days |8.5 Days |11.5 Days |*13 Days*
+|10GB |3.5 Day |7 Days |8.5 Days |10.5 Days |*13.5 Days* |*15.5 Days* |*18.5 Days*
 
-|25GB |3 Day |6 Days |7 Days |8.5 Days |11.5 Days |*13 Days*
+|25GB |3.5 Day |7 Days |8.5 Days |10.5 Days |*13.5 Days* |*15.5 Days* |*18.5 Days*
 |===
 
 ==== SG5660 -> SG6060/SG6160
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
-|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size |22TB Drive size 
 
-|10GB |2.5 Day |4.5 Days |5.5 Days |6.5 Days |9 Days |10 Days 
+|10GB |2.5 Day |4.5 Days |5.5 Days |6.5 Days |9 Days |10 Days |*12 Days*
 
-|25GB |2 Day |4 Days |5 Days |6 Days |8 Days |9 Days
+|25GB |2 Day |4 Days |5 Days |6 Days |8 Days |9 Days |10 Days
 |===
 
 ==== SG5760/SG5860 -> SG5760/SG5860
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
-|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size |22TB Drive size
 
-|10GB |3 Day |6 Days |7 Days |8.5 Days |11.5 Days |*13 Days*
+|10GB |3.5 Day |7 Days |8.5 Days |10.5 Days |*13.5 Days* |*15.5 Days* |*18.5 Days*
 
-|25GB |3 Day |6 Days |7 Days |8.5 Days |11.5 Days |*13 Days*
+|25GB |3.5 Day |7 Days |8.5 Days |10.5 Days |*13.5 Days* |*15.5 Days* |*18.5 Days*
 |===
 
 ==== SG5760/SG5860 -> SG6060/SG6160
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
-|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size |22TB Drive size 
 
-|10GB |2.5 Day |4.5 Days |5.5 Days |6.5 Days |9 Days |10 Days 
+|10GB |2.5 Day |4.5 Days |5.5 Days |6.5 Days |9 Days |10 Days |*12 Days*
 
-|25GB |1.5 Day |3 Days |3.5 Days |4.5 Days |6 Days |6.5 Days
+|25GB |2 Day |3.5 Days |4.5 Days |5.5 Days |7 Days |8 Days |9.5 Days
 |===
 
 ==== SG6060/SG6160 -> SG6060/SG6160
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
-|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size |22TB Drive size 
 
-|10GB |2.5 Day |4.5 Days |5.5 Days |6.5 Days |8.5 Days |9.5 Days 
+|10GB |2.5 Day |4.5 Days |5.5 Days |6.5 Days |8.5 Days |9.5 Days |11.5 Days
 
-|25GB |1.5 Day |3 Days |3.5 Days |4 Days |5.5 Days |6 Days
+|25GB |2 Day |3 Days |4 Days |4.5 Days |6 Days |7 Days |8.5 Days
 |===
 
 === DDP16
 
 ==== SG5760/SG5860 -> SG5760/SG5860
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
-|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size |22TB Drive size 
 
-|10GB |3.5 Day |6.5 Days |8 Days |9.5 Days |12.5 Days |*14 Days* 
+|10GB |3.5 Day |6.5 Days |8 Days |9.5 Days |*12.5 Days* |*14 Days* |*17 Days*
 
-|25GB |3.5 Day |6.5 Days |8 Days |9.5 Days |12.5 Days |*14 Days*
+|25GB |3.5 Day |6.5 Days |8 Days |9.5 Days |*12.5 Days* |*14 Days* |*17 Days*
 |===
 
 ==== SG5760/SG5860 -> SG6060/SG6160
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
-|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size |22TB Drive size 
 
-|10GB |2.5 Day |5 Days |6 Days |7.5 Days |10 Days |11 Days 
+|10GB |2.5 Day |5 Days |6 Days |7.5 Days |10 Days |11 Days |*13 Days*
 
-|25GB |2 Day |3.5 Days |4 Days |5 Days |6.5 Days |7 Days
+|25GB |2 Day |3.5 Days |4 Days |5 Days |6.5 Days |7 Days |8.5 Days
 |===
 
 ==== SG6060/SG6160 -> SG6060/SG6160 
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
-|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size |22TB Drive size 
 
-|10GB |3.5 Day |5 Days |6 Days |7 Days |9.5 Days |10.5 Days 
+|10GB |3 Day |5 Days |6 Days |7 Days |9.5 Days |10.5 Days  |*13 Days*
 
-|25GB |2 Day |3 Days |4 Days |4.5 Days |6 Days |7 Days
+|25GB |2 Day |3.5 Days |4.5 Days |5 Days |7 Days |7.5 Days |9 Days
 |===
 
 ==== Expansion shelf (add to above SG6060/SG6160 for each shelf on source appliance) 
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
-|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size 
+|4TB Drive size |8TB Drive size |10TB Drive size |12TB Drive size |16TB Drive size |18TB Drive size |22TB Drive size 
 
-|10GB |3.5 Day |5 Days |6 Days |7 Days |9.5 Days |10.5 Days 
+|10GB |3.5 Day |5 Days |6 Days |7 Days |9.5 Days |10.5 Days  |*12 Days*
 
-|25GB |2 Day |3 Days |4 Days |4.5 Days |6 Days |7 Days
+|25GB |2 Day |3 Days |4 Days |4.5 Days |6 Days |7 Days |8.5 Days
 |===
 
 _By Aron Klein_
