@@ -34,7 +34,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 
 ==== SG5612/SG5712/SG5812 -> Any
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
@@ -47,7 +47,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 
 ==== SG5660 -> SG5760/SG5860
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
@@ -60,7 +60,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 
 ==== SG5660 -> SG6060/SG6160
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
@@ -73,7 +73,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 
 ==== SG5760/SG5860 -> SG5760/SG5860
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
@@ -86,7 +86,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 
 ==== SG5760/SG5860 -> SG6060/SG6160
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
@@ -99,7 +99,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 
 ==== SG6060/SG6160 -> SG6060/SG6160
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
@@ -114,7 +114,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 
 ==== SG5760/SG5860 -> SG5760/SG5860
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
@@ -127,7 +127,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 
 ==== SG5760/SG5860 -> SG6060/SG6160
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
@@ -140,7 +140,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 
 ==== SG6060/SG6160 -> SG6060/SG6160 
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
@@ -153,7 +153,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 
 ==== Expansion shelf (add to above SG6060/SG6160 for each shelf on source appliance) 
 
-[cols="2a,1a,1a,1a,1a,1a,1a" options="header"]
+[cols="2a,1a,1a,1a,1a,1a,1a,1a" options="header"]
 |===
 // header row
 |Network Interface speed
