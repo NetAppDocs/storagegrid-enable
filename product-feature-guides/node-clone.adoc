@@ -81,7 +81,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 
 |10GB |3.5 Day |7 Days |8.5 Days |10.5 Days |*13.5 Days* |*15.5 Days* |*18.5 Days*
 
-|25GB |3.5 Day |7 Days |8.5 Days |10.5 Days |13.5 Days |*15.5 Days* |*18.5 Days*
+|25GB |3.5 Day |7 Days |8.5 Days |10.5 Days |*13.5 Days* |*15.5 Days* |*18.5 Days*
 |===
 
 ==== SG5760/SG5860 -> SG6060/SG6160
@@ -135,7 +135,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 
 |10GB |2.5 Day |5 Days |6 Days |7.5 Days |10 Days |11 Days |*13 Days*
 
-|25GB |2 Day |3.5 Days |4 Days |5 Days |6.5 Days |7 Days |*8.5 Days*
+|25GB |2 Day |3.5 Days |4 Days |5 Days |6.5 Days |7 Days |8.5 Days
 |===
 
 ==== SG6060/SG6160 -> SG6060/SG6160 
@@ -148,7 +148,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 
 |10GB |3 Day |5 Days |6 Days |7 Days |9.5 Days |10.5 Days  |*13 Days*
 
-|25GB |2 Day |3.5 Days |4.5 Days |5 Days |7 Days |7.5 Days |*9 Days*
+|25GB |2 Day |3.5 Days |4.5 Days |5 Days |7 Days |7.5 Days |9 Days
 |===
 
 ==== Expansion shelf (add to above SG6060/SG6160 for each shelf on source appliance) 
@@ -161,7 +161,7 @@ The following tables contain calculated estimates for node clone duration. Condi
 
 |10GB |3.5 Day |5 Days |6 Days |7 Days |9.5 Days |10.5 Days  |*12 Days*
 
-|25GB |2 Day |3 Days |4 Days |4.5 Days |6 Days |7 Days |*8.5 Days*
+|25GB |2 Day |3 Days |4 Days |4.5 Days |6 Days |7 Days |8.5 Days
 |===
 
 _By Aron Klein_
