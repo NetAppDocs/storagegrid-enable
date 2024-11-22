@@ -11,7 +11,6 @@ summary: 'This report covers big data analytics on StorageGRID.'
 
 [.lead]
 _By Angela Cheng_
-
 == NetApp StorageGRID use cases
 
 NetApp StorageGRID object storage solution offers scalability, data availability, security, and high performance. Organizations of all sizes and across various industries use StorageGRID S3 for a wide range of use cases. Let's explore some typical scenarios:
