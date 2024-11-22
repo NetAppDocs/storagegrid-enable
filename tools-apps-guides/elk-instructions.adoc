@@ -14,6 +14,8 @@ With the StorageGRID syslog forward feature, you can configure an external syslo
 StorageGRID 11.9 supports exporting load balancer endpoint access log to external syslog server. Watch this https://youtu.be/hnnT0QqLSgA?si=tDMPc4bdbqumYzFz[Youtube Video^] to learn more about this new feature.
 This article provides sample files of Logstash configuration, Kibana queries, charts and dashboard to give you a quick start for StorageGRID log management and analytics.
 
+_By Angela Cheng_
+
 == Requirements
 
 * StorageGRID 11.6.0.2 or higher
@@ -143,4 +145,4 @@ You are now ready to perform StorageGRID log analysis using Kibana.
 * https://www.elastic.co/guide/en/kibana/master/document-explorer.html[Kibana guide – Explore the document]
 * https://docs.netapp.com/us-en/storagegrid-116/audit/index.html[StorageGRID audit log messages reference]
 
-_By Angela Cheng_
+
