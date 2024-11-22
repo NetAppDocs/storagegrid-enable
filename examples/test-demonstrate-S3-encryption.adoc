@@ -10,6 +10,8 @@ summary: 'StorageGRID and the S3 API offer a number of different ways to encrypt
 :imagesdir: ../media/
 
 [.lead]
+_By Aron Klein_
+
 StorageGRID and the S3 API offer a number of different ways to encrypt your data at rest. To learn more, see https://docs.netapp.com/us-en/storagegrid-116/admin/reviewing-storagegrid-encryption-methods.html[Review StorageGRID encryption methods^]. 
 
 This guide will demonstrate the S3 API encryption methods.
@@ -184,4 +186,4 @@ aws s3api head-object --bucket <bucket> --key <file> --endpoint-url https://s3.e
 aws s3api get-object --bucket <bucket>  --key <file> <file> --endpoint-url https://s3.example.com
 ----
 
-_By Aron Klein_
+
