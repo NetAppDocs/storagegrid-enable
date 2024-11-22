@@ -13,7 +13,7 @@ Elasticsearch.'
 
 [.lead]
 This guide provides detailed instructions for configuring NetApp StorageGRID
-11.6 search integration service with either Amazon OpenSearch Service or on-premises
+search integration service with either Amazon OpenSearch Service or on-premises
 Elasticsearch.
 
 == Introduction

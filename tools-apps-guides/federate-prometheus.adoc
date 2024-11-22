@@ -10,6 +10,8 @@ summary: 'This technical report provides detailed instructions for configuring N
 :imagesdir: ../media/
 
 [.lead]
+_By Aron Klein_
+
 This technical report provides detailed instructions for configuring NetApp StorageGRID 11.6 with external Prometheus and Grafana services.
 
 == Introduction
@@ -318,4 +320,4 @@ image:prometheus/grafana_panel_edit.png[grafana edit panel]
 === Conclusion
 Now we have a Prometheus server with customizable data retention and storage capacity.  With this we can continue build out our own dashboards with the metrics that are most relevant to our operations. You can get more information on the Prometheus metrics collected in the https://docs.netapp.com/us-en/storagegrid-116/monitor/commonly-used-prometheus-metrics.html[StorageGRID documentation^].
 
-_By Aron Klein_
+

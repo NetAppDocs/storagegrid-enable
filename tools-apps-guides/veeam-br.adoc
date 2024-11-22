@@ -10,6 +10,8 @@ summary: 'This guide focuses on the configuration of NetApp StorageGRID and part
 :imagesdir: ../media/
 
 [.lead]
+_By Oliver Haensel and Aron Klein_
+
 This guide focuses on the configuration of NetApp StorageGRID and partly Veeam Backup and Replication. This paper is written for storage and network administrators who are familiar with Linux systems and tasked with maintaining or implementing a NetApp StorageGRID system in combination with Veeam Backup and Replication.
 
 == Overview
@@ -150,4 +152,4 @@ To learn more about the information that is described in this document, review t
 * link:https://docs.netapp.com/us-en/storagegrid-119/[NetApp StorageGRID 11.9 Product Documentation^]
 * link:https://www.veeam.com/documentation-guides-datasheets.html?productId=8&version=product%3A8%2F221[Veeam Backup and Replication^]
 
-_By Oliver Haensel and Aron Klein_
+
