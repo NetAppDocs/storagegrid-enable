@@ -10,7 +10,8 @@ summary: With StorageGRID 11.6 syslog forward feature, you can configure a exter
 :imagesdir: ../media/
 
 [.lead]
-With the StorageGRID 11.6 syslog forward feature, you can configure an external syslog server to collect and analyze StorageGRID log messages.  ELK (Elasticsearch, Logstash, Kibana) has become one of the most popular log analytics solutions.  Watch the https://media.netapp.com/video-detail/3d090a61-23d7-5ad7-9746-4cebbb7452fb/storagegrid-log-analysis-using-elk-stack[StorageGRID log analysis using ELK video^] to view a sample ELK configuration and how it can be used to identify and troubleshoot failed S3 requests.  
+With the StorageGRID syslog forward feature, you can configure an external syslog server to collect and analyze StorageGRID log messages.  ELK (Elasticsearch, Logstash, Kibana) has become one of the most popular log analytics solutions.  Watch the https://media.netapp.com/video-detail/3d090a61-23d7-5ad7-9746-4cebbb7452fb/storagegrid-log-analysis-using-elk-stack[StorageGRID log analysis using ELK video^] to view a sample ELK configuration and how it can be used to identify and troubleshoot failed S3 requests.  
+StorageGRID 11.9 supports exporting load balancer endpoint access log to external syslog server. Watch this https://youtu.be/hnnT0QqLSgA?si=tDMPc4bdbqumYzFz[Youtube Video^] to learn more about this new feature.
 This article provides sample files of Logstash configuration, Kibana queries, charts and dashboard to give you a quick start for StorageGRID log management and analytics.
 
 == Requirements
@@ -28,6 +29,9 @@ This article provides sample files of Logstash configuration, Kibana queries, ch
     *md5 checksum* e11bae3a662f87c310ef363d0fe06835 +
     *sha256 checksum* 5c670755742cfdfd5aa723a596ba087e0153a65bcaef3934afdb682f61cd278d   
 
+* link:../media/elk-config/elk8-sample-for-sg119.zip[Download the Logstash 8.x sample files package for StorageGRID 11.9] +
+    *md5 checksum* 41272857c4a54600f95995f6ed74800d +
+    *sha256 checksum* 67048ee8661052719990851e1ad960d4902fe537a6e135e8600177188da677c9   
 
 == Assumption
 
@@ -118,6 +122,7 @@ The following Kibana objects are imported: +
 * bycast log s3 related messages +
 * loglevel warning or above +
 * failed security event +
+* nginx-gw endpoint access log (available only in elk8-sample-for-sg119.zip) +
 *Chart* +
 * s3 requests count based on bycast.log +
 * HTTP status code +
