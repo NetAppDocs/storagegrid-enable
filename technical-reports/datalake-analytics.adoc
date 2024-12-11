@@ -9,9 +9,6 @@ summary: 'This report covers big data analytics on StorageGRID.'
 :icons: font
 :imagesdir: ../media/
 
-[.lead]
-_By Angela Cheng_
-
 == NetApp StorageGRID use cases
 
 NetApp StorageGRID object storage solution offers scalability, data availability, security, and high performance. Organizations of all sizes and across various industries use StorageGRID S3 for a wide range of use cases. Let's explore some typical scenarios:
@@ -25,8 +22,6 @@ NetApp StorageGRID object storage solution offers scalability, data availability
 *Data storage for applications:* StorageGRID S3 can be used as a storage backend for applications, enabling developers to easily store and retrieve files, images, videos, and other types of data.
 
 *Content delivery:* StorageGRID S3 can be used to store and deliver static website content, media files, and software downloads to users around the world, leveraging StorageGRID's geo distribution and global namespace for fast and reliable content delivery.
-
-*Data Tiering:* NetApp customers use ONTAP FabricPool feature to automatically move data between a high-performance local tier to StorageGRID. Tiering frees up expensive flash storage for hot data while keep cold data readily available from low-cost object storage. This maximizes performance and savings.
 
 *Data Archive:* StorageGRID offers different storage types and supports tiering to public long term low-cost storage options, make it an ideal solution for archiving and long-term retention of data that needs to be retained for compliance or historical purposes.
 
@@ -98,7 +93,7 @@ all range GET |80% range get of 2KB to 2MB from 32MB objects, 50 - 100 requests/
 |TPCDS 99 queries +
 total minutes (cache disabled) |30 |28 |22 
 |TPCDS 99 queries +
-total minutes (cache enabled) |22 |28 |21.5
+total minutes ^2^ (cache enabled) |22 |28 |21.5
 4+a|S3 Requests breakdown
 |GET (cache disabled) |2,154,747 |938,639 |931,582
 |GET (cache enabled) |5,389 |30,158 |3,281
@@ -111,6 +106,7 @@ all range GET |Range GET size: 67% 1MB, 15% 100KB, 10% 500KB, 3000 - 4000 reques
 (existent object) |1,261 |509 |509
 |Total requests (cache disabled) |2,156,578 |939,148 |932,071
 |===
+^2^ Trino/Starburst performance is bottlenecked by compute resources; adding more RAM to the cluster reduces the total query time. 
 
 As shown in the first table, Hive is significantly slower than other modern data lakehouse ecosystems. We observed that Hive sent a large number of S3 list-objects requests, which are typically slow on all object storage platforms, especially when dealing with buckets containing many objects. This significantly increases the overall query duration. Additionally, modern lakehouse ecosystems can send a high number of GET requests in parallel, ranging from 2,000 to 5,000 requests per second, compared to Hive’s 50 to 100 requests per second. The standard filesystem mimicry by Hive and Hadoop S3A contributes to Hive’s slowness when interacting with S3 object storage.
 
