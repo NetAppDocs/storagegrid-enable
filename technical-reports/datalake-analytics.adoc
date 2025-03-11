@@ -56,12 +56,12 @@ https://www.dremio.com/wp-content/uploads/2023/02/apache-Iceberg-TDG_ER1.pdf?ali
 ** Cluster of VMs, each with 128G RAM and 24 vCPU, SSD storage for system disk
 ** Hadoop 3.3.5 with Hive 3.1.3 (1 name node + 4 data nodes)
 ** Delta Lake with Spark 3.2.0 (1 master + 4 workers) and Hadoop 3.3.5
-** Dremio v25.2 (1 cordinator + 5 executors)
-** Trino v438 (1 cordinator + 5 workers)
-** Starburst v453 (1 cordinator + 5 workers)
+** Dremio v25.2 (1 coordinator + 5 executors)
+** Trino v438 (1 coordinator + 5 workers)
+** Starburst v453 (1 coordinator + 5 workers)
 * Object storage
 ** NetApp^®^ StorageGRID^®^ 11.8 with 3 x SG6060 + 1x SG1000 load balancer
-** Object protection - 2 copies (result is similiar with EC 2+1)
+** Object protection - 2 copies (result is similar with EC 2+1)
 * Database size 1000GB
 * Cache was disabled across all ecosystems for each query test using the Parquet format. For the Iceberg format, we compared the number of S3 GET requests and total query time between cache-disabled and cache-enabled scenarios.
 
