@@ -9,9 +9,6 @@ summary: 'This report covers big data analytics on StorageGRID.'
 :icons: font
 :imagesdir: ../media/
 
-[.lead]
-_By Angela Cheng_
-
 == NetApp StorageGRID use cases
 
 NetApp StorageGRID object storage solution offers scalability, data availability, security, and high performance. Organizations of all sizes and across various industries use StorageGRID S3 for a wide range of use cases. Let's explore some typical scenarios:
@@ -59,12 +56,12 @@ https://www.dremio.com/wp-content/uploads/2023/02/apache-Iceberg-TDG_ER1.pdf?ali
 ** Cluster of VMs, each with 128G RAM and 24 vCPU, SSD storage for system disk
 ** Hadoop 3.3.5 with Hive 3.1.3 (1 name node + 4 data nodes)
 ** Delta Lake with Spark 3.2.0 (1 master + 4 workers) and Hadoop 3.3.5
-** Dremio v23 (1 cordinator + 5 executors)
-** Trino v438 (1 cordinator + 5 workers)
-** Starburst v453 (1 cordinator + 5 workers)
+** Dremio v25.2 (1 coordinator + 5 executors)
+** Trino v438 (1 coordinator + 5 workers)
+** Starburst v453 (1 coordinator + 5 workers)
 * Object storage
 ** NetApp^®^ StorageGRID^®^ 11.8 with 3 x SG6060 + 1x SG1000 load balancer
-** Object protection - 2 copies (result is similiar with EC 2+1)
+** Object protection - 2 copies (result is similar with EC 2+1)
 * Database size 1000GB
 * Cache was disabled across all ecosystems for each query test using the Parquet format. For the Iceberg format, we compared the number of S3 GET requests and total query time between cache-disabled and cache-enabled scenarios.
 
@@ -75,17 +72,17 @@ TPC-DS includes 99 complex SQL queries designed for benchmarking. We measured th
 |===
 |Ecosystem |Hive |Delta Lake |Dremio |Trino |Starburst
 |TPCDS 99 queries +
-total minutes |1084 ^1^ |55 |47 |32 |28
+total minutes |1084 ^1^ |55 |36 |32 |28
 6+a|S3 Requests breakdown 
-|GET |1,117,184 |2,074,610 |4,414,227 |1,504,212 |1,495,039
+|GET |1,117,184 |2,074,610 |3,939,690 |1,504,212 |1,495,039
 |observation: +
-all range GET |80% range get of 2KB to 2MB from 32MB objects, 50 - 100 requests/sec |73% range get below 100KB from 32MB objects, 1000 - 1400 requests/sec |90% 1M byte range get from 256MB objects, 2000 - 2300 requests/sec |Range GET size: 50% below 100KB, 16% around 1MB, 27% 2MB-9MB, 3500 - 4000 requests/sec |Range GET size: 50% below 100KB, 16% around 1MB, 27% 2MB-9MB, 4000 - 5000 request/sec 
-|List objects |312,053 |24,158 |240 |509 |512
+all range GET |80% range get of 2KB to 2MB from 32MB objects, 50 - 100 requests/sec |73% range get below 100KB from 32MB objects, 1000 - 1400 requests/sec |90% 1M byte range get from 256MB objects, 2500 - 3000 requests/sec |Range GET size: 50% below 100KB, 16% around 1MB, 27% 2MB-9MB, 3500 - 4000 requests/sec |Range GET size: 50% below 100KB, 16% around 1MB, 27% 2MB-9MB, 4000 - 5000 request/sec 
+|List objects |312,053 |24,158 |120 |509 |512
 |HEAD +
-(non-existent object) |156,027 |12,103 |192 |0 |0
+(non-existent object) |156,027 |12,103 |96 |0 |0
 |HEAD +
-(existent object) |982,126 |922,732 |1,845 |0 |0
-|Total requests |2,567,390 |3,033,603 |4,416,504 |1,504,721 |1,499,551
+(existent object) |982,126 |922,732 |0 |0 |0
+|Total requests |2,567,390 |3,033,603 |3.939,906 |1,504,721 |1,499,551
 |===
 ^1^ Hive unable to complete query number 72
 
@@ -94,20 +91,20 @@ all range GET |80% range get of 2KB to 2MB from 32MB objects, 50 - 100 requests/
 |===
 |Ecosystem |Dremio |Trino |Starburst
 |TPCDS 99 queries +
-total minutes (cache disabled) |30 |28 |22 
+total minutes (cache disabled) |22 |28 |22 
 |TPCDS 99 queries +
-total minutes ^2^ (cache enabled) |22 |28 |21.5
+total minutes ^2^ (cache enabled) |16 |28 |21.5
 4+a|S3 Requests breakdown
-|GET (cache disabled) |2,154,747 |938,639 |931,582
-|GET (cache enabled) |5,389 |30,158 |3,281
+|GET (cache disabled) |1,985,922 |938,639 |931,582
+|GET (cache enabled) |611,347 |30,158 |3,281
 |observation: +
-all range GET |Range GET size: 67% 1MB, 15% 100KB, 10% 500KB, 3000 - 4000 requests/sec |Range GET size: 42% below 100KB, 17% around 1MB, 33% 2MB-9MB, 3500 - 4000 requests/sec |Range GET size: 43% below 100KB, 17% around 1MB, 33% 2MB-9MB, 4000 - 5000 requests/sec
-|List objects |284 |0 |0 
+all range GET |Range GET size: 67% 1MB, 15% 100KB, 10% 500KB, 3500 - 4500 requests/sec |Range GET size: 42% below 100KB, 17% around 1MB, 33% 2MB-9MB, 3500 - 4000 requests/sec |Range GET size: 43% below 100KB, 17% around 1MB, 33% 2MB-9MB, 4000 - 5000 requests/sec
+|List objects |1465 |0 |0 
 |HEAD +
-(non-existent object) |284 |0 |0
+(non-existent object) |1464 |0 |0
 |HEAD +
-(existent object) |1,261 |509 |509
-|Total requests (cache disabled) |2,156,578 |939,148 |932,071
+(existent object) |3,702 |509 |509
+|Total requests (cache disabled) |1,992,553 |939,148 |932,071
 |===
 ^2^ Trino/Starburst performance is bottlenecked by compute resources; adding more RAM to the cluster reduces the total query time. 
 
