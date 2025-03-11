@@ -7,7 +7,7 @@ summary: 'Steps to access StorageGRID evaluation software for a prospective cust
 = Steps to access StorageGRID evaluation software
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 This instruction is for NetApp sales, partners, and prospects engaged with NetApp.

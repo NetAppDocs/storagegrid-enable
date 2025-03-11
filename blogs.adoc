@@ -7,7 +7,7 @@ summary: 'You can find some NetApp StorageGRID blogs here.'
 = NetApp StorageGRID Blogs
 :hardbreaks:
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 [.lead]
 You can find some great NetApp StorageGRID blogs here:

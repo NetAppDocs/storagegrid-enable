@@ -34,23 +34,23 @@ link:https://docs.netapp.com/us-en/storagegrid-118/expand/updating-subnets-for-g
 . Log in to the primary Admin Node, use change-ip to make Grid IP change, must *stage* the change before shutdown the node for relocation.  
 .. Select 2 then 1 for Grid IP change
 +
-image:site-relocation/ip-change-1.png[]
+image:site-relocation/ip-change-1.png[change-ip edit]
 
 .. select 5 to show changes
 +
-image:site-relocation/ip-change-2.png[]
+image:site-relocation/ip-change-2.png[validate]
 .. select 10 to validate and apply the change.
 +
-image:site-relocation/ip-change-3.png[]
+image:site-relocation/ip-change-3.png[stage changes]
 .. Must select *stage* in this step.
 +
-image:site-relocation/ip-change-4.png[]
+image:site-relocation/ip-change-4.png[Restart admin manually]
 .. If primary admin node is included in above change, Enter *'a' to restart primary admin node manually*
 +
-image:site-relocation/ip-change-5.png[]
+image:site-relocation/ip-change-5.png[Previous menu]
 .. Press enter to return to previous menu and exit from change-ip interface.
 +
-image:site-relocation/ip-change-6.png[]
+image:site-relocation/ip-change-6.png[Continue]
 . From Grid Manager, download the new recovery package. *Grid manager* > *Maintenance* > *Recovery package*
 . If VLAN change is required on StorageGRID appliance, see the section <<Appliance VLAN change>>.
 . Shutdown all nodes and/or appliances at the site, label/remove disk drives if necessary, unrack, pack and move. 
