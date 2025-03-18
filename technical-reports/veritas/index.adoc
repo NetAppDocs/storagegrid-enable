@@ -28,8 +28,6 @@ To learn more about the information that is described in this document, review t
 https://docs.netapp.com/us-en/storagegrid-118/
 * NetApp StorageGRID Enablement
 https://docs.netapp.com/us-en/storagegrid-enable/
-* StorageGRID Documentation Resources page 
-https://www.netapp.com/data-storage/storagegrid/documentation/
 * NetApp Product Documentation 
 https://www.netapp.com/support-and-training/documentation/ 
 
