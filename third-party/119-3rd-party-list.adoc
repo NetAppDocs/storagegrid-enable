@@ -70,7 +70,7 @@ These solutions have been tested in collaboration with the respective partners.
 * Varnish Enterprise 6.0.4
 * Veeam 12
 * Veritas Enterprise Vault 15.1
-* Veritas NetBackup 8.0
+* Veritas NetBackup 10.1.1 and later
 * Vertica 10.x
 * Vidispine
 * Virtalica StorageFabric
