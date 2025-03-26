@@ -14,8 +14,8 @@ This instruction is for NetApp sales, partners, and prospects engaged with NetAp
 
 == Register for an account
 . Register for an account on the https://mysupport.netapp.com/site/user/registration[NetApp Support site] using your business email.
-.. If you already have an account, proceed with the next step.
-. Log in with the created account.
+.. Do not Log in with the newly created account.
+.. If you already have an account, make sure you are not signed in and proceed with the next step.
 . Create a non-technical support case to elevate access levels to "prospect." To do this, click on the "https://mysupport.netapp.com/site/help?relevanturl=%2Fuser%2Fregistration[Report an Issue]" link in the footer of the website.
 . Select "Registration Issue" as the feedback category.
 . In the comments section, write: "I would like to get prospect access to download the StorageGRID evaluation software."
