@@ -1,4 +1,4 @@
- ---
+---
 permalink: product-feature-guides/achieve-zero-rpo.html
 sidebar: sidebar
 keywords: rpo, zero, rto, on-premises, storagegrid, object, replication, synchronous
