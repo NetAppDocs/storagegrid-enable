@@ -197,8 +197,6 @@ To add an extra layer of redundancy, this scenario will employ two StorageGRID C
 
 The solution will use four locations equally divided into two regions. Region 1 will contain the 2 storage sites of grid 1 as the primary grid of the region and the metadata site of grid 2. Region 2 will contain the 2 storage sites of grid 2 as the primary grid of the region and the metadata site of grid 1. In each region the same location can house the storage site of the primary grid of the region as well as the metadata only site of the other regions grid. Using metadata only nodes as the third site will provide the consistency required for the metadata and not duplicate the storage of objects in that location.
 
-[#_Toc194401905 .anchor]####Figure 5) The four site multi-grid solution
-
 image:zero-rpo/2x-grid-3-site.png[The four site multi-grid solution]
 
 This solution with four separate locations provides complete redundancy of two separate StorageGRID systems maintaining an RPO of 0 and will make use of both multi-site synchronous replication, and multi-grid asynchronous replication. Any single site can fail while maintaining uninterrupted client operations on both StorageGRID systems.
