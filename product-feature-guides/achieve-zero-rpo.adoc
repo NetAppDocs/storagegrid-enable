@@ -1,5 +1,5 @@
  ---
-permalink: technical-reports/achieve-zero-rpo.html
+permalink: product-feature-guides/achieve-zero-rpo.html
 sidebar: sidebar
 keywords: rpo, zero, rto, on-premises, storagegrid, object, replication, synchronous
 summary: 'This technical report outlines the implementation of StorageGRID replication strategies to achieve a Recovery Point Objective (RPO) of 0 in the event of a site failure.'
