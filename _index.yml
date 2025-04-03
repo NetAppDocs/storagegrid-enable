@@ -29,6 +29,8 @@ indexpage:
         url: "/third-party/112-3rd-party-list.html"
     - title: Product feature guides
       links:
+      - title: Achieving zero RPO with StorageGRID
+        url: "/product-feature-guides/achieve-zero-rpo.html"
       - title: Create Cloud Storage Pool for AWS or Google
         url: /product-feature-guides/create-cloud-storage-pool-aws-google-cloud.html
       - title: Create Cloud Storage Pool for Azure Blob storage
