@@ -69,9 +69,14 @@ To generate the permissions for a StorageGRID group policy:
 
 image:policy/group-generic.png[Generate a group policy]
 
-image:policy/bucket-generic.png[Generate a bucket policy]
+To generate the permissions for a bucket policy: 
+* choose the S3 Bucket Policy for the type of policy. 
+* Select the button for the desired effect - Allow or Deny. It is a good practice to start your policies with the deny permissions and then add the allow permissions
+* Type in the user or group information for the Principal.
+* In the actions drop-down click the box next to as many of the S3 actions you want to include in this permission or the "All Actions" box.
+* type in the bucket paths in the Amazon Resource Name (ARN) box. include "arn:aws:s3:::" before the bucket name. ex. "arn:aws:s3:::examplebucket"
 
-image:policy/s3-actions-generic.png[Select all desired actions]
+image:policy/bucket-generic.png[Generate a bucket policy]
 
 For an example, if you wanted to generate a bucket policy to allow all users to perform GetObject operations on all objects in the bucket, while only users belonging the group "Marketing" in the specified account are allowed full access.
 
