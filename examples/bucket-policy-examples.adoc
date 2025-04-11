@@ -166,6 +166,8 @@ This group policy will restrict users from deleting versioned objects by version
 
 == Bucket Policies
 
+=== Restrict user deletes of versioned objects in a bucket
+
 This bucket policy will restrict a user(identified by userID "56622399308951294926") from deleting versioned objects by versionID
 
 [source,json]
