@@ -2,7 +2,7 @@
 permalink: examples/bucket-policy-examples.html
 sidebar: sidebar
 keywords: iam, bucket policy, group policy, policy
-summary: 'Here are examples of bucket policies and group policies(IAM Policies).'
+summary: 'Here are example Policies and permissions in StorageGRID S3.'
 ---
 = Example bucket and Group(IAM) policies
 :hardbreaks:
@@ -10,7 +10,50 @@ summary: 'Here are examples of bucket policies and group policies(IAM Policies).
 :imagesdir: ../media/
 
 [.lead]
-Here are examples of bucket policies and group policies(IAM Policies).
+Here are example Policies and permissions in StorageGRID S3.
+
+== The structure of a policy
+In StorageGRID, group policies are functionally equivelent to AWS user (IAM) policies.
+Bucket and group policies share most of the same elements. Policies are built in json format and can be generated using the https://awspolicygen.s3.amazonaws.com/policygen.html[AWS policy generator]
+
+All policies will define the effect, principal(s), action(s), and resource(s).
+
+The *Effect* will be either to Allow or Deny the request.
+The *Principal* is the account(s)/user(s) being granted or denied the abilities. This can be defined as a wildcard "*" or a local or federated user or group from within the tenant the bucket resides, or another tenant in the grid. The user or group can be identified by name or ID string.
+The *Action* is the set of S3 operations being granted or denied to the user(s). 
+
+NOTE: Users must have the s3:ListBucket action Allowed in order to perform any other S3 actions.
+
+The *Resource* is the bucket or buckets the principals being granted or denied the ability to perform the actions on.
+Optionally there can be a *Condition* for when the policy action is valid.
+
+The format of the Json polict will look like this:
+[source,json]
+----
+{
+  "Statement": [
+    {
+      "Sid": "Custom name for this permission",
+      "Effect": "Allow or Deny",
+      "Principal": {
+        "AWS": "arn:aws:iam::Tenant_ID:federated-group/Group_Name",
+        "AWS": "arn:aws:iam::Tenant_ID:group/Group_Name",
+        "AWS": "arn:aws:iam::Tenant_ID::federated-user/User_Name",  
+        "AWS": "User_Name"    
+      },
+      "Action": [
+        "s3:ListBucket",
+        "s3:Other_Action"
+      ],
+      "Resource": [
+        "arn:aws:s3:::Example_Bucket",
+        "arn:aws:s3:::Example_Bucket/*"
+      ],
+    }
+  ]
+}
+----
+
 
 == Group Policies (IAM)
 
@@ -19,6 +62,7 @@ This group policy will only allow users to access objects in the bucket named th
 
 [source,json]
 ----
+{
 "Statement": [
     {
       "Sid": "AllowListBucketOfASpecificUserPrefix",
@@ -120,6 +164,8 @@ This group policy will restrict users from deleting versioned objects by version
 }
 ----
 
+== Bucket Policies
+
 This bucket policy will restrict a user(identified by userID "56622399308951294926") from deleting versioned objects by versionID
 
 [source,json]
@@ -151,6 +197,7 @@ This bucket policy will restrict a user(identified by userID "566223993089512949
   ]
 }
 ----
+
 === Restrict bucket to single user with read-only access
 This policy allows a single user to have read-only access to a bucket and explicitly denys access to all other users. Grouping the Deny statements at the top of the policy is a good practice for faster evaluation.
 [source,json]
@@ -161,29 +208,29 @@ This policy allows a single user to have read-only access to a bucket and explic
             "Sid": "Deny non user1",
             "Effect": "Deny",
             "NotPrincipal": {
-                "AWS": "urn:sgws:identity::34921514133002833665:user/user1"
+                "AWS": "arn:aws:iam::34921514133002833665:user/user1"
             },
             "Action": [
                 "s3:*"
             ],
             "Resource": [
-                "urn:sgws:s3:::bucket1",
-                "urn:sgws:s3:::bucket1/*"
+                "arn:aws:s3:::bucket1",
+                "arn:aws:s3:::bucket1/*"
             ]
         },
         {
             "Sid": "Allow user1 read access to bucket bucket1",
             "Effect": "Allow",
             "Principal": {
-                "AWS": "urn:sgws:identity::34921514133002833665:user/user1"
+                "AWS": "arn:aws:iam::34921514133002833665:user/user1"
             },
             "Action": [
                 "s3:GetObject",
                 "s3:ListBucket"
             ],
             "Resource": [
-                "urn:sgws:s3:::bucket1",
-                "urn:sgws:s3:::bucket1/*"
+                "arn:aws:s3:::bucket1",
+                "arn:aws:s3:::bucket1/*"
             ]
         }
     ]
