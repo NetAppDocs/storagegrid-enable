@@ -22,7 +22,7 @@ The *Effect* will be either to Allow or Deny the request.
 The *Principal* is the account(s)/user(s) being granted or denied the abilities. This can be defined as a wildcard "++*++" or a local or federated user or group from within the tenant the bucket resides, or another tenant in the grid. The user or group can be identified by name or ID string.
 The *Action* is the set of S3 operations being granted or denied to the user(s). 
 
-NOTE: Users must have the s3:ListBucket action Allowed in order to perform any other S3 actions.
+NOTE: The s3:ListBucket action Allowed is required for users to perform any S3 actions.
 
 The *Resource* is the bucket or buckets the principals being granted or denied the ability to perform the actions on.
 Optionally there can be a *Condition* for when the policy action is valid.
