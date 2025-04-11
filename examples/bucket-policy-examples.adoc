@@ -13,7 +13,10 @@ summary: 'Here are example Policies and permissions in StorageGRID S3.'
 Here are example Policies and permissions in StorageGRID S3.
 
 == The structure of a policy
-In StorageGRID, group policies are functionally equivelent to AWS user (IAM) policies.
+In StorageGRID, group policies are the same as AWS user (IAM) S3 service policies. 
+
+Group policies are required in StorageGRID. A user with S3 access keys but not assigned to a user group, or assigned to a group without a policy granting some permissions, will not be able to access any data. 
+
 Bucket and group policies share most of the same elements. Policies are built in json format and can be generated using the https://awspolicygen.s3.amazonaws.com/policygen.html[AWS policy generator]
 
 All policies will define the effect, action(s), and resource(s). Bucket policies will also definition a principal.
@@ -53,6 +56,134 @@ The format of the Json polict will look like this:
   ]
 }
 ----
+
+== Using the AWS policy generator
+
+The AWS policy generator is a great tool to assist with getting the json code with the correct format and information you are trying to implement.
+
+To generate the permissions for a StorageGRID group policy: 
+* choose the IAM policy for the type of policy. 
+* Select the button for the desired effect - Allow or Deny. It is a good practice to start your policies with the deny permissions and then add the allow permissions
+* In the actions drop-down click the box next to as many of the S3 actions you want to include in this permission or the "All Actions" box.
+* type in the bucket paths in the Amazon Resource Name (ARN) box. include "arn:aws:s3:::" before the bucket name. ex. "arn:aws:s3:::examplebucket"
+
+image:policy/group-generic.png[Generate a group policy]
+
+image:policy/bucket-generic.png[Generate a bucket policy]
+
+image:policy/s3-actions-generic.png[Select all desired actions]
+
+For an example, if you wanted to generate a bucket policy to allow all users to perform GetObject operations on all objects in the bucket, while only users belonging the group "Marketing" in the specified account are allowed full access.
+
+* Select S3 Bucket Policy as the policy type.
+* Choose the Allow effect
+* Enter the Marketing group information - arn:aws:iam::95390887230002558202:federated-group/Marketing 
+* Click the box for "All Actions"
+* Enter the bucket information - arn:aws:s3:::examplebucket,arn:aws:s3:::examplebucket/*
+
+image:policy/example-bucket1.png[Generate the first permission in the policy]
+
+* click the "Add Statement" button
+
+image:policy/permission1.png[First permission in the policy entered]
+
+* Choose the Allow effect
+* Enter the asterisk ++*++ for everyone 
+* Click the box next to GetObject and ListBucket actions"
+
+image:policy/getobject.png[Select GetObject]
+image:policy/listbucket.png[Select ListBucket]
+
+* Enter the bucket information - arn:aws:s3:::examplebucket,arn:aws:s3:::examplebucket/*
+
+image:policy/example-bucket2.png[Generate the second permission in the policy]
+
+* click the "Add Statement" button
+
+image:policy/permission3.png[Second permission in the policy]
+
+* Click on the button "Generate Policy" and a pop-up window will appear with your generated policy.
+
+image:policy/example-output.png[The final output]
+
+* Copy out the complete json text that should look like this:
+
+[source,json]
+----
+{
+  "Id": "Policy1744399292233",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1744399152830",
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::examplebucket",
+        "arn:aws:s3:::examplebucket/*"
+      ],
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::95390887230002558202:federated-group/Marketing"
+        ]
+      }
+    },
+    {
+      "Sid": "Stmt1744399280838",
+      "Action": [
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::examplebucket",
+        "arn:aws:s3:::examplebucket/*"
+      ],
+      "Principal": "*"
+    }
+  ]
+}
+----
+
+This json can be used as is, or you can remove the ID and Version lines above the "Statement" line and you can customize the Sid for each permission with a more meaningful title for each permission or these can be removed as well.
+
+For example:
+
+[source,json]
+----
+{
+  "Statement": [
+    {
+      "Sid": "MarketingAllowFull",
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::examplebucket",
+        "arn:aws:s3:::examplebucket/*"
+      ],
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::95390887230002558202:federated-group/Marketing"
+        ]
+      }
+    },
+    {
+      "Sid": "EveryoneReadOnly",
+      "Action": [
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::examplebucket",
+        "arn:aws:s3:::examplebucket/*"
+      ],
+      "Principal": "*"
+    }
+  ]
+}
+----
+
 
 
 == Group Policies (IAM)
