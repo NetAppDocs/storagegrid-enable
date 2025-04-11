@@ -16,10 +16,10 @@ Here are example Policies and permissions in StorageGRID S3.
 In StorageGRID, group policies are functionally equivelent to AWS user (IAM) policies.
 Bucket and group policies share most of the same elements. Policies are built in json format and can be generated using the https://awspolicygen.s3.amazonaws.com/policygen.html[AWS policy generator]
 
-All policies will define the effect, principal(s), action(s), and resource(s).
+All policies will define the effect, action(s), and resource(s). Bucket policies will also definition a principal.
 
 The *Effect* will be either to Allow or Deny the request.
-The *Principal* is the account(s)/user(s) being granted or denied the abilities. This can be defined as a wildcard "*" or a local or federated user or group from within the tenant the bucket resides, or another tenant in the grid. The user or group can be identified by name or ID string.
+The *Principal* is the account(s)/user(s) being granted or denied the abilities. This can be defined as a wildcard "++*++" or a local or federated user or group from within the tenant the bucket resides, or another tenant in the grid. The user or group can be identified by name or ID string.
 The *Action* is the set of S3 operations being granted or denied to the user(s). 
 
 NOTE: Users must have the s3:ListBucket action Allowed in order to perform any other S3 actions.
