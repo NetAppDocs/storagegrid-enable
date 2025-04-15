@@ -30,7 +30,7 @@ NOTE: The s3:ListBucket action Allowed is required for users to perform any S3 a
 The *Resource* is the bucket or buckets the principals being granted or denied the ability to perform the actions on.
 Optionally there can be a *Condition* for when the policy action is valid.
 
-The format of the Json polict will look like this:
+The format of the Json policy will look like this:
 [source,json]
 ----
 {
@@ -65,7 +65,7 @@ To generate the permissions for a StorageGRID group policy:
 * choose the IAM policy for the type of policy. 
 * Select the button for the desired effect - Allow or Deny. It is a good practice to start your policies with the deny permissions and then add the allow permissions
 * In the actions drop-down click the box next to as many of the S3 actions you want to include in this permission or the "All Actions" box.
-* type in the bucket paths in the Amazon Resource Name (ARN) box. include "arn:aws:s3:::" before the bucket name. ex. "arn:aws:s3:::examplebucket"
+* type in the bucket paths in the Amazon Resource Name (ARN) box. include "arn:aws:s3:::" before the bucket name. ex. "arn:aws:s3:::example_bucket"
 
 image:policy/group-generic.png[Generate a group policy]
 
@@ -74,7 +74,7 @@ To generate the permissions for a bucket policy:
 * Select the button for the desired effect - Allow or Deny. It is a good practice to start your policies with the deny permissions and then add the allow permissions
 * Type in the user or group information for the Principal.
 * In the actions drop-down click the box next to as many of the S3 actions you want to include in this permission or the "All Actions" box.
-* type in the bucket paths in the Amazon Resource Name (ARN) box. include "arn:aws:s3:::" before the bucket name. ex. "arn:aws:s3:::examplebucket"
+* type in the bucket paths in the Amazon Resource Name (ARN) box. include "arn:aws:s3:::" before the bucket name. ex. "arn:aws:s3:::example_bucket"
 
 image:policy/bucket-generic.png[Generate a bucket policy]
 
@@ -84,7 +84,7 @@ For an example, if you wanted to generate a bucket policy to allow all users to 
 * Choose the Allow effect
 * Enter the Marketing group information - arn:aws:iam::95390887230002558202:federated-group/Marketing 
 * Click the box for "All Actions"
-* Enter the bucket information - arn:aws:s3:::examplebucket,arn:aws:s3:::examplebucket/*
+* Enter the bucket information - arn:aws:s3:::example_bucket,arn:aws:s3:::example_bucket/*
 
 image:policy/example-bucket1.png[Generate the first permission in the policy]
 
@@ -99,13 +99,13 @@ image:policy/permission1.png[First permission in the policy entered]
 image:policy/getobject.png[Select GetObject]
 image:policy/listbucket.png[Select ListBucket]
 
-* Enter the bucket information - arn:aws:s3:::examplebucket,arn:aws:s3:::examplebucket/*
+* Enter the bucket information - arn:aws:s3:::example_bucket,arn:aws:s3:::example_bucket/*
 
 image:policy/example-bucket2.png[Generate the second permission in the policy]
 
 * click the "Add Statement" button
 
-image:policy/permission3.png[Second permission in the policy]
+image:policy/permission2.png[Second permission in the policy]
 
 * Click on the button "Generate Policy" and a pop-up window will appear with your generated policy.
 
@@ -124,8 +124,8 @@ image:policy/example-output.png[The final output]
       "Action": "s3:*",
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:s3:::examplebucket",
-        "arn:aws:s3:::examplebucket/*"
+        "arn:aws:s3:::example_bucket",
+        "arn:aws:s3:::example_bucket/*"
       ],
       "Principal": {
         "AWS": [
@@ -141,8 +141,8 @@ image:policy/example-output.png[The final output]
       ],
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:s3:::examplebucket",
-        "arn:aws:s3:::examplebucket/*"
+        "arn:aws:s3:::example_bucket",
+        "arn:aws:s3:::example_bucket/*"
       ],
       "Principal": "*"
     }
@@ -163,8 +163,8 @@ For example:
       "Action": "s3:*",
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:s3:::examplebucket",
-        "arn:aws:s3:::examplebucket/*"
+        "arn:aws:s3:::example_bucket",
+        "arn:aws:s3:::example_bucket/*"
       ],
       "Principal": {
         "AWS": [
@@ -180,8 +180,8 @@ For example:
       ],
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:s3:::examplebucket",
-        "arn:aws:s3:::examplebucket/*"
+        "arn:aws:s3:::example_bucket",
+        "arn:aws:s3:::example_bucket/*"
       ],
       "Principal": "*"
     }
