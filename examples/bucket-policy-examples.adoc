@@ -2,7 +2,7 @@
 permalink: examples/bucket-policy-examples.html
 sidebar: sidebar
 keywords: iam, bucket policy, group policy, policy
-summary: 'Here are examples of bucket policies and group policies(IAM Policies).'
+summary: 'Here are example Policies and permissions in StorageGRID S3.'
 ---
 = Example bucket and Group(IAM) policies
 :hardbreaks:
@@ -10,7 +10,186 @@ summary: 'Here are examples of bucket policies and group policies(IAM Policies).
 :imagesdir: ../media/
 
 [.lead]
-Here are examples of bucket policies and group policies(IAM Policies).
+Here are example Policies and permissions in StorageGRID S3.
+
+== The structure of a policy
+In StorageGRID, group policies are the same as AWS user (IAM) S3 service policies. 
+
+Group policies are required in StorageGRID. A user with S3 access keys but not assigned to a user group, or assigned to a group without a policy granting some permissions, will not be able to access any data. 
+
+Bucket and group policies share most of the same elements. Policies are built in json format and can be generated using the https://awspolicygen.s3.amazonaws.com/policygen.html[AWS policy generator]
+
+All policies will define the effect, action(s), and resource(s). Bucket policies will also definition a principal.
+
+The *Effect* will be either to Allow or Deny the request.
+The *Principal* is the account(s)/user(s) being granted or denied the abilities. This can be defined as a wildcard "++*++" or a local or federated user or group from within the tenant the bucket resides, or another tenant in the grid. The user or group can be identified by name or ID string.
+The *Action* is the set of S3 operations being granted or denied to the user(s). 
+
+NOTE: The s3:ListBucket action Allowed is required for users to perform any S3 actions.
+
+The *Resource* is the bucket or buckets the principals being granted or denied the ability to perform the actions on.
+Optionally there can be a *Condition* for when the policy action is valid.
+
+The format of the Json polict will look like this:
+[source,json]
+----
+{
+  "Statement": [
+    {
+      "Sid": "Custom name for this permission",
+      "Effect": "Allow or Deny",
+      "Principal": {
+        "AWS": "arn:aws:iam::Tenant_ID:federated-group/Group_Name",
+        "AWS": "arn:aws:iam::Tenant_ID:group/Group_Name",
+        "AWS": "arn:aws:iam::Tenant_ID::federated-user/User_Name",  
+        "AWS": "User_Name"    
+      },
+      "Action": [
+        "s3:ListBucket",
+        "s3:Other_Action"
+      ],
+      "Resource": [
+        "arn:aws:s3:::Example_Bucket",
+        "arn:aws:s3:::Example_Bucket/*"
+      ],
+    }
+  ]
+}
+----
+
+== Using the AWS policy generator
+
+The AWS policy generator is a great tool to assist with getting the json code with the correct format and information you are trying to implement.
+
+To generate the permissions for a StorageGRID group policy: 
+* choose the IAM policy for the type of policy. 
+* Select the button for the desired effect - Allow or Deny. It is a good practice to start your policies with the deny permissions and then add the allow permissions
+* In the actions drop-down click the box next to as many of the S3 actions you want to include in this permission or the "All Actions" box.
+* type in the bucket paths in the Amazon Resource Name (ARN) box. include "arn:aws:s3:::" before the bucket name. ex. "arn:aws:s3:::examplebucket"
+
+image:policy/group-generic.png[Generate a group policy]
+
+To generate the permissions for a bucket policy: 
+* choose the S3 Bucket Policy for the type of policy. 
+* Select the button for the desired effect - Allow or Deny. It is a good practice to start your policies with the deny permissions and then add the allow permissions
+* Type in the user or group information for the Principal.
+* In the actions drop-down click the box next to as many of the S3 actions you want to include in this permission or the "All Actions" box.
+* type in the bucket paths in the Amazon Resource Name (ARN) box. include "arn:aws:s3:::" before the bucket name. ex. "arn:aws:s3:::examplebucket"
+
+image:policy/bucket-generic.png[Generate a bucket policy]
+
+For an example, if you wanted to generate a bucket policy to allow all users to perform GetObject operations on all objects in the bucket, while only users belonging the group "Marketing" in the specified account are allowed full access.
+
+* Select S3 Bucket Policy as the policy type.
+* Choose the Allow effect
+* Enter the Marketing group information - arn:aws:iam::95390887230002558202:federated-group/Marketing 
+* Click the box for "All Actions"
+* Enter the bucket information - arn:aws:s3:::examplebucket,arn:aws:s3:::examplebucket/*
+
+image:policy/example-bucket1.png[Generate the first permission in the policy]
+
+* click the "Add Statement" button
+
+image:policy/permission1.png[First permission in the policy entered]
+
+* Choose the Allow effect
+* Enter the asterisk ++*++ for everyone 
+* Click the box next to GetObject and ListBucket actions"
+
+image:policy/getobject.png[Select GetObject]
+image:policy/listbucket.png[Select ListBucket]
+
+* Enter the bucket information - arn:aws:s3:::examplebucket,arn:aws:s3:::examplebucket/*
+
+image:policy/example-bucket2.png[Generate the second permission in the policy]
+
+* click the "Add Statement" button
+
+image:policy/permission3.png[Second permission in the policy]
+
+* Click on the button "Generate Policy" and a pop-up window will appear with your generated policy.
+
+image:policy/example-output.png[The final output]
+
+* Copy out the complete json text that should look like this:
+
+[source,json]
+----
+{
+  "Id": "Policy1744399292233",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1744399152830",
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::examplebucket",
+        "arn:aws:s3:::examplebucket/*"
+      ],
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::95390887230002558202:federated-group/Marketing"
+        ]
+      }
+    },
+    {
+      "Sid": "Stmt1744399280838",
+      "Action": [
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::examplebucket",
+        "arn:aws:s3:::examplebucket/*"
+      ],
+      "Principal": "*"
+    }
+  ]
+}
+----
+
+This json can be used as is, or you can remove the ID and Version lines above the "Statement" line and you can customize the Sid for each permission with a more meaningful title for each permission or these can be removed as well.
+
+For example:
+
+[source,json]
+----
+{
+  "Statement": [
+    {
+      "Sid": "MarketingAllowFull",
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::examplebucket",
+        "arn:aws:s3:::examplebucket/*"
+      ],
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::95390887230002558202:federated-group/Marketing"
+        ]
+      }
+    },
+    {
+      "Sid": "EveryoneReadOnly",
+      "Action": [
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::examplebucket",
+        "arn:aws:s3:::examplebucket/*"
+      ],
+      "Principal": "*"
+    }
+  ]
+}
+----
+
+
 
 == Group Policies (IAM)
 
@@ -19,6 +198,7 @@ This group policy will only allow users to access objects in the bucket named th
 
 [source,json]
 ----
+{
 "Statement": [
     {
       "Sid": "AllowListBucketOfASpecificUserPrefix",
@@ -120,6 +300,10 @@ This group policy will restrict users from deleting versioned objects by version
 }
 ----
 
+== Bucket Policies
+
+=== Restrict user deletes of versioned objects in a bucket
+
 This bucket policy will restrict a user(identified by userID "56622399308951294926") from deleting versioned objects by versionID
 
 [source,json]
@@ -151,6 +335,7 @@ This bucket policy will restrict a user(identified by userID "566223993089512949
   ]
 }
 ----
+
 === Restrict bucket to single user with read-only access
 This policy allows a single user to have read-only access to a bucket and explicitly denys access to all other users. Grouping the Deny statements at the top of the policy is a good practice for faster evaluation.
 [source,json]
@@ -161,29 +346,29 @@ This policy allows a single user to have read-only access to a bucket and explic
             "Sid": "Deny non user1",
             "Effect": "Deny",
             "NotPrincipal": {
-                "AWS": "urn:sgws:identity::34921514133002833665:user/user1"
+                "AWS": "arn:aws:iam::34921514133002833665:user/user1"
             },
             "Action": [
                 "s3:*"
             ],
             "Resource": [
-                "urn:sgws:s3:::bucket1",
-                "urn:sgws:s3:::bucket1/*"
+                "arn:aws:s3:::bucket1",
+                "arn:aws:s3:::bucket1/*"
             ]
         },
         {
             "Sid": "Allow user1 read access to bucket bucket1",
             "Effect": "Allow",
             "Principal": {
-                "AWS": "urn:sgws:identity::34921514133002833665:user/user1"
+                "AWS": "arn:aws:iam::34921514133002833665:user/user1"
             },
             "Action": [
                 "s3:GetObject",
                 "s3:ListBucket"
             ],
             "Resource": [
-                "urn:sgws:s3:::bucket1",
-                "urn:sgws:s3:::bucket1/*"
+                "arn:aws:s3:::bucket1",
+                "arn:aws:s3:::bucket1/*"
             ]
         }
     ]
