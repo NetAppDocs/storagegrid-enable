@@ -105,7 +105,7 @@ image:policy/example-bucket2.png[Generate the second permission in the policy]
 
 * click the "Add Statement" button
 
-image:policy/permission3.png[Second permission in the policy]
+image:policy/permission2.png[Second permission in the policy]
 
 * Click on the button "Generate Policy" and a pop-up window will appear with your generated policy.
 
