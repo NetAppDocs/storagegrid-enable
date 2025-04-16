@@ -22,7 +22,48 @@ Bucket and group policies share most of the same elements. Policies are built in
 All policies will define the effect, action(s), and resource(s). Bucket policies will also definition a principal.
 
 The *Effect* will be either to Allow or Deny the request.
-The *Principal* is the account(s)/user(s) being granted or denied the abilities. This can be defined as a wildcard "++*++" or a local or federated user or group from within the tenant the bucket resides, or another tenant in the grid. The user or group can be identified by name or ID string.
+
+The *Principal* 
+
+* Only applies for bucket policies. 
+* The principal is the account(s)/user(s) being granted or denied the permissions. 
+* Can be defined as:
+** A wildcard "++*++" 
++
+----
+"Principal":"*"
+----
++
+----
+"Principal":{"AWS":"*"}
+----
+
+** A tenant ID for all users in a tenant (equivalent to AWS account)
++
+----
+"Principal": { "AWS": "27233906934684427525" }
+----
+
+** A user (local or federated from within the tenant the bucket resides, or another tenant in the grid)
++
+----
+"Principal": { "AWS": "arn:aws:iam::76233906934699427431:user/tenant1user1" }
+----
++
+----
+"Principal": { "AWS": "arn:aws:iam::27233906934684427525:federated-user/tenant2user1" }
+----
+
+** A group (local or federated from within the tenant the bucket resides, or another tenant in the grid). 
++
+----
+"Principal": { "AWS": "arn:aws:iam::76233906934699427431:group/DevOps"  }
+----
++
+----
+"Principal": { "AWS": "arn:aws:iam::27233906934684427525:federated-group/Managers"  }
+----
+
 The *Action* is the set of S3 operations being granted or denied to the user(s). 
 
 NOTE: The s3:ListBucket action Allowed is required for users to perform any S3 actions.
@@ -39,10 +80,13 @@ The format of the Json policy will look like this:
       "Sid": "Custom name for this permission",
       "Effect": "Allow or Deny",
       "Principal": {
-        "AWS": "arn:aws:iam::Tenant_ID:federated-group/Group_Name",
-        "AWS": "arn:aws:iam::Tenant_ID:group/Group_Name",
-        "AWS": "arn:aws:iam::Tenant_ID::federated-user/User_Name",  
-        "AWS": "User_Name"    
+        "AWS": [
+          "arn:aws:iam::tenant_ID::user/User_Name",  
+          "arn:aws:iam::tenant_ID::federated-user/User_Name",
+          "arn:aws:iam::tenant_ID:group/Group_Name",
+          "arn:aws:iam::tenant_ID:federated-group/Group_Name",
+          "tenant_ID"    
+        ]
       },
       "Action": [
         "s3:ListBucket",
@@ -300,6 +344,74 @@ This group policy will restrict users from deleting versioned objects by version
 }
 ----
 
+=== Restrict a group to single subdirectory (prefix) with read-only access
+This policy allows members of the group to have read-only access to a subdirectory (prefix) within a bucket. The bucket name is "study" and the subdirectory is "study01".
+[source,json]
+----
+{
+    "Statement": [
+        {
+            "Sid": "AllowUserToSeeBucketListInTheConsole",
+            "Action": [
+                "s3:ListAllMyBuckets"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:s3:::*"
+            ]
+        },
+        {
+            "Sid": "AllowRootAndstudyListingOfBucket",
+            "Action": [
+                "s3:ListBucket"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:s3::: study"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "s3:prefix": [
+                        "",
+                        "study01/"
+                    ],
+                    "s3:delimiter": [
+                        "/"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "AllowListingOfstudy01",
+            "Action": [
+                "s3:ListBucket"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:s3:::study"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "s3:prefix": [
+                        "study01/*"
+                    ]
+                }
+            }
+        },
+        {
+            "Sid": "AllowAllS3ActionsInstudy01Folder",
+            "Effect": "Allow",
+            "Action": [
+                "s3:Getobject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::study/study01/*"
+            ]
+        }
+    ]
+}
+----
+
 == Bucket Policies
 
 === Restrict user deletes of versioned objects in a bucket
@@ -369,73 +481,6 @@ This policy allows a single user to have read-only access to a bucket and explic
             "Resource": [
                 "arn:aws:s3:::bucket1",
                 "arn:aws:s3:::bucket1/*"
-            ]
-        }
-    ]
-}
-----
-=== Restrict a group to single subdirectory (prefix) with read-only access
-This policy allows members of the group to have read-only access to a subdirectory (prefix) within a bucket. The bucket name is "study" and the subdirectory is "study01".
-[source,json]
-----
-{
-    "Statement": [
-        {
-            "Sid": "AllowUserToSeeBucketListInTheConsole",
-            "Action": [
-                "s3:ListAllMyBuckets"
-            ],
-            "Effect": "Allow",
-            "Resource": [
-                "arn:aws:s3:::*"
-            ]
-        },
-        {
-            "Sid": "AllowRootAndstudyListingOfBucket",
-            "Action": [
-                "s3:ListBucket"
-            ],
-            "Effect": "Allow",
-            "Resource": [
-                "arn:aws:s3::: study"
-            ],
-            "Condition": {
-                "StringEquals": {
-                    "s3:prefix": [
-                        "",
-                        "study01/"
-                    ],
-                    "s3:delimiter": [
-                        "/"
-                    ]
-                }
-            }
-        },
-        {
-            "Sid": "AllowListingOfstudy01",
-            "Action": [
-                "s3:ListBucket"
-            ],
-            "Effect": "Allow",
-            "Resource": [
-                "arn:aws:s3:::study"
-            ],
-            "Condition": {
-                "StringLike": {
-                    "s3:prefix": [
-                        "study01/*"
-                    ]
-                }
-            }
-        },
-        {
-            "Sid": "AllowAllS3ActionsInstudy01Folder",
-            "Effect": "Allow",
-            "Action": [
-                "s3:Getobject"
-            ],
-            "Resource": [
-                "arn:aws:s3:::study/study01/*"
             ]
         }
     ]
