@@ -22,10 +22,51 @@ Bucket and group policies share most of the same elements. Policies are built in
 All policies will define the effect, action(s), and resource(s). Bucket policies will also definition a principal.
 
 The *Effect* will be either to Allow or Deny the request.
-The *Principal* is the account(s)/user(s) being granted or denied the abilities. This can be defined as a wildcard "++*++" or a local or federated user or group from within the tenant the bucket resides, or another tenant in the grid. The user or group can be identified by name or ID string.
+
+The *Principal* 
+
+* Only applies for bucket policies. 
+* The principal is the account(s)/user(s) being granted or denied the permissions. 
+* Can be defined as:
+** A wildcard "++*++" 
++
+----
+"Principal":"*"
+----
++
+----
+"Principal":{"AWS":"*"}
+----
+
+** A tenant ID for all users in a tenant (equivalent to AWS account)
++
+----
+"Principal": { "AWS": "27233906934684427525" }
+----
+
+** A user (local or federated from within the tenant the bucket resides, or another tenant in the grid)
++
+----
+"Principal": { "AWS": "arn:aws:iam::76233906934699427431:user/tenant1user1" }
+----
++
+----
+"Principal": { "AWS": "arn:aws:iam::27233906934684427525:federated-user/tenant2user1" }
+----
+
+** A group (local or federated from within the tenant the bucket resides, or another tenant in the grid). 
++
+----
+"Principal": { "AWS": "arn:aws:iam::76233906934699427431:group/DevOps"  }
+----
++
+----
+"Principal": { "AWS": "arn:aws:iam::27233906934684427525:federated-group/Managers"  }
+----
+
 The *Action* is the set of S3 operations being granted or denied to the user(s). 
 
-NOTE: The s3:ListBucket action Allowed is required for users to perform any S3 actions.
+NOTE: For Group policies, the s3:ListBucket action Allowed is required for users to perform any S3 actions.
 
 The *Resource* is the bucket or buckets the principals being granted or denied the ability to perform the actions on.
 Optionally there can be a *Condition* for when the policy action is valid.
@@ -39,10 +80,13 @@ The format of the Json policy will look like this:
       "Sid": "Custom name for this permission",
       "Effect": "Allow or Deny",
       "Principal": {
-        "AWS": "arn:aws:iam::Tenant_ID:federated-group/Group_Name",
-        "AWS": "arn:aws:iam::Tenant_ID:group/Group_Name",
-        "AWS": "arn:aws:iam::Tenant_ID::federated-user/User_Name",  
-        "AWS": "User_Name"    
+        "AWS": [
+          "arn:aws:iam::tenant_ID::user/User_Name",  
+          "arn:aws:iam::tenant_ID::federated-user/User_Name",
+          "arn:aws:iam::tenant_ID:group/Group_Name",
+          "arn:aws:iam::tenant_ID:federated-group/Group_Name",
+          "tenant_ID"    
+        ]
       },
       "Action": [
         "s3:ListBucket",
@@ -300,80 +344,6 @@ This group policy will restrict users from deleting versioned objects by version
 }
 ----
 
-== Bucket Policies
-
-=== Restrict user deletes of versioned objects in a bucket
-
-This bucket policy will restrict a user(identified by userID "56622399308951294926") from deleting versioned objects by versionID
-
-[source,json]
-----
-{
-  "Statement": [
-    {
-      "Action": [
-        "s3:DeleteObjectVersion"
-      ],
-      "Effect": "Deny",
-      "Resource": "arn:aws:s3:::verdeny/*",
-      "Principal": {
-        "AWS": [
-          "56622399308951294926"
-        ]
-      }
-    },
-    {
-      "Action": "s3:*",
-      "Effect": "Allow",
-      "Resource": "arn:aws:s3:::verdeny/*",
-      "Principal": {
-        "AWS": [
-          "56622399308951294926"
-        ]
-      }
-    }
-  ]
-}
-----
-
-=== Restrict bucket to single user with read-only access
-This policy allows a single user to have read-only access to a bucket and explicitly denys access to all other users. Grouping the Deny statements at the top of the policy is a good practice for faster evaluation.
-[source,json]
-----
-{
-    "Statement": [
-        {
-            "Sid": "Deny non user1",
-            "Effect": "Deny",
-            "NotPrincipal": {
-                "AWS": "arn:aws:iam::34921514133002833665:user/user1"
-            },
-            "Action": [
-                "s3:*"
-            ],
-            "Resource": [
-                "arn:aws:s3:::bucket1",
-                "arn:aws:s3:::bucket1/*"
-            ]
-        },
-        {
-            "Sid": "Allow user1 read access to bucket bucket1",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::34921514133002833665:user/user1"
-            },
-            "Action": [
-                "s3:GetObject",
-                "s3:ListBucket"
-            ],
-            "Resource": [
-                "arn:aws:s3:::bucket1",
-                "arn:aws:s3:::bucket1/*"
-            ]
-        }
-    ]
-}
-----
 === Restrict a group to single subdirectory (prefix) with read-only access
 This policy allows members of the group to have read-only access to a subdirectory (prefix) within a bucket. The bucket name is "study" and the subdirectory is "study01".
 [source,json]
@@ -441,3 +411,127 @@ This policy allows members of the group to have read-only access to a subdirecto
     ]
 }
 ----
+
+== Bucket Policies
+
+=== Restrict bucket to single user with read-only access
+This policy allows a single user to have read-only access to a bucket and explicitly denys access to all other users. Grouping the Deny statements at the top of the policy is a good practice for faster evaluation.
+[source,json]
+----
+{
+    "Statement": [
+        {
+            "Sid": "Deny non user1",
+            "Effect": "Deny",
+            "NotPrincipal": {
+                "AWS": "arn:aws:iam::34921514133002833665:user/user1"
+            },
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::bucket1",
+                "arn:aws:s3:::bucket1/*"
+            ]
+        },
+        {
+            "Sid": "Allow user1 read access to bucket bucket1",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::34921514133002833665:user/user1"
+            },
+            "Action": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::bucket1",
+                "arn:aws:s3:::bucket1/*"
+            ]
+        }
+    ]
+}
+----
+
+=== restrict a bucket to a few users with read-only access.
+
+[source,json]
+----
+{
+    "Statement": [
+      {            
+        "Sid": "Deny all S3 actions to employees 002-005",
+        "Effect": "deny",
+        "Principal": {
+          "AWS": [
+            "arn:aws:iam::46521514133002703882:user/employee-002",
+            "arn:aws:iam::46521514133002703882:user/employee-003",
+            "arn:aws:iam::46521514133002703882:user/employee-004",
+            "arn:aws:iam::46521514133002703882:user/employee-005"
+          ]
+        },
+        "Action": "*",
+        "Resource": [
+          "arn:aws:s3:::databucket1",
+          "arn:aws:s3:::databucket1/*"
+        ]
+      },
+      {            
+        "Sid": "Allow read-only access for employees 002-005",
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": [
+            "arn:aws:iam::46521514133002703882:user/employee-002",
+            "arn:aws:iam::46521514133002703882:user/employee-003",
+            "arn:aws:iam::46521514133002703882:user/employee-004",
+            "arn:aws:iam::46521514133002703882:user/employee-005"
+          ]
+        },
+        "Action": [
+          "s3:GetObject",
+          "s3:GetObjectTagging",
+          "s3:GetObjectVersion"
+        ],
+        "Resource": [
+          "arn:aws:s3:::databucket1",
+          "arn:aws:s3:::databucket1/*"
+        ]
+      }
+    ]
+}
+----
+
+=== Restrict user deletes of versioned objects in a bucket
+
+This bucket policy will restrict a user(identified by userID "56622399308951294926") from deleting versioned objects by versionID
+
+[source,json]
+----
+{
+  "Statement": [
+    {
+      "Action": [
+        "s3:DeleteObjectVersion"
+      ],
+      "Effect": "Deny",
+      "Resource": "arn:aws:s3:::verdeny/*",
+      "Principal": {
+        "AWS": [
+          "56622399308951294926"
+        ]
+      }
+    },
+    {
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::verdeny/*",
+      "Principal": {
+        "AWS": [
+          "56622399308951294926"
+        ]
+      }
+    }
+  ]
+}
+----
+
