@@ -66,7 +66,7 @@ The *Principal*
 
 The *Action* is the set of S3 operations being granted or denied to the user(s). 
 
-NOTE: The s3:ListBucket action Allowed is required for users to perform any S3 actions.
+NOTE: For Group policies, the s3:ListBucket action Allowed is required for users to perform any S3 actions.
 
 The *Resource* is the bucket or buckets the principals being granted or denied the ability to perform the actions on.
 Optionally there can be a *Condition* for when the policy action is valid.
