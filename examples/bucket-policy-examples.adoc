@@ -2,9 +2,9 @@
 permalink: examples/bucket-policy-examples.html
 sidebar: sidebar
 keywords: iam, bucket policy, group policy, policy
-summary: 'Here are example Policies and permissions in StorageGRID S3.'
+summary: 'Policies and permissions in StorageGRID .'
 ---
-= Example bucket and Group(IAM) policies
+= Policies and permissions in StorageGRID 
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
@@ -19,7 +19,7 @@ Group policies are required in StorageGRID. A user with S3 access keys but not a
 
 Bucket and group policies share most of the same elements. Policies are built in json format and can be generated using the https://awspolicygen.s3.amazonaws.com/policygen.html[AWS policy generator]
 
-All policies will define the effect, action(s), and resource(s). Bucket policies will also definition a principal.
+All policies will define the effect, action(s), and resource(s). Bucket policies will also define a principal.
 
 The *Effect* will be either to Allow or Deny the request.
 
