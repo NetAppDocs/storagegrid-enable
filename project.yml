@@ -1,6 +1,6 @@
 settings:
   name: "StorageGRID solutions and sesources"
-  search: "storagegrid-enable,storagegrid,storagegrid-appliances,solutions,resources"
+  search: "storagegrid-enable,storagegrid,storagegrid-appliances"
   internal:
     pdf_enabled: true
     termcheck_enabled: false
