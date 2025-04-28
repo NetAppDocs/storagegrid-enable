@@ -1,5 +1,5 @@
 settings:
-  name: "StorageGRID Solutions and Resources"
+  name: "StorageGRID solutions and sesources"
   search: "storagegrid-enable,storagegrid,storagegrid-appliances,solutions,resources"
   internal:
     pdf_enabled: true
@@ -11,7 +11,7 @@ settings:
 
 sidebar:
   entries:
-    - title: StorageGRID Solutions and Resources
+    - title: StorageGRID solutions and resources
       url: /index.html      
     - title: Try StorageGRID
       url: /evaluation-software.html
