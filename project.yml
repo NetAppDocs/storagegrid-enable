@@ -1,6 +1,6 @@
 settings:
-  name: "How to enable StorageGRID in your environment"
-  search: "storagegrid-enable,storagegrid-118,storagegrid-appliances"
+  name: "StorageGRID solutions and sesources"
+  search: "storagegrid-enable,storagegrid,storagegrid-appliances"
   internal:
     pdf_enabled: true
     termcheck_enabled: false
@@ -9,7 +9,7 @@ settings:
     harmony_enabled: true
 sidebar:
   entries:
-    - title: How to enable StorageGRID
+    - title: StorageGRID solutions and resources
       url: /index.html      
     - title: Try StorageGRID
       url: /evaluation-software.html
