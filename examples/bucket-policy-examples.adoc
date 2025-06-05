@@ -2,7 +2,7 @@
 permalink: examples/bucket-policy-examples.html
 sidebar: sidebar
 keywords: iam, bucket policy, group policy, policy
-summary: 'Policies and permissions in StorageGRID .'
+summary: 'Policies and permissions in StorageGRID.'
 ---
 = Policies and permissions in StorageGRID 
 :hardbreaks:

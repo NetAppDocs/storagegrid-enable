@@ -18,15 +18,21 @@ Additionally, the report covers performance considerations, failure scenarios, a
 
 NetApp StorageGRID is an object-based storage system that supports the industry-standard Amazon Simple Storage Service (Amazon S3) API.
 
-StorageGRID provides a single namespace across multiple locations with variable levels of service driven by information lifecycle management policies (ILM). With These lifecycle policies you can optimize where your data lives throughout its lifecycle.
+StorageGRID provides a single namespace across multiple locations with variable levels of service driven by information lifecycle management policies (ILM). With these lifecycle policies you can optimize where your data lives throughout its lifecycle.
 
-StorageGRID allows for configurable durability and availability of your data in local and geo-distributed solutions. Whether your data is on premises or in a public cloud, Integrated hybrid cloud workflows allow your business to leverage cloud services like Amazon Simple Notification Service (Amazon SNS), Google Cloud, Microsoft Azure Blob, Amazon S3 Glacier, Elasticsearch, and more.
+StorageGRID allows for configurable durability and availability of your data in local and geo-distributed solutions. Whether your data is on premises or in a public cloud, integrated hybrid cloud workflows allow your business to leverage cloud services like Amazon Simple Notification Service (Amazon SNS), Google Cloud, Microsoft Azure Blob, Amazon S3 Glacier, Elasticsearch, and more.
 
 === StorageGRID scale
 
 StorageGRID can be deployed with as few as 3 storage nodes and a single grid can grow up to 200 nodes. A single grid can be deployed as a single site or extend to 16 sites. A minimal grid consists of an admin node and 3 storage nodes in a single site. The admin node contains the management interface, a central point for metrics and logging, and maintains the configuration of the StorageGRID components. The admin node also contains an integrated load balancer for S3 API access. StorageGRID can be deployed as software-only, as VMware virtual machine appliances, or as purpose-built appliances.
 
-A StorageGRID node can be deployed as a metadata only node maximizing object count, an object storage only node maximizing object space, or a combined metadata and object storage node adding both object count and object space. Each storage node can scale to multi-petabyte capacity for object storage allowing for a single namespace in the hundreds of petabytes. StorageGRID also provides an integrated load balancer for S3 API operations called a gateway node.
+A StorageGRID node can be deployed as:
+
+* A metadata only node maximizing object count 
+* An object storage only node maximizing object space
+* A combined metadata and object storage node adding both object count and object space 
+
+Each storage node can scale to multi-petabyte capacity for object storage allowing for a single namespace in the hundreds of petabytes. StorageGRID also provides an integrated load balancer for S3 API operations called a gateway node.
 
 image:zero-rpo/delivery-paths.png[StorageGRID deployment options]
 
@@ -54,7 +60,7 @@ StorageGRID uses object metadata to track the locations of all objects across th
 
 Object metadata includes information such as the following:
 
-* System metadata, including a unique ID for each object (UUID), the object name, the name of the S3 bucket, the tenant account name or ID, the logical size of the object, the date and time the object was first created, and the date and time the object was last modified.
+* System metadata, including a unique ID for each object, the object name, the name of the S3 bucket, the tenant account name or ID, the logical size of the object, the date and time the object was first created, and the date and time the object was last modified.
 * The current storage location of each object replica or erasure-coded fragment.
 * Any custom user metadata key-value pairs associated with the object.
 * For S3 objects, any object tag key-value pairs associated with the object
