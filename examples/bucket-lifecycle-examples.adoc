@@ -166,7 +166,7 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 }
 ----
 
-=== Delete delete markers when no other versions exist
+=== Remove delete markers when no other versions exist
 
 [source,json]
 ----
@@ -184,7 +184,7 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 }
 ----
 
-=== Delete current versions after 30 days, delete non-current versions after 60 days, and delete the delete markers created by the current version delete and no more versions exist.
+=== Delete current versions after 30 days, delete non-current versions after 60 days, and remove the delete markers created by the current version delete once no other versions exist.
 
 [source,json]
 ----
@@ -215,7 +215,7 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 }
 ----
 
-=== Delete delete markers that have no other versions and have existed for 5 days, Retain 4 non-current versions and at least 30 days worth of history for objects with the "accounts_ prefix" and keep 2 versions and at least 10 days worth of history for all other object versions.
+=== remove delete markers that have no other versions and have existed for 5 days, Retain 4 non-current versions and at least 30 days worth of history for objects with the "accounts_ prefix" and keep 2 versions and at least 10 days worth of history for all other object versions.
 
 [source,json]
 ----
