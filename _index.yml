@@ -95,7 +95,7 @@ indexpage:
         url: "/examples/test-demonstrate-S3-object-lock.html"        
       - title: Bucket and Group Policy examples
         url: "/examples/bucket-policy-examples.html"
-      - title: Bucket lifecycle Policy examples
+      - title: Bucket Lifecycle Policy examples
         url: "/examples/bucket-lifecycle-examples.html"
     - title: Blog posts
       links:
