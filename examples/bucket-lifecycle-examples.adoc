@@ -111,6 +111,8 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 == Example lifecycle policies for standard (non-versioned) buckets
 
 === Delete objects after 90 days
+Use case: This policy is ideal for managing data that is only relevant for a limited time, such as temporary files, logs, or intermediate processing data.
+Benefit: Reduce storage costs and ensure the bucket is clutter-free.
 
 [source,json]
 ----
@@ -131,6 +133,8 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 == Example lifecycle policies for versioned buckets
 
 === Delete noncurrent versions after 10 days
+Use case: This policy helps manage the storage of non-current version objects, which can accumulate over time and consume significant space.
+Benefit: Optimize storage usage by keeping only the most recent version.
 
 [source,json]
 ----
@@ -149,6 +153,8 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 ----
 
 === Keep 5 noncurrent versions
+Use case: Useful where you want to retain a limited number of previous versions for recovery or audit purposes
+Benefit: Retain enough non-current versions to ensure sufficient history and recovery points.
 
 [source,json]
 ----
@@ -167,6 +173,8 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 ----
 
 === Remove delete markers when no other versions exist
+Use case: This policy helps manage the delete markers left over after all non-current versions are removed which can accumulate over time.
+Benefit: Reduce unnecessary clutter.
 
 [source,json]
 ----
@@ -185,6 +193,8 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 ----
 
 === Delete current versions after 30 days, delete non-current versions after 60 days, and remove the delete markers created by the current version delete once no other versions exist.
+Use case: Provide a complete lifecycle for current and non-current versions including the delete markers.
+Benefit: Reduce storage costs and ensure the bucket is clutter-free while retaining sufficient recovery points and history.
 
 [source,json]
 ----
@@ -216,6 +226,8 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 ----
 
 === remove delete markers that have no other versions and have existed for 5 days, Retain 4 non-current versions and at least 30 days worth of history for objects with the "accounts_ prefix" and keep 2 versions and at least 10 days worth of history for all other object versions.
+Use case: Provide unique rules for specific objects along side other objects to manage the complete lifecycle for current and non-current versions including the delete markers.
+Benefit: Reduce storage costs and ensure the bucket is clutter-free while retaining sufficient recovery points and history to meet a mix of client requirements.
 
 [source,json]
 ----
@@ -252,3 +264,8 @@ aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configurati
 }
 ----
 
+== Conclusion
+* Regularly review and update lifecycle policies and align them with ILM and data management goals.
+* Test policies in a non-production environment or bucket before applying them broadly to ensure they work as intended
+* Use Descriptive ID's for rules to make it more intuitive, as the logic structure can get complex
+* Monitor the impact of these bucket lifecycle policies on storage usage and performance to make necessary adjustments. 
