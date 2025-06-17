@@ -1,0 +1,271 @@
+---
+permalink: examples/bucket-lifecycle-examples.html
+sidebar: sidebar
+keywords: iam, bucket policy, lifecycle policy, policy, bucket
+summary: 'Bucket lifecycle in StorageGRID.'
+---
+= Bucket lifecycle in StorageGRID
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+You can create an S3 lifecycle configuration to control when specific objects are deleted from the StorageGRID system.
+
+== What is a lifecycle configuration 
+A lifecycle configuration is a set of rules that are applied to the objects in specific S3 buckets. Each rule specifies which objects are affected and when those objects will expire (on a specific date or after some number of days).
+
+Each object follows the retention settings of either an S3 bucket lifecycle or an ILM policy. When an S3 bucket lifecycle is configured, the lifecycle expiration actions override the ILM policy for objects matching the bucket lifecycle filter. Objects that do not match the bucket lifecycle filter use the retention settings of the ILM policy. If an object matches a bucket lifecycle filter and no expiration actions are explicitly specified, the retention settings of the ILM policy are not used and it is implied that object versions are retained forever.
+
+As a result, an object might be removed from the grid even though the placement instructions in an ILM rule still apply to the object. Or, an object might be retained on the grid even after any ILM placement instructions for the object have lapsed
+
+StorageGRID supports up to 1,000 lifecycle rules in a lifecycle configuration. Each rule can include the following XML elements:
+
+* Expiration: Delete an object when a specified date is reached or when a specified number of days is reached, starting from when the object was ingested.
+* NoncurrentVersionExpiration: Delete an object when a specified number of days is reached, starting from when the object became noncurrent.
+* Filter (Prefix, Tag)
+* Status
+*ID
+
+StorageGRID supports the use of the following bucket operations to manage lifecycle configurations:
+
+* DeleteBucketLifecycle
+* GetBucketLifecycleConfiguration
+* PutBucketLifecycleConfiguration
+
+== Structure of a lifecycle policy
+
+As the first step in creating a lifecycle configuration, you create a JSON file that includes one or more rules. For example, this JSON file includes three rules, as follows:
+
+. *Rule 1* applies only to objects that match the prefix category1/ and that have a key2 value of tag2. The Expiration parameter specifies that objects matching the filter will expire at midnight on 22 August 2020.
+
+. *Rule 2* applies only to objects that match the prefix category2/. The Expiration parameter specifies that objects matching the filter will expire 100 days after they are ingested.
++
+CAUTION:	Rules that specify a number of days are relative to when the object was ingested. If the current date exceeds the ingest date plus the number of days, some objects might be removed from the bucket as soon as the lifecycle configuration is applied.
+
+. *Rule 3* applies only to objects that match the prefix category3/. The Expiration parameter specifies that any noncurrent versions of matching objects will expire 50 days after they become noncurrent.
+
+[source,json]
+----
+{
+	"Rules": [
+        {
+		    "ID": "rule1",
+			"Filter": {
+                "And": {
+                    "Prefix": "category1/",
+                    "Tags": [
+                        {
+                            "Key": "key2",
+							"Value": "tag2"
+                        }
+                    ]
+                }
+            },
+			"Expiration": {
+                "Date": "2020-08-22T00:00:00Z"
+            },
+            "Status": "Enabled"
+        },
+		{
+            "ID": "rule2",
+			"Filter": {
+                "Prefix": "category2/"
+            },
+			"Expiration": {
+                "Days": 100
+            },
+            "Status": "Enabled"
+        },
+		{
+            "ID": "rule3",
+			"Filter": {
+                "Prefix": "category3/"
+            },
+			"NoncurrentVersionExpiration": {
+                "NoncurrentDays": 50
+            },
+            "Status": "Enabled"
+        }
+    ]
+}
+----
+
+== Apply lifecycle configuration to bucket
+After you have created the lifecycle configuration file, you apply it to a bucket by issuing a PutBucketLifecycleConfiguration request.
+
+This request applies the lifecycle configuration in the example file to objects in a bucket named `testbucket`.
+
+----
+aws s3api --endpoint-url <StorageGRID endpoint> put-bucket-lifecycle-configuration
+--bucket testbucket --lifecycle-configuration file://bktjson.json
+----
+
+To validate that a lifecycle configuration was successfully applied to the bucket, issue a GetBucketLifecycleConfiguration request. For example:
+
+----
+aws s3api --endpoint-url <StorageGRID endpoint> get-bucket-lifecycle-configuration
+ --bucket testbucket
+----
+
+== Example lifecycle policies for standard (non-versioned) buckets
+
+=== Delete objects after 90 days
+Use case: This policy is ideal for managing data that is only relevant for a limited time, such as temporary files, logs, or intermediate processing data.
+Benefit: Reduce storage costs and ensure the bucket is clutter-free.
+
+[source,json]
+----
+{
+	"Rules": [
+	  {
+		"ID": "Delete after 90 day rule",
+		"Filter": {},
+		"Status": "Enabled"，
+		  "Expiration": {
+			  "Days": 90
+	    }
+	  }
+	]
+}
+----
+
+== Example lifecycle policies for versioned buckets
+
+=== Delete noncurrent versions after 10 days
+Use case: This policy helps manage the storage of non-current version objects, which can accumulate over time and consume significant space.
+Benefit: Optimize storage usage by keeping only the most recent version.
+
+[source,json]
+----
+{
+	"Rules": [
+	        {
+		"ID": "NoncurrentVersionExpiration 10 day rule",
+		"Filter": {},
+		"Status": "Enabled"，
+		  "NoncurrentVersionExpiration": {
+			  "NoncurrentDays": 10
+	   	}
+    }
+	]
+}
+----
+
+=== Keep 5 noncurrent versions
+Use case: Useful where you want to retain a limited number of previous versions for recovery or audit purposes
+Benefit: Retain enough non-current versions to ensure sufficient history and recovery points.
+
+[source,json]
+----
+{
+	"Rules": [
+	  {
+		"ID": "NewerNoncurrentVersions 5 version rule",
+		"Filter": {},
+		"Status": "Enabled"，
+		"NoncurrentVersionExpiration": {
+		  	"NewerNoncurrentVersions": 5
+	    }
+    }
+	]
+}
+----
+
+=== Remove delete markers when no other versions exist
+Use case: This policy helps manage the delete markers left over after all non-current versions are removed which can accumulate over time.
+Benefit: Reduce unnecessary clutter.
+
+[source,json]
+----
+{
+	"Rules": [
+    {
+		"ID": "Delete marker cleanup rule",
+		"Filter": {},
+		"Status": "Enabled"，
+		"Expiration": {
+        "ExpiredObjectDeleteMarker": true
+	  	}
+    }
+	]
+}
+----
+
+=== Delete current versions after 30 days, delete non-current versions after 60 days, and remove the delete markers created by the current version delete once no other versions exist.
+Use case: Provide a complete lifecycle for current and non-current versions including the delete markers.
+Benefit: Reduce storage costs and ensure the bucket is clutter-free while retaining sufficient recovery points and history.
+
+[source,json]
+----
+{
+  "Rules": [
+    {
+      "ID": "Delete current version",
+      "Status": "Enabled",
+      "Expiration": {
+        "Days": 30
+      },
+    },
+    {
+      "ID": "noncurrent version retention",
+      "Status": "Enabled",
+      "NoncurrentVersionExpiration": {
+        "NoncurrentDays": 60
+      }
+    },
+    {
+      "ID": "Markers",
+      "Status": "Enabled",
+      "Expiration": {
+        "ExpiredObjectDeleteMarker": true
+      }
+    }
+  ]
+}
+----
+
+=== remove delete markers that have no other versions and have existed for 5 days, Retain 4 non-current versions and at least 30 days worth of history for objects with the "accounts_ prefix" and keep 2 versions and at least 10 days worth of history for all other object versions.
+Use case: Provide unique rules for specific objects along side other objects to manage the complete lifecycle for current and non-current versions including the delete markers.
+Benefit: Reduce storage costs and ensure the bucket is clutter-free while retaining sufficient recovery points and history to meet a mix of client requirements.
+
+[source,json]
+----
+{
+  "Rules": [
+    {
+      "ID": "Markers",
+      "Status": "Enabled",
+      "Expiration": {
+        "Days": 5,
+        "ExpiredObjectDeleteMarker": true
+      },
+    },
+    {
+      "ID": "accounts version retention",
+      "Status": "Enabled",
+      "NoncurrentVersionExpiration": {
+        "NewerNoncurrentVersions": 4,
+        "NoncurrentDays": 30
+      },
+      "Filter": {
+          "Prefix":"account_"
+      }
+    },
+    {
+      "ID": "noncurrent version retention",
+      "Status": "Enabled",
+      "NoncurrentVersionExpiration": {
+        "NewerNoncurrentVersions": 2,
+        "NoncurrentDays": 10
+      }
+    }
+  ]
+}
+----
+
+== Conclusion
+* Regularly review and update lifecycle policies and align them with ILM and data management goals.
+* Test policies in a non-production environment or bucket before applying them broadly to ensure they work as intended
+* Use Descriptive ID's for rules to make it more intuitive, as the logic structure can get complex
+* Monitor the impact of these bucket lifecycle policies on storage usage and performance to make necessary adjustments. 
