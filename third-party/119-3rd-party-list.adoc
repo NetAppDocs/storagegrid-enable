@@ -38,7 +38,6 @@ These solutions have been tested in collaboration with the respective partners.
 * FujiFilm Object Archive
 * GitHub Enterprise Server
 * IBM Filenet
-* IBM Spectrum Protect Plus
 * IBM Storage Protect
 * Interica
 * Komprise
