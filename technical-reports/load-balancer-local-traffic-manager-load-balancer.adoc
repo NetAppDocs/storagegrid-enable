@@ -1,0 +1,136 @@
+---
+sidebar: sidebar
+permalink: technical-reports/load-balancer-local-traffic-manager-load-balancer.html
+keywords: local traffic manager, load balancer
+summary: Explore the guidance for local traffic manager load balancers and determine the optimal configuration.
+
+---
+
+= Learn about local traffic manager load balancers
+:experimental:
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../../media/
+
+[.lead]
+Explore the guidance for local traffic manager load balancers and determine the optimal configuration.
+
+The following is presented as general guidance for configuration of third-party load balancers. Work with your load balancer administrator to determine the optimal configuration for your environment.
+
+== Create a resource group of Storage Nodes
+Group StorageGRID Storage Nodes into a resource pool or service group (the terminology might differ with specific load balancers).
+StorageGRID Storage Nodes present the S3 API on the following ports:
+
+* S3 HTTPS: 18082
+* S3 HTTP: 18084
+
+Most customers choose to present the APIs on the virtual server through the standard HTTPS and HTTP ports (443 and 80).
+
+NOTE: Each StorageGRID site requires a default of three Storage Nodes, two of which must be healthy.
+
+== Health check
+Third-party load balancers require a method to determine the health of each node and its eligibility to receive traffic. NetApp recommends the HTTP `OPTIONS` method to perform the health check. The load balancer issues HTTP `OPTIONS` requests to each individual Storage Node and expects a `200` status response.
+
+If any Storage Node does not provide a `200` response, that node is not able to service storage requests. Your application and business requirements should determine the timeout for these checks and the action your load balancer takes.
+
+For example, if three of four Storage Nodes in data center 1 are down, you might direct all traffic to data center 2. 
+
+The recommended polling interval is once per second, marking the node offline after three failed checks.
+
+=== S3 health check example
+In the following example, we send `OPTIONS` and check for `200 OK`. We use `OPTIONS` because Amazon S3) does not support unauthorized requests. 
+
+[subs="verbatim,quotes"]
+----
+##curl -X OPTIONS https://10.63.174.75:18082 --verbose --insecure##
+* Rebuilt URL to: https://10.63.174.75:18082/
+*   Trying 10.63.174.75...
+* TCP_NODELAY set
+* Connected to 10.63.174.75 (10.63.174.75) port 18082 (#0)
+* TLS 1.2 connection using TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+* Server certificate: webscale.stl.netapp.com
+* Server certificate: NetApp Corp Issuing CA 1
+* Server certificate: NetApp Corp Root CA
+> OPTIONS / HTTP/1.1
+> Host: 10.63.174.75:18082
+> User-Agent: curl/7.51.0
+> Accept: */*
+> 
+< HTTP/1.1 ##200 OK##
+< Date: Mon, 22 May 2017 15:17:30 GMT
+< Connection: KEEP-ALIVE
+< Server: StorageGRID/10.4.0
+< x-amz-request-id: 3023514741
+----
+
+=== File or content-based health checks
+In general, NetApp does not recommend file-based health checks. Typically, a small file —`healthcheck.htm`, for example — is created in a bucket with a read-only policy. This file is then fetched and evaluated by the load balancer. This approach has several disadvantages: 
+
+* *Dependent on a single account.* If the account that owns the file is disabled, the health check fails, and no storage requests are processed.
+* *Data protection rules.* The default data protection scheme is a two-copy approach. In this scenario, if the two storage nodes hosting the health check file are unavailable, the health check fails, and storage requests are not sent to healthy storage nodes, rendering the grid offline.
+* *Audit log bloat.* The load balancer fetches the file from every storage node every X minutes, creating many audit log entries. 
+* *Resource intensive.* Fetching the health check file from every node every few seconds consumes grid and network resources.
+
+If a content-based health check is required, use a dedicated tenant with a dedicated S3 bucket.
+
+=== Session persistence
+Session persistence, or stickiness, refers to the time a given HTTP session is allowed to persist. By default, sessions are dropped by Storage Nodes after 10 minutes. Longer persistence can lead to better performance because applications do not have to reestablish their sessions for every action; however, holding these sessions open consumes resources. If you determine that your workload will benefit, you can reduce the session persistence on a third-party load balancer. 
+
+== Virtual hosted-style addressing
+Virtual hosted-style is now the default method for AWS S3, and while StorageGRID and many applications still support path style, it is best practice to implement virtual hosted-style support. Virtual hosted-style requests have the bucket as part of the host name.
+
+To support virtual hosted-style, do the following:
+
+* Support wildcard DNS lookups: *.s3.company.com
+* Use an SSL certificate with subject alt names to support wildcard: *.s3.company.com
+Some customers have expressed security concerns around the use of wildcard certificates. StorageGRID continues to support path style access, as do key applications such as FabricPool. That said, certain S3 API calls fail or behave improperly without virtual hosted support.
+
+== SSL termination
+There are security benefits to SSL termination on third-party load balancers. If the load balancer is compromised, the grid is compartmentalized.
+
+There are three supported configurations: 
+
+* *SSL pass-through.* The SSL certificate is installed on StorageGRID as a custom server certificate.
+* *SSL termination and re-encryption (recommended).* This might be beneficial if you are already doing SSL certificate management on the load balancer rather than installing the SSL certificate on StorageGRID. This configuration provides the additional security benefit of limiting the attack surface to the load balancer.
+* *SSL termination with HTTP.* In this configuration, SSL is terminated on the third-party load balancer and communication from the load balancer to StorageGRID is nonencrypted to take advantage of SSL off-load (with SSL libraries embedded in modern processors this is of limited benefit).
+
+== Pass through configuration
+If you prefer to configure your load balancer for pass through, you must install the certificate on StorageGRID. Go to menu:Configuration[Server Certificates > Object Storage API Service Endpoints Server Certificate].
+
+== Source client IP visibility
+StorageGRID 11.4 introduced the concept of a trusted third-party load balancer. In order to forward the client application IP to StorageGRID, you must configure this feature. For more information, see 
+https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_configure_StorageGRID_to_work_with_third-party_Layer_7_load_balancers[How to configure StorageGRID to work with third-party Layer 7 load balancers.^]
+
+To enable the XFF header to be used to view the IP of the client application, follow these steps:
+
+.Steps
+. Record the client IP in the audit log.
+. Use `aws:SourceIp` S3 bucket or group policy.
+
+=== Load balancing strategies
+Most load balancing solutions offer multiple strategies for load balancing. The following are common strategies: 
+
+* *Round robin.* A universal fit but suffers with few nodes and large transfers clogging single nodes.
+* *Least connection.* A good fit for small and mixed object workloads, resulting in an equal distribution of the connections to all nodes.
+
+The choice of algorithm becomes less important with an increasing number of Storage Nodes to choose from.
+
+=== Data path
+All data flows through local traffic manager load balancers. StorageGRID does not support direct server routing (DSR).
+
+==== Verifying distribution of connections
+To verify that your method is distributing the load evenly across Storage Nodes, check the established sessions on each node in a given site:
+
+* *UI Method.* Go to menu:Support[Metrics > S3 Overview > LDR HTTP Sessions]
+* *Metrics API.* Use `storagegrid_http_sessions_incoming_currently_established`
+
+
+
+
+
+
+
+
+

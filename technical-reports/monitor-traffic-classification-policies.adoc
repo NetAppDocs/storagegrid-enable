@@ -1,0 +1,38 @@
+---
+permalink: technical-reports/monitor-traffic-classification-policies.html
+sidebar: sidebar
+keywords: traffic classification policies, storagegrid
+summary: Learn how to set up and monitor Traffic Classification Policies in StorageGRID 11.4 for efficient traffic management and network bandwidth optimization.
+
+---
+= Use traffic classification policies in StorageGRID
+:experimental:
+:hardbreaks:
+:icons: font
+:imagesdir: ../../media/
+
+[.lead]
+Learn how to set up and configure traffic classification policies to manage and optimize network traffic in StorageGRID.
+
+Traffic Classification Policies provide a method to monitor and/or limit traffic based on a specific tenant, buckets, IP subnets, or load balancer endpoints. Network connectivity and bandwidth are especially important metrics for StorageGRID.
+
+To configure a Traffic Classification Policy, follow these steps:
+
+.Steps
+
+. On the GMI, navigate to menu:Configuration[System Settings > Traffic Classification].
+. Click Create +
+. Enter a name and description for your policy.
+. Create a matching rule.
++
+image:monitor/monitor-matching-rule.png[monitor-matching-rule]
+. Set a limit (optional).
++
+image:monitor/monitor-limit.png[monitor-limit]
+. Save your policy
++
+image:monitor/monitor-traffic-policy.png[monitor-traffic-policy]
++
+To view the metrics associated to your Traffic Classification Policy, select your policy and click Metrics. A Grafana dashboard is generated displaying information such as Load Balancer Request Traffic and Average Request Duration.
++
+image:monitor/monitor-dashboard-showing-metrics.png[monitor-dashboard-showing-metrics]

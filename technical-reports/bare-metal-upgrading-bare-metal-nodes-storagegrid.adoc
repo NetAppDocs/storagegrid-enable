@@ -1,0 +1,24 @@
+---
+sidebar: sidebar
+permalink: technical-reports/bare-metal-upgrading-bare-metal-nodes-storagegrid.html
+keywords: bare-metal, upgrade, storagegrid
+summary: Learn about the upgrade process for bare-metal nodes in StorageGRID.
+
+---
+= Upgrade bare-metal nodes in StorageGRID
+
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../../media/
+
+[.lead]
+Learn about the upgrade process for bare-metal nodes in StorageGRID.
+
+The upgrade process for bare-metal nodes is different than that for appliances or VMware nodes. Before performing an upgrade of a bare-metal node, you must first upgrade the RPM files on all hosts before running the upgrade through the GUI.
+----
+[root@host1 rpms]# rpm -Uvh StorageGRID-Webscale-Images-*.rpm
+[root@host1 rpms]# rpm -Uvh StorageGRID-Webscale-Service-*.rpm
+----
+Now you can proceed to the software upgrade through the GUI.
