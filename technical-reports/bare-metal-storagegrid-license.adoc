@@ -1,0 +1,33 @@
+---
+sidebar: sidebar
+permalink: technical-reports/bare-metal-storagegrid-license.html
+keywords: license, storagegrid 
+summary: Learn how to upload the StorageGRID license file.
+
+---
+
+= Add StorageGRID license details
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Learn how to upload the StorageGRID license file.
+
+You must specify the name for your StorageGRID system and upload the license file provided by NetApp.
+
+To specify the StorageGRID license information, complete the following steps:
+
+.Steps
+. On the License page, in the Grid Name field, enter a name for your StorageGRID system. 
+After installation, the name is displayed as the top level in the grid topology tree.
+. Click Browse, locate the NetApp License File (`NLF-_unique-id_.txt`), and click Open.
+The license file is validated, and the serial number and licensed storage capacity are displayed.
++
+NOTE: The StorageGRID installation archive includes a free license that does not provide any support entitlement for the product. You can update to a license that offers support after installation.
++
+image:bare-metal/bare-metal-update-license.png[bare-metal-update-license]
++
+. Click Next.
