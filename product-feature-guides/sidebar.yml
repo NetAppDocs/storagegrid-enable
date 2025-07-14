@@ -29,4 +29,4 @@ entries:
       - title: Populate and replicate the bucket
         url: "/product-feature-guides/ontap-migrate-populate-replicate.html"
       - title: Migrate users and keys then cutover
-        url: "/product-feature-guides/ontap-migrate-migrate-cutover.html"
+        url: "/product-feature-guides/ontap-migrate-cutover.html"
