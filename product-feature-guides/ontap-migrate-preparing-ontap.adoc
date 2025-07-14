@@ -1,0 +1,83 @@
+---
+permalink: product-feature-guides/ontap-migrate-preparing-ontap.html
+sidebar: sidebar
+keywords: S3, ONTAP S3, ONTAP, StorageGRID, migration
+summary: Migrate from ONTAP S3 to StorageGRID. 
+---
+= Enabling enterprise-grade S3 by seamlessly migrating object-based storage from ONTAP S3 to StorageGRID
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Enabling enterprise-grade S3 by seamlessly migrating object-based storage from ONTAP S3 to StorageGRID
+
+== Preparing ONTAP
+
+For demonstration purposes we will create an SVM object store server, user, group, group policy and buckets.
+
+==== Create the Storage Virtual Machine
+
+In ONTAP System Manager, navigate to Storage VM's and add a new storage VM.
+
+image:ontap-migrate/ontap-svm-add-01.png[Add a new SVM]
+
+Select the "Enable S3" and "Enable TLS" check boxes and configure the HTTP(S) ports. Define the IP, subnet mask and define the gateway and broadcast domain if not using the default or required in your environment.
+
+image:ontap-migrate/ontap-svm-create-01.png[configure new SVM]
+
+As part of the SVM creation a user will be created. Download the S3 keys for this user and close the window.
+
+image:ontap-migrate/ontap-s3-key.png[download S3 keys]
+
+Once the SVM has been created, edit the SVM and add the DNS settings.
+
+image:ontap-migrate/ontap-dns-01.png[configure DNS]
+
+Define the DNS name and IP.
+
+image:ontap-migrate/ontap-dns-02.png[configure DNS Server]
+
+==== Create SVM S3 User
+
+Now we can configure the S3 users and group. Edit the S3 settings.
+
+image:ontap-migrate/ontap-edit-s3.png[Configure S3]
+
+Add a new user.
+
+image:ontap-migrate/ontap-user-create-01.png[Add a new user]
+
+Input the user name and key expiration.
+
+image:ontap-migrate/ontap-user-create-01.png[Add a new user]
+
+Download the S3 keys for the new user.
+
+image:ontap-migrate/ontap-user-keys.png[new user s3 keys]
+
+==== Create SVM S3 group
+
+On the Groups tab of the SVM S3 settings, add a new group with the user created above and FullAccess permissions.
+
+image:ontap-migrate/ontap-add-group.png[Add S3 group]
+
+==== Create SVM S3 buckets
+
+Navigate to the Buckets section and click the "+Add" button.
+
+image:ontap-migrate/ontap-add-bucket-01.png[Add Bucket]
+
+Enter a name, capacity, and deselect the "Enable ListBucket access..." check box. and click on the "More options" button.
+
+image:ontap-migrate/ontap-add-bucket-02.png[Add Bucket]
+
+In the "More options" section select the enable versioning check box. and click the "Save" button.
+
+image:ontap-migrate/ontap-add-bucket-ver-01.png[Enable versioning]
+
+Repeat the process and create a second bucket without versioning enabled. Enter a name, the same capacity as bucket one, and deselect the "Enable ListBucket access..." check box. and click on the "Save" button.
+
+image:ontap-migrate/ontap-add-bucket2-01.png[Add bucket two]
+
+_By Rafael Guedes, and Aron Klein_

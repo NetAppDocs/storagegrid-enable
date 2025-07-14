@@ -1,0 +1,56 @@
+---
+permalink: product-feature-guides/ontap-migrate-cutover.html
+sidebar: sidebar
+keywords: S3, ONTAP S3, ONTAP, StorageGRID, migration
+summary: Migrate from ONTAP S3 to StorageGRID. 
+---
+= Enabling enterprise-grade S3 by seamlessly migrating object-based storage from ONTAP S3 to StorageGRID
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Enabling enterprise-grade S3 by seamlessly migrating object-based storage from ONTAP S3 to StorageGRID
+
+== Migrate S3 Keys
+
+For a migration, most of the time you will want to migrate the credentials for the users rather than generate new credentials on the destination side. StorageGRID provides api's to allow s3 keys to be imported to a user.
+
+Logging into the StorageGRID management UI (not the tenant manager UI) open the API Documentation swagger page.
+
+image:ontap-migrate/sg-api-swagger-link.png[Open the API Documentation]
+
+Expand the "accounts" section, select the "POST /grid/account-enable-s3-key-import", click the "Try it out" button, then click on the execute button.
+
+image:ontap-migrate/sg-import-enable.png[Enable S3 key import]
+
+Now scroll down still under "accounts" to "POST /grid/accounts/{id}/users/{user_id}/s3-access-keys"
+
+Here is where we are going to input the tenant ID and user account ID we collected earlier. fill in the fields and the keys from our ONTAP user in the json box. you can set the expiration of the keys, or remove the " , "expires": 123456789" and click on execute.
+
+image:ontap-migrate/sg-import-key.png[import the S3 key]
+
+Once you have completed all of your user key imports you should disable the key import function in "accounts" "POST /grid/account-disable-s3-key-import"
+
+image:ontap-migrate/sg-import-disable.png[Disable S3 key import]
+
+If we look at the user account in the tenant manager UI, we can see the new key has been added.
+
+image:ontap-migrate/sg-user-keys.png[User keys]
+
+=== The final cut-over
+
+If the intention is to have a perpetually replicating bucket from ONTAP to StorageGRID, you can end here.  If this is a migration from ONTAP S3 to StorageGRID, then its time to put an end to it and cut over.
+
+Inside ONTAP system manager, edit the S3 group and set it to "ReadOnlyAccess". This will prevent the users from writing to the ONTAP S3 bucket anymore.
+
+image:ontap-migrate/ontap-edit-group.png[Set ONTAP group to read-only]
+
+All that is left to do is configure DNS to point from the ONTAP cluster to the StorageGRID endpoint. Make sure your endpoint certificate is correct and if you need virtual hosted style requests then add the endpoint domain names in storageGRID 
+
+image:ontap-migrate/sg-endpoint-domain.png[Set ONTAP group to read-only]
+
+Your clients will either need to wait for the TTL to expire, or flush DNS to resolve to the new system so you can test that everything is working.  All that is left is to clean up the initial temporary S3 keys we used to test the StorageGRID data access (NOT the imported keys), remove the snapmirror relationships, and remove the ONTAP data. 
+
+
+_By Rafael Guedes, and Aron Klein_
