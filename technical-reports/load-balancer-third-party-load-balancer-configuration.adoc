@@ -11,7 +11,7 @@ summary: Learn how to configure trusted third-party load balancer in StorageGRID
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 Learn how to configure trusted third-party load balancer in StorageGRID.

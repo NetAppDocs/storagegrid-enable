@@ -8,7 +8,7 @@ summary: Begin your journey of monitoring NetApp StorageGRID with the GMI Dashbo
 = Use the GMI dashboard to monitor StorageGRID
 :hardbreaks:
 :icons: font
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 The StorageGrid Grid Management Interface (GMI) dashboard provides a centralized view of the StorageGRID infrastructure, allowing you to oversee the health, performance, and capacity of the entire grid.

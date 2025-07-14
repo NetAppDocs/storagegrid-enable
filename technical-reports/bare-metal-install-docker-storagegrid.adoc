@@ -11,7 +11,7 @@ summary: Learn how to to install Docker for StorageGRID.
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 Learn how to to install Docker for StorageGRID.

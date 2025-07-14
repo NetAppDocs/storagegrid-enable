@@ -11,7 +11,7 @@ summary: Learn how to install StorageGRID dependencies and packages.
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 Learn how to install StorageGRID dependencies and packages.

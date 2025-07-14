@@ -9,7 +9,7 @@ summary: Learn how to monitor StorageGRID using metrics API.
 :experimental:
 :hardbreaks:
 :icons: font
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 Learn how to access and export metrics to help troubleshoot issues.

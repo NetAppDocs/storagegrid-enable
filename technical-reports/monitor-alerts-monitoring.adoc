@@ -8,7 +8,7 @@ summary: Learn how to use the alerts system in StorageGRID for monitoring issues
 = Use alerts to monitor StorageGRID
 :hardbreaks:
 :icons: font
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 Learn how to use the alerts system in StorageGRID to monitor issues, manage custom alerts, and extend alert notifications using SNMP or email.

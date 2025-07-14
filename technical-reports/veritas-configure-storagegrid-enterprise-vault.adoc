@@ -8,7 +8,7 @@ summary: Learn how to implement basic configurations for StorageGRID 11.5 and ve
 :experimental:
 :hardbreaks:
 :icons: font
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 Learn how to implement basic configurations for StorageGRID 11.5 or higher and veritas Enterprise Vault 14.1 or higher.

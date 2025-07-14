@@ -11,7 +11,7 @@ summary: Learn about ransomware attacks and how to protect data with StorageGRID
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 Learn about ransomware attacks and how to protect data with StorageGRID security best practices.

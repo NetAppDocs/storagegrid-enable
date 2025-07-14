@@ -12,7 +12,7 @@ summary: Learn how to replicate objects to a secondary bucket using StorageGRID 
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 Learn how to replicate objects to a secondary bucket using StorageGRID CloudMirror.

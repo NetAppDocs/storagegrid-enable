@@ -21,12 +21,12 @@ entries:
     pdf-filename: Migrating object-based storage from ONTAP S3 to StorageGRID
     entries: 
       - title: Migrate from ONTAP S3 to StorageGRID
-        url: "/product-feature-guides/ontap-migrate/index.html"
+        url: "/product-feature-guides/ontap-migrate-index.html"
       - title: Preparing ONTAP
-        url: "/product-feature-guides/ontap-migrate/preparing-ontap.html"
+        url: "/product-feature-guides/ontap-migrate-preparing-ontap.html"
       - title: Preparing StorageGRID
-        url: "/product-feature-guides/ontap-migrate/preparing-sg.html"
+        url: "/product-feature-guides/ontap-migrate-preparing-sg.html"
       - title: Populate and replicate the bucket
-        url: "/product-feature-guides/ontap-migrate/populate-replicate.html"
+        url: "/product-feature-guides/ontap-migrate-populate-replicate.html"
       - title: Migrate users and keys then cutover
-        url: "/product-feature-guides/ontap-migrate/migrate-cutover.html"
+        url: "/product-feature-guides/ontap-migrate-migrate-cutover.html"

@@ -10,7 +10,7 @@ summary: Learn how to validate the grid configuration information and complete t
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 Learn how to validate the grid configuration information and complete the StorageGRID install process.

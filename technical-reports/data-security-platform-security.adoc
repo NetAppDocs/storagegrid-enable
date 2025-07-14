@@ -11,7 +11,7 @@ summary: Learn about the platform security features in StorageGRID.
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 Learn about the platform security features in StorageGRID.

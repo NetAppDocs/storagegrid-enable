@@ -11,7 +11,7 @@ summary: Explore the object and metadata security features in StorageGRID.
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 Explore the object and metadata security features in StorageGRID.

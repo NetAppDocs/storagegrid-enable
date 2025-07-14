@@ -9,7 +9,7 @@ summary: Learn how to set up and monitor Traffic Classification Policies in Stor
 :experimental:
 :hardbreaks:
 :icons: font
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 Learn how to set up and configure traffic classification policies to manage and optimize network traffic in StorageGRID.

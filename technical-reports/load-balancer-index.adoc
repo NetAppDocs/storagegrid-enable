@@ -10,7 +10,7 @@ summary: Learn about the role of a third-party and global load balancers in an o
 :nofooter:
 :icons: font
 :linkattrs:
-:imagesdir: ../../media/
+:imagesdir: ../media/
 
 [.lead]
 Learn about the role of a third-party and global load balancers in an object storage systems like StorageGRID.
