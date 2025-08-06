@@ -1,0 +1,33 @@
+---
+sidebar: sidebar
+permalink: technical-reports/ransomware-protection-investigate-branch-buckets.html
+keywords: object lock, storagegrid
+summary: Explore how branch buckets can be used to investigate and remediate a ransomware attack.
+
+---
+
+= Ransomware investigation and remediation
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ../media/
+
+[.lead]
+Learn how to investigate and remediate buckets after a possible ransomware attack with StorageGRID.
+
+In StorageGRID 12.0, the new branch bucket feature has been added to extend the usefulness of versioning for ransomware defense. A branch bucket provides access to objects in a bucket as they existed at a certain time provided they still exist in the bucket. Branch buckets can only be created for versioning-enabled base buckets. 
+
+This means if you suspect a ransomware attack has occurred, you can create a read/write, or read-only branch bucket containing all objects and versions that existed prior to the initial attack time. You can use this branch bucket to compare against the base bucket contents to figure out what objects have changed and if the change was part of the attack or not. You could also use a branch bucket to continue client operations using the clean branch while investigating the attack. 
+
+== Creating a Branch bucket
+
+* Navigate to the base bucket details page and the Branches tab to create a branch bucket.
+
+image:ransomware/ransomware-protection-branch-create.png[ransomware-protection-branch-create]
+
+* Once the Create branch bucket  button is clicked, a popup will open with prefilled details of the region associated with the base bucket.
+* provide the branch bucket name, before time, and select what type of branch bucket to create.
+
+image:ransomware/ransomware-protection-branch-define.png[ransomware-protection-branch-define]
+

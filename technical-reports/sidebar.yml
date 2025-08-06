@@ -65,6 +65,8 @@ entries:
         url: "/technical-reports/ransomware-protection-replicate-bucket-versioning-storagegrid.html"
       - title: Ransomware defense using versioning with protective IAM policy
         url: "/technical-reports/ransomware-protection-versioning-protective-iam-policy-storagegrid.html"       
+      - title: Ransomware defense investigation using branch buckets
+        url: "/technical-reports/ransomware-protection-investigate-branch-buckets.html"       
   - title: "TR-4765: Monitor StorageGRID"
     pdf-filename: Monitor StorageGRID using external applications
     entries:
