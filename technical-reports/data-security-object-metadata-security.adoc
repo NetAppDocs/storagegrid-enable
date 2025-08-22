@@ -43,6 +43,14 @@ Encryption keys for the disks can be optionally managed by an external KMIP serv
 CTFC 1.31(c)-(d)
 (FINRA) Rule 4511(c)
 
+|Federal Information Processing Standard (FIPS) 140-3 compliant encryption for nodes
+|The SG5812, SG5860, SG6160, SGF6112, SG1100, and SG110 StorageGRID appliances offer the option of FIPS 140-3 compliant node encryption.
+Encryption keys for the nodes are managed by an external KMIP server.
+|Enables secure storage of system data, metadata, and objects. Also provides StorageGRID software-based object encryption, which secures storage and transmission of objects.
+|SEC Rule 17a-4(f)
+CTFC 1.31(c)-(d)
+(FINRA) Rule 4511(c)
+
 |Background Integrity Scan and Self-Healing
 |StorageGRID uses an interlocking mechanism of hashes, checksums, and cyclic redundancy checks (CRCs) at the object and sub-object level to protect against data inconsistency, tampering, or modification, both when objects are in storage and in transit. StorageGRID automatically detects corrupt and tampered objects and replaces them, while quarantining the altered data and alerting the administrator.
 |Enables Grid administrators to meet SLA, regulations, and other obligations regarding data durability. Helps customers detect ransomware or viruses attempting to encrypt, tamper, or modify data.
