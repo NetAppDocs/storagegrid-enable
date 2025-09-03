@@ -138,6 +138,28 @@ CTFC 1.31(c)-(d)
 |Allows Grid administrators to specify access control by user groups for the whole tenant; also enables tenant users to specify access control for their own buckets and objects.
 |--
 
+|S3 Security Token Service API AssumeRole 
+|StorageGRID supports the S3 STS API AssumeRole to provide temporary security credentials (access key ID, secret access key, session token) with downscoped permissions and limited duration.
+Inline session policies to further restrict permissions during the session are supported as part of the AssumeRole API.
+|Allows Tenant administrators to provide secure temporary access to object data.
+|--
+
+|Simple Notification Service
+|StorageGRID supports sending notification on object access.
+The following event types are supported:
+
+* s3:ObjectCreated:
+* s3:ObjectCreated:Put
+* s3:ObjectCreated:Post
+* s3:ObjectCreated:Copy
+* s3:ObjectCreated:CompleteMultipartUpload
+* s3:ObjectRemoved:
+* s3:ObjectRemoved:Delete
+* s3:ObjectRemoved:DeleteMarkerCreated
+* s3:ObjectRestore:Post
+|Allows Tenant administrators to monitor access to objects
+|--
+
 |Server-side encryption with StorageGRID-managed keys (SSE)
 |StorageGRID supports SSE, allowing multitenant protection of data at rest with encryption keys managed by StorageGRID.
 |Enables tenants to encrypt objects.
