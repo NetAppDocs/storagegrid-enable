@@ -27,6 +27,8 @@ entries:
     entries:
       - title: Use third-party load balancers with StorageGRID
         url: "/technical-reports/load-balancer-index.html"
+      - title: Learn about the role of StorageGRID load balancers
+        url: "/technical-reports/load-balancer-storagegrid.html"
       - title: Learn how to implement SSL certificates for HTTPS in StorageGRID
         url: "/technical-reports/load-balancer-ssl-certificates-storagegrid.html"
       - title: Configure trusted third-party load balancer in StorageGRID
