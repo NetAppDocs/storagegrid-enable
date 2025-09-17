@@ -67,7 +67,7 @@ PUT _snapshot/sg_snapshot_repository
 image:es-snapshot/es-create-repository-api.png[Elasticsearch API sample screenshot]
 
 . From Kibana web GUI, navigate to the Stack Management > Snapshot and Restore page, select the Repositories tab. +
-Click on the repository name to view the details or modify some settings such as max snapshot bytes per second which defaults to 40 MB/s. +
+Click on the repository name to view the details or modify some settings such as max snapshot bytes per second which defaults to 40 MB/s per Elasticsearch node. +
 For settings not visible on this page, use the `PUT _snapshot` API in the Dev Tools Console to make changes.
 
 image:es-snapshot/es-snapshot-repository.png[Snapshot Repository sample screenshot]
