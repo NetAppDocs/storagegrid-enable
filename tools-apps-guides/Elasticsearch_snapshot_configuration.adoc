@@ -1,0 +1,87 @@
+---
+permalink: tools-apps-guides/elasticsearch-snapshot-configuration.html
+sidebar: sidebar
+keywords: Elastic, Elasticsearch, snapshot, repository, StorageGRID, object storage 
+summary: Instructions for creating Elasticsearch snapshot repository to use StorageGRID object storage. 
+---
+= Elasticsearch snapshot repository configuration
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+[.lead]
+Elasticsearch supports using AWS S3-compatible object storage for snapshot repositories. This article provides step-by-step instructions on how to create an Elasticsearch S3 snapshot repository with StorageGRID as the backend object storage.
+
+== Requirements
+
+* StorageGRID 11.8 or higher
+* Elasticsearch 8.x or higher
+
+== Assumption
+
+Readers are familiar with StorageGRID and Elasticsearch terminology and operations. 
+
+== Instruction
+
+*Steps*
+
+. Create a StorageGRID bucket to use for the Elasticsearch snapshot repository. Bucket versioning must be enabled. +
+Use one bucket per repository. Do not share a bucket across multiple repositories or Elasticsearch clusters.
+. Add the StorageGRID tenant access key and secret key to the Elasticsearch keystore. +
+Log in to the Elasticsearch master node, navigate to the `<elasticsearch>/bin/` directory, and use `elasticsearch-keystore` to add the access key and secret key. +
+
+Sample command: + 
+Note: In older Elasticsearch versions, the key names are `access.key` and `secret.key` instead of using underscores. +
+----
+/usr/share/elasticsearch/bin/elasticsearch-keystore add s3.client.sgdemo.access_key
+Enter value for s3.client.sgdemo.access_key: <paste the access key here, it will not be displayed>
+
+/usr/share/elasticsearch/bin/elasticsearch-keystore add s3.client.sgdemo.secret_key
+Enter value for s3.client.sgdemo.secret_key: <paste the secret key here, it will not be displayed>
+----
+To display the keys, use the 'elasticsearch-keystore show <key-name>' command.
+
+. For multi-nodes Elasticsearch clusters, repeat step 2 in each node or consult Elasticsearch documentation. 
+. From Kibana web GUI, navigate to the Dev Tools Console page and use `POST _nodes/reload_secure_settings` API to apply the changes to each node.
+
+image:es-snapshot/es-reload-api.png[reload_secure_settings sample screenshot]
+
+. Use the `PUT _snapshot` API to create a new snapshot repository. +
+In this example, the repository name is `sg_snapshot_repository`, and the buffer size corresponds to the S3 multipart upload part size. +
+The default protocol is HTTPS. To use HTTP with the StorageGRID S3 endpoint, add `"protocol": "http"` to the settings. +
+Use the bucket name created in step 1 and the client name configured in step 2. +
+----
+PUT _snapshot/sg_snapshot_repository
+{
+  "type": "s3",
+  "settings": {
+    "bucket": "elk-snapshot",
+    "client": "sgdemo",
+    "path_style_access": "true",
+    "endpoint": "sgdemo.netapp.com",
+    "buffer_size": "512mb"
+  }
+}
+----
+
+image:es-snapshot/es-create-repository-api.png[Elasticsearch API sample screenshot]
+
+. From Kibana web GUI, navigate to the Stack Management > Snapshot and Restore page, select the Repositories tab. +
+Click on the repository name to view the details or modify some settings such as buffer size. +
+For settings not visible on this page, use the `PUT _snapshot` API in the Dev Tools Console to make changes.
+
+image:es-snapshot/es-snapshot-repository.png[Snapshot Repository sample screenshot]
+
+. Set up a bucket lifecycle policy to manage non-current version objects in the snapshot bucket. For example, remove non-current versions after 90 days.
+
+. Elastic requires clients to validate the non-AWS S3 storage before using it for storing snapshot.   +
+Follow Elastic instructions to validate the setup: +
+https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-snapshot-repository-analyze
+
+. After validation, follows Elasticsearch guide to create a policy for storing nightly snapshots.
+
+== Additional resources
+* https://www.elastic.co/docs/api/doc/elasticsearch/group/endpoint-snapshot[Elasticsearch s3 repository]
+* https://docs.netapp.com/us-en/storagegrid/ilm/how-objects-are-deleted.html#delete-s3-versioned-objects[How S3 versioned objects are deleted]
+
+_By Angela Cheng_
