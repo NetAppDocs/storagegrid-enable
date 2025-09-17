@@ -10,6 +10,8 @@ summary: Instructions for creating an Elasticsearch snapshot repository to use S
 :imagesdir: ../media/
 
 [.lead]
+_By Angela Cheng_
+
 Elasticsearch supports using AWS S3-compatible object storage for snapshot repositories. This article provides step-by-step instructions on how to create an Elasticsearch S3 snapshot repository with StorageGRID as the backend object storage.
 
 == Requirements
@@ -47,7 +49,7 @@ Enter value for s3.client.sgdemo.secret_key: <paste the secret key here, it will
 +
 To display the keys, use the 'elasticsearch-keystore show <key-name>' command.
 +
-. For multi-nodes Elasticsearch clusters, repeat step 2 in each node or consult Elasticsearch documentation. 
+. For multi-node Elasticsearch clusters, repeat step 2 in each node or consult Elasticsearch documentation. 
 . From Kibana web GUI, navigate to the Dev Tools Console page and use `POST _nodes/reload_secure_settings` API to apply the changes to each node.
 +
 image:es-snapshot/es-reload-api.png[reload_secure_settings sample screenshot]
@@ -98,4 +100,3 @@ https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-snapshot-r
 * https://www.elastic.co/docs/api/doc/elasticsearch/group/endpoint-snapshot[Elasticsearch s3 repository]
 * https://docs.netapp.com/us-en/storagegrid/ilm/how-objects-are-deleted.html#delete-s3-versioned-objects[How S3 versioned objects are deleted]
 
-_By Angela Cheng_
