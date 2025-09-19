@@ -41,7 +41,7 @@ While an LTM is always required, a GSLB is optional depending on the number of S
 To learn more about the information that is described in this document, review the following documents and/or websites:
 
 * NetApp StorageGRID Documentation Center
-https://docs.netapp.com/us-en/storagegrid-118/
+https://docs.netapp.com/us-en/storagegrid/
 * NetApp StorageGRID Enablement
 https://docs.netapp.com/us-en/storagegrid-enable/
 * StorageGRID f5 load balancer design considerations

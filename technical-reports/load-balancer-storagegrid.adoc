@@ -32,8 +32,9 @@ The StorageGRID load balancer provides the following advantages:
 * *Traffic classifications*. The Advanced Traffic Classification feature allows for StorageGRID-specific QoS rules along with workload analytics.
 * *Future StorageGRID specific features*. StorageGRID will continue to optimize and add innovative features to the load balancer over upcoming releases.
 
-As an integrated node of StorageGRID, it has the ability to use advanced health checking to distribute requests based on Storage Node health, load and resource availability.
+As an integrated node of StorageGRID, the local traffic manager has the ability to use advanced health checking to distribute requests based on Storage Node health, load and resource availability. In addition it has the ability to distribute the load across multiple sites when the StorageGRID link costs are set to "0" between the sites. In the event the Storage Nodes are unavailable but the Gateway Node is available in a site, the load will automatically be directed to another site in the grid.
 
-The Load balancer caching feature of the Gateway Node is intended to provide a substantial performance improvement for certain workloads (such as AI training) which re-read a data set multiple times as part of processing that data. Caching gateway nodes can also be deployed physically distant from the rest of the grid enabling better performance and lower WAN network utilization in some workloads. The cache operates in a read back mode where writes are not cached and do not modify the state of the cache. Each Caching Gateway Node operates independently of any other caching Gateway node.
+The Load balancer caching feature of the Gateway Node is intended to provide a substantial performance improvement for certain workloads (such as AI training) which re-read a data set multiple times as part of processing that data. 
+Caching gateway nodes can also be deployed physically distant from the rest of the grid enabling better performance and lower WAN network utilization in some workloads. The cache operates in a read back mode where writes are not cached and do not modify the state of the cache. Each Caching Gateway Node operates independently of any other caching Gateway node.
 
-For details about deploying the StorageGRID Gateway Node, see the https://docs.netapp.com/us-en/storagegrid-117/[StorageGRID documentation^].
+For details about deploying the StorageGRID Gateway Node, see the https://docs.netapp.com/us-en/storagegrid/[StorageGRID documentation^].
