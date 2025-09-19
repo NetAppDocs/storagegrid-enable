@@ -34,7 +34,7 @@ The primary ransomware protection mechanism in the S3 API is to implement object
 To learn more about the information that is described in this document, review the following documents and/or websites:
 
 * NetApp StorageGRID Documentation Center
-https://docs.netapp.com/us-en/storagegrid-118/
+https://docs.netapp.com/us-en/storagegrid/
 * NetApp StorageGRID Enablement
 https://docs.netapp.com/us-en/storagegrid-enable/
 * NetApp Product Documentation 
