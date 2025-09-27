@@ -122,7 +122,7 @@ The gateway nodes will balance the load between the storage nodes in the site wh
 
 Ensuring an RTO of zero can be achieved with a combination of local and global load balancing. Ensuring uninterrupted client access requires load balancing of client requests. A StorageGRID solution can contain many gateway nodes and high availability groups in each site. To provide uninterrupted access for clients in any site even in a site failure you should configure an external load balancing solution in combination with StorageGRID gateway nodes. Configure gateway node high availability groups that manage the load within each site and use the external load balancer to balance the load across the high availability groups. The external load balancer must be configured to perform a health check to ensure requests are sent only to operational sites. For more information on load balancing with StorageGRID please see the https://www.netapp.com/media/17068-tr4626.pdf[StorageGRID load balancer technical report].
 
-== How to get to Zero RPO with StorageGRID
+== Requirements for Zero RPO with StorageGRID
 
 To achieve zero Recovery Point Objective (RPO) in an object storage system, it is crucial that at the time of failure:
 
