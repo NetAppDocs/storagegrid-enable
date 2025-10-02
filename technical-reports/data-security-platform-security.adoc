@@ -82,8 +82,8 @@ CTFC 1.31(c)-(d)
 |
 
 |Enhanced SSH behavior
-|New SSH host certificates and host keys are generated when upgrading a node to StorageGRID 11.5.
-|Enhances man-in-the-middle attack protection.
+|disable SSH by default prior to installation. In the default state, SSH access is only enabled on the link-local management ports address. The admin and root user passwords are set to the appliance compute controller serial number.  Login is only allowed on serial console and graphical console (BMC KVM). SSH on any network port is disabled.
+|Enhances network access protection.
 |SEC Rule 17a-4(f)
 CTFC 1.31(c)-(d)
 (FINRA) Rule 4511(c)

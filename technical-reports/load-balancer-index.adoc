@@ -37,28 +37,11 @@ There are two types of load balancers:
 * *Global Service Load Balancer (GSLB)*. Spreads connections over multiple sites, effectively load balancing LTM load balancers. Think of a GSLB as an intelligent DNS server. When a client requests a StorageGRID endpoint URL, the GSLB resolves it to the VIP of an LTM based on availability or other factors (for example, which site can provide lower latency to the application).
 While an LTM is always required, a GSLB is optional depending on the number of StorageGRID sites and your application requirements.
 
-=== StorageGRID Gateway Node load balancer versus third-party load balancer
-StorageGRID is unique among S3-compatible object storage vendors in that it provides a native load balancer available as a purpose-built appliance, VM, or container. The StorageGRID provided load balancer is also referred to as a Gateway Node. 
-
-For customers that do not already own a load balancer such as F5, Citrix, and so on, implementation of a third-party load balancer can be very complex. The StorageGRID load balancer greatly simplifies load balancer operations.
-
-The Gateway Node is an enterprise grade, highly available, and high-performance load balancer. Customers can choose to implement the Gateway Node, third-party load balancer, or even both, in the same grid. The Gateway Node is a local traffic manager versus a GSLB. 
-
-The StorageGRID load balancer provides the following advantages:
-
-* *Simplicity*. Automatic configuration of resource pools, health checks, patching, and maintenance, all managed by StorageGRID.
-* *Performance*. The StorageGRID load balancer is dedicated to StorageGRID, you do not compete with other applications for bandwidth.
-* *Cost*. The virtual machine (VM) and container versions are provided at no additional cost.
-* *Traffic classifications*. The Advanced Traffic Classification feature allows for StorageGRID-specific QoS rules along with workload analytics.
-* *Future StorageGRID specific features*. StorageGRID will continue to optimize and add innovative features to the load balancer over upcoming releases.
-
-For details about deploying the StorageGRID Gateway Node, see the https://docs.netapp.com/us-en/storagegrid-117/[StorageGRID documentation^].
-
 == Where to find additional information
 To learn more about the information that is described in this document, review the following documents and/or websites:
 
 * NetApp StorageGRID Documentation Center
-https://docs.netapp.com/us-en/storagegrid-118/
+https://docs.netapp.com/us-en/storagegrid/
 * NetApp StorageGRID Enablement
 https://docs.netapp.com/us-en/storagegrid-enable/
 * StorageGRID f5 load balancer design considerations

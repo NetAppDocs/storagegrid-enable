@@ -202,13 +202,15 @@ Benefit: Reduce storage costs and ensure the bucket is clutter-free while retain
   "Rules": [
     {
       "ID": "Delete current version",
+      "Filter": {},
       "Status": "Enabled",
       "Expiration": {
         "Days": 30
-      },
+      }
     },
     {
       "ID": "noncurrent version retention",
+      "Filter": {},
       "Status": "Enabled",
       "NoncurrentVersionExpiration": {
         "NoncurrentDays": 60
@@ -216,6 +218,7 @@ Benefit: Reduce storage costs and ensure the bucket is clutter-free while retain
     },
     {
       "ID": "Markers",
+      "Filter": {},
       "Status": "Enabled",
       "Expiration": {
         "ExpiredObjectDeleteMarker": true
@@ -225,7 +228,7 @@ Benefit: Reduce storage costs and ensure the bucket is clutter-free while retain
 }
 ----
 
-=== remove delete markers that have no other versions and have existed for 5 days, Retain 4 non-current versions and at least 30 days worth of history for objects with the "accounts_ prefix" and keep 2 versions and at least 10 days worth of history for all other object versions.
+=== remove delete markers that have no other versions, Retain 4 non-current versions and at least 30 days worth of history for objects with the "accounts_ prefix" and keep 2 versions and at least 10 days worth of history for all other object versions.
 Use case: Provide unique rules for specific objects along side other objects to manage the complete lifecycle for current and non-current versions including the delete markers.
 Benefit: Reduce storage costs and ensure the bucket is clutter-free while retaining sufficient recovery points and history to meet a mix of client requirements.
 
@@ -235,25 +238,24 @@ Benefit: Reduce storage costs and ensure the bucket is clutter-free while retain
   "Rules": [
     {
       "ID": "Markers",
+      "Filter": {},
       "Status": "Enabled",
       "Expiration": {
-        "Days": 5,
         "ExpiredObjectDeleteMarker": true
-      },
+      }
     },
     {
       "ID": "accounts version retention",
+      "Filter": {"Prefix":"account_"},
       "Status": "Enabled",
       "NoncurrentVersionExpiration": {
         "NewerNoncurrentVersions": 4,
         "NoncurrentDays": 30
-      },
-      "Filter": {
-          "Prefix":"account_"
-      }
+      }    
     },
     {
       "ID": "noncurrent version retention",
+      "Filter": {},
       "Status": "Enabled",
       "NoncurrentVersionExpiration": {
         "NewerNoncurrentVersions": 2,

@@ -46,12 +46,15 @@ Discover the administration security features in StorageGRID.
 |Distributed audit logging
 |StorageGRID provides a built-in, distributed audit logging infrastructure, scalable to hundreds of nodes across up to 16 sites. StorageGRID software nodes generate audit messages, which are transmitted through a redundant audit relay system and ultimately captured in one or more audit log repositories. Audit messages capture events at an object-level granularity such as client-initiated S3 API operations, object lifecycle events by ILM, background object health checks, and configuration changes made from the management UI or APIs.
 
-Audit logs can be exported from admin nodes through CIFS or NFS, allowing audit messages to be mined by tools such as Splunk and ELK. There are four types of audit messages:
+Audit logs can be exported by syslog allowing audit messages to be mined by tools such as Splunk and ELK. There are four types of audit messages:
 
 * System audit messages
 * Object storage audit messages
 * HTTP protocol audit messages
 * Management audit messages
+
+Audit logs can be stored in a S3 bucket for long term retention and application access.
+
 |Provides Grid administrators with a proven and scalable audit service and enables them to mine audit data for various objectives. Such objectives include troubleshooting, auditing SLA performance, client data access API operations, and management configuration changes.
 |--
 
