@@ -24,7 +24,12 @@ StorageGRID allows for configurable durability and availability of your data in 
 
 === StorageGRID scale
 
-StorageGRID can be deployed with as few as 3 storage nodes and a single grid can grow up to 200 nodes. A single grid can be deployed as a single site or extend to 16 sites. A minimal grid consists of an admin node and 3 storage nodes in a single site. The admin node contains the management interface, a central point for metrics and logging, and maintains the configuration of the StorageGRID components. The admin node also contains an integrated load balancer for S3 API access. StorageGRID can be deployed as software-only, as VMware virtual machine appliances, or as purpose-built appliances.
+A minimal StorageGRID deployment consists of an Admin node and 3 Storage nodes in a single site. A single grid can grow up to 220 nodes. 
+StorageGRID can be deployed as a single site or extend to 16 sites.  
+
+The Admin node contains the management interface, a central point for metrics and logging, and maintains the configuration of the StorageGRID components. The Admin node also contains an integrated load balancer for S3 API access. 
+
+StorageGRID can be deployed as software-only, as VMware virtual machine appliances, or as purpose-built appliances.
 
 A StorageGRID node can be deployed as:
 
@@ -32,11 +37,11 @@ A StorageGRID node can be deployed as:
 * An object storage only node maximizing object space
 * A combined metadata and object storage node adding both object count and object space 
 
-Each storage node can scale to multi-petabyte capacity for object storage allowing for a single namespace in the hundreds of petabytes. StorageGRID also provides an integrated load balancer for S3 API operations called a gateway node.
+Each Storage node can scale to multi-petabyte capacity for object storage allowing for a single namespace in the hundreds of petabytes. StorageGRID also provides an integrated load balancer for S3 API operations called a gateway node.
 
 image:zero-rpo/delivery-paths.png[StorageGRID deployment options]
 
-StorageGRID consists of a collection of nodes placed into a site topology. A site in StorageGRID can be a unique physical location or reside in a shared physical location as other sites in the grid as a logical construct. A StorageGRID site should not span multiple physical locations. A site represents a shared local area network (LAN) infrastructure.
+StorageGRID consists of a collection of nodes placed into a site topology. A site in StorageGRID can be a unique physical location or reside in a shared physical location as other sites in the grid as a logical construct. A StorageGRID site should not span multiple physical locations. A site represents a shared local area network (LAN) infrastructure and failure domain.
 
 === StorageGRID and failure domains
 
@@ -72,9 +77,11 @@ StorageGRID's Information lifecycle management (ILM) system is used to orchestra
 
 === Erasure coding
 
-StorageGRID provides the ability to erasure code data at multiple levels. With StorageGRID appliances we erasure code the data stored on each node across all the drives with RAID providing protection against multiple disk failures causing data loss or interruptions. Additionally, StorageGRID can use erasure coding schemes to store object data across the nodes within a site or spread across 3 or more sites in the StorageGRID system though StorageGRID's ILM rules.
+StorageGRID provides the ability to erasure code data at node level and the drive level. With StorageGRID appliances we erasure code the data stored on each node across all the drives within the node providing local protection against multiple disk failures causing data loss or interruptions. Rebuilds from drive failures are local to the node and do not require data replicated over the network. 
 
-Erasure coding provides a storage layout that is resilient to node failures with low overhead, while replication can do the same thing, with more overhead. All StorageGRID erasure coding schemes are deployable in a single site provided the minimum number of nodes required to store the data chunks are met. This means for an EC scheme of 4+2 there needs to be a minimum of 6 nodes available to receive the data.
+Additionally, StorageGRID appliances use erasure coding schemes to store object data across the nodes within a site or spread across 3 or more sites in the StorageGRID system though StorageGRID's ILM rules protecting against node failure.
+
+Erasure coding provides a storage layout that is resilient to node and site failures with low overhead, while replication can do the same thing, with more overhead. All StorageGRID erasure coding schemes are deployable in a single site provided the minimum number of nodes required to store the data chunks are met. This means for an EC scheme of 4+2 there needs to be a minimum of 6 nodes available to receive the data.
 
 image:zero-rpo/ec-schemes.png[Available StorageGRID erasure coding schemes for objects]
 
@@ -88,7 +95,9 @@ The bucket consistency options available in StorageGRID are:
 
 * *All*: Provides the highest level of consistency. All nodes in the grid receive the data immediately, or the request will fail.
 * *Strong-global*: Guarantees read-after-write consistency for all client requests across all sites.
-* *Strong-global V2*: Guarantees read-after-write consistency for all client requests across all sites. Offers consistency for multiple nodes or even a site failure if metadata replica quorum is achievable. For example, a minimum of 5 replicas must be made from a 3-site grid with a maximum of 3 replicas within a site.
+* *Quorum Strong-global*: Guarantees read-after-write consistency for all client requests across all sites. Offers consistency for multiple nodes or even a site failure if metadata replica quorum is achievable. 
+** QUORUM consistency is defined as a quorum of Storage Node metadata replicas, where each site has 3 metadata replicas. It may be calculated as follows: 1+((N*3)/2) where N is the total number of sites
+** For example, a minimum of 5 replicas must be made from a 3-site grid with a maximum of 3 replicas within a site.
 * *Strong-site*: Guarantees read-after-write consistency for all client requests within a site.
 * *Read-after-new-write*(default): Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability and data protection guarantees. Recommended for most cases.
 * *Available*: Provides eventual consistency for both new objects and object updates. For S3 buckets, use only as required (for example, for a bucket that contains log values that are rarely read, or for HEAD or GET operations on keys that don't exist). Not supported for S3 FabricPool buckets.
@@ -111,25 +120,25 @@ StorageGRID can be deployed with client access through the integrated gateway no
 
 The gateway nodes will balance the load between the storage nodes in the site where the gateway node resides by default. StorageGRID can be configured to allow the gateway nodes to balance load using nodes from multiple sites. This configuration would add the latency between those sites to the response latency to the client requests. This should only be configured if the total latency is acceptable to the clients.
 
-== How to get to Zero RPO with StorageGRID
+Ensuring an RTO of zero can be achieved with a combination of local and global load balancing. Ensuring uninterrupted client access requires load balancing of client requests. A StorageGRID solution can contain many gateway nodes and high availability groups in each site. To provide uninterrupted access for clients in any site even in a site failure you should configure an external load balancing solution in combination with StorageGRID gateway nodes. Configure gateway node high availability groups that manage the load within each site and use the external load balancer to balance the load across the high availability groups. The external load balancer must be configured to perform a health check to ensure requests are sent only to operational sites. For more information on load balancing with StorageGRID please see the https://www.netapp.com/media/17068-tr4626.pdf[StorageGRID load balancer technical report].
+
+== Requirements for Zero RPO with StorageGRID
 
 To achieve zero Recovery Point Objective (RPO) in an object storage system, it is crucial that at the time of failure:
 
 * Both metadata and object contents are in sync and considered consistent
 * Object content remain accessible despite the failure.
 
-For a multi-site deployment, Strong Global V2 is the preferred consistency model to ensure metadata is synchronized across all sites, making it essential for meeting the zero RPO requirement.
+For a multi-site deployment, Quorum Strong Global is the preferred consistency model to ensure metadata is synchronized across all sites, making it essential for meeting the zero RPO requirement.
 
 Objects in the storage system are stored based on Information Lifecycle Management (ILM) rules, which dictate how and where data is stored throughout its lifecycle. For synchronous replication one can consider between Strict execution or Balanced Execution.
 
 * Strict execution of these ILM rules is necessary for zero RPO because it ensures that objects are placed in the defined locations without any delay or fallback, maintaining data availability and consistency.
 * StorageGRID's ILM balance ingest behavior provides a balance between high availability and resiliency, allowing users to continue ingesting data even in the event of a site failure.
 
-Optionally, ensuring an RTO of zero can be achieved with a combination of local and global load balancing. Ensuring uninterrupted client access requires load balancing of client requests. A StorageGRID solution can contain many gateway nodes and high availability groups in each site. To provide uninterrupted access for clients in any site even in a site failure you should configure an external load balancing solution in combination with StorageGRID gateway nodes. Configure gateway node high availability groups that manage the load within each site and use the external load balancer to balance the load across the high availability groups. The external load balancer must be configured to perform a health check to ensure requests are sent only to operational sites. For more information on load balancing with StorageGRID please see the https://www.netapp.com/media/17068-tr4626.pdf[StorageGRID load balancer technical report].
-
 == Synchronous Deployments across multiple sites
 
-*Multi-site solutions:* StorageGRID allows you to replicate objects across multiple sites within the grid synchronously. By setting up Information Lifecycle Management (ILM) rules with balance or strict behavior, objects are placed immediately in the specified locations. Configuring bucket consistency level to Strong Global v2 will ensure synchronous metadata replication as well. StorageGRID uses a single global namespace, storing object placement locations as metadata, so every node knows where all copies or erasure coded pieces are located. If an object can't be retrieved from the site where the request was made, it will be automatically retrieved from a remote site without needing failover procedures.
+*Multi-site solutions:* StorageGRID allows you to replicate objects across multiple sites within the grid synchronously. By setting up Information Lifecycle Management (ILM) rules with balance or strict behavior, objects are placed immediately in the specified locations. Configuring bucket consistency level to Quorum Strong Global will ensure synchronous metadata replication as well. StorageGRID uses a single global namespace, storing object placement locations as metadata, so every node knows where all copies or erasure coded pieces are located. If an object can't be retrieved from the site where the request was made, it will be automatically retrieved from a remote site without needing failover procedures.
 
 Once the failure is resolved, no manual failback efforts are required. The replication performance depends on the site with the lowest network throughput, highest latency, and lowest performance. A site's performance is based on the number of nodes, CPU core count and speed, memory, drive quantity, and drive types.
 
@@ -142,7 +151,7 @@ Once the failure is resolved, no manual failback efforts are required. The repli
 
 == A Single Grid Multi-site deployment 
 
-In the following scenarios the StorageGRID solutions are configured with an optional external load balancer managing requests to the integrated load balancer high availability groups. This will achieve an RTO of zero in addition to an RPO of zero. ILM is configured with Balanced ingest protection for synchronous placement. Each bucket is configured with the strong global v2 consistency model for grids of 3 or more sites and strong Global consistency for less than 3 sites.
+In the following scenarios the StorageGRID solutions are configured with an optional external load balancer managing requests to the integrated load balancer high availability groups. This will achieve an RTO of zero in addition to an RPO of zero. ILM is configured with Balanced ingest protection for synchronous placement. Each bucket is configured with the Quorum Strong Global consistency model for grids of 3 or more sites and strong Global consistency for less than 3 sites.
 
 In a two site StorageGRID solution there are at least two replicas or 3 EC chunks of every object and 6 replicas of all metadata. Upon failure recovery, updates from the outage will synchronize to the recovered site/nodes automatically. With only 2 sites it is not likely to achieve a zero RPO in failure scenarios beyond a full site loss.
 
@@ -198,7 +207,7 @@ No disruption to operations in the remaining sites and no data loss
 
 == A multi-site multi-grid deployment 
 
-To add an extra layer of redundancy, this scenario will employ two StorageGRID Clusters and use cross-grid replication to keep them in sync. For this solution each StorageGRID clusters will have three sites. Two sites will be used for object storage and metadata while the third site will be used solely for metadata. Both systems will be configured with a balanced ILM rule to synchronously store the objects using erasure coding in each of the two data sites. Buckets will be configured with the strong global v2 consistency model. Each grid will be configured with bi-directional cross-grid replication on every bucket. This provides the asynchronous replication between the regions. Optionally a global load balancer can be implemented to manage requests to the integrated load balancer high availability groups of both StorageGRID systems to achieve a zero RPO.
+To add an extra layer of redundancy, this scenario will employ two StorageGRID Clusters and use cross-grid replication to keep them in sync. For this solution each StorageGRID clusters will have three sites. Two sites will be used for object storage and metadata while the third site will be used solely for metadata. Both systems will be configured with a balanced ILM rule to synchronously store the objects using erasure coding in each of the two data sites. Buckets will be configured with the Quorum Strong Global consistency model. Each grid will be configured with bi-directional cross-grid replication on every bucket. This provides the asynchronous replication between the regions. Optionally a global load balancer can be implemented to manage requests to the integrated load balancer high availability groups of both StorageGRID systems to achieve a zero RPO.
 
 The solution will use four locations equally divided into two regions. Region 1 will contain the 2 storage sites of grid 1 as the primary grid of the region and the metadata site of grid 2. Region 2 will contain the 2 storage sites of grid 2 as the primary grid of the region and the metadata site of grid 1. In each region the same location can house the storage site of the primary grid of the region as well as the metadata only site of the other regions grid. Using metadata only nodes as the third site will provide the consistency required for the metadata and not duplicate the storage of objects in that location.
 
