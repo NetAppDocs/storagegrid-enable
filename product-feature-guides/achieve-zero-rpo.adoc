@@ -203,21 +203,57 @@ Operations disrupted and risk of data loss if:
 * No replicate copies exist
 * Insufficient EC chucks exist to retrieve the object
 
-|Single site failure |Some client operations will be interrupted until the failure is resolved. HEAD operations will continue without interruption. GET operations will continue without interruption if a replicate copy or sufficient EC chunks exist. Reduce bucket consistency to read-after-new-write or lower to continue operations uninterrupted in this failure state.
- |No interruption to operations or data loss.
+|Single site failure |Some client operations will be interrupted until the failure is resolved. 
 
-|Single site plus single node failures |Some client operations will be interrupted until either the failure is resolved. HEAD operations will continue without interruption. GET operations will continue without interruption if a replicate copy or sufficient EC chunks exist. Reduce bucket consistency to read-after-new-write or lower to continue operations uninterrupted in this failure state. |No interruption to operations or data loss. Possible data loss depending on the number of replicate copies. Local Erasure coding can prevent data loss.
+GET and HEAD operations will continue without interruption. 
 
-|Single site plus a node from each remaining site |Only two sites exist. See: Single site plus a single node. |Operations will be disrupted If metadata replica quorum cannot be met.
-Reduce bucket consistency to read-after-new-write or lower to continue operations uninterrupted in this failure state. Possible data loss for permanent failure depending on the number of replicate copies. Local Erasure coding can prevent data loss. 
+Reduce bucket consistency to read-after-new-write or lower to continue operations uninterrupted in this failure state.
 
-|Multi-site failure |No operational sites remain. Data will be lost if at least one site cannot be recovered in its entirety. |Operations will be disrupted If metadata replica quorum cannot be met. Reduce bucket consistency to read-after-new-write or lower to continue operations uninterrupted in this failure state. Possible data loss for permanent failure if not enough erasure coded chunks remain. Local Erasure coding or replicate copies can prevent data loss.
+|No interruption to operations or data loss.
 
+|Single site plus single node failures |Some client operations will be interrupted until either the failure is resolved. 
 
-|Network isolation of a site |client operations will be interrupted until either the failure is resolved. Reduce bucket consistency to read-after-new-write or lower to continue operations uninterrupted in this failure state. No data loss a|
-Operations will be disrupted for the isolated site, but no data loss Reduce bucket consistency to read-after-new-write or lower to continue operations uninterrupted in this failure state.
+HEAD operations will continue without interruption. 
 
-No disruption to operations in the remaining sites and no data loss
+GET operations will continue without interruption if a replicate copy or sufficient EC chunks exist. 
+
+Reduce bucket consistency to read-after-new-write or lower to continue operations uninterrupted in this failure state. |No interruption to operations or data loss. 
+
+Possible data loss depending on the number of replicate copies. 
+
+Local Erasure coding can prevent data loss.
+
+|Single site plus a node from each remaining site |Only two sites exist. 
+
+See: Single site plus a single node. |Operations will be disrupted If metadata replica quorum cannot be met.
+
+Reduce bucket consistency to read-after-new-write or lower to continue operations uninterrupted in this failure state. 
+
+Possible data loss for permanent failure depending on the number of replicate copies.
+
+Local Erasure coding can prevent data loss. 
+
+|Multi-site failure |No operational sites remain. 
+
+Data will be lost if at least one site cannot be recovered in its entirety. 
+|Operations will be disrupted If metadata replica quorum cannot be met. 
+
+Reduce bucket consistency to read-after-new-write or lower to continue operations uninterrupted in this failure state. 
+
+Possible data loss for permanent failure if not enough erasure coded chunks remain. 
+
+Local Erasure coding or replicate copies can prevent data loss.
+
+|Network isolation of a site |client operations will be interrupted until either the failure is resolved. 
+
+Reduce bucket consistency to read-after-new-write or lower to continue operations uninterrupted in this failure state. 
+
+No data loss 
+|Operations will be disrupted for the isolated site, but no data loss. 
+
+Reduce bucket consistency to read-after-new-write or lower to continue operations uninterrupted in this failure state.
+
+No disruption to operations in the remaining sites and no data loss.
 |===
 
 == A multi-site multi-grid deployment 
