@@ -11,8 +11,8 @@ summary: 'This technical report outlines the implementation of StorageGRID repli
 
 [.lead]
 
-This technical report provides a comprehensive guide to implementing StorageGRID replication strategies to achieve a Recovery Point Objective (RPO) of zero in the event of a site failure. The document details various deployment options for StorageGRID, including multi-site synchronous replication and multi-grid asynchronous replication. It explains how StorageGRID's Information Lifecycle Management (ILM) policies can be configured to ensure data durability and availability across multiple locations.
-Additionally, the report covers performance considerations, failure scenarios, and recovery processes to maintain uninterrupted client operations. The goal of this document is to provide the information to ensure that data remains accessible and consistent, even in the event of a complete site failure, by leveraging both synchronous and asynchronous replication techniques.
+This technical report provides a comprehensive guide to implementing StorageGRID replication strategies to achieve a Recovery Point Objective (RPO) of zero in the event of a site failure. The document details various deployment options for StorageGRID, including multi-site synchronous replication and multi-grid asynchronous replication. It explains how StorageGRID Information Lifecycle Management (ILM) policies can be configured to ensure data durability and availability across multiple locations.
+Additionally, the report covers performance considerations, failure scenarios, and recovery processes to maintain uninterrupted client operations. The goal of this document is to provide information to ensure that data remains accessible and consistent, even in the event of a complete site failure, by leveraging both synchronous and asynchronous replication techniques.
 
 == StorageGRID Overview
 
@@ -25,13 +25,13 @@ StorageGRID allows for configurable durability and availability of your data in 
 === StorageGRID scale
 
 A minimal StorageGRID deployment consists of an Admin node and 3 Storage nodes in a single site. A single grid can grow up to 220 nodes. 
-StorageGRID can be deployed as a single site or extend to 16 sites.  
+StorageGRID can be deployed as a single site or extended to 16 sites.  
 
 The Admin node contains the management interface, a central point for metrics and logging, and maintains the configuration of the StorageGRID components. The Admin node also contains an integrated load balancer for S3 API access. 
 
 StorageGRID can be deployed as software-only, as VMware virtual machine appliances, or as purpose-built appliances.
 
-A StorageGRID node can be deployed as:
+A Storage node can be deployed as:
 
 * A metadata only node maximizing object count 
 * An object storage only node maximizing object space
@@ -58,7 +58,7 @@ With object storage, the unit of storage is an object, rather than a file or a b
 
 Each object in an object-based storage system has two parts: object data and object metadata.
 
-* Object data represents the actual underlying data for example, a photograph, a movie, or a medical record.
+* Object data represents the actual underlying data, for example, a photograph, a movie, or a medical record.
 * Object metadata is any information that describes an object.
 
 StorageGRID uses object metadata to track the locations of all objects across the grid and to manage each object's lifecycle over time.
@@ -66,10 +66,10 @@ StorageGRID uses object metadata to track the locations of all objects across th
 Object metadata includes information such as the following:
 
 * System metadata, including a unique ID for each object, the object name, the name of the S3 bucket, the tenant account name or ID, the logical size of the object, the date and time the object was first created, and the date and time the object was last modified.
-* The current storage location of each object replica or erasure-coded fragment.
+* The current storage location of each object's replicate copy or erasure-coded fragment.
 * Any custom user metadata key-value pairs associated with the object.
 * For S3 objects, any object tag key-value pairs associated with the object
-* For segmented objects and multipart objects, segment identifiers and data sizes.
+* For segmented objects and multipart objects, segment identifiers, and data sizes.
 
 Object metadata is customizable and expandable, making it flexible for applications to use. For detailed information about how and where StorageGRID stores object metadata, go to https://docs.netapp.com/us-en/storagegrid/admin/managing-object-metadata-storage.html[Manage object metadata storage].
 
@@ -81,7 +81,7 @@ StorageGRID provides the ability to erasure code data at node level and the driv
 
 Additionally, StorageGRID appliances use erasure coding schemes to store object data across the nodes within a site or spread across 3 or more sites in the StorageGRID system though StorageGRID's ILM rules protecting against node failure.
 
-Erasure coding provides a storage layout that is resilient to node and site failures with low overhead, while replication can do the same thing, with more overhead. All StorageGRID erasure coding schemes are deployable in a single site provided the minimum number of nodes required to store the data chunks are met. This means for an EC scheme of 4+2 there needs to be a minimum of 6 nodes available to receive the data.
+Erasure coding provides a storage layout that is resilient to node and site failures with a lower overhead than replication. All StorageGRID erasure coding schemes are deployable in a single site provided the minimum number of nodes required to store the data chunks are met. This means for an EC scheme of 4+2 there needs to be a minimum of 6 nodes available to receive the data.
 
 image:zero-rpo/ec-schemes.png[Available StorageGRID erasure coding schemes for objects]
 
@@ -94,10 +94,13 @@ The default consistency is defined at a grid wide level. Users can change the co
 The bucket consistency options available in StorageGRID are:
 
 * *All*: Provides the highest level of consistency. All nodes in the grid receive the data immediately, or the request will fail.
-* *Strong-global*: Guarantees read-after-write consistency for all client requests across all sites.
-* *Quorum Strong-global*: Guarantees read-after-write consistency for all client requests across all sites. Offers consistency for multiple nodes or even a site failure if metadata replica quorum is achievable. 
-** QUORUM consistency is defined as a quorum of Storage Node metadata replicas, where each site has 3 metadata replicas. It may be calculated as follows: 1+((N*3)/2) where N is the total number of sites
-** For example, a minimum of 5 replicas must be made from a 3-site grid with a maximum of 3 replicas within a site.
+* *Strong-global*: 
+** *Legacy Strong Global*: Guarantees read-after-write consistency for all client requests across all sites. 
+*** This is the default behavior for all systems upgraded from 11.9 or older to 12.0 without manually changing to the new Quorum Strong Global. 
+** *Quorum Strong-global*: Guarantees read-after-write consistency for all client requests across all sites. Offers consistency for multiple nodes or even a site failure if metadata replica quorum is achievable. 
+*** This is the default behavior for all systems newly installed at 12.0 or higher. 
+*** QUORUM consistency is defined as a quorum of Storage Node metadata replicas, where each site has 3 metadata replicas. It may be calculated as follows: 1+((N*3)/2) where N is the total number of sites
+*** For example, a minimum of 5 replicas must be made from a 3-site grid with a maximum of 3 replicas within a site.
 * *Strong-site*: Guarantees read-after-write consistency for all client requests within a site.
 * *Read-after-new-write*(default): Provides read-after-write consistency for new objects and eventual consistency for object updates. Offers high availability and data protection guarantees. Recommended for most cases.
 * *Available*: Provides eventual consistency for both new objects and object updates. For S3 buckets, use only as required (for example, for a bucket that contains log values that are rarely read, or for HEAD or GET operations on keys that don't exist). Not supported for S3 FabricPool buckets.
@@ -108,19 +111,19 @@ While metadata is automatically replicated within and across sites, object data 
 
 Each ILM rule will be configured with one of three ingest behaviors for protecting objects: Dual commit, balanced or strict.
 
-The dual commit option will make two copies on any two different storage nodes in the grid immediately and return the request is successful to the client. The node selection will try within the site of the request, but may use nodes of another site in some circumstances. The object is added to the ILM queue to be evaluated and placed according to the ILM rules.
+The dual commit option will make two copies on any two different storage nodes in the grid immediately and return the request to be successful to the client. The node selection will be tried within the site of the request but may use nodes of another site in some circumstances. The object is added to the ILM queue to be evaluated and placed according to the ILM rules.
 
-The balanced option evaluates the object against the ILM policy immediately and places the object synchronously before returning the request is successful to the client. If the ILM rule cannot be met immediately due to an outage or inadequate storage to meet the placement requirements, then dual commit will be used instead. Once the issue is resolved ILM will automatically place the object based on the defined rule.
+The balanced option evaluates the object against the ILM policy immediately and places the object synchronously before returning the request to be successful to the client. If the ILM rule cannot be met immediately due to an outage or inadequate storage to meet the placement requirements, then dual commit will be used instead. Once the issue is resolved, ILM will automatically place the object based on the defined rule.
 
-The strict option evaluates the object against the ILM policy immediately and places the object synchronously before returning the request is successful to the client. If the ILM rule cannot be met immediately due to an outage or inadequate storage to meet the placement requirements, then the request will fail, and the client will need to retry.
+The strict option evaluates the object against the ILM policy immediately and places the object synchronously before returning the request to be successful to the client. If the ILM rule cannot be met immediately due to an outage or inadequate storage to meet the placement requirements, then the request will fail, and the client will need to retry.
 
 === Load balancing
 
 StorageGRID can be deployed with client access through the integrated gateway nodes, an external 3^rd^ party load balancer, DNS round robin, or directly to a storage node. Multiple gateway nodes can be deployed in a site and configured in high availability groups providing automated failover and fail back in the event of a gateway node outage. You can combine load balancing methods in a solution to provide a single point of access for all sites in a solution.
 
-The gateway nodes will balance the load between the storage nodes in the site where the gateway node resides by default. StorageGRID can be configured to allow the gateway nodes to balance load using nodes from multiple sites. This configuration would add the latency between those sites to the response latency to the client requests. This should only be configured if the total latency is acceptable to the clients.
+The gateway nodes will balance the load between the storage nodes in the site where the gateway node resides by default. StorageGRID can be configured to allow the gateway nodes to balance load using nodes from multiple sites. This configuration would add the latency between those sites to the response latency to the client's requests. This should only be configured if the total latency is acceptable to the clients.
 
-Ensuring an RTO of zero can be achieved with a combination of local and global load balancing. Ensuring uninterrupted client access requires load balancing of client requests. A StorageGRID solution can contain many gateway nodes and high availability groups in each site. To provide uninterrupted access for clients in any site even in a site failure you should configure an external load balancing solution in combination with StorageGRID gateway nodes. Configure gateway node high availability groups that manage the load within each site and use the external load balancer to balance the load across the high availability groups. The external load balancer must be configured to perform a health check to ensure requests are sent only to operational sites. For more information on load balancing with StorageGRID please see the https://www.netapp.com/media/17068-tr4626.pdf[StorageGRID load balancer technical report].
+Ensuring an RTO of zero can be achieved with a combination of local and global load balancing. Ensuring uninterrupted client access requires load balancing of client requests. A StorageGRID solution can contain many gateway nodes and high availability groups in each site. To provide uninterrupted access for clients in any site even in a site failure, you should configure an external load balancing solution in combination with StorageGRID Gateway nodes. Configure Gateway node high availability groups that manage the load within each site and use the external load balancer to balance the load across the high availability groups. The external load balancer must be configured to perform a health check to ensure requests are sent only to operational sites. For more information on load balancing with StorageGRID please see the https://www.netapp.com/media/17068-tr4626.pdf[StorageGRID load balancer technical report].
 
 == Requirements for Zero RPO with StorageGRID
 
@@ -131,7 +134,7 @@ To achieve zero Recovery Point Objective (RPO) in an object storage system, it i
 
 For a multi-site deployment, Quorum Strong Global is the preferred consistency model to ensure metadata is synchronized across all sites, making it essential for meeting the zero RPO requirement.
 
-Objects in the storage system are stored based on Information Lifecycle Management (ILM) rules, which dictate how and where data is stored throughout its lifecycle. For synchronous replication one can consider between Strict execution or Balanced Execution.
+Objects in the storage system are stored based on Information Lifecycle Management (ILM) rules, which dictate how and where data is stored throughout its lifecycle. For synchronous replication, one can consider between Strict execution or Balanced Execution.
 
 * Strict execution of these ILM rules is necessary for zero RPO because it ensures that objects are placed in the defined locations without any delay or fallback, maintaining data availability and consistency.
 * StorageGRID's ILM balance ingest behavior provides a balance between high availability and resiliency, allowing users to continue ingesting data even in the event of a site failure.
@@ -151,21 +154,26 @@ Once the failure is resolved, no manual failback efforts are required. The repli
 
 == A Single Grid Multi-site deployment 
 
-In the following scenarios the StorageGRID solutions are configured with an optional external load balancer managing requests to the integrated load balancer high availability groups. This will achieve an RTO of zero in addition to an RPO of zero. ILM is configured with Balanced ingest protection for synchronous placement. Each bucket is configured with the Quorum Strong Global consistency model for grids of 3 or more sites and strong Global consistency for less than 3 sites.
+In the following scenarios the StorageGRID solutions are configured with an optional external load balancer managing requests to the integrated load balancer high availability groups. This will achieve an RTO of zero in addition to an RPO of zero. ILM is configured with Balanced ingest protection for synchronous placement. Each bucket is configured with the Quorum version of Strong Global consistency model for grids of 3 or more sites and the Legacy version of Strong Global consistency for 2 sites.
 
-In a two site StorageGRID solution there are at least two replicas or 3 EC chunks of every object and 6 replicas of all metadata. Upon failure recovery, updates from the outage will synchronize to the recovered site/nodes automatically. With only 2 sites it is not likely to achieve a zero RPO in failure scenarios beyond a full site loss.
+*Scenario 1:*
+
+In a two site StorageGRID solution, there are at least two replicas of every object and 6 replicas of all metadata. Upon failure recovery, updates from the outage will synchronize to the recovered site/nodes automatically. With only 2 sites it is not likely to achieve a zero RPO in failure scenarios beyond a full site loss.
 
 image:zero-rpo/2-site.png[Two site StorageGRID system]
 
-In a StorageGRID solution of three or more sites there are at least 3 replicas or 3 EC chunks of every object and 9 replicas of all metadata. Upon failure recovery, updates from the outage will synchronize to the recovered site/nodes automatically. With three or more sites it is possible to achieve a zero RPO.
+*Scenario 2:*
+
+In a StorageGRID solution of three or more sites, there are at least 3 replicas or 3 EC chunks of every object and 9 replicas of all metadata. Upon failure recovery, updates from the outage will synchronize to the recovered site/nodes automatically. With three or more sites it is possible to achieve a zero RPO.
 
 image:zero-rpo/3-site.png[Three site StorageGRID system]
 
 Multi-site failure scenarios
 [cols="34%,33%,33%",options="header",]
 |===
-|Failure |2-site Outcome |3 or more sites outcome
-|Single node drive failure |Each appliance uses multiple disk groups and can sustain at least 1 drive per group failing without interruption or data loss. |Each appliance uses multiple disk groups and can sustain at least 1 drive per group failing without interruption or data loss.
+|Failure |2-site Outcome + 
+Legacy Strong Global |3 or more sites outcome + 
+Quorum Strong Global|Single node drive failure |Each appliance uses multiple disk groups and can sustain at least 1 drive per group failing without interruption or data loss. |Each appliance uses multiple disk groups and can sustain at least 1 drive per group failing without interruption or data loss.
 |Single node failure in one site |No interruption to operations or data loss. |No interruption to operations or data loss.
 |Multiple node failure in one site a|
 Disruption to client operations directed to this site but no data loss.
@@ -176,31 +184,38 @@ Operations directed to the other site remain uninterrupted and no data loss.
 |Single node failure at multiple sites a|
 No disruption or data loss if:
 
-* At least a single replica exists in the grid
+* At least one replicate copy exists in the grid
 * Sufficient EC chunks exist in the grid
 
 Operations disrupted and risk of data loss if:
 
-* No replicas exist
+* No replicate copies exist
 * Insufficient EC chucks exist
 
 a|
 No disruption or data loss if:
 
-* At least a single replica exists in the grid
+* At least a single replicate copy exists in the grid
 * Sufficient EC chunks exist in the grid
 
 Operations disrupted and risk of data loss if:
 
-* No replicas exist
+* No replicate copies exist
 * Insufficient EC chucks exist to retrieve the object
 
-|Single site failure |client operations will be interrupted until either the failure is resolved, or the bucket consistency is lowered to strong site or lower to allow operations to succeed but no data loss. |No interruption to operations or data loss.
-|Single site plus single node failures |client operations will be interrupted until either the failure is resolved, or the bucket consistency is lowered to read-after-new-write or lower to allow operations to succeed and possible data loss. |No interruption to operations or data loss.
-|Single site plus a node from each remaining site |client operations will be interrupted until either the failure is resolved, or the bucket consistency is lowered to read-after-new-write or lower to allow operations to succeed and possible data loss. |Operations will be disrupted If metadata replica quorum cannot be met and possible data loss.
-|Multi-site failure |No operations sites remain data will be lost if at least 1 site cannot be recovered in its entirety. |Operations will be disrupted If metadata replica quorum cannot be met. No data loss as long as at least 1 site remains.
-|Network isolation of a site |client operations will be interrupted until either the failure is resolved, or the bucket consistency is lowered to strong site or lower to allow operations to succeed, but no data loss a|
-Operations will be disrupted for the isolated site, but no data loss
+|Single site failure |Some client operations will be interrupted until the failure is resolved. HEAD operations will continue without interruption. GET operations will continue without interruption if a replicate copy or sufficient EC chunks exist. Reduce bucket consistency to read-after-new-write or lower to continue operations uninterrupted in this failure state.
+ |No interruption to operations or data loss.
+
+|Single site plus single node failures |Some client operations will be interrupted until either the failure is resolved. HEAD operations will continue without interruption. GET operations will continue without interruption if a replicate copy or sufficient EC chunks exist. Reduce bucket consistency to read-after-new-write or lower to continue operations uninterrupted in this failure state. |No interruption to operations or data loss. Possible data loss depending on the number of replicate copies. Local Erasure coding can prevent data loss.
+
+|Single site plus a node from each remaining site |Only two sites exist. See: Single site plus a single node. |Operations will be disrupted If metadata replica quorum cannot be met.
+Reduce bucket consistency to read-after-new-write or lower to continue operations uninterrupted in this failure state. Possible data loss for permanent failure depending on the number of replicate copies. Local Erasure coding can prevent data loss. 
+
+|Multi-site failure |No operational sites remain. Data will be lost if at least one site cannot be recovered in its entirety. |Operations will be disrupted If metadata replica quorum cannot be met. Reduce bucket consistency to read-after-new-write or lower to continue operations uninterrupted in this failure state. Possible data loss for permanent failure if not enough erasure coded chunks remain. Local Erasure coding or replicate copies can prevent data loss.
+
+
+|Network isolation of a site |client operations will be interrupted until either the failure is resolved. Reduce bucket consistency to read-after-new-write or lower to continue operations uninterrupted in this failure state. No data loss a|
+Operations will be disrupted for the isolated site, but no data loss Reduce bucket consistency to read-after-new-write or lower to continue operations uninterrupted in this failure state.
 
 No disruption to operations in the remaining sites and no data loss
 |===
