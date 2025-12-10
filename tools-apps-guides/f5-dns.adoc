@@ -20,10 +20,9 @@ This document aims to provide a succinct, high-level guide for utilizing BIG-IP 
 The F5 BIG-IP DNS solution formerly called BIG-IP GTM (Global Traffic Manager) and informally GSLB (Global Server Load Balancing) allows for seamless access across multiple active-active HA groups and active-active multi-site StorageGRID solutions to effectively be realized. 
 
 == F5 BIG-IP multi-site StorageGRID configuration
-
-=== BIG-IP DNS - First Steps in Initial Set Up
 Regardless of the number of StorageGRID sites to be supported, a minimum of two BIG-IP appliances, physical or virtual, must have the BIG-IP DNS module enabled and setup. The more DNS appliances, the further the degree of redundancy an enterprise will benefit from.
 
+=== BIG-IP DNS - First Steps in Initial Set Up
 Once the BIG-IP appliance has undergone at least initial provisioning, use a web browser to log into the TMUI (BIG-IP GUI) interface, and choose System -> Resource Provisioning. As highlighted, ensure that the “Global Traffic (DNS)” module has a check mark and is shown to be licensed. Note, as in the image, it is common that “Local Traffic (LTM)” can be provisioned on the same appliance.
 
 image:f5-dns/global-traffic.png[Global Traffic (DNS) service enabled]
@@ -49,11 +48,11 @@ image:f5-dns/dns-protocol.png[DNS protocol]
 Now, we simply need to assign an IP address for both UDP and TCP traffic involving the BIG-IP DNS. For those familiar with BIG-IP LTM, this is essentially the creation of DNS virtual servers, and virtual servers need “listener” IP addresses.
 As in the screenshot, follow the arrows to create listener/virtual servers for DNS/UDP and DNS/TCP.
 
-image:f5-dns/listener-list1.png[Add listner ip]
+image:f5-dns/listener-list1.png[Add listener ip]
 
 The following is one example from a live BIG-IP DNS, in it we see the TCP virtual server listener settings and can see how it ties together many of the previous steps. This includes referencing the DNS profile and protocol (TCP) profile, as well as configuring a valid IP address for DNS to use. As with all the objects one creates with BIG-IP, it is helpful to use a meaningful name which serves to self-identify what the object is, such as dns/siteb/TCP53 in the example name assigned.
 
-image:f5-dns/listener-list2.png[Add listner information]
+image:f5-dns/listener-list2.png[Add listener information]
 
 This concludes the preliminary, typically “one time”, setup steps of a BIG-IP appliance with the DNS module enabled. At this point we are ready to transition to the specifics of setting up a global traffic management solution with our appliances, which will of course be linked to the characteristics of the StorageGRID sites.
 
@@ -86,7 +85,7 @@ The four key elements when adding each BIG-IP include:
 * Choose a health monitor, always use “BIG-IP” when the load balancer being added is BIG-IP appliance, for back-end StorageGRID node health consideration.
 * Optionally, request virtual server automatic discovery if the appliance is a dual DNS/LTM appliance.
 
-image:f5-dns/new-servers.png[Set new servers]
+image:f5-dns/new-server.png[Set new servers]
 
 In some situations, such as transient networking problems or firewall ACL rules between network locations, when adding a remote appliance at this stage, the virtual server discovery may not show entries for remote appliances with LTM configured. In such cases, after adding the new appliance (“server”), one can manually add the virtual servers as indicated below. If adding a BIG-IP DNS-only appliance, there will be no virtual servers to be discovered or added to that device.
 
@@ -105,7 +104,7 @@ Issue the following singe command at the prompt: _bigip_add_
 The "bigip_add" command pulls the management certificate from the destination BIGIP devices for use during the encrypted “iQuery” channel setup between GSLB servers in the cluster. iQuery, by default, runs using TCP port 4353 and is the hearbeat that allows BOG-IP DNS members to stay in a synchronized state. It makes use of xml and gzip in the encrypted channel. When running "bigip_add" without any options, the command will be run against all BIGIP devices in the GSLB Server list using the current username to connect to the endpoints.
 As a quick check of success, simply return to the BIG-IP GUI and confirm all servers now have certificates listed in the displayed pull-down menu.
 
-image:f5-dns/trust2.png[Verify certificate trust]
+image:f5-dns/big-ip-add.png[Verify certificate trust]
 
 ==== Step four: Synchronize all BIG-IP DNS Appliances to the DNS Group
 The final step will allow all BIG-IP DNS appliances to be fully configured by simply using the TMUI GUI of one single unit. In a sample case, where there are two StorageGRID sites, this means now using SSH to reach the command line of the *other* site's BIG-IP DNS.
