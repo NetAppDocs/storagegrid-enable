@@ -12,9 +12,7 @@ summary: 'This technical report provides detailed instructions for configuring N
 [.lead]
 _By Steve Gorman (F5)_
 
-This technical report provides detailed instructions for configuring NetApp StorageGRID with F5 DNS services for global load balancing. 
-
-This document aims to provide a succinct, high-level guide for utilizing BIG-IP DNS with NetApp StorageGRID to deliver better data availability, greater data consistency, and optimize S3 transaction routing when your grid is distributed across multiple sites and/or HA groups.
+This technical report provides detailed instructions for configuring NetApp StorageGRID with F5 DNS services for global load balancing to deliver better data availability, greater data consistency, and optimize S3 transaction routing when your grid is distributed across multiple sites and/or HA groups.
 
 == Introduction
 The F5 BIG-IP DNS solution formerly called BIG-IP GTM (Global Traffic Manager) and informally GSLB (Global Server Load Balancing) allows for seamless access across multiple active-active HA groups and active-active multi-site StorageGRID solutions to effectively be realized. 
