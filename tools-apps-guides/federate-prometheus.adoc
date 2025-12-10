@@ -2,7 +2,7 @@
 permalink: tools-apps-guides/federate-prometheus.html
 sidebar: sidebar
 keywords: prometheus, on-premises, grafana, metrics
-summary: 'This technical report provides detailed instructions for configuring NetApp StorageGRID 11.6 with external Prometheus and Grafana services.'
+summary: 'This technical report provides detailed instructions for configuring NetApp StorageGRID with external Prometheus and Grafana services.'
 ---
 = Use Prometheus and Grafana to extend your metrics retention
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: 'This technical report provides detailed instructions for configuring N
 [.lead]
 _By Aron Klein_
 
-This technical report provides detailed instructions for configuring NetApp StorageGRID 11.6 with external Prometheus and Grafana services.
+This technical report provides detailed instructions for configuring NetApp StorageGRID with external Prometheus and Grafana services.
 
 == Introduction
 StorageGRID stores metrics using Prometheus and provides visualizations of these metrics through built in Grafana dashboards. The Prometheus metrics can be accessed securely from StorageGRID by configuring client access certificates and enabling prometheus access for the specified client. Today, the retention of this metric data is limited by the storage capacity of the administration node. To gain a longer duration and an ability to create customized visualizations of these metrics we will deploy a new Prometheus and Grafana server, configure our new server to scrape the metrics from StorageGRIDs instance, and build a dashboard with the metrics that are important to us.  You can get more information on the Prometheus metrics collected in the https://docs.netapp.com/us-en/storagegrid-116/monitor/commonly-used-prometheus-metrics.html[StorageGRID documentation^].
