@@ -152,7 +152,7 @@ Benefit: Optimize storage usage by keeping only the most recent version.
 }
 ----
 
-=== Keep 5 noncurrent versions
+=== Keep 5 noncurrent versions and delete after 90 days
 Use case: Useful where you want to retain a limited number of previous versions for recovery or audit purposes
 Benefit: Retain enough non-current versions to ensure sufficient history and recovery points.
 
@@ -165,12 +165,15 @@ Benefit: Retain enough non-current versions to ensure sufficient history and rec
 		"Filter": {},
 		"Status": "Enabled"，
 		"NoncurrentVersionExpiration": {
-		  	"NewerNoncurrentVersions": 5
+		  	"NewerNoncurrentVersions": 5,
+        	"NoncurrentDays": 90
 	    }
     }
 	]
 }
 ----
+
+NOTE: You must use *NoncurrentDays* with *NewerNoncurrentVersions*.  
 
 === Remove delete markers when no other versions exist
 Use case: This policy helps manage the delete markers left over after all non-current versions are removed which can accumulate over time.
