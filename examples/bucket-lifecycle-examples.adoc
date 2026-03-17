@@ -166,7 +166,7 @@ Benefit: Retain enough non-current versions to ensure sufficient history and rec
 		"Status": "Enabled"，
 		"NoncurrentVersionExpiration": {
 		  	"NewerNoncurrentVersions": 5,
-        "NoncurrentDays": 90
+        	"NoncurrentDays": 90
 	    }
     }
 	]
