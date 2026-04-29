@@ -25,20 +25,14 @@ The *Effect* will be either to Allow or Deny the request.
 
 The *Principal*:
 
-*	Will match anyone, including anonymous
-*	`{ "AWS": "*" }` will match any identity or user, excluding anonymous
 * Only applies for bucket policies
 * The principal is the account(s)/user(s) being granted or denied the permissions
 * Can be defined as:
 ** A wildcard "++*++" 
 +
-----
-"Principal":"*"
-----
+`"Principal":"*"` (will match anyone, including anonymous)
 +
-----
-"Principal":{"AWS":"*"}
-----
+`"Principal": { "AWS": "*" }` (will match any identity or user, excluding anonymous)
 
 ** A tenant ID for all users in a tenant (equivalent to AWS account)
 +
