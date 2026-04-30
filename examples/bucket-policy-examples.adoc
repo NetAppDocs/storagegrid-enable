@@ -30,9 +30,9 @@ The *Principal*:
 * Can be defined as:
 ** A wildcard "++*++" 
 +
-`"Principal":"*"` (will match anyone, including anonymous)
+`"Principal": "*"` matches everyone, including anonymous (unsigned) requests
 +
-`"Principal": { "AWS": "*" }` (will match any identity or user, excluding anonymous)
+`"Principal": { "AWS": "*" }` matches any authenticated identity or user (doesn't match anonymous requests)
 
 ** A tenant ID for all users in a tenant (equivalent to AWS account)
 +
