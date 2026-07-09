@@ -31,7 +31,7 @@ As of April 2022, Java 11.0.14 with Cloudera 7.1.7 was tested against StorageGRI
 
 === Install Java package
 
-. Check the https://docs.cloudera.com/cdp-private-cloud-upgrade/latest/release-guide/topics/cdpdc-java-requirements.html[Cloudera support matrix^] for the supported JDK version.
+. Check the https://docs.cloudera.com/cdp-private-cloud-upgrade/latest/upgrade/topics/cdpdc-java-requirements.html[Cloudera support matrix^] for the supported JDK version.
 
 . Download the https://www.oracle.com/java/technologies/downloads/[Java 11.x package^] that matches the Cloudera cluster operating system. Copy this package to each host in the cluster. In this example, the rpm package is used for CentOS.
 
