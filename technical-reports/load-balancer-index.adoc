@@ -47,7 +47,7 @@ https://docs.netapp.com/us-en/storagegrid-enable/
 * StorageGRID f5 load balancer design considerations
 https://www.netapp.com/blog/storagegrid-f5-load-balancer-design-considerations/
 * Loadbalancer.org—Load balancing NetApp StorageGRID
-https://www.loadbalancer.org/applications/load-balancing-netapp-storagegrid/
+https://www.loadbalancer.org/applications/netapp-storagegrid/
 * Kemp—Load balancing NetApp StorageGRID
 https://support.kemptechnologies.com/hc/en-us/articles/360045186451-NetApp-StorageGRID
 

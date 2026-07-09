@@ -72,7 +72,7 @@ If running in VMWare vSphere, you must accept promiscuous mode, MAC address chan
 
 The nodes each require either SAN-based or local disk devices of the sizes shown in the following table.
 
-NOTE: The numbers in the table are for each StorageGRID service type, not for the entire grid or each physical host. Based on the deployment choices, we will calculate numbers for each physical host in link:prerequisites-install-storagegrid.html#physical-host-layout-and-requirements[Physical host layout and requirements], later in this document.
+NOTE: The numbers in the table are for each StorageGRID service type, not for the entire grid or each physical host. Based on the deployment choices, we will calculate numbers for each physical host in link:bare-metal-prerequisites-install-storagegrid.html#physical-host-layout-and-requirements[Physical host layout and requirements], later in this document.
 ++ ++
 The paths or file systems marked with an asterisk will be created in the StorageGRID container itself by the installer. No manual configuration or file system creation is required by the administrator, but the hosts need block devices to satisfy these requirements. In other words, the block device should appear by using the command `lsblk` but not be formatted or mounted within the host OS.
 ++ ++
@@ -131,7 +131,7 @@ BLOCK_DEVICE_RANGEDB_001 = /dev/mapper/SN-Db01
 BLOCK_DEVICE_RANGEDB_002 = /dev/mapper/SN-Db02`
 |===
 
-In this example, the disk sizes shown in the following table are needed per container type. The requirements per physical host are described in link:prerequisites-install-storagegrid.html#physical-host-layout-and-requirements[Physical host layout and requirements], later in this document.
+In this example, the disk sizes shown in the following table are needed per container type. The requirements per physical host are described in link:bare-metal-prerequisites-install-storagegrid.html#physical-host-layout-and-requirements[Physical host layout and requirements], later in this document.
 
 == Disk sizes per container type
 === Admin container
@@ -334,7 +334,7 @@ This example assumes that your physical network device for the grid network is e
 
 == Optional storage setup with iSCSI
 
-If you are not using iSCSI storage, you must ensure that host1, host2, and host3 contain block devices of sufficient size to meet their requirements. See link:prerequisites-install-storagegrid.html#disk-sizes-per-container-type[Disk sizes per container type] for host1, host2, and host3 storage requirements.
+If you are not using iSCSI storage, you must ensure that host1, host2, and host3 contain block devices of sufficient size to meet their requirements. See link:bare-metal-prerequisites-install-storagegrid.html#disk-sizes-per-container-type[Disk sizes per container type] for host1, host2, and host3 storage requirements.
 
 To set up storage with iSCSI, complete the following steps:
 
@@ -353,7 +353,7 @@ sudo yum install device-mapper-multipath
 InitiatorName=iqn.2006-04.com.example.node1
 ----
 +
-. Using the initiator name from step 2, map LUNs on your storage device (of the number and size shown in the link:prerequisites-install-storagegrid.html#storage-requirements[Storage requirements] table) to each storage node.
+. Using the initiator name from step 2, map LUNs on your storage device (of the number and size shown in the link:bare-metal-prerequisites-install-storagegrid.html#storage-requirements[Storage requirements] table) to each storage node.
 . Discover the newly created LUNs with `iscsiadm` and log in to them.
 +
 ----
