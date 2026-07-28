@@ -13,7 +13,7 @@ summary: Explore few use cases for StorageGRID configurations implemented by cus
 :imagesdir: ../media/
 
 [.lead]
-In the Aux Copy operation, four Commvault MediaAgents backed up data to a NetApp AFF A300 system and an auxiliary copy was created on NetApp StorageGRID. For details on the test setup environment, read the Solution Design and Best Practices section in the https://www.netapp.com/us/media/tr-4831.pdf[NetApp Scale-out Data Protection with Commvault] technical report.
+In the Aux Copy operation, four Commvault MediaAgents backed up data to a NetApp AFF A300 system and an auxiliary copy was created on NetApp StorageGRID. 
 
 The tests were performed with 100 VMs and 1000 VMs, both tests with a 50/50 mix of Windows and CentOS VMs. The following table shows the results from our baseline performance tests:
 

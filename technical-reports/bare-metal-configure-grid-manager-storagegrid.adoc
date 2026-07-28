@@ -23,14 +23,14 @@ Configuring the grid and completing the installation involves the following task
 
 .Steps
 . <<Navigate to Grid Manager>>
-. link:storagegrid-license.html[Specify the StorageGRID license information]
-. link:add-sites-storagegrid.html[Add sites to StorageGRID]
-. link:grid-network-subnets-storagegrid.html[Specify grid network subnets]
-. link:approve-grid-nodes-storagegrid.html[Approve pending grid nodes]
-. link:ntp-server-storagegrid.html[Specify NTP server information]
-. link:dns-server-storagegrid.html[Specify domain name system server information]
-. link:system-passwords-storagegrid.html[Specify the StorageGRID system passwords]
-. link:review-config-complete-storagegrid-install.html[Review your configuration and complete installation]
+. link:bare-metal-storagegrid-license.html[Specify the StorageGRID license information]
+. link:bare-metal-add-sites-storagegrid.html[Add sites to StorageGRID]
+. link:bare-metal-grid-network-subnets-storagegrid.html[Specify grid network subnets]
+. link:bare-metal-approve-grid-nodes-storagegrid.html[Approve pending grid nodes]
+. link:bare-metal-ntp-server-storagegrid.html[Specify NTP server information]
+. link:bare-metal-dns-server-storagegrid.html[Specify domain name system server information]
+. link:bare-metal-system-passwords-storagegrid.html[Specify the StorageGRID system passwords]
+. link:bare-metal-review-config-complete-storagegrid-install.html[Review your configuration and complete installation]
 
 == Navigate to Grid Manager
 Use Grid Manager to define all of the information required to configure your StorageGRID system.

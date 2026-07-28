@@ -30,7 +30,7 @@ image:site-relocation/s3-completed-request.png[S3 Overview Grafana chart sample]
 .Steps
 
 . If new Grid network subnet will be used at the new location, 
-link:https://docs.netapp.com/us-en/storagegrid-118/expand/updating-subnets-for-grid-network.htmll[add the subnet to Grid network subnet list^]   
+link:https://docs.netapp.com/us-en/storagegrid/expand/updating-subnets-for-grid-network.html[add the subnet to Grid network subnet list^]   
 . Log in to the primary Admin Node, use change-ip to make Grid IP change, must *stage* the change before shutdown the node for relocation.  
 .. Select 2 then 1 for Grid IP change
 +
