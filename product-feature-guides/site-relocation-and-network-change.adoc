@@ -65,7 +65,7 @@ The procedure below assume you have remote access to StorageGRID appliance's adm
 link:https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/placing-appliance-into-maintenance-mode.html[place the appliance in maintenance mode]. 
 . Using a browser to access the StorageGRID appliance installer GUI using https://<admin-or-client-network-ip>:8443.  Cannot use Grid IP as the new Grid IP already in place once the appliance is boot into maintenance mode. 
 . Change the VLAN for Grid network.  If you are accessing the appliance over client network, you cannot change Client VLAN at this time, you can change it after the move.   
-. ssh to the appliance and shutdown the node using 'shutdoown -h now' 
+. ssh to the appliance and shutdown the node using 'shutdown -h now' 
 . After the appliances are ready at new site, access to the StorageGRID appliance installer GUI using https://<grid-network-ip>:8443.  Confirm the storage are in optimal state and network connectivity to other Grid nodes using ping/nmap tools in the GUI.
 . If plan to change client network IP, you can change the client VLAN at this stage.  The client network is not ready until you update the client network ip using change-ip tool in later step.
 . Exit maintenance mode. From the StorageGRID Appliance Installer, select *Advanced* > *Reboot Controller*, and then select *Reboot into StorageGRID*.
