@@ -7,8 +7,6 @@ settings:
   prod:
     pdf_enabled: true
     harmony_enabled: true
-
-
 sidebar:
   entries:
     - title: StorageGRID solutions and resources
