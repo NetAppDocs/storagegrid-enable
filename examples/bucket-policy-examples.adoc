@@ -23,20 +23,16 @@ All policies will define the effect, action(s), and resource(s). Bucket policies
 
 The *Effect* will be either to Allow or Deny the request.
 
-The *Principal* 
+The *Principal*:
 
-* Only applies for bucket policies. 
-* The principal is the account(s)/user(s) being granted or denied the permissions. 
+* Only applies for bucket policies
+* The principal is the account(s)/user(s) being granted or denied the permissions
 * Can be defined as:
 ** A wildcard "++*++" 
 +
-----
-"Principal":"*"
-----
+`"Principal": "*"` matches everyone, including anonymous (unsigned) requests
 +
-----
-"Principal":{"AWS":"*"}
-----
+`"Principal": { "AWS": "*" }` matches any authenticated identity or user (doesn't match anonymous requests)
 
 ** A tenant ID for all users in a tenant (equivalent to AWS account)
 +

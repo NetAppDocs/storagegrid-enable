@@ -19,6 +19,9 @@ NetApp has tested StorageGRID with GitLab. See sample GitLab configuration below
 For Linux Package installations, this is an example of the `connection` setting in the consolidated form. Edit `/etc/gitlab/gitlab.rb` and add the following lines, substituting the values you want:
 
 ```
+# Workaround for unexpected EOF errors with strict OpenSSL 3 / external services
+gitlab_rails['env'] = { 'SSL_IGNORE_UNEXPECTED_EOF' => '1' }
+
 # Consolidated object storage configuration
 gitlab_rails['object_store']['enabled'] = true
 gitlab_rails['object_store']['proxy_download'] = true
