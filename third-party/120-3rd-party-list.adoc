@@ -76,7 +76,7 @@ These solutions have been tested in collaboration with the respective partners.
 * Vertica 10.x
 * Vidispine
 * Virtalica StorageFabric
-* Weka v3.10 or later
+* WEKA v3.10 or later
  
 
 == Third-party solutions validated on StorageGRID with object lock
