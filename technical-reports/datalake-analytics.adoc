@@ -10,7 +10,7 @@ summary: 'This report covers big data analytics on StorageGRID.'
 :imagesdir: ../media/
 
 [.lead]
-Hadoop S3A connector facilitates seamless interaction between Hadoop-based applications and S3 object storage. Tuning the Hadoop S3A Connector is essential to optimize performance when working with S3 object storage.
+Big data analytics is one of the most common use cases for object storage-based data lakes. When selecting an analytics platform, understanding how data warehouse and lakehouse technologies interact with S3 object storage can help you optimize performance, scalability, and operational efficiency. StorageGRID provides S3-compatible object storage for analytics workloads, including platforms such as Apache Spark, Dremio, Trino, and Starburst.
 
 == NetApp StorageGRID use cases
 
