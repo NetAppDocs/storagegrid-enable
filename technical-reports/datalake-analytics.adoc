@@ -9,6 +9,9 @@ summary: 'This report covers big data analytics on StorageGRID.'
 :icons: font
 :imagesdir: ../media/
 
+[.lead]
+Big data analytics is one of the most common use cases for object storage-based data lakes. When selecting an analytics platform, understanding how data warehouse and lakehouse technologies interact with S3 object storage can help you optimize performance, scalability, and operational efficiency. StorageGRID provides S3-compatible object storage for analytics workloads, including platforms such as Apache Spark, Dremio, Trino, and Starburst.
+
 == NetApp StorageGRID use cases
 
 NetApp StorageGRID object storage solution offers scalability, data availability, security, and high performance. Organizations of all sizes and across various industries use StorageGRID S3 for a wide range of use cases. Let's explore some typical scenarios:
