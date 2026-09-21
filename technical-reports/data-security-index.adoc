@@ -29,7 +29,7 @@ This paper is an overview of the many security features in StorageGRID 12.0, div
 
 This paper is intended to be a security datasheet—it does not detail how to configure the system to support the security features enumerated within that are not configured by default. The https://docs.netapp.com/us-en/storagegrid/harden/index.html[StorageGRID Hardening Guide^] is available on the official https://docs.netapp.com/us-en/storagegrid/[StorageGRID Documentation^] page.
 
-In addition to the capabilities described in this report, StorageGRID follows the https://www.netapp.com/us/legal/vulnerability-response.aspx[NetApp Product Security Vulnerability Response and Notification Policy^]. Reported vulnerabilities are verified and responded to according to the product security incident response process.
+In addition to the capabilities described in this report, StorageGRID follows the https://security.netapp.com/policy/[NetApp Product Security Vulnerability Response and Notification Policy^]. Reported vulnerabilities are verified and responded to according to the product security incident response process.
 
 NetApp StorageGRID provides advanced security features for highly demanding enterprise object storage use cases.
 
