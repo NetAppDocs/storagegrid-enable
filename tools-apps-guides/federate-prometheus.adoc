@@ -224,7 +224,7 @@ Aug 22 15:14:24 aj-deb-prom01 prometheus[6498]: ts=2022-08-22T19:14:24.832Z call
 Aug 22 15:14:24 aj-deb-prom01 prometheus[6498]: ts=2022-08-22T19:14:24.832Z caller=main.go:961 level=info msg="Server is ready to receive web requests."
 Aug 22 15:14:24 aj-deb-prom01 prometheus[6498]: ts=2022-08-22T19:14:24.832Z caller=manager.go:941 level=info component="rule manager" msg="Starting rule manager..."
 ----
-. You should now be able to browse to the UI of your prometheus server `http://Prometheus-server:9090` and see the UI
+. You should now be able to browse to the UI of your prometheus server \http://<prometheus-server-ip>:9090 and see the UI
 +
 image:prometheus/prometheus_ui.png[prometheus UI page]
 . Under "Status" Targets you can see the status of the StorageGRID endpoint we configured in prometheus.yml
@@ -270,7 +270,7 @@ sudo systemctl daemon-reload
 sudo systemctl start grafana-server
 sudo systemctl enable grafana-server.service
 ----
-. Grafana is now installed and running.  When you open a browser to `HTTP://Prometheus-server:3000` you will be greeted with the Grafana login page.
+. Grafana is now installed and running.  When you open a browser to \http://<prometheus-server-ip>:3000 you will be greeted with the Grafana login page.
 . The default login credentials are admin/admin, and you should set a new password as it prompts you to.
 
 === Create a Grafana dashboard for StorageGRID
