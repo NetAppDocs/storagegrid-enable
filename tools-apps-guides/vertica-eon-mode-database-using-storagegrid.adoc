@@ -148,7 +148,7 @@ The following list provides a brief explanation of arguments used in this exampl
 +
 * `-x <path/filename of authorization file>`
 +
-For details about the authorization file, refer to <<createauthorization,“Creating an authorization file to access the S3 endpoint”>>.
+For details about the authorization file, refer to <<createauthorization,Creating an authorization file to access the S3 endpoint>>.
 +
 The authorization details are stored inside database after successful creation. You can remove this file to avoid exposing the S3 secret key.
 * `--communal-storage-location <s3://storagegrid bucketname>`
